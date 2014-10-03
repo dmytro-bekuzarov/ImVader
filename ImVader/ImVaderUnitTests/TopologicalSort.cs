@@ -26,9 +26,7 @@ namespace ImVaderUnitTests
         public void Sort()
         {
             // TODO: Should be rewritten
-            IGraph g = new ListGraph();
-            g.TopologicalSort();
-            Assert.AreNotEqual(null, g);
+            MatrixGraph<Vertex<int>, UnweightedEdge> g = new MatrixGraph<Vertex<int>, UnweightedEdge>(10); 
         }
     }
 }
