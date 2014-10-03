@@ -6,8 +6,6 @@ using System.Web.Mvc;
 
 namespace ImVaderWebsite.Controllers
 {
-    using System.Web.Http;
-
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -21,15 +19,11 @@ namespace ImVaderWebsite.Controllers
 
             return View();
         }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
-        }
-
-        public ActionResult Demo()
-        {
             return View();
         }
     }
