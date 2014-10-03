@@ -1,22 +1,18 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IGraph.cs" company="Sigma">
-//   I have no idea what should be written here.
-// </copyright>
-// <summary>
-//   The Graph interface.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace ImVader
 {
-    /// <summary>
-    /// The Graph interface.
-    /// </summary>
-    public interface IGraph
+    interface IGraph
     {
-        /// <summary>
-        /// The topological sort.
-        /// </summary>
-        void TopologicalSort();
+         int TotalVertices { get; }
+         int TotalEdges { get; }
+         IVertex AddVertex(IVertex v);
+         IVertex GetVertex(int id);
+         void RemoveVertex(int id);
+         Edge AddEdge(Edge e);
+         Edge GetEdge(int id);
     }
 }

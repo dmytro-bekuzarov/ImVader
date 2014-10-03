@@ -25,10 +25,7 @@ namespace ImVaderUnitTests
         [TestMethod]
         public void Sort()
         {
-            // TODO: Should be rewritten
-            IGraph g = new ListGraph();
-            g.TopologicalSort();
-            Assert.AreNotEqual(null, g);
+            
         }
     }
 }

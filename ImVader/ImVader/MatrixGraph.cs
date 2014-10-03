@@ -12,8 +12,7 @@ namespace ImVader
     /// <summary>
     /// The matrix graph.
     /// </summary>
-    public class MatrixGraph : IGraph
-    {
+    public class MatrixGraph{
         /// <summary>
         /// The topological sort.
         /// </summary>

@@ -12,8 +12,12 @@ namespace ImVader
     /// <summary>
     /// The list graph.
     /// </summary>
-    public class ListGraph : IGraph
-    {
+    public class ListGraph {
+        /// <summary>
+        /// Gets or sets the id.
+        /// </summary>
+        public int Id { get; set; }
+
         /// <summary>
         /// The topological sort.
         /// </summary>
