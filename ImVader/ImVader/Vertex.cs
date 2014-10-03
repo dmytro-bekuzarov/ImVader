@@ -1,19 +1,35 @@
-﻿namespace ImVader
-{
-    using System;
+﻿// <copyright file="Vertex.cs" company="Sigma">
+//   Sigma
+// </copyright>
+// <summary>
+//   Vertex class defines graph vertex
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
+namespace ImVader
+{
     /// <summary>
-    /// The vertex.
+    /// Defines graph vertex
     /// </summary>
-    /// <typeparam name="T">Type of the value
+    /// <typeparam name="T">
+    /// Defines type of data stored in the vertex
     /// </typeparam>
-    public class Vertex<T> : IVertex where T : IComparable
+    public class Vertex<T>
     {
         /// <summary>
-        /// Gets or sets the value.
+        /// Initializes a new instance of the <see cref="Vertex{T}"/> class.
         /// </summary>
-        public virtual T Value { get; set; }
+        /// <param name="data">
+        /// The data.
+        /// </param>
+        public Vertex(T data)
+        {
+            this.Data = data;
+        }
 
-        public int Id { get; protected set; }
+        /// <summary>
+        /// Gets or sets the data in the vertex
+        /// </summary>
+        public T Data { get; protected set; }
     }
 }

@@ -25,7 +25,8 @@ namespace ImVaderUnitTests
         [TestMethod]
         public void Sort()
         {
-            
+            // TODO: Should be rewritten
+            MatrixGraph<Vertex<int>, UnweightedEdge> g = new MatrixGraph<Vertex<int>, UnweightedEdge>(10); 
         }
     }
 }

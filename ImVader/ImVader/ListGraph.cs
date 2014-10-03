@@ -1,28 +1,74 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ListGraph.cs" company="Sigma">
-//    I have no idea what should be written here.
+//   Sigma
 // </copyright>
 // <summary>
-//   The list graph.
+//   Adjacency-list based graph.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace ImVader
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     /// <summary>
-    /// The list graph.
+    /// Adjacency-list based graph.
     /// </summary>
-    public class ListGraph {
+    /// <typeparam name="TV">
+    /// Type of data stored in vertices
+    /// </typeparam>
+    /// <typeparam name="TE">
+    /// Type of edge used to connect vertices
+    /// </typeparam>
+    public class ListGraph<TV, TE> : Graph<TV, TE>
+        where TV : Vertex<TV>
+        where TE : Edge
+    {
         /// <summary>
-        /// Gets or sets the id.
+        /// Represents adjacency list
         /// </summary>
-        public int Id { get; set; }
+        protected List<List<TE>> AdjacencyList;
 
         /// <summary>
-        /// The topological sort.
+        /// Initializes a new instance of the <see cref="ListGraph{TV,TE}"/> class.
         /// </summary>
-        public void TopologicalSort()
+        /// <param name="vertexCount">
+        /// The count of vertices.
+        /// </param>
+        public ListGraph(int vertexCount)
+            : base(vertexCount)
         {
+            this.AdjacencyList = new List<List<TE>>(vertexCount);
+        }
+
+        /// <summary>
+        /// The get adjacency list.
+        /// </summary>
+        /// <param name="v">
+        /// The v.
+        /// </param>
+        /// <returns>
+        /// List containing ids of vertices adjacent to v
+        /// </returns>
+        public override IEnumerable<int> GetAdjacencyList(int v)
+        {
+            this.CheckArguments(v);
+            return this.AdjacencyList[v].Select(edge => edge.Other(v));
+        }
+
+        /// <summary>
+        /// Adds new edge between two vertices of the graph
+        /// </summary>
+        /// <param name="e">
+        /// Edge to be added
+        /// </param>
+        public override void AddEdge(TE e)
+        {
+            this.CheckArguments(e.W);
+            this.CheckArguments(e.V);
+            this.AdjacencyList[e.V].Add(e);
+            this.AdjacencyList[e.W].Add(e);
         }
     }
 }
