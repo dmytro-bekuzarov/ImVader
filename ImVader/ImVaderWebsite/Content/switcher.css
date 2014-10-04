@@ -1,0 +1,222 @@
+@charset "utf-8";
+/* CSS Document */
+#style_panel #control {
+	background-color: #fff;
+	background-repeat:no-repeat;
+	background-position:9px 9px;
+	float: right;
+	height: 44px;
+	width: 44px;
+	display:block;
+	text-decoration:none;
+	color:#1d2024;
+	font-size:26px;
+	padding-left: 9px;
+    padding-top: 7px;
+	border:2px solid #1d2024;
+}
+
+#style_panel #control:hover {
+	background-color:#1d2024;
+	color:#fff; 
+}
+
+
+#style_panel .title h5 {
+	float: left;
+	font-family:'Droid Sans', sans-serif;
+	font-size:14px;
+	color: #fff;
+	padding:13px 0 0 15px;
+	text-transform:none;
+}
+#style_panel .title {
+	background-color: #fff;
+	height: 40px;
+	width:317px;
+}
+#style_panel .inner {
+	background-color: #F4F1E4;
+	float: left;
+	width: 170px;
+}
+#style_panel {
+	width:210px;
+	position:fixed;
+	top:20%;
+	left:-275px;
+	z-index:120;
+	-o-transition: all 350ms ease-in;
+	-webkit-transition: all 350ms ease-in;
+	-moz-transition: all 350ms ease-in;
+	transition: all 350ms ease-in;
+	
+}
+#style_panel.opens {
+	width:210px;
+	position:fixed;
+	top:20%;
+	left:0px;
+	
+}
+
+#style_panel .inner{
+	background-color:#fff;
+	border:2px solid #1d2024;
+	width:275px;
+	height:460px;
+	margin-top: -40px;
+}
+
+#style_panel .inner h6 {
+	padding-bottom: 0;
+    padding-top: 0;
+	font-family:'OpenSans', sans-serif;
+	font-weight:700;
+	font-size:14px;
+	color: #312e5d;
+	text-transform:uppercase;
+	text-align: left;
+	margin-left:45px;
+	margin-bottom: 4px;
+	margin-top: 31px;
+}
+#default, #backtothemef {
+	font-family: 'Bree Serif';
+	font-size: 13px;
+	text-transform: uppercase;
+	display:block;
+	margin:15px 0 15px 35px;
+	text-decoration:underline;
+	color: #495d60;
+}
+#style_panel .inner ul
+{
+margin:0 0 0 35px;
+overflow:hidden;
+}
+#style_panel .inner ul li
+{
+/*float:left;*/
+margin:5px 5px 0 0;
+}
+
+#style_panel .inner .color{
+	margin-left: 0;
+}
+#style_panel .inner .color li a{
+	display:block;
+	padding-left: 10px;
+	padding-bottom: 9px;
+	overflow: hidden;
+}
+
+#style_panel .inner .color li a span{
+	/*display:inline-block;*/
+	display: block;
+	float: left;
+	background-color: #77D0C4;
+	width: 12px;
+	height: 12px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	margin-right:9px;
+	margin-top: 9px;
+}
+
+
+#style_panel .inner .color li{
+	width: 92px;
+	padding-left: 8px;
+	line-height: 0;
+}
+
+#style_panel .inner .color li a{
+	border: 3px solid #e9e8ed;
+}
+
+#style_panel .inner .color li a:hover,
+#style_panel .inner .color li a.activ{
+	border-color:#acabaf; 
+}
+
+#style_panel .inner .color li p{
+	font-family:'OpenSans', sans-serif;
+	font-size:12px;
+	color: #312e5d;
+	text-align:left;
+	text-decoration:none;
+	display: inline-block;
+	margin: 7px 13px 0px 5px;
+	vertical-align: top;
+}
+
+#style_panel .inner .color li p{
+	margin: 5px 13px 2px 5px;
+}
+
+#style_panel .inner .color li a:hover,
+#style_panel .inner .color li a:focus{
+	text-decoration:none;
+}
+
+#style_panel .inner .color li.active{
+	border-color:#acabaf; 
+}
+
+#style_panel .inner .left-column{
+	float: left;
+}
+
+#style_panel .inner .color li a .concat{
+	background: none;
+	margin-top: 10px;
+	margin-left: 4px;
+	color: #000;
+}
+/*Color control*/
+
+#style_panel .inner .color li a .one {
+	background-color: #212c43;
+}
+
+#style_panel .inner .color--light li a .one {
+	background-color: #F3F5F7;
+}
+
+#style_panel .inner .color li a .three {
+	background-color: #7ccbfc;
+}
+
+#style_panel .inner .color li .red .three{
+	background-color: #f93e54;
+}
+
+#style_panel .inner .color li .blue .three{
+	background-color: #5688c9;
+}
+
+#style_panel .inner .color li .emerald .three{
+	background-color: #4adaa9;
+}
+
+#style_panel .inner .color li .purple .three{
+	background-color: #9c7dc4;
+}
+
+#style_panel .inner .color li .orange .three{
+	background-color: #fc6b00;
+}
+
+#style_panel .inner .color li .yellow .three{
+	background-color: #fcd500;
+}
+
+#style_panel .inner .color li .pink .three{
+	background-color: #f29090;
+}
+
+#style_panel .inner .color li .green .three{
+	background-color: #90d34f;
+}

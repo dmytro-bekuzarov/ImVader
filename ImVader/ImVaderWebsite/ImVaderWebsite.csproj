@@ -39,7 +39,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -49,6 +57,30 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -66,45 +98,12 @@
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
-    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.0\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.0\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="WebGrease">
-      <Private>True</Private>
-      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr3.Runtime">
-      <Private>True</Private>
-      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -118,26 +117,224 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\demo.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\style_default.css" />
+    <Content Include="Content\switcher.css" />
+    <Content Include="External\custom.js" />
+    <Content Include="External\form.js" />
+    <Content Include="External\jquery\jquery-2.1.1.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\404.png" />
+    <Content Include="Images\404x2.png" />
+    <Content Include="Images\avatars\user-photo-1.jpg" />
+    <Content Include="Images\avatars\user-photo-2.jpg" />
+    <Content Include="Images\avatars\user-photo-3.jpg" />
+    <Content Include="Images\avatars\user-photo-4.jpg" />
+    <Content Include="Images\avatars\user-photo-5.jpg" />
+    <Content Include="Images\avatars\user-photo-6.jpg" />
+    <Content Include="Images\avatars\user-photo-7.jpg" />
+    <Content Include="Images\avatars\user-photo-8.jpg" />
+    <Content Include="Images\avatars\user-photo-9.jpg" />
+    <Content Include="Images\avatars\user-photo-default.jpg" />
+    <Content Include="Images\blog\large\single-post-img.jpg" />
+    <Content Include="Images\blog\thumbs\popular-post-photo.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-1.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-10.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-11.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-12.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-13.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-14.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-15.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-16.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-17.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-18.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-19.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-2.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-20.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-21.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-22.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-3.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-4.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-5.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-6.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-7.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-8.jpg" />
+    <Content Include="Images\blog\thumbs\post-photo-9.jpg" />
+    <Content Include="Images\category-img.png" />
+    <Content Include="Images\compatibility-image.png" />
+    <Content Include="Images\components\compatibility-image-arrow.svg" />
+    <Content Include="Images\components\draghand.cur" />
+    <Content Include="Images\components\draghanda.cur" />
+    <Content Include="Images\components\meet-image-arrow.svg" />
+    <Content Include="Images\components\pattern-grid-dark.png" />
+    <Content Include="Images\components\pattern-grid-dark2x.png" />
+    <Content Include="Images\components\pattern-grid-light.png" />
+    <Content Include="Images\components\pattern-grid-light2x.png" />
+    <Content Include="Images\components\timeline-star.svg" />
+    <Content Include="Images\gallery\large\gallery-img1.jpg" />
+    <Content Include="Images\gallery\large\gallery-img10.jpg" />
+    <Content Include="Images\gallery\large\gallery-img11.jpg" />
+    <Content Include="Images\gallery\large\gallery-img12.jpg" />
+    <Content Include="Images\gallery\large\gallery-img13.jpg" />
+    <Content Include="Images\gallery\large\gallery-img14.jpg" />
+    <Content Include="Images\gallery\large\gallery-img2.jpg" />
+    <Content Include="Images\gallery\large\gallery-img3.jpg" />
+    <Content Include="Images\gallery\large\gallery-img4.jpg" />
+    <Content Include="Images\gallery\large\gallery-img5.jpg" />
+    <Content Include="Images\gallery\large\gallery-img6.jpg" />
+    <Content Include="Images\gallery\large\gallery-img7.jpg" />
+    <Content Include="Images\gallery\large\gallery-img8.jpg" />
+    <Content Include="Images\gallery\large\gallery-img9.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns2-img1.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns2-img2.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns2-img3.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns2-img4.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns2-img5.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns2-img6.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns2-img7.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns2-img8.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns3-img1.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns3-img10.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns3-img11.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns3-img12.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns3-img2.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns3-img3.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns3-img4.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns3-img5.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns3-img6.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns3-img7.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns3-img8.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-columns3-img9.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-random-img1.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-random-img10.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-random-img11.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-random-img12.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-random-img13.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-random-img14.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-random-img2.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-random-img3.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-random-img4.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-random-img5.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-random-img6.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-random-img7.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-random-img8.jpg" />
+    <Content Include="Images\gallery\thumbs\gallery-random-img9.jpg" />
+    <Content Include="Images\icons\alert-icons.svg" />
+    <Content Include="Images\icons\arrow.svg" />
+    <Content Include="Images\icons\icons-services.svg" />
+    <Content Include="Images\iphone-blue.png" />
+    <Content Include="Images\iphone-dark.png" />
+    <Content Include="Images\iphone-pink.png" />
+    <Content Include="Images\meet-image.png" />
+    <Content Include="Images\page_title\about-photo.jpg" />
+    <Content Include="Images\page_title\blog-photo.jpg" />
+    <Content Include="Images\page_title\gallery-photo.jpg" />
+    <Content Include="Images\page_title\home-photo.jpg" />
+    <Content Include="Images\page_title\how-it-works-photo.jpg" />
+    <Content Include="Images\page_title\prices-photo.jpg" />
+    <Content Include="Images\page_title\services-photo.jpg" />
+    <Content Include="Images\person-photo-1.jpg" />
+    <Content Include="Images\person-photo-2.jpg" />
+    <Content Include="Images\person-photo-3.jpg" />
+    <Content Include="Images\person-photo-4.jpg" />
+    <Content Include="Images\project-img1.jpg" />
+    <Content Include="Images\project-img2.jpg" />
+    <Content Include="Images\project-img3.jpg" />
+    <Content Include="Images\project-img4.jpg" />
+    <Content Include="Images\revo_slider\revo-img1.png" />
+    <Content Include="Images\revo_slider\revo-img1x2.png" />
+    <Content Include="Images\revo_slider\revo-img2.png" />
+    <Content Include="Images\revo_slider\revo-img2x2.png" />
+    <Content Include="Images\revo_slider\revo-img3.png" />
+    <Content Include="Images\revo_slider\revo-img3x2.png" />
+    <Content Include="Images\revo_slider\revo-slider-img1.jpg" />
+    <Content Include="Images\revo_slider\revo-slider-img2.jpg" />
+    <Content Include="Images\revo_slider\revo-slider-img3.jpg" />
+    <Content Include="Images\revo_slider\revo-slider2-img1.jpg" />
+    <Content Include="Images\revo_slider\revo-slider2-img2.jpg" />
+    <Content Include="Images\revo_slider\revo-slider2-img3.jpg" />
+    <Content Include="Images\shop\popular-item-img1.jpg" />
+    <Content Include="Images\shop\popular-item-img2.jpg" />
+    <Content Include="Images\shop\popular-item-img3.jpg" />
+    <Content Include="Images\shop\shop-img1.jpg" />
+    <Content Include="Images\shop\shop-img10.jpg" />
+    <Content Include="Images\shop\shop-img2.jpg" />
+    <Content Include="Images\shop\shop-img3.jpg" />
+    <Content Include="Images\shop\shop-img4.jpg" />
+    <Content Include="Images\shop\shop-img5.jpg" />
+    <Content Include="Images\shop\shop-img6.jpg" />
+    <Content Include="Images\shop\shop-img7.jpg" />
+    <Content Include="Images\shop\shop-img8.jpg" />
+    <Content Include="Images\shop\shop-img9.jpg" />
+    <Content Include="Images\shop\shop-list-img1.jpg" />
+    <Content Include="Images\shop\shop-list-img10.jpg" />
+    <Content Include="Images\shop\shop-list-img2.jpg" />
+    <Content Include="Images\shop\shop-list-img3.jpg" />
+    <Content Include="Images\shop\shop-list-img4.jpg" />
+    <Content Include="Images\shop\shop-list-img5.jpg" />
+    <Content Include="Images\shop\shop-list-img6.jpg" />
+    <Content Include="Images\shop\shop-list-img7.jpg" />
+    <Content Include="Images\shop\shop-list-img8.jpg" />
+    <Content Include="Images\shop\shop-list-img9.jpg" />
+    <Content Include="Images\shop\shop-slide1.jpg" />
+    <Content Include="Images\shop\shop-slide2.jpg" />
+    <Content Include="Images\shop\shop-slide3.jpg" />
+    <Content Include="Images\similar-projects-img1.jpg" />
+    <Content Include="Images\similar-projects-img2.jpg" />
+    <Content Include="Images\similar-projects-img3.jpg" />
+    <Content Include="Images\similar-projects-img4.jpg" />
+    <Content Include="Images\text-image1.jpg" />
+    <Content Include="Images\text-image2.jpg" />
+    <Content Include="Images\univers-bg.jpg" />
+    <Content Include="Images\univers-circles.png" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="External\bootstrap-select\bootstrap-select.css" />
+    <Content Include="External\bootstrap-select\bootstrap-select.js" />
+    <Content Include="External\bootstrap\js\bootstrap.min.js" />
+    <Content Include="External\colorbox\colorbox.css" />
+    <Content Include="External\colorbox\images\overlay.png" />
+    <Content Include="External\colorbox\jquery.colorbox.js" />
+    <Content Include="External\countdown\count.down.js" />
+    <Content Include="External\gozha-nav\gozha-nav.css" />
+    <Content Include="External\gozha-nav\images\close-open-menu-icon.svg" />
+    <Content Include="External\gozha-nav\images\plus-minus-icon.png" />
+    <Content Include="External\gozha-nav\jquery.mobile.menu.js" />
+    <Content Include="External\jflickrfeed\jflickrfeed.js" />
+    <Content Include="External\jquery-bxslider\jquery.bxslider.min.js" />
+    <Content Include="External\jquery-cookie\jquery.cookie.js" />
+    <Content Include="External\jquery-easing\jquery.easing.1.3.js" />
+    <Content Include="External\jquery-event\jquery.event.drag-2.2.js" />
+    <Content Include="External\jquery-event\jquery.event.drop-2.2.js" />
+    <Content Include="External\jquery-fitvids\jquery.fitvids.js" />
+    <Content Include="External\jquery-knob\jquery.knob.min.js" />
+    <Content Include="External\jquery-roundabout\jquery.roundabout.min.js" />
+    <Content Include="External\jquery-timeline\jquery.timelineG.js" />
+    <Content Include="External\jquery-twitter\jquery.twitter.js" />
+    <Content Include="External\jquery\jquery-migrate-1.2.1.min.js" />
+    <Content Include="External\jquery\jquery.ui.touch-punch.min.js" />
+    <Content Include="External\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="External\magnific-popup\magnific-popup.css" />
+    <Content Include="External\masonry\masonry.pkgd.min.js" />
+    <Content Include="External\modernizr\modernizr.custom.91224.js" />
+    <Content Include="External\raty\jquery.raty.js" />
+    <Content Include="External\rs-plugin\css\settings.css" />
+    <Content Include="External\rs-plugin\js\jquery.themepunch.plugins.min.js" />
+    <Content Include="External\rs-plugin\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="External\swiper\idangerous.swiper.css" />
+    <Content Include="External\swiper\idangerous.swiper.min.js" />
+    <Content Include="External\vkConnection.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -152,16 +349,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Demo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>

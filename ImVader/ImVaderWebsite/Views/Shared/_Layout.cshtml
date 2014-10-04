@@ -2,41 +2,181 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="telephone=no" name="format-detection">										<!--Remove styling of telephone numbers on IOS-->
+    <meta name="description" content="@ViewBag.Description"> 							<!--Change content-->
+    <meta name="keywords" content="HTML, LESS, CSS, JavaScript"> 								<!--Change content-->
+    <meta name="author" content="Designzway Team"> 												<!--Change content-->
+    <title>@ViewBag.Title</title>															<!--Change title-->
+    <link href="~/Content/switcher.css" rel="stylesheet" />											<!--Color panel-->
+    <link href="~/Content/style.css?v=1" rel="stylesheet">    										<!-- Stylesheet -->
+    <link href="~/Content/style_default.css" rel="stylesheet" media="all">    						<!-- Stylesheet -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="~/External/jquery/jquery-2.1.1.min.js"></script>	
+    @RenderSection("head",false)
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+<body onload="@ViewBag.BodyOnLoad">
+    <div class="wrapper">
+        <!-- Begin header -->
+        <header>
+            <div class="presentation">
+                <!-- Begin top navigation -->
+                <div class="top-info">
+                    <div class="container">
+                        <p class="top-info__text pull-left hidden-xs small">
+                            Get acquainted with amazing app <a href="#">here</a>
+                        </p>
+                        <p class="top-info__text pull-right small">
+                            Have any questions? Just call us <span class="text-highlight">1-222-345-6789</span>
+                        </p>
+                    </div>
+                </div>
+                <!-- End top navigation -->
+                <!-- Begin main navigation -->
+                <div class="main-nav">
+                    <div class="divider-circle"></div>
+                    <nav class="container">
+                        <!-- Logo -->
+                        <div class="logo pull-left">
+                            <a href="@Url.Action("Index","Home")">
+                                <h1 class="logo-text"><span class="text-highlight">Im</span>Vader</h1>
+                            </a>
+                        </div>
+                        <!-- End Logo -->
+                        <!-- Main navigation-->
+                        <div class="pull-right" id="navigation-box">
+                            <a id="navigation-toggle" href="#">
+                                <span class="menu-icon"></span>
+                            </a>
+                            <ul id="navigation">
+                                <li class="active-item">
+                                    <a href="@Url.Action("Index","Home")">Home</a>
+                                </li>
+                                <li><a href="#">Documentaion</a></li>
+                                <li><a href="@Url.Action("Demo","Home")">Demo</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <!-- End main navigation -->
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
+            <!-- End presentation-->
+
+        </header>
+        <!-- End header -->
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <!--Begin footer -->
+        <footer class="footer-wrapper">
+            <!--Begin footer widget-->
+            <div class="container footer-widgets">
+                <div class="row">
+                    <div class="col-sm-12 col-md-5 col-lg-6 widget-news">
+                        <h3 class="widget-title">News from APPIC</h3>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-12">
+                                <p class="widget-news__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet quam augue. Donec ut sem vel mauris sodales egestas.</p>
+                                <!-- subscribe form -->
+                                <form class="subscribe-form" id="subscribe-form" name="subscribe-form" method="post" action="getEmail.php" novalidate>
+                                    <input class="subscribe-input" id="input-email" name="input-email" type="email" placeholder="your email here">
+                                    <button class="submit-button" id="submit-button" type="submit">
+                                        <i class="icon-circle icon-circle--thin fa fa-arrow-right"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="col-sm-6 col-md-12">
+                                <address class="widget-contacts">
+                                    <span class="widget-contacts__item"><i class="icon-circle icon-circle--thin fa fa-phone"></i>+ 44 1225 324 980</span>
+                                    <span class="widget-contacts__item"><i class="icon-circle icon-circle--thin fa fa-envelope"></i><a href="mailto:appic@gmail.com">appic@gmail.com</a></span>
+                                    <span class="widget-contacts__item"><i class="icon-circle icon-circle--thin fa fa-map-marker"></i>101 West Street, New York, NY 12345</span>
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 widget-tweets">
+                        <h3 class="widget-title">Latest Tweets</h3>
+                        <ul class="twitter_update_list" id="twitter-feed"></ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 widget-flickr">
+                        <h3 class="widget-title">Flickr Stream</h3>
+                        <ul class="flickr" id="flickr"></ul>
+                    </div>
+                </div>
+            </div>
+            <!--End footer widget -->
+            <!--Begin footer secondary -->
+            <div class="footer-secondary">
+                <div class="divider-circle"></div>
+                <div class="container">
+                    <ul class="social">
+                        <li class="social__item custom-tooltip tooltip--info" title="pinterest">
+                            <a class="icon-circle fa fa-pinterest" href="http://pinterest.com/" target="_blank"></a>
+                        </li>
+                        <li class="social__item custom-tooltip tooltip--info" title="google">
+                            <a class="icon-circle fa fa-google-plus" href="https://plus.google.com" target="_blank"></a>
+                        </li>
+                        <li class="social__item custom-tooltip tooltip--info" title="linkedin">
+                            <a class="icon-circle fa fa-linkedin" href="http://ua.linkedin.com/" target="_blank"></a>
+                        </li>
+                        <li class="social__item custom-tooltip tooltip--info" title="twitter">
+                            <a class="icon-circle fa fa-twitter" href="http://twitter.com/" target="_blank"></a>
+                        </li>
+                        <li class="social__item custom-tooltip tooltip--info" title="facebook">
+                            <a class="icon-circle fa fa-facebook" href="http://www.facebook.com/" target="_blank"></a>
+                        </li>
+                    </ul>
+                    <div class="copyright">
+                        <small class="small">&copy; ImVader, @DateTime.Now.Year . All rights reserved.</small>
+                    </div>
+                </div>
+            </div>
+            <!--End footer secondary -->
         </footer>
+        <!--End footer -->
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <!--End wrapper -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <!--Script jQuery-->
+    <script src="~/External/jquery/jquery-migrate-1.2.1.min.js"></script>			<!--Script jQuery for old version jQuery-->
+    <script src="~/External/bootstrap/js/bootstrap.min.js"></script>				<!--Bootstrap JavaScript-->
+    <script src="~/External/jquery-event/jquery.event.drag-2.2.js"></script>		<!--Script jquery event Drag-->
+    <script src="~/External/jquery-event/jquery.event.drop-2.2.js"></script>		<!--Script jquery event Drop-->
+    <script src="~/External/jquery-easing/jquery.easing.1.3.js"></script>			<!--Script jquery Easing-->
+    <script src="~/External/jquery-roundabout/jquery.roundabout.min.js"></script>	<!--Script Roundabout-->
+    <script src="~/External/swiper/idangerous.swiper.min.js"></script>			<!--Script Swiper slider -->
+    <script src="~/External/jquery-twitter/jquery.twitter.js"></script>			<!--Script Twitter-->
+    <script src="~/External/jflickrfeed/jflickrfeed.js"></script>					<!--Script Widget Flikr-->
+    <script src="~/External/gozha-nav/jquery.mobile.menu.js"></script>			<!--Script Mobile menu-->
+    <script src="~/External/modernizr/modernizr.custom.91224.js"></script>		<!--Script Modernizr-->
+    <script src="~/External/colorbox/jquery.colorbox.js"></script>				<!--Script Сolorbox-->
+    <script src="~/External/jquery-cookie/jquery.cookie.js"></script>				<!--Script Сookie-->
+    <script src="~/External/form.js"></script>											<!--Script Forms -->
+    <script src="~/External/custom.js"></script>										<!--Script Custom-->
+    <script>
+        $(document).ready(function () {
+
+            //Button hover
+            init_ButtonInfo();
+
+            init_Button();
+
+            //Roundabout slider
+            init_Roundabout();
+
+            //Swiper
+            init_DecoratedSlider();
+
+            init_QoutationSlider();
+
+            //Services hover
+            init_ServicesInfo();
+        });
+    </script>
 </body>
 </html>
+

@@ -1,9 +1,9 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Edge.cs" company="Sigma">
-//   Copyright
+//   Sigma 
 // </copyright>
 // <summary>
-//   Defines the Edge type.
+//   Represents edge in undirected graph
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -11,37 +11,65 @@ namespace ImVader
 {
     using System;
 
+    /// <summary>
+    /// Represents edge in undirected graph
+    /// </summary>
     public class Edge
     {
-        private readonly IVertex v;
-        private readonly IVertex w;
-
-        public Edge(IVertex v, IVertex w)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Edge"/> class according to the order. 
+        /// Order does not matter as it's not a directed edge
+        /// </summary>
+        /// <param name="v">
+        /// First vertex id of the edge 
+        /// </param>
+        /// <param name="w">
+        /// Second vertex of the edge
+        /// </param>
+        protected Edge(int v, int w)
         {
-            this.v = v;
-            this.w = w;
-        }
-
-        public IVertex Either()
-        {
-            return v;
+            this.V = v;
+            this.W = w;
         }
 
         /// <summary>
-        /// The other.
+        /// Gets or sets first vertex id.
+        /// </summary>
+        public int V { get; protected set; }
+
+        /// <summary>
+        /// Gets or sets second vertex id.
+        /// </summary>
+        public int W { get; protected set; }
+
+        /// <summary>
+        /// Returns the first vertex of the edge
+        /// </summary>
+        /// <returns>
+        /// The first vertex of the edge
+        ///  <see cref="int"/>.
+        /// </returns>
+        public int Either()
+        {
+            return this.V;
+        }
+
+        /// <summary>
+        /// Returns the other vertex id of the edge
         /// </summary>
         /// <param name="vertex">
-        /// The vertex.
+        /// One of the vertices of the edge
         /// </param>
         /// <returns>
-        /// The <see cref="IVertex"/>.
+        /// Other vertex id in the edge
         /// </returns>
         /// <exception cref="ArgumentException">
+        /// Exception is thrown if vertex was not found
         /// </exception>
-        public IVertex Other(IVertex vertex)
+        public int Other(int vertex)
         {
-            if (vertex == v) return w;
-            if (vertex == w) return v;
+            if (vertex == this.V) { return W; }
+            if (vertex == this.W) { return V; }
             throw new ArgumentException();
         }
     }

@@ -1,0 +1,16 @@
+﻿.hidden
+{
+    display:none;
+}
+.visible
+{
+    display: block;
+}
+.bordered
+{
+    border: 1px solid black;
+}
+.smallFont
+{
+    font-size: 10px;
+}

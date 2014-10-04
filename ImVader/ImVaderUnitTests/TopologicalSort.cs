@@ -26,7 +26,7 @@ namespace ImVaderUnitTests
         public void Sort()
         {
             // TODO: Should be rewritten
-            MatrixGraph<Vertex<int>, UnweightedEdge> g = new MatrixGraph<Vertex<int>, UnweightedEdge>(10); 
+            var g = new MatrixGraph<int, UnweightedEdge>(10); 
         }
     }
 }

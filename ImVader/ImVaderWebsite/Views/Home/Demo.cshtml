@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "ImVader Demo";
+    ViewBag.BodyOnLoad = "onPageLoaded();s";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head
+{
+    <link rel="stylesheet" href="~/Content/demo.css" />
+    <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
+
+    <!-- Selfwritten lib -->
+    <script src="~/External/vkConnection.js" type="text/javascript"></script>
+}
+<div id="login_button" onclick="VK.Auth.login(authInfo);"></div>
+<div id="vk_greetings" class="hidden">Test</div>
+<div id="vk_friends_json" class="hidden bordered smallFont"></div>

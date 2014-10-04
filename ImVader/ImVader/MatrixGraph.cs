@@ -22,7 +22,6 @@ namespace ImVader
     /// Type of edge used to connect vertices
     /// </typeparam>
     public class MatrixGraph<TV, TE> : Graph<TV, TE>
-        where TV : Vertex<TV>
         where TE : Edge
     {
         /// <summary>
