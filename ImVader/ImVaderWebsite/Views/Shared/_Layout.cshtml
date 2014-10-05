@@ -70,113 +70,89 @@
         </header>
         <!-- End header -->
         @RenderBody()
-        <!--Begin footer -->
-        <footer class="footer-wrapper">
-            <!--Begin footer widget-->
-            <div class="container footer-widgets">
-                <div class="row">
-                    <div class="col-sm-12 col-md-5 col-lg-6 widget-news">
-                        <h3 class="widget-title">News from APPIC</h3>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-12">
-                                <p class="widget-news__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet quam augue. Donec ut sem vel mauris sodales egestas.</p>
-                                <!-- subscribe form -->
-                                <form class="subscribe-form" id="subscribe-form" name="subscribe-form" method="post" action="getEmail.php" novalidate>
-                                    <input class="subscribe-input" id="input-email" name="input-email" type="email" placeholder="your email here">
-                                    <button class="submit-button" id="submit-button" type="submit">
-                                        <i class="icon-circle icon-circle--thin fa fa-arrow-right"></i>
-                                    </button>
-                                </form>
-                            </div>
-                            <div class="col-sm-6 col-md-12">
-                                <address class="widget-contacts">
-                                    <span class="widget-contacts__item"><i class="icon-circle icon-circle--thin fa fa-phone"></i>+ 44 1225 324 980</span>
-                                    <span class="widget-contacts__item"><i class="icon-circle icon-circle--thin fa fa-envelope"></i><a href="mailto:appic@gmail.com">appic@gmail.com</a></span>
-                                    <span class="widget-contacts__item"><i class="icon-circle icon-circle--thin fa fa-map-marker"></i>101 West Street, New York, NY 12345</span>
-                                </address>
+        @if (ViewBag.DisplayFooter != false)
+        {
+            <!--Begin footer -->
+            <footer class="footer-wrapper">
+                <!--Begin footer widget-->
+                <div class="container footer-widgets">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5 col-lg-6 widget-news">
+                            <h3 class="widget-title">News from APPIC</h3>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-12">
+                                    <p class="widget-news__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet quam augue. Donec ut sem vel mauris sodales egestas.</p>
+                                    <!-- subscribe form -->
+                                    <form class="subscribe-form" id="subscribe-form" name="subscribe-form" method="post" action="getEmail.php" novalidate>
+                                        <input class="subscribe-input" id="input-email" name="input-email" type="email" placeholder="your email here">
+                                        <button class="submit-button" id="submit-button" type="submit">
+                                            <i class="icon-circle icon-circle--thin fa fa-arrow-right"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="col-sm-6 col-md-12">
+                                    <address class="widget-contacts">
+                                        <span class="widget-contacts__item"><i class="icon-circle icon-circle--thin fa fa-phone"></i>+ 44 1225 324 980</span>
+                                        <span class="widget-contacts__item"><i class="icon-circle icon-circle--thin fa fa-envelope"></i><a href="mailto:appic@gmail.com">appic@gmail.com</a></span>
+                                        <span class="widget-contacts__item"><i class="icon-circle icon-circle--thin fa fa-map-marker"></i>101 West Street, New York, NY 12345</span>
+                                    </address>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 widget-tweets">
-                        <h3 class="widget-title">Latest Tweets</h3>
-                        <ul class="twitter_update_list" id="twitter-feed"></ul>
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 widget-flickr">
-                        <h3 class="widget-title">Flickr Stream</h3>
-                        <ul class="flickr" id="flickr"></ul>
-                    </div>
-                </div>
-            </div>
-            <!--End footer widget -->
-            <!--Begin footer secondary -->
-            <div class="footer-secondary">
-                <div class="divider-circle"></div>
-                <div class="container">
-                    <ul class="social">
-                        <li class="social__item custom-tooltip tooltip--info" title="pinterest">
-                            <a class="icon-circle fa fa-pinterest" href="http://pinterest.com/" target="_blank"></a>
-                        </li>
-                        <li class="social__item custom-tooltip tooltip--info" title="google">
-                            <a class="icon-circle fa fa-google-plus" href="https://plus.google.com" target="_blank"></a>
-                        </li>
-                        <li class="social__item custom-tooltip tooltip--info" title="linkedin">
-                            <a class="icon-circle fa fa-linkedin" href="http://ua.linkedin.com/" target="_blank"></a>
-                        </li>
-                        <li class="social__item custom-tooltip tooltip--info" title="twitter">
-                            <a class="icon-circle fa fa-twitter" href="http://twitter.com/" target="_blank"></a>
-                        </li>
-                        <li class="social__item custom-tooltip tooltip--info" title="facebook">
-                            <a class="icon-circle fa fa-facebook" href="http://www.facebook.com/" target="_blank"></a>
-                        </li>
-                    </ul>
-                    <div class="copyright">
-                        <small class="small">&copy; ImVader, @DateTime.Now.Year . All rights reserved.</small>
+                        <div class="col-sm-6 col-md-4 col-lg-3 widget-tweets">
+                            <h3 class="widget-title">Latest Tweets</h3>
+                            <ul class="twitter_update_list" id="twitter-feed"></ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 col-lg-3 widget-flickr">
+                            <h3 class="widget-title">Flickr Stream</h3>
+                            <ul class="flickr" id="flickr"></ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--End footer secondary -->
-        </footer>
-        <!--End footer -->
+                <!--End footer widget -->
+                <!--Begin footer secondary -->
+                <div class="footer-secondary">
+                    <div class="divider-circle"></div>
+                    <div class="container">
+                        <ul class="social">
+                            <li class="social__item custom-tooltip tooltip--info" title="pinterest">
+                                <a class="icon-circle fa fa-pinterest" href="http://pinterest.com/" target="_blank"></a>
+                            </li>
+                            <li class="social__item custom-tooltip tooltip--info" title="google">
+                                <a class="icon-circle fa fa-google-plus" href="https://plus.google.com" target="_blank"></a>
+                            </li>
+                            <li class="social__item custom-tooltip tooltip--info" title="linkedin">
+                                <a class="icon-circle fa fa-linkedin" href="http://ua.linkedin.com/" target="_blank"></a>
+                            </li>
+                            <li class="social__item custom-tooltip tooltip--info" title="twitter">
+                                <a class="icon-circle fa fa-twitter" href="http://twitter.com/" target="_blank"></a>
+                            </li>
+                            <li class="social__item custom-tooltip tooltip--info" title="facebook">
+                                <a class="icon-circle fa fa-facebook" href="http://www.facebook.com/" target="_blank"></a>
+                            </li>
+                        </ul>
+                        <div class="copyright">
+                            <small class="small">&copy; ImVader, @DateTime.Now.Year . All rights reserved.</small>
+                        </div>
+                    </div>
+                </div>
+                <!--End footer secondary -->
+            </footer>
+            <!--End footer -->
+        }
     </div>
 
     <!--End wrapper -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <!--Script jQuery-->
     <script src="~/External/jquery/jquery-migrate-1.2.1.min.js"></script>			<!--Script jQuery for old version jQuery-->
     <script src="~/External/bootstrap/js/bootstrap.min.js"></script>				<!--Bootstrap JavaScript-->
-    <script src="~/External/jquery-event/jquery.event.drag-2.2.js"></script>		<!--Script jquery event Drag-->
-    <script src="~/External/jquery-event/jquery.event.drop-2.2.js"></script>		<!--Script jquery event Drop-->
-    <script src="~/External/jquery-easing/jquery.easing.1.3.js"></script>			<!--Script jquery Easing-->
-    <script src="~/External/jquery-roundabout/jquery.roundabout.min.js"></script>	<!--Script Roundabout-->
-    <script src="~/External/swiper/idangerous.swiper.min.js"></script>			<!--Script Swiper slider -->
-    <script src="~/External/jquery-twitter/jquery.twitter.js"></script>			<!--Script Twitter-->
     <script src="~/External/jflickrfeed/jflickrfeed.js"></script>					<!--Script Widget Flikr-->
     <script src="~/External/gozha-nav/jquery.mobile.menu.js"></script>			<!--Script Mobile menu-->
     <script src="~/External/modernizr/modernizr.custom.91224.js"></script>		<!--Script Modernizr-->
     <script src="~/External/colorbox/jquery.colorbox.js"></script>				<!--Script Сolorbox-->
     <script src="~/External/jquery-cookie/jquery.cookie.js"></script>				<!--Script Сookie-->
-    <script src="~/External/form.js"></script>											<!--Script Forms -->
     <script src="~/External/custom.js"></script>										<!--Script Custom-->
-    <script>
-        $(document).ready(function () {
 
-            //Button hover
-            init_ButtonInfo();
-
-            init_Button();
-
-            //Roundabout slider
-            init_Roundabout();
-
-            //Swiper
-            init_DecoratedSlider();
-
-            init_QoutationSlider();
-
-            //Services hover
-            init_ServicesInfo();
-        });
-    </script>
+    @RenderSection("bottom",false)
 </body>
 </html>
 

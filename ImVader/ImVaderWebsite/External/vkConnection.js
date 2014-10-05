@@ -1,11 +1,4 @@
-/**
- * Created by JetBrains PhpStorm.
- * User: bebecap
- * Date: 03.10.14
- * Time: 20:44
- * To change this template use File | Settings | File Templates.
- */
-user_id = null;
+var user_id = null;
 
 function onPageLoaded() {
     console.log("Page loaded");
