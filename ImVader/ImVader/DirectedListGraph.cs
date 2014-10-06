@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="DirectedListGraph.cs" company="Sigma">
-//   Sigma
+//   It's a totally free software
 // </copyright>
 // <summary>
 //   Defines the DirectedListGraph type.
@@ -24,25 +24,47 @@ namespace ImVader
         /// <summary>
         /// Initializes a new instance of the <see cref="DirectedListGraph{TV,TE}"/> class.
         /// </summary>
-        /// <param name="vertexCount">
-        /// Count of vertices in graph
+        /// <param name="capacity">
+        /// Initial number of vertices.
         /// </param>
-        public DirectedListGraph(int vertexCount)
-            : base(vertexCount)
+        public DirectedListGraph(int capacity = 0)
+            : base(capacity)
         {
         }
 
         /// <summary>
-        /// Adds new edge between two vertices of the graph 
+        /// Adds a new edge to the graph
         /// </summary>
         /// <param name="e">
-        /// Edge to be added
+        /// The edge to add
         /// </param>
-        public override void AddEdge(TE e)
+        /// <returns>
+        /// The index of the created edge
+        /// </returns>
+        public override int AddEdge(TE e)
         {
-            this.CheckArguments(e.W);
-            this.CheckArguments(e.V);
-            this.AdjacencyList[e.V].Add(e);
+            CheckVerticesIndexes(e.V, e.W);
+            Edges.Add(++LastEdgeIndex, e);
+            AdjacencyList[Indexes.IndexOf(e.V)].Add(e);
+            EdgesCount++;
+            return LastEdgeIndex;
+        }
+
+        /// <summary>
+        /// Removes the edge with the specified index
+        /// </summary>
+        /// <param name="index">
+        /// The index of the edge
+        /// </param>
+        public override void RemoveEdge(int index)
+        {
+            TE e = Edges[index];
+            var list1 = AdjacencyList[Indexes.IndexOf(e.V)];
+            int index1 = list1.IndexOf(e);
+            list1.RemoveAt(index1);
+            EdgesCount--;
+            if (index == LastEdgeIndex) LastEdgeIndex--;
+            Edges.Remove(index);
         }
     }
 }

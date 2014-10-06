@@ -1,8 +1,8 @@
 ﻿// <copyright file="Graph.cs" company="Sigma">
-//   I have no idea what should be written here.
+//   It's a totally free software
 // </copyright>
 // <summary>
-//   The Graph interface.
+//   The base class for all graphs.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -10,114 +10,182 @@ namespace ImVader
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     /// <summary>
     /// Base class for all graphs
     /// </summary>
     /// <typeparam name="TV">
-    /// Type of information stored in the vertex
+    /// Type of data stored in the vertex
     /// </typeparam>
     /// <typeparam name="TE">
-    /// Type of edges used to ceonnect vertices
+    /// Type of the edges connecting vertices
     /// </typeparam>
     public abstract class Graph<TV, TE>
         where TE : Edge
     {
         /// <summary>
-        /// Represents vertices in graph
+        /// A collection of vertices in the graph
         /// </summary>
-        protected Vertex<TV>[] Vertices;
+        protected Dictionary<int, Vertex<TV>> Vertices;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Graph{TV,TE}"/> class.
+        /// Contains all edges in the graph
         /// </summary>
-        /// <param name="vertexCount">
-        /// Count of vertices
-        /// </param>
-        protected Graph(int vertexCount)
+        protected Dictionary<int, TE> Edges;
+
+        /// <summary>
+        /// Contains indexes of the vertices stored in the matrix
+        /// </summary>
+        protected List<int> Indexes = new List<int>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Graph{TV,TE}"/> class. 
+        /// </summary>
+        protected Graph()
         {
-            // ReSharper disable once DoNotCallOverridableMethodsInConstructor
-            this.VertexCount = vertexCount;
-            // ReSharper disable once DoNotCallOverridableMethodsInConstructor
-            this.Vertices = new Vertex<TV>[this.VertexCount];
+            Vertices = new Dictionary<int, Vertex<TV>>();
+            Edges = new Dictionary<int, TE>();
         }
 
         /// <summary>
-        /// Gets or sets count of vertices in the graph
+        /// Gets number of vertices in the graph
         /// </summary>
-        public virtual int VertexCount { get; protected set; }
+        public int VertexCount
+        {
+            get { return Vertices.Count; }
+        }
 
         /// <summary>
-        /// Gets or sets count of edges in the graph
+        /// Gets or sets number of edges in the graph
         /// </summary>
-        public virtual int EdgesCount { get; protected set; }
+        public int EdgesCount { get; protected set; }
 
         /// <summary>
-        /// Gets adjacency list for vertex id v
+        /// Gets or sets the last edge index.
+        /// </summary>
+        protected int LastEdgeIndex { get; set; }
+
+        /// <summary>
+        /// Gets the last vertex index or -1 if there is no vertices in the graph.
+        /// </summary>
+        protected int LastVertexIndex
+        {
+            get
+            {
+                return Indexes.Count > 0 ? Indexes[Indexes.Count - 1] : -1;
+            }
+        }
+
+        /// <summary>
+        /// Gets a collection of indexes of the vertices that are adjacent for the vertex v
         /// </summary>
         /// <param name="v">
-        /// Id of vertex for which we want to get adjacency list
+        /// Index of the vertex
         /// </param>
         /// <returns>
-        /// <see cref="System.Collections.IEnumerable"/> Ids of vertices adjacent to v
+        /// <see cref="System.Collections.IEnumerable"/> 
+        /// Indexes of the vertices that are adjacent for the vertex v
         /// </returns>
-        public abstract IEnumerable<int> GetAdjacencyList(int v);
+        public abstract IEnumerable<int> GetAdjacentVertices(int v);
 
         /// <summary>
-        /// Sets data to the appropriate vertex
+        /// Adds a new vertex to the graph.
         /// </summary>
-        /// <param name="id">
-        /// Id of vertex where we want to set data
-        /// </param>
-        /// <param name="data">
-        /// Data we want to store in the vertex
+        /// <param name="value">
+        /// The value of the vertex
         /// </param>
         /// <returns>
-        /// Returns vertex with new data.
+        /// Index of the created vertex
         /// </returns>
-        public virtual Vertex<TV> SetVertexData(int id, TV data)
-        {
-            this.CheckArguments(id);
-            this.Vertices[id] = new Vertex<TV>(data);
-            return this.Vertices[id];
-        }
+        public abstract int AddVertex(TV value);
 
         /// <summary>
         /// Gets vertex data
         /// </summary>
-        /// <param name="id">
-        /// Id of vertex which data we want to get
+        /// <param name="index">
+        /// Index of the vertex
         /// </param>
         /// <returns>
-        /// Data stored in vertex with id
+        /// Data stored in the vertex
         /// </returns>
-        public virtual TV GetVertexData(int id)
+        public virtual TV GetVertexData(int index)
         {
-            this.CheckArguments(id);
-            return this.Vertices[id].Data;
+            this.CheckVerticesIndexes(index);
+            return Vertices[index].Data;
         }
 
         /// <summary>
-        /// Adds new edge to the graph
+        /// Sets data to the the vertex
         /// </summary>
-        /// <param name="e">
-        /// Contains info about edge we want to add(two vertices and cost if needed)
+        /// <param name="index">
+        /// Index of vertex where we want to set data
         /// </param>
-        public abstract void AddEdge(TE e);
+        /// <param name="data">
+        /// Data to store in the vertex
+        /// </param>
+        public virtual void SetVertexData(int index, TV data)
+        {
+            this.CheckVerticesIndexes(index);
+            Vertices[index].Data = data;
+        }
 
         /// <summary>
-        /// Validates parameter
+        /// Removes the vertex with the specified index
         /// </summary>
-        /// <param name="id">
-        /// Id of vertex we want to validate
+        /// <param name="index">
+        /// The index of the vertex
+        /// </param>
+        public abstract void RemoveVertex(int index);
+
+        /// <summary>
+        /// Adds a new edge to the graph
+        /// </summary>
+        /// <param name="e">
+        /// The edge to add
+        /// </param>
+        /// <returns>
+        /// The index of the created edge
+        /// </returns>
+        public abstract int AddEdge(TE e);
+
+        /// <summary>
+        /// Gets the edge with specified index.
+        /// </summary>
+        /// <param name="edgeIndex">
+        /// The index of the edge.
+        /// </param>
+        /// <returns>
+        /// The edge found
+        /// </returns>
+        public virtual TE GetEdge(int edgeIndex)
+        {
+            return Edges[edgeIndex];
+        }
+
+        /// <summary>
+        /// Removes the edge with the specified index
+        /// </summary>
+        /// <param name="index">
+        /// The index of the edge
+        /// </param>
+        public abstract void RemoveEdge(int index);
+
+        /// <summary>
+        /// Checks if indexes are greater or equlas zero and less than a number of vertices in the graph)
+        /// </summary>
+        /// <param name="indexes">
+        /// The indexes to check.
         /// </param>
         /// <exception cref="ArgumentException">
-        /// Throws an exception if id is out of boundaries(0 and count of vertices in graph)
+        /// Throws an exception if at least one of indexes is out of boundaries (0 and number of vertices in the graph)
         /// </exception>
-        protected void CheckArguments(int id)
+        protected void CheckVerticesIndexes(params int[] indexes)
         {
-            if (id < 0 || id >= VertexCount)
-                throw new ArgumentException("Id must be between 0 and verticesCount");
+            if (indexes.Any(t => t < 0 || t >= this.VertexCount))
+            {
+                throw new ArgumentException("Index must be greater or equlas zero and less than a number of vertices in the graph");
+            }
         }
     }
 }

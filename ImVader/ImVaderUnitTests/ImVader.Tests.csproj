@@ -50,8 +50,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ListGraph.cs" />
+    <Compile Include="MatrixGraph.cs" />
     <Compile Include="TopologicalSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DirectedMatrixGraph.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ImVader\ImVader.csproj">

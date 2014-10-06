@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="DirectedMatrixGraph.cs" company="Sigma">
-//   Sigma
+//   It's a totally free software
 // </copyright>
 // <summary>
 //   Defines the DirectedMatrixGraph type.
@@ -13,10 +13,10 @@ namespace ImVader
     /// Defines directed matrix-based graph
     /// </summary>
     /// <typeparam name="TV">
-    /// Type of information stored in the vertex
+    /// Type of the data stored in the vertices
     /// </typeparam>
     /// <typeparam name="TE">
-    /// Type of edges used to connect vertices
+    /// Type of the edges connecting vertices
     /// </typeparam>
     public class DirectedMatrixGraph<TV, TE> : MatrixGraph<TV, TE>
         where TE : Edge
@@ -24,25 +24,45 @@ namespace ImVader
         /// <summary>
         /// Initializes a new instance of the <see cref="DirectedMatrixGraph{TV,TE}"/> class.
         /// </summary>
-        /// <param name="vertexCount">
-        /// Count of vertices
+        /// <param name="capacity">
+        /// Initial number of vertices
         /// </param>
-        public DirectedMatrixGraph(int vertexCount)
-            : base(vertexCount)
+        public DirectedMatrixGraph(int capacity = 0)
+            : base(capacity)
         {
         }
 
         /// <summary>
-        /// Adds new edge between two vertices of the graph
+        /// Adds a new edge to the graph
         /// </summary>
         /// <param name="e">
-        /// Edge to be added
+        /// The edge to add
         /// </param>
-        public override void AddEdge(TE e)
+        /// <returns>
+        /// The index of the created edge
+        /// </returns>
+        public override int AddEdge(TE e)
         {
-            this.CheckArguments(e.V);
-            this.CheckArguments(e.W);
-            this.Matrix[e.V][e.W]++;
+            CheckVerticesIndexes(e.V, e.W);
+            Edges.Add(++LastEdgeIndex, e);
+            this[e.V, e.W].Add(LastEdgeIndex);
+            EdgesCount++;
+            return LastEdgeIndex;
+        }
+
+        /// <summary>
+        /// Removes the edge with the specified index
+        /// </summary>
+        /// <param name="index">
+        /// The index of the edge
+        /// </param>
+        public override void RemoveEdge(int index)
+        {
+            Edge e = Edges[index];
+            this[e.V, e.W].Remove(index);
+            EdgesCount--;
+            if (index == LastEdgeIndex) LastEdgeIndex--;
+            Edges.Remove(index);
         }
     }
 }

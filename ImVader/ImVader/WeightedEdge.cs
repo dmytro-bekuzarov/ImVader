@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="WeightedEdge.cs" company="Sigma">
-//   Sigma
+//   It's a totally free software
 // </copyright>
 // <summary>
 //   Defines the WeightedEdge type.
@@ -35,10 +35,6 @@ namespace ImVader
         /// <summary>
         /// Gets or sets the weight.
         /// </summary>
-        public double Weight
-        {
-            get;
-            protected set;
-        }
+        public double Weight { get; set; }
     }
 }

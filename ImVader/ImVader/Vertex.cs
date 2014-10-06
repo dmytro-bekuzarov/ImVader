@@ -1,5 +1,5 @@
 ﻿// <copyright file="Vertex.cs" company="Sigma">
-//   Sigma
+//   It's a totally free software
 // </copyright>
 // <summary>
 //   Vertex class defines graph vertex
@@ -19,6 +19,14 @@ namespace ImVader
         /// <summary>
         /// Initializes a new instance of the <see cref="Vertex{T}"/> class.
         /// </summary>
+        public Vertex()
+        {
+            this.Data = default(T);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vertex{T}"/> class.
+        /// </summary>
         /// <param name="data">
         /// The data.
         /// </param>
@@ -30,6 +38,6 @@ namespace ImVader
         /// <summary>
         /// Gets or sets the data in the vertex
         /// </summary>
-        public T Data { get; protected set; }
+        public T Data { get; set; }
     }
 }

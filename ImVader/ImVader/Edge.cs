@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Edge.cs" company="Sigma">
-//   Sigma 
+//  It's a totally free software
 // </copyright>
 // <summary>
 //   Represents edge in undirected graph
@@ -12,7 +12,7 @@ namespace ImVader
     using System;
 
     /// <summary>
-    /// Represents edge in undirected graph
+    /// Represents edge in an undirected graph
     /// </summary>
     public class Edge
     {

@@ -9,8 +9,6 @@
 
 namespace ImVaderUnitTests
 {
-    using ImVader;
-
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
