@@ -26,7 +26,7 @@ namespace ImVader
         /// <param name="w">
         /// Second vertex of the edge
         /// </param>
-        protected Edge(int v, int w)
+        public Edge(int v, int w)
         {
             this.V = v;
             this.W = w;
