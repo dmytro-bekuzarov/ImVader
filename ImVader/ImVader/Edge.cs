@@ -14,7 +14,7 @@ namespace ImVader
     /// <summary>
     /// Represents edge in an undirected graph
     /// </summary>
-    public class Edge
+    public abstract class Edge
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Edge"/> class according to the order. 
@@ -26,7 +26,7 @@ namespace ImVader
         /// <param name="w">
         /// Second vertex of the edge
         /// </param>
-        public Edge(int v, int w)
+        protected Edge(int v, int w)
         {
             this.V = v;
             this.W = w;
