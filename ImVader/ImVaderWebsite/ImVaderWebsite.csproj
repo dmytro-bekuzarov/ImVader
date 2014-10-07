@@ -130,6 +130,7 @@
     <Content Include="External\graph.js" />
     <Content Include="External\jquery\jquery-2.1.1.min.js" />
     <Content Include="External\spinner.js" />
+    <Content Include="External\util.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
