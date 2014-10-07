@@ -1,6 +1,6 @@
 var user_id = null;
 
-function onPageLoaded() {
+function initializeVk() {
     console.log("Page loaded");
     VK.init({
         apiId: 4575060
@@ -30,13 +30,13 @@ function authInfo(response) {
 }
 
 function getFriends() {
-
+    startSpinner();
     //Getting user friends
     if (user_id != null) {
         if (checkHasNoFriends(user_id)) {
             VK.Api.call('friends.get', {user_id: user_id, fields: "photo_200_orig,sex"}, function (r) {
                 if (r.response) {
-                    startSpinner();
+                 
                     var friends = r.response;
                     addFriends(friends);
                     stopSpinner(friends.length);

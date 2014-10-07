@@ -13,6 +13,12 @@
     <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
     <script src="http://visjs.org/dist/vis.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
+
+    <!-- ourLibs -->
+    <script src="~/External/vkConnection.js" type="text/javascript"></script>
+    <script src="~/External/graph.js" type="text/javascript"></script>
+    <script src="~/External/spinner.js" type="text/javascript"></script>
+    <script src="~/External/util.js" type="text/javascript"></script>
 }
 
 
@@ -35,13 +41,13 @@
                     <div class=" col-md-9 col-lg-9 ">
                         <div>
                             <span><b>User ID: </b></span>
-                            <span id ="user_id"></span>
+                            <span id="user_id"></span>
                         </div>
                         <div>
                             <span><b>Gender: </b></span>
                             <span id="user_gender"></span>
                         </div>
-                        <br/>
+                        <br />
                         <a onclick="getFriends()" class="btn btn-primary">Get friends</a>
                     </div>
                 </div>
@@ -51,13 +57,3 @@
 </div>
 
 <div id="graph_place" class="relative"></div>
-@section bottom{
-<script src="~/External/vkConnection.js" type="text/javascript"></script>
-<script src="~/External/graph.js" type="text/javascript"></script>
-    <script src="~/External/spinner.js" type="text/javascript"></script>
-    <script>
-        $(document).ready(function() {
-            getFriends();
-        })
-    </script>
-}
