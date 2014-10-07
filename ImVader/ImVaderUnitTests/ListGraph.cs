@@ -1,6 +1,7 @@
 ﻿namespace ImVaderUnitTests
 {
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
 
     using ImVader;
@@ -106,6 +107,48 @@
                 Assert.AreEqual(
                     true,
                     m.GetVertexData(index) == m.GetVertexData(v[0]) || m.GetVertexData(index) == m.GetVertexData(v[1]));
+            }
+        }
+
+        [TestMethod]
+        public void SerializeGraph()
+        {
+            var graph = new ListGraph<int, Edge>(5);
+            graph.AddEdge(
+                new WeightedEdge(1, 2, 3));
+            graph.AddEdge(
+                new WeightedEdge(1, 3, 1.5));
+
+            Stream s = System.IO.File.OpenWrite("test.txt");
+            graph.SaveToStream(new StreamWriter(s));
+        }
+
+        [TestMethod]
+        public void DeserializeGraph()
+        {
+            Stream s = System.IO.File.OpenRead("test.txt");
+            var graph =
+                (ListGraph<int, Edge>)Graph<int, Edge>.LoadFromJsonFile(new StreamReader(s));
+        }
+
+        [TestMethod]
+        public void TestSerialization()
+        {
+            ListGraph<int, Edge> deserializedGraph;
+            var initialGraph = new ListGraph<int, Edge>(5);
+            initialGraph.AddEdge(
+                new WeightedEdge(1, 2, 3));
+            initialGraph.AddEdge(
+                new WeightedEdge(1, 3, 1.5));
+
+            using (Stream s = File.OpenWrite("test.txt"))
+            {
+                initialGraph.SaveToStream(new StreamWriter(s));
+            }
+
+            using (Stream s2 = File.OpenRead("test.txt"))
+            {
+                deserializedGraph = (ListGraph<int, Edge>)Graph<int, Edge>.LoadFromJsonFile(new StreamReader(s2));
             }
         }
     }

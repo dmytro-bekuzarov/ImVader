@@ -12,6 +12,8 @@ namespace ImVader
     using System.Collections.Generic;
     using System.Linq;
 
+    using Newtonsoft.Json;
+
     /// <summary>
     /// List-based graph.
     /// </summary>
@@ -27,6 +29,7 @@ namespace ImVader
         /// <summary>
         /// Represents adjacency list
         /// </summary>
+        [JsonProperty]
         protected List<List<TE>> AdjacencyList;
 
         /// <summary>

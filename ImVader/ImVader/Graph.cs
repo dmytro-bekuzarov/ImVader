@@ -10,7 +10,10 @@ namespace ImVader
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
+
+    using Newtonsoft.Json;
 
     /// <summary>
     /// Base class for all graphs
@@ -27,16 +30,19 @@ namespace ImVader
         /// <summary>
         /// A collection of vertices in the graph
         /// </summary>
+        [JsonProperty]
         protected Dictionary<int, Vertex<TV>> Vertices;
 
         /// <summary>
         /// Contains all edges in the graph
         /// </summary>
+        [JsonProperty]
         protected Dictionary<int, TE> Edges;
 
         /// <summary>
         /// Contains indexes of the vertices stored in the matrix
         /// </summary>
+        [JsonProperty]
         protected List<int> Indexes = new List<int>();
 
         /// <summary>
@@ -51,6 +57,7 @@ namespace ImVader
         /// <summary>
         /// Gets number of vertices in the graph
         /// </summary>
+        [JsonIgnore]
         public int VertexCount
         {
             get { return Vertices.Count; }
@@ -59,11 +66,13 @@ namespace ImVader
         /// <summary>
         /// Gets or sets number of edges in the graph
         /// </summary>
+        [JsonProperty]
         public int EdgesCount { get; protected set; }
 
         /// <summary>
         /// Gets or sets the last edge index.
         /// </summary>
+        [JsonProperty]
         protected int LastEdgeIndex { get; set; }
 
         /// <summary>
@@ -75,6 +84,28 @@ namespace ImVader
             {
                 return Indexes.Count > 0 ? Indexes[Indexes.Count - 1] : -1;
             }
+        }
+
+        /// <summary>
+        /// Loads graph object from specified StreamReader.
+        /// </summary>
+        /// <param name="inputStreamReader">
+        /// The input StreamReader.
+        /// </param>
+        /// <returns>
+        /// Deserialized graph object.
+        /// </returns>
+        public static Graph<TV, TE> LoadFromJsonFile(StreamReader inputStreamReader)
+        {
+            Graph<TV, TE> result;
+            var serializer = new JsonSerializer();
+            using (JsonReader reader = new JsonTextReader(inputStreamReader))
+            {
+                serializer.TypeNameHandling = TypeNameHandling.All;
+                result = serializer.Deserialize<Graph<TV, TE>>(reader);
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -172,6 +203,22 @@ namespace ImVader
         public abstract void RemoveEdge(int index);
 
         /// <summary>
+        /// Saves graph Json to specified StreamWriter.
+        /// </summary>
+        /// <param name="outputStreamWriter">
+        /// Output StreamWriter to serialize graph object.
+        /// </param>
+        public virtual void SaveToStream(StreamWriter outputStreamWriter)
+        {
+            var serializer = new JsonSerializer();
+            using (JsonWriter writer = new JsonTextWriter(outputStreamWriter))
+            {
+                serializer.TypeNameHandling = TypeNameHandling.All;
+                serializer.Serialize(writer, this);
+            }
+        }
+
+        /// <summary>
         /// Checks if indexes are greater or equlas zero and less than a number of vertices in the graph)
         /// </summary>
         /// <param name="indexes">
@@ -187,5 +234,6 @@ namespace ImVader
                 throw new ArgumentException("Index must be greater or equlas zero and less than a number of vertices in the graph");
             }
         }
+
     }
 }
