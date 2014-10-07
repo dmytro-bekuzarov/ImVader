@@ -11,4 +11,5 @@
 function onPageLoaded() {
     initializeVk();
     initializeGraph();
+    initializeSpinner();
 }

@@ -15,8 +15,12 @@ var opts = {
     top: 25, // Top position relative to parent in px
     left: 25 // Left position relative to parent in px
 };
-var target = document.getElementById('spinner');
-var spinner = new Spinner(opts).spin(target);;
+var target;
+var spinner;
+function initializeSpinner() {
+    target = document.getElementById('spinner');
+    spinner = new Spinner(opts).spin(target);
+}
 
 function startSpinner() {
     $("#loading").removeClass("hidden");
