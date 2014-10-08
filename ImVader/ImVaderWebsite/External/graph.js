@@ -1,5 +1,6 @@
 var nodes = new vis.DataSet();
 var edges = new vis.DataSet();
+var textFile = null;
 
 var data = {
     nodes: nodes,
@@ -12,15 +13,41 @@ var options = {
 var container;
 var network;
 
-function clearGraph() {
-    nodes = new vis.DataSet();
-    edges = new vis.DataSet();
+function loadGraph(files) {
+    var reader = new FileReader();
+    reader.readAsText(files[0]);
+    reader.onload = function (e) {
+        var text = reader.result;
+        var graph = jQuery.parseJSON(reader.result);
+        nodes = new vis.DataSet();
+        edges = new vis.DataSet();
+        for (var j = 0; j < graph.nodes.length; j++) {
+            data.nodes = addNode(graph.nodes[j]);
+        }
+        for (var j = 0; j < graph.edges.length; j++) {
+            data.edges = addEdge(graph.edges[j].from, graph.edges[j].to);
+        }
+
+        initializeGraph();
+    }
 }
+
+function makeTextFile(text) {
+    var data = new Blob([text], { type: 'text/javascript' });
+
+    if (textFile !== null) {
+        window.URL.revokeObjectURL(textFile);
+    }
+
+    textFile = window.URL.createObjectURL(data);
+
+    return textFile;
+};
+
 
 function initializeGraph() {
     container = document.getElementById('graph_place');
     network = new vis.Network(container, data, options);
-
     network.on('select', function (properties) {
         if (properties.nodes != null && properties.nodes.length != 0 && properties.nodes[0] != undefined) {
             var selectedNode = nodes._data[properties.nodes[0]];
@@ -28,6 +55,7 @@ function initializeGraph() {
             showUserInfo(selectedNode);
         }
     });
+    
 }
 
 function addNode(user) {

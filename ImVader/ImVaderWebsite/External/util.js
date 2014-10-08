@@ -8,7 +8,36 @@
         $("#user_gender").text("Male");
 }
 
+function handleDragOver(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    evt.dataTransfer.dropEffect = 'copy';
+}
+
+function handleFileSelect(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    var files = evt.dataTransfer.files;
+    startSpinner();
+    loadGraph(files);
+    stopSpinner();
+}
+
+function initializeEvents() {
+    var create = document.getElementById('downloadlink');
+
+    create.addEventListener('click', function () {
+        var link = document.getElementById('downloadlink');
+        link.href = makeTextFile(JSON.stringify(getGraphAsJson()));
+    }, false);    
+
+    var dropZone = document.getElementById('drop_zone');
+    dropZone.addEventListener('dragover', handleDragOver, false);
+    dropZone.addEventListener('drop', handleFileSelect, false);
+}
+
 function onPageLoaded() {
+    initializeEvents();
     initializeVk();
     initializeGraph();
     initializeSpinner();
