@@ -234,6 +234,5 @@ namespace ImVader
                 throw new ArgumentException("Index must be greater or equlas zero and less than a number of vertices in the graph");
             }
         }
-
     }
 }
