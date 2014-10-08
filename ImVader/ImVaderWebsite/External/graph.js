@@ -11,6 +11,12 @@ var options = {
 };
 var container;
 var network;
+
+function clearGraph() {
+    nodes = new vis.DataSet();
+    edges = new vis.DataSet();
+}
+
 function initializeGraph() {
     container = document.getElementById('graph_place');
     network = new vis.Network(container, data, options);
@@ -27,11 +33,14 @@ function initializeGraph() {
 function addNode(user) {
     user.id = user.uid;
     user.label = user.first_name;
-    if (user.sex == 1)user.color = 'red';
+    if (user.sex == 1) user.color = 'red';
     nodes.add(user);
+    return nodes;
 }
+
 function addEdge(from, to) {
-    edges.add({from: from, to: to});
+    edges.add({ from: from, to: to });
+    return edges;
 }
 
 function addFriends(friends) {
