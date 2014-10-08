@@ -8,6 +8,8 @@ using System.Web.Routing;
 
 namespace ImVaderWebsite
 {
+    using System.Web.Http;
+
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
@@ -16,6 +18,7 @@ namespace ImVaderWebsite
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
 }
