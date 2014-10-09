@@ -18,9 +18,7 @@ function handleFileSelect(evt) {
     evt.stopPropagation();
     evt.preventDefault();
     var files = evt.dataTransfer.files;
-    startSpinner();
     loadGraph(files);
-    stopSpinner();
 }
 
 function initializeEvents() {

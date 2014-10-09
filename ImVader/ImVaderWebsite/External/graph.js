@@ -19,16 +19,20 @@ function loadGraph(files) {
     reader.onload = function (e) {
         var text = reader.result;
         var graph = jQuery.parseJSON(reader.result);
-        nodes = new vis.DataSet();
-        edges = new vis.DataSet();
+        startSpinner();
+        clearGraph();
+
+        var initialNode = graph.nodes[0];
+        user_id = initialNode.uid;
+        showUserInfo(initialNode);
+
         for (var j = 0; j < graph.nodes.length; j++) {
-            data.nodes = addNode(graph.nodes[j]);
+            addNode(graph.nodes[j]);
         }
         for (var j = 0; j < graph.edges.length; j++) {
-            data.edges = addEdge(graph.edges[j].from, graph.edges[j].to);
+            addEdge(graph.edges[j].from, graph.edges[j].to);
         }
-
-        initializeGraph();
+        stopSpinner(graph.edges.length);
     }
 }
 
@@ -55,7 +59,7 @@ function initializeGraph() {
             showUserInfo(selectedNode);
         }
     });
-    
+
 }
 
 function addNode(user) {
@@ -95,15 +99,30 @@ function checkHasNoFriends(user_id) {
     else return false;
 }
 
+function clearGraph() {
+    var nodez = Object.keys(nodes._data).map(function (k) {
+        return nodes._data[k];
+    });
+    var edgez = Object.keys(edges._data).map(function (k) {
+        return edges._data[k];
+    });
+    for (var i = 0; i < nodez.length; i++) {
+        nodes.remove(nodez[i].uid);
+    }
+    for (var i = 0; i < edgez.length; i++) {
+        nodes.remove(edgez[i].id);
+    }
+}
+
 function getGraphAsJson() {
     var graph = {};
     graph.edges = new Array();
     graph.nodes = new Array();
     var nodez = Object.keys(nodes._data).map(function (k) {
-        return nodes._data[k]
+        return nodes._data[k];
     });
     var edgez = Object.keys(edges._data).map(function (k) {
-        return edges._data[k]
+        return edges._data[k];
     });
     for (var i = 0; i < nodez.length; i++) {
         graph.nodes.push(new Object({

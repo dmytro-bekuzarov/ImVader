@@ -16,7 +16,7 @@ function authInfo(response) {
         $("#user_info").removeClass("hidden");
 
         user_id = response.session.mid;
-        VK.Api.call('users.get', {uids: response.session.mid, fields: "photo_200_orig,sex"}, function (r) {
+        VK.Api.call('users.get', { uids: response.session.mid, fields: "photo_200_orig,sex" }, function (r) {
             if (r.response) {
                 var user = r.response[0];
                 addNode(user);
@@ -31,17 +31,18 @@ function authInfo(response) {
 
 function getFriends() {
     startSpinner();
+    var time = 0;
     //Getting user friends
     if (user_id != null) {
         if (checkHasNoFriends(user_id)) {
-            VK.Api.call('friends.get', {user_id: user_id, fields: "photo_200_orig,sex"}, function (r) {
+            VK.Api.call('friends.get', { user_id: user_id, fields: "photo_200_orig,sex" }, function (r) {
                 if (r.response) {
-                 
                     var friends = r.response;
+                    time = friends.length;
                     addFriends(friends);
-                    stopSpinner(friends.length);
+                    stopSpinner(time);
                 }
-            });
+            }, function () { stopSpinner(time); });
         } else {
             console.log('already has friends');
         }
