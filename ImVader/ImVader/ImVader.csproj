@@ -38,6 +38,7 @@
     <Compile Include="DirectedMatrixGraph.cs" />
     <Compile Include="Edge.cs" />
     <Compile Include="Graph.cs" />
+    <Compile Include="Utils\JsonSerializer.cs" />
     <Compile Include="ListGraph.cs" />
     <Compile Include="MatrixGraph.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
