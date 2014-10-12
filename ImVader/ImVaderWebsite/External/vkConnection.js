@@ -1,5 +1,10 @@
-var user_id = null;
-
+/**
+ * Created by JetBrains PhpStorm.
+ * User: bebecap
+ * Date: 03.10.14
+ * Time: 20:44
+ * To change this template use File | Settings | File Templates.
+ */
 function onPageLoaded() {
     console.log("Page loaded");
     VK.init({
@@ -12,42 +17,24 @@ function authInfo(response) {
     if (response.session) {
         //Hiding vk auth button
         $("#login_button").addClass("hidden");
+        $("#vk_greetings").removeClass("hidden");
+        $("#vk_friends_json").removeClass("hidden");
 
-        $("#user_info").removeClass("hidden");
-
-        user_id = response.session.mid;
-        VK.Api.call('users.get', {uids: response.session.mid, fields: "photo_200_orig,sex"}, function (r) {
+        //Getting user info
+        console.log('user: ' + response.session.mid);
+        VK.Api.call('users.get', { uids: response.session.mid }, function (r) {
             if (r.response) {
-                var user = r.response[0];
-                addNode(user);
-                showUserInfo(user);
+                $("#vk_greetings").text("Hello, " + r.response[0].first_name + ". Here are your friend list in JSON.");
             }
         });
-
+        //Getting user friends
+        VK.Api.call('friends.get', { user_id: response.session.mid, fields: "photo_200_orig" }, function (r) {
+            if (r.response) {
+                console.log(r);
+                $("#vk_friends_json").text(JSON.stringify(r.response));
+            }
+        });
     } else {
         console.log('not auth');
     }
-}
-
-function getFriends() {
-
-    //Getting user friends
-    if (user_id != null) {
-        if (checkHasNoFriends(user_id)) {
-            VK.Api.call('friends.get', {user_id: user_id, fields: "photo_200_orig,sex"}, function (r) {
-                if (r.response) {
-                    startSpinner();
-                    var friends = r.response;
-                    addFriends(friends);
-                    stopSpinner(friends.length);
-                }
-            });
-        } else {
-            console.log('already has friends');
-        }
-    }
-    else {
-        console.log('not auth');
-    }
-
 }

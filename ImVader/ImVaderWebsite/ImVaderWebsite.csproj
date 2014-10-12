@@ -337,6 +337,7 @@
     <Content Include="External\swiper\idangerous.swiper.css" />
     <Content Include="External\swiper\idangerous.swiper.min.js" />
     <Content Include="External\vkConnection.js" />
+    <None Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
