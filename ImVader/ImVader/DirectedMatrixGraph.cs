@@ -18,7 +18,7 @@ namespace ImVader
     /// <typeparam name="TE">
     /// Type of the edges connecting vertices
     /// </typeparam>
-    public class DirectedMatrixGraph<TV, TE> : MatrixGraph<TV, TE>
+    public class DirectedMatrixGraph<TV, TE> : MatrixGraph<TV, TE>,IDirectedGraph
         where TE : Edge
     {
         /// <summary>

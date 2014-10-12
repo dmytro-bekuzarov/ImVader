@@ -14,7 +14,7 @@
         /// <param name="w">
         /// Second vertex of the edge
         /// </param>
-        protected UnweightedEdge(int v, int w)
+        public UnweightedEdge(int v, int w)
             : base(v, w)
         {
         }

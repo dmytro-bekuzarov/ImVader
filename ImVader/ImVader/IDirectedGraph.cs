@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace ImVader
+﻿namespace ImVader
 {
-    interface IDirectedGraph
+    /// <summary>
+    /// The DirectedGraph interface.Marks the directed graph.
+    /// </summary>
+    public interface IDirectedGraph
     {
-        void TopologicalSort();
     }
 }

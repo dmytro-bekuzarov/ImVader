@@ -53,5 +53,24 @@
                 Assert.AreEqual(m.GetVertexData((i + 1) % 10), m.GetVertexData(v[0]));
             }
         }
+
+        [TestMethod]
+        public void GetAdjacentEdges()
+        {
+            var m = new DirectedListGraph<int, UnweightedEdge>(5);
+
+            m.AddEdge(new UnweightedEdge(0, 1));
+            m.AddEdge(new UnweightedEdge(0, 4));
+            m.AddEdge(new UnweightedEdge(0, 2));
+            m.AddEdge(new UnweightedEdge(1, 2));
+            m.AddEdge(new UnweightedEdge(1, 3));
+            m.AddEdge(new UnweightedEdge(3, 4));
+
+            Assert.AreEqual(3, m.GetAdjacentEdges(0).Count());
+            Assert.AreEqual(2, m.GetAdjacentEdges(1).Count());
+            Assert.AreEqual(0, m.GetAdjacentEdges(2).Count());
+            Assert.AreEqual(1, m.GetAdjacentEdges(3).Count());
+            Assert.AreEqual(0, m.GetAdjacentEdges(4).Count());
+        }
     }
 }

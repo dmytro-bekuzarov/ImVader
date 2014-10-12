@@ -10,6 +10,7 @@
 namespace ImVader
 {
     using System.Collections.Generic;
+    using System.Linq;
 
     using ImVader.Utils;
 
@@ -85,10 +86,32 @@ namespace ImVader
         {
             CheckVerticesIndexes(v);
             int id = Indexes.IndexOf(v);
-            for (int j = 0; j < EdgesCount; j++)
+            for (int j = 0; j < VertexCount; j++)
             {
                 if (Matrix[id, j] != null && Matrix[id, j].Count > 0) yield return Indexes[j];
             }
+        }
+
+        /// <summary>
+        /// Gets a collection of indexes of the edges that are adjacent for the vertex v
+        /// </summary>
+        /// <param name="v">
+        /// The v.
+        /// </param>
+        /// <returns>
+        /// <see cref="System.Collections.IEnumerable"/> 
+        /// </returns>
+        public override IEnumerable<TE> GetAdjacentEdges(int v)
+        {
+            CheckVerticesIndexes(v);
+            int id = Indexes.IndexOf(v);
+            var edgesIndexes = new List<int>();
+            for (var j = 0; j < VertexCount; j++)
+            {
+                if (Matrix[id, j] != null && Matrix[id, j].Count > 0) edgesIndexes.AddRange(Matrix[id, j]);
+            }
+
+            return edgesIndexes.Select(t => this.Edges[t]).ToList();
         }
 
         /// <summary>
