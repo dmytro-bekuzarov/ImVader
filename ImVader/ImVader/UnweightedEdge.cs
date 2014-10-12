@@ -1,4 +1,13 @@
-﻿namespace ImVader
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UnweightedEdge.cs" company="Sigma">
+//   It's a totally free software
+// </copyright>
+// <summary>
+//   Represents unweighted edge in the graph
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace ImVader
 {
     /// <summary>
     /// Represents unweighted edge in the graph

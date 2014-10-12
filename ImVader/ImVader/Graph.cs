@@ -10,7 +10,6 @@ namespace ImVader
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
     using System.Linq;
 
     using Newtonsoft.Json;
@@ -84,28 +83,6 @@ namespace ImVader
             {
                 return Indexes.Count > 0 ? Indexes[Indexes.Count - 1] : -1;
             }
-        }
-
-        /// <summary>
-        /// Loads graph object from specified StreamReader.
-        /// </summary>
-        /// <param name="inputStreamReader">
-        /// The input StreamReader.
-        /// </param>
-        /// <returns>
-        /// Deserialized graph object.
-        /// </returns>
-        public static Graph<TV, TE> LoadFromJsonFile(StreamReader inputStreamReader)
-        {
-            Graph<TV, TE> result;
-            var serializer = new JsonSerializer();
-            using (JsonReader reader = new JsonTextReader(inputStreamReader))
-            {
-                serializer.TypeNameHandling = TypeNameHandling.All;
-                result = serializer.Deserialize<Graph<TV, TE>>(reader);
-            }
-
-            return result;
         }
 
         /// <summary>
@@ -205,6 +182,12 @@ namespace ImVader
             return Edges[edgeIndex];
         }
 
+        //TODO: Rewrite
+        public virtual IEnumerable<Edge> FindShortestPath()
+        {
+            return this.Edges.Values;
+        }
+
         /// <summary>
         /// Removes the edge with the specified index
         /// </summary>
@@ -212,22 +195,6 @@ namespace ImVader
         /// The index of the edge
         /// </param>
         public abstract void RemoveEdge(int index);
-
-        /// <summary>
-        /// Saves graph Json to specified StreamWriter.
-        /// </summary>
-        /// <param name="outputStreamWriter">
-        /// Output StreamWriter to serialize graph object.
-        /// </param>
-        public virtual void SaveToStream(StreamWriter outputStreamWriter)
-        {
-            var serializer = new JsonSerializer();
-            using (JsonWriter writer = new JsonTextWriter(outputStreamWriter))
-            {
-                serializer.TypeNameHandling = TypeNameHandling.All;
-                serializer.Serialize(writer, this);
-            }
-        }
 
         /// <summary>
         /// Checks if indexes are greater or equlas zero and less than a number of vertices in the graph)
