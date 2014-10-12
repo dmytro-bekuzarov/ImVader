@@ -39,16 +39,24 @@
     <Compile Include="DirectedMatrixGraph.cs" />
     <Compile Include="Edge.cs" />
     <Compile Include="Graph.cs" />
+    <Compile Include="IDirectedGraph.cs" />
     <Compile Include="Utils\JsonSerializer.cs" />
     <Compile Include="ListGraph.cs" />
     <Compile Include="MatrixGraph.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShortestPaths\Dijkstra.cs" />
+    <Compile Include="ShortestPaths\MinPQ.cs" />
+    <Compile Include="ShortestPaths\Node.cs" />
+    <Compile Include="ShortestPaths\ShortestPath.cs" />
     <Compile Include="UnweightedEdge.cs" />
     <Compile Include="Utils\SquareMatrix.cs" />
     <Compile Include="Vertex.cs" />
     <Compile Include="WeightedEdge.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="ImVader">
+      <HintPath>..\ImVaderWebsite\Bin\ImVader.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>

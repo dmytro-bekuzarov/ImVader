@@ -18,7 +18,7 @@ namespace ImVader
     /// <typeparam name="TE">
     /// Type of edge used to connect vertices
     /// </typeparam>
-    public class DirectedListGraph<TV, TE> : ListGraph<TV, TE>
+    public class DirectedListGraph<TV, TE> : ListGraph<TV, TE>,IDirectedGraph
         where TE : Edge
     {
         /// <summary>

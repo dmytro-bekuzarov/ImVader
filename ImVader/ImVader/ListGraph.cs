@@ -68,6 +68,21 @@ namespace ImVader
         }
 
         /// <summary>
+        /// Gets a collection of indexes of the edges that are adjacent for the vertex v
+        /// </summary>
+        /// <param name="v">
+        /// The v.
+        /// </param>
+        /// <returns>
+        /// <see cref="System.Collections.IEnumerable"/> 
+        /// </returns>
+        public override IEnumerable<TE> GetAdjacentEdges(int v)
+        {
+            CheckVerticesIndexes(v);
+            return this.AdjacencyList[v];
+        }
+
+        /// <summary>
         /// Adds a new vertex to the graph.
         /// </summary>
         /// <param name="value">

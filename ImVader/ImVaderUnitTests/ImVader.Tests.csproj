@@ -60,6 +60,7 @@
     <Compile Include="AlgorithmsTests\BreathFirstPassesTest.cs" />
     <Compile Include="ListGraph.cs" />
     <Compile Include="MatrixGraph.cs" />
+    <Compile Include="ShortestPaths.cs" />
     <Compile Include="TopologicalSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DirectedMatrixGraph.cs" />

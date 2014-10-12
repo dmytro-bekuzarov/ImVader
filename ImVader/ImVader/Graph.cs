@@ -98,6 +98,17 @@ namespace ImVader
         public abstract IEnumerable<int> GetAdjacentVertices(int v);
 
         /// <summary>
+        /// Gets a collection of indexes of the edges that are adjacent for the vertex v
+        /// </summary>
+        /// <param name="v">
+        /// The v.
+        /// </param>
+        /// <returns>
+        /// <see cref="System.Collections.IEnumerable"/> 
+        /// </returns>
+        public abstract IEnumerable<TE> GetAdjacentEdges(int v);
+
+        /// <summary>
         /// Adds a new vertex to the graph.
         /// </summary>
         /// <param name="value">
