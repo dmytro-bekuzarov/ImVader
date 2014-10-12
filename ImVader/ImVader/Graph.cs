@@ -12,6 +12,8 @@ namespace ImVader
     using System.Collections.Generic;
     using System.Linq;
 
+    using Newtonsoft.Json;
+
     /// <summary>
     /// Base class for all graphs
     /// </summary>
@@ -27,16 +29,19 @@ namespace ImVader
         /// <summary>
         /// A collection of vertices in the graph
         /// </summary>
+        [JsonProperty]
         protected Dictionary<int, Vertex<TV>> Vertices;
 
         /// <summary>
         /// Contains all edges in the graph
         /// </summary>
+        [JsonProperty]
         protected Dictionary<int, TE> Edges;
 
         /// <summary>
         /// Contains indexes of the vertices stored in the matrix
         /// </summary>
+        [JsonProperty]
         protected List<int> Indexes = new List<int>();
 
         /// <summary>
@@ -51,6 +56,7 @@ namespace ImVader
         /// <summary>
         /// Gets number of vertices in the graph
         /// </summary>
+        [JsonIgnore]
         public int VertexCount
         {
             get { return Vertices.Count; }
@@ -59,11 +65,13 @@ namespace ImVader
         /// <summary>
         /// Gets or sets number of edges in the graph
         /// </summary>
+        [JsonProperty]
         public int EdgesCount { get; protected set; }
 
         /// <summary>
         /// Gets or sets the last edge index.
         /// </summary>
+        [JsonProperty]
         protected int LastEdgeIndex { get; set; }
 
         /// <summary>
@@ -161,6 +169,12 @@ namespace ImVader
         public virtual TE GetEdge(int edgeIndex)
         {
             return Edges[edgeIndex];
+        }
+
+        //TODO: Rewrite
+        public virtual IEnumerable<Edge> FindShortestPath()
+        {
+            return this.Edges.Values;
         }
 
         /// <summary>

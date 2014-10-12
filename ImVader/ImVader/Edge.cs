@@ -14,7 +14,7 @@ namespace ImVader
     /// <summary>
     /// Represents edge in an undirected graph
     /// </summary>
-    public class Edge
+    public abstract class Edge
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Edge"/> class according to the order. 

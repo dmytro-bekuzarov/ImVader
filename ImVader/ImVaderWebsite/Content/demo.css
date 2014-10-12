@@ -109,6 +109,15 @@
 
 .absolute{
     position: fixed;
+    top:320px;
+    left:0;
+    width:500px;
+    height:250px;
+    z-index: 100;
+}
+
+.absoluteHigher{
+    position: fixed;
     top:130px;
     left:0;
     width:500px;
@@ -151,4 +160,17 @@
 }
 .graph-container {
     border-left: 1px solid #212c43;
+}
+
+#drop_zone {
+    border: 2px dashed #bbb;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    width: 420px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font: 20pt bold 'Vollkorn';
+    color: #bbb;
 }

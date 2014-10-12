@@ -13,6 +13,8 @@ namespace ImVader
 
     using ImVader.Utils;
 
+    using Newtonsoft.Json;
+
     /// <summary>
     /// Matrix-based graph
     /// </summary>
@@ -28,6 +30,7 @@ namespace ImVader
         /// <summary>
         /// Represents an adjacency matrix of the graph
         /// </summary>
+        [JsonProperty]
         protected SquareMatrix<List<int>> Matrix;
 
         /// <summary>

@@ -1,16 +1,16 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="UnweightedEdge.cs" company="Sigma">
-//   Sigma
+//   It's a totally free software
 // </copyright>
 // <summary>
-//   The unweighted edge.
+//   Represents unweighted edge in the graph
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace ImVader
 {
     /// <summary>
-    /// Represents unweighted edge of the graph
+    /// Represents unweighted edge in the graph
     /// </summary>
     public class UnweightedEdge : Edge
     {
@@ -18,10 +18,10 @@ namespace ImVader
         /// Initializes a new instance of the <see cref="UnweightedEdge"/> class.
         /// </summary>
         /// <param name="v">
-        /// Vertex where edge starts
+        /// First vertex id of the edge 
         /// </param>
         /// <param name="w">
-        /// Vertex where edge finished
+        /// Second vertex of the edge
         /// </param>
         public UnweightedEdge(int v, int w)
             : base(v, w)

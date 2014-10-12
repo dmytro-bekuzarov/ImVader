@@ -54,7 +54,7 @@
 
 	var config = $.cookie = function (key, value, options) {
 
-		// Write
+		// Serialize
 
 		if (arguments.length > 1 && !$.isFunction(value)) {
 			options = $.extend({}, config.defaults, options);
@@ -73,7 +73,7 @@
 			].join(''));
 		}
 
-		// Read
+		// Deserialize
 
 		var result = key ? undefined : {};
 
