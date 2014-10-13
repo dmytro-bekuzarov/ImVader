@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\BreadthFirstPathes.cs" />
     <Compile Include="DirectedListGraph.cs" />
     <Compile Include="DirectedMatrixGraph.cs" />
     <Compile Include="Edge.cs" />
