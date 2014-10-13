@@ -65,13 +65,13 @@ namespace ImVader.Algorithms
         }
 
         /// <summary>
-        /// The has path to.
+        /// Defines if there is a path from start vertex to vertex v after bfs done
         /// </summary>
         /// <param name="v">
-        /// The v.
+        /// Vertex for which we want to know if there is a path from start to it 
         /// </param>
         /// <returns>
-        /// The <see cref="bool"/>.
+        /// Bollean value <see cref="bool"/>.
         /// </returns>
         public bool HasPathTo(int v)
         {
@@ -79,13 +79,13 @@ namespace ImVader.Algorithms
         }
 
         /// <summary>
-        /// The path to.
+        /// Defines a path between start vertex and v as a sequence of vertices from s to v if path exists else returns null 
         /// </summary>
         /// <param name="v">
-        /// The v.
+        /// Path from s to v
         /// </param>
         /// <returns>
-        /// The <see cref="System.Collections.IEnumerable"/>.
+        /// Collections of vertices <see cref="System.Collections.IEnumerable"/>.
         /// </returns>
         public IEnumerable<int> PathTo(int v)
         {
@@ -98,10 +98,10 @@ namespace ImVader.Algorithms
         }
 
         /// <summary>
-        /// The bfs.
+        /// Private method encapsulating bfs algorithm on a graph
         /// </summary>
         /// <param name="g">
-        /// The g.
+        /// Graph we want to do bfs on
         /// </param>
         private void BFS(Graph<TV, TE> g)
         {
