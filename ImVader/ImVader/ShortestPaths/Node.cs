@@ -5,7 +5,7 @@
     /// <summary>
     /// The ode interface.
     /// </summary>
-    public class Node : IComparable
+    internal class Node : IComparable
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Node"/> class.
