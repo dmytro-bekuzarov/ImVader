@@ -3,10 +3,7 @@
 namespace ImVaderUnitTests.AlgorithmsTests
 {
     using System;
-    using System.Diagnostics;
-    using System.Diagnostics.Contracts;
     using System.Linq;
-    using System.Runtime.InteropServices;
 
     using ImVader;
     using ImVader.Algorithms;
@@ -39,7 +36,7 @@ namespace ImVaderUnitTests.AlgorithmsTests
             Assert.IsNull(bfs.PathTo(2));
             //Assert.AreEqual(bfs.PathTo(0), null);
             Assert.IsTrue(bfs.HasPathTo(1));
-            Assert.IsTrue(bfs.PathTo(1).ToArray().Length == 1);
+            Assert.IsTrue(bfs.PathTo(1).ToArray().Length == 2);
         }
 
         [TestMethod]

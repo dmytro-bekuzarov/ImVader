@@ -1,4 +1,5 @@
-﻿.hidden
+﻿
+.hidden
 {
     display:none;
 }
@@ -106,25 +107,6 @@
     height:140px;
     width:95px;
 }
-
-.absolute{
-    position: fixed;
-    top:320px;
-    left:0;
-    width:500px;
-    height:250px;
-    z-index: 100;
-}
-
-.absoluteHigher{
-    position: fixed;
-    top:130px;
-    left:0;
-    width:500px;
-    height:250px;
-    z-index: 100;
-}
-
 .relative{
     position:relative;
     z-index:5;
@@ -151,12 +133,14 @@
     -moz-transition: opacity 0.3s linear;
     -o-transition: opacity 0.3s linear;
     transition: opacity 0.3s linear;
+     z-index: 10000;
 }
 
 .spinner{
     position: fixed;
     top: 45%;
     left: 45%;
+    z-index: 100001;
 }
 .graph-container {
     border-left: 1px solid #212c43;
@@ -167,10 +151,34 @@
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    width: 420px;
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
     font: 20pt bold 'Vollkorn';
     color: #bbb;
+}
+
+#downloadlink {
+    margin-top: 15px;
+}
+a.btn {
+   width: 100%;
+    padding: 5px;
+}
+
+@media(max-width: 1023px) {
+    #demo-content {
+        height: auto;width: 100%;float: none
+    }
+    #graph_place {
+        width: 100%;min-height: 600px;position: inherit;left: 0
+    }
+}
+@media(min-width: 1024px) {
+    #demo-content {
+        height: 100%;width: 30%;float: left
+    }
+    #graph_place {
+        width: 70%;height: 100%;position: fixed;left: 30%
+    }
 }

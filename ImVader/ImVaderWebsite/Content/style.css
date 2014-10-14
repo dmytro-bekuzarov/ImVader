@@ -1,11 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald|PT+Sans:400,700,400italic);
 @import "http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css";
 @import "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css";
-@import "../external/gozha-nav/gozha-nav.css";
-@import "../external/magnific-popup/magnific-popup.css";
-@import "../external/colorbox/colorbox.css";
-@import "../external/rs-plugin/css/settings.css";
-@import "../external/swiper/idangerous.swiper.css";
 @import "../external/bootstrap-select/bootstrap-select.css";
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {

@@ -59,7 +59,6 @@ function initializeGraph() {
             showUserInfo(selectedNode);
         }
     });
-
 }
 
 function addNode(user) {
