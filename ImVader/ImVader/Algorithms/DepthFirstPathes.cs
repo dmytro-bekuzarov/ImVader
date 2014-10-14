@@ -3,9 +3,25 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    class DepthFirstPathes<TV,TE> 
+
+    /// <summary>
+    /// Initialized new instance for doing Breath first search on a graph
+    /// </summary>
+    /// <typeparam name="TV"></typeparam>
+    /// <typeparam name="TE"></typeparam>
+    public class DepthFirstPathes<TV,TE> 
         where TE :Edge
     {
+        /// <summary>
+        /// Times of the entrance to the vertices
+        /// </summary>
+        public readonly int[] Timein;
+
+        /// <summary>
+        /// Times of the exit from the vertices
+        /// </summary>
+        public readonly int[] Timeout;
+
         /// <summary>
         /// Represents if the vertex with an appropriate id is marked or not after dfs done
         /// </summary>
@@ -20,16 +36,6 @@
         /// Start vertex for depth-first search
         /// </summary>
         private readonly int s;
-
-        /// <summary>
-        /// Times of the entrance to the vertices
-        /// </summary>
-        private List<int> timein;
-
-        /// <summary>
-        /// Times of the exit from the vertices
-        /// </summary>
-        private List<int> timeout; 
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DepthFirstPathes{TV,TE}"/> class.
@@ -49,8 +55,10 @@
                 throw new ArgumentOutOfRangeException("Vertex is out of range!");
             marked = new bool[g.VertexCount];
             edgeTo = new int[g.VertexCount];
+            Timein = new int[g.VertexCount];
+            Timeout = new int[g.VertexCount];
             for (var i = 0; i < edgeTo.Length; i++)
-                timein[i] = timeout[i] = edgeTo[i] = -1;
+                Timein[i] = Timeout[i] = edgeTo[i] = -1;
             
             this.s = s;
             DFS(g);
@@ -70,6 +78,25 @@
             return marked[v];
         }
 
+        /// <summary>
+        /// The path to.
+        /// </summary>
+        /// <param name="v">
+        /// The v.
+        /// </param>
+        /// <returns>
+        /// The <see cref="System.Collections.IEnumerable"/>.
+        /// </returns>
+        public IEnumerable<int> PathTo(int v)
+        {
+            if (!HasPathTo(v)) return null;
+            var path = new Stack<int>();
+            for (var i = v; i != -1; i = edgeTo[i])
+                path.Push(i);
+
+            return path;
+        }
+
         private void DFS(Graph<TV, TE> g)
         {
             int dfsTimer = 0;
@@ -79,13 +106,13 @@
             {
                 ++dfsTimer;
                 var curVertex = vertices.Peek();
-                if (timein[curVertex] == -1)
+                if (Timein[curVertex] == -1)
                 {
-                    timein[curVertex] = dfsTimer;
+                    Timein[curVertex] = dfsTimer;
                 }
                 else
                 {
-                    timeout[curVertex] = dfsTimer;
+                    Timeout[curVertex] = dfsTimer;
                     vertices.Pop();
                     continue;
                 }
