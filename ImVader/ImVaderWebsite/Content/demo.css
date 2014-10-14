@@ -133,12 +133,14 @@
     -moz-transition: opacity 0.3s linear;
     -o-transition: opacity 0.3s linear;
     transition: opacity 0.3s linear;
+     z-index: 10000;
 }
 
 .spinner{
     position: fixed;
     top: 45%;
     left: 45%;
+    z-index: 100001;
 }
 .graph-container {
     border-left: 1px solid #212c43;
