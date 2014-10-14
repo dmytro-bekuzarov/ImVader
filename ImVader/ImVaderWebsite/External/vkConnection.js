@@ -11,10 +11,8 @@ function initializeVk() {
 function authInfo(response) {
     if (response.session) {
         //Hiding vk auth button
-        $("#login_button").addClass("hidden");
-        $("#user_info").removeClass("hidden");
-        $("#saveload").removeClass("hidden");
-
+        $("#login_button").hide();
+        $("#demo-content").removeClass("hidden");
         user_id = response.session.mid;
         VK.Api.call('users.get', { uids: response.session.mid, fields: "photo_200_orig,sex" }, function (r) {
             if (r.response) {
