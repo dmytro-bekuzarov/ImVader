@@ -108,5 +108,10 @@ function selectedArgumentPathNodes() {
 }
 
 function goToServer() {
-    //TODO
+    console.log(shortestPathNodeListIndexes);
+    var edges = {};
+
+    $.getJSON('/api/ShortestPath', { vertices: shortestPathNodeListIndexes, edges: edges }, function(data) {
+        
+    });
 }
