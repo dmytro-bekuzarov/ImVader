@@ -92,5 +92,21 @@
 
             return path;
         }
+
+
+        public IEnumerable<int> PathToAsIds(int v)
+        {
+            if (!HasPathTo(v)) return null;
+            var path = new Stack<int>();
+            for (var e = this.EdgeTo[v]; e != null; e = this.EdgeTo[e.V])
+            {
+                path.Push(e.V);
+                if (this.EdgeTo[e.V] == null)
+                {
+                    path.Push(e.W);
+                }
+            }
+            return path;
+        }
     }
 }

@@ -73,8 +73,10 @@
             var d = new Dijkstra<int, UnweightedEdge>(m, 0);
 
             var all = d.PathTo(1);
+            var allIds = d.PathToAsIds(1);
             var enumerable = all as UnweightedEdge[] ?? all.ToArray();
-
+            var enumerableIds = allIds as int[] ?? allIds.ToArray();
+            Assert.AreEqual(2, enumerableIds.Length);
             Assert.AreEqual(1, enumerable.Length);
         }
 

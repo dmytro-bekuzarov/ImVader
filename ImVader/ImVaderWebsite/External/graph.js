@@ -147,4 +147,11 @@ function getGraphAsJson() {
         });
     }
     return graph;
-}
+};
+
+$(document).ready(function() {
+    $("#find-shortest-path").on('click', function() {
+        $("#find-shortest-path-tooltip").html("Select two vertices");
+    });
+});
+

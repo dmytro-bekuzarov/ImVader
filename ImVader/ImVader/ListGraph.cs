@@ -51,6 +51,20 @@ namespace ImVader
             LastEdgeIndex = -1;
         }
 
+
+        public void Init(List<TE> edges, List<TV> vertices)
+        {
+            foreach (var vertex in vertices)
+            {
+                this.AddVertex(vertex);
+            }
+
+            foreach (var edge in edges)
+            {
+                this.AddEdge(edge);
+            }
+        }
+
         /// <summary>
         /// Gets a collection of indexes of the vertices that are adjacent for the vertex v
         /// </summary>
