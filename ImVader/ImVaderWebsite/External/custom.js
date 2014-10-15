@@ -116,13 +116,11 @@ setInterval(function scrollHandler() {
 
 //navigation
 function hideElem(){
-	$('.main-nav')[0].classList.remove('fixed-pos');
-	$block.fadeOut();
+	
 }
 	
 function showElem(){
-	$('.main-nav')[0].classList.add('fixed-pos');	
-	$block.fadeIn();
+	
 }
 });
 
