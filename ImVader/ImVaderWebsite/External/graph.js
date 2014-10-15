@@ -123,16 +123,32 @@ function clearGraph() {
 
 function getGraphAsJson() {
     var graph = {};
-    graph.edges = new Array();
-    graph.nodes = new Array();
-    var nodez = Object.keys(nodes._data).map(function (k) {
-        return nodes._data[k];
-    });
+    graph.edges = getEdges();
+    graph.nodes = getNodes();
+    return graph;
+};
+
+function getEdges() {
+    var localEdges = new Array();
     var edgez = Object.keys(edges._data).map(function (k) {
         return edges._data[k];
     });
+    for (var i = 0; i < edgez.length; i++) {
+        localEdges.push({
+            from: parseInt(edgez[i].from),
+            to: parseInt(edgez[i].to)
+        });
+    }
+    return localEdges;
+}
+
+function getNodes() {
+    var localNodes = new Array();
+    var nodez = Object.keys(nodes._data).map(function (k) {
+        return nodes._data[k];
+    });
     for (var i = 0; i < nodez.length; i++) {
-        graph.nodes.push(new Object({
+        localNodes.push(new Object({
             first_name: nodez[i].first_name,
             last_name: nodez[i].last_name,
             uid: nodez[i].uid,
@@ -140,18 +156,5 @@ function getGraphAsJson() {
             sex: nodez[i].sex
         }));
     }
-    for (var i = 0; i < edgez.length; i++) {
-        graph.edges.push({
-            from: parseInt(edgez[i].from),
-            to: parseInt(edgez[i].to)
-        });
-    }
-    return graph;
-};
-
-$(document).ready(function() {
-    $("#find-shortest-path").on('click', function() {
-        $("#find-shortest-path-tooltip").html("Select two vertices");
-    });
-});
-
+    return localNodes;
+}
