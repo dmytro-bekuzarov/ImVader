@@ -11,6 +11,7 @@ namespace ImVader
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Xml.Linq;
 
     using Newtonsoft.Json;
 
@@ -195,6 +196,78 @@ namespace ImVader
         /// The index of the edge
         /// </param>
         public abstract void RemoveEdge(int index);
+
+        /// <summary>
+        /// Calculate shortest pathes in graph between every pair of vertices.
+        /// </summary>
+        /// <returns>
+        /// Returns matrix with vertices indexes as indexes and minimal pathes as values.
+        /// If graph has unweighted edges their weights are considered 1.
+        /// </returns>
+        public virtual double[,] GetShortestPathesList()
+        {
+            var result = new double[this.VertexCount, this.VertexCount];
+            for (var i = 0; i < this.VertexCount; i++)
+            {
+                for (var j = 0; j < this.VertexCount; j++)
+                {
+                    result[i, j] = (i == j) ? 0 : double.PositiveInfinity;
+                }
+            }
+
+            var thisIsDirectedGraph = this is IDirectedGraph; // SPARTA!!!!
+
+            IEnumerable<WeightedEdge> edges;
+            WeightedEdge[] weightedEdges;
+            try
+            {   
+                edges = this.Edges.Values.Cast<WeightedEdge>();
+                weightedEdges = edges as WeightedEdge[] ?? edges.ToArray();
+            }
+            catch
+            {
+                // if our graph edges can`t be cast to WeightedEdge their weight is considered equal to 1
+                edges = this.Edges.Values.Select(x => new WeightedEdge(x.V, x.W, 1));
+                weightedEdges = edges as WeightedEdge[] ?? edges.ToArray();
+            }
+
+            // map graph vertices indexes to zero-based iterative indexes
+            weightedEdges = weightedEdges.Select(
+                x => new WeightedEdge(
+                         this.Indexes.IndexOf(x.V),
+                         this.Indexes.IndexOf(x.W), 
+                    x.Weight)).ToArray();
+
+            foreach (var edge in weightedEdges)
+            {
+                result[edge.V, edge.W] = Math.Min(edge.Weight, result[edge.V, edge.W]);
+            }
+
+            if (!thisIsDirectedGraph)
+            {
+                foreach (var edge in weightedEdges)
+                {
+                    result[edge.W, edge.V] = Math.Min(edge.Weight, result[edge.W, edge.V]);
+                }
+            }
+
+            for (var i = 0; i < this.VertexCount; i++)
+            {
+                for (var j = 0; j < this.VertexCount; j++)
+                {
+                    for (var k = 0; k < this.VertexCount; k++)
+                    {
+                        result[i, j] = Math.Min(result[i, j], result[i, k] + result[k, j]);
+                        if (!thisIsDirectedGraph)
+                        {
+                            result[j, i] = Math.Min(result[i, j], result[i, k] + result[k, j]);
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Checks if indexes are greater or equlas zero and less than a number of vertices in the graph)

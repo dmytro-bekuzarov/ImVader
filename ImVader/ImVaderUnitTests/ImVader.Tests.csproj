@@ -67,6 +67,7 @@
     <Compile Include="DirectedMatrixGraph.cs" />
     <Compile Include="DirectedListGraph.cs" />
     <Compile Include="Serialization.cs" />
+    <Compile Include="ShortestPathesTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ImVader\ImVader.csproj">
