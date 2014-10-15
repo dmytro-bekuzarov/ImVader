@@ -8,7 +8,8 @@ var data = {
 };
 var options = {
     width: '100%',
-    height: '100%'
+    height: '100%',
+    selectable:false
 };
 var container;
 var network;
@@ -48,23 +49,30 @@ function makeTextFile(text) {
     return textFile;
 };
 
+function selectNode(properties) {
+    if (properties.nodes != null && properties.nodes.length != 0 && properties.nodes[0] != undefined) {
+        var selectedNode = nodes._data[properties.nodes[0]];
+        user_id = selectedNode.uid;
+        showUserInfo(selectedNode);
+    }
+}
 
 function initializeGraph() {
     container = document.getElementById('graph_place');
     network = new vis.Network(container, data, options);
-    network.on('select', function (properties) {
-        if (properties.nodes != null && properties.nodes.length != 0 && properties.nodes[0] != undefined) {
-            var selectedNode = nodes._data[properties.nodes[0]];
-            user_id = selectedNode.uid;
-            showUserInfo(selectedNode);
-        }
-    });
+
+    network.on('select', selectNode);
 }
 
 function addNode(user) {
     user.id = user.uid;
     user.label = user.first_name;
-    if (user.sex == 1) user.color = 'red';
+    if (user.sex == 1) user.color = {
+        background: 'red',
+        highlight: {
+            border: 'black'
+        }
+    }
     nodes.add(user);
     return nodes;
 }
