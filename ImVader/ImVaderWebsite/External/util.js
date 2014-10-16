@@ -42,7 +42,7 @@ function onPageLoaded() {
 }
 
 
-///////////shortest path
+//shortest path
 $(document).ready(function () {
     $("#find-shortest-path").on('click', function () {
         $("#find-shortest-path-tooltip").html("Select two vertices");
@@ -109,8 +109,8 @@ function selectedArgumentPathNodes() {
 }
 
 function goToServer() {
-    console.log(shortestPathNodeListIndexes);
-    var nodes = getNodes(); console.log(nodes);
+    startSpinner();
+    var nodes = getNodes();
     var nodesIds = new Array();
     for (var i = 0; i < nodes.length; i++) {
         nodesIds.push(nodes[i].uid);
@@ -141,9 +141,8 @@ function goToServer() {
         success: function (data) {
             shortestPathNodeListIndexes = data;
             selectedArgumentPathNodes();
-            
-            
-            
+            higlightPath(shortestPathNodeListIndexes);
+            stopSpinner();
         }
     });
 }

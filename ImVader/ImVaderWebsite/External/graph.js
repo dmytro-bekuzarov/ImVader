@@ -5,27 +5,15 @@ var textFile = null;
 var data = {
     nodes: nodes,
     edges: edges,
-    color: 'green'
+    color: {
+        border: 'black',
+        background: '#CCCCFF'
+    }
 };
 
 var options = {
     width: '100%',
-    height: '100%',
-    selectable: false,
-    groups: {
-        mygroup: {
-            shape: 'circle',
-            color: {
-                border: 'black',
-                background: 'white',
-                highlight: {
-                    border: 'yellow',
-                    background: 'orange'
-                }
-            }
-    }
-    // add more groups here
-}
+    height: '100%'
 };
 
 var container;
@@ -77,8 +65,64 @@ function selectNode(properties) {
 function initializeGraph() {
     container = document.getElementById('graph_place');
     network = new vis.Network(container, data, options);
-
     network.on('select', selectNode);
+}
+
+function higlightPath(selectedNodes) {
+    newObject = jQuery.extend(true, {}, oldObject);
+    for (var i = 0; i < selectedNodes.length; i++) {
+        data.nodes._data[selectedNodes[i]].color = {
+            background: '#99FF99',
+            border: '#006600'
+        }
+        for (var id in data.edges._data) {
+            for (var k = 0; k < selectedNodes.length; k++) {
+                if (data.edges._data[id].from == selectedNodes[i] &&
+                    data.edges._data[id].to == selectedNodes[k]) {
+                    data.edges._data[id].color = '#33CC66';
+                    data.edges._data[id].width = 8;
+                }
+            }
+        }
+    }
+    network.setData(data);
+}
+
+function highlightSubgraph(selectedNodes, selectedEdges) {
+    for (var i = 0; i < selectedNodes.length; i++) {
+        data.nodes._data[selectedNodes[i]].color = {
+            background: '#99FF99',
+            border: '#006600'
+        }        
+    }
+    for (var id in data.edges._data) {
+        for (var k = 0; k < selectedEdges.length; k++) {
+            if (data.edges._data[id].from == selectedEdges[i].from &&
+                data.edges._data[id].to == selectedEdges[k].to ||
+                data.edges._data[id].from == selectedEdges[i].to &&
+                data.edges._data[id].to == selectedEdges[k].from) {
+                data.edges._data[id].color = '#33CC66';
+                data.edges._data[id].width = 8;
+            }
+        }
+    }
+    network.setData(data);
+}
+
+function setDefaultVisualOptions() {
+    for (var id in data.edges._data) {
+        data.edges._data[id].color = {
+            border: 'grey'
+        };
+        data.edges._data[id].width = 1;
+    }
+    for (var id in data.nodes._data) {
+        data.nodes._data[id].color = {
+            border: '#9999FF',
+            backgroud: '#CCCCFF'
+        };
+    }
+    network.setData(data);
 }
 
 function addNode(user) {
@@ -96,7 +140,11 @@ function addNode(user) {
 }
 
 function addEdge(from, to) {
-    edges.add({ from: from, to: to });
+    for (var ed in data.edges._data) {
+        if (data.edges._data[ed].from == to && data.edges._data[ed].to == from)
+            return edges;
+    }
+    edges.add({ from: from, to: to, color: 'grey' });
     return edges;
 }
 
