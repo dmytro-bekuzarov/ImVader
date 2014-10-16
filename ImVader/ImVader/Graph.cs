@@ -36,7 +36,7 @@ namespace ImVader
         /// Contains all edges in the graph
         /// </summary>
         [JsonProperty]
-        protected Dictionary<int, TE> Edges;
+        internal Dictionary<int, TE> Edges;
 
         /// <summary>
         /// Contains indexes of the vertices stored in the matrix
@@ -226,27 +226,27 @@ namespace ImVader
             catch
             {
                 // if our graph edges can`t be cast to WeightedEdge their weight is considered equal to 1
-                edges = this.Edges.Values.Select(x => new WeightedEdge(x.V, x.W, 1));
+                edges = this.Edges.Values.Select(x => new WeightedEdge(x.From, x.To, 1));
                 weightedEdges = edges as WeightedEdge[] ?? edges.ToArray();
             }
 
             // map graph vertices indexes to zero-based iterative indexes
             weightedEdges = weightedEdges.Select(
                 x => new WeightedEdge(
-                         this.Indexes.IndexOf(x.V),
-                         this.Indexes.IndexOf(x.W), 
+                         this.Indexes.IndexOf(x.From),
+                         this.Indexes.IndexOf(x.To), 
                     x.Weight)).ToArray();
 
             foreach (var edge in weightedEdges)
             {
-                result[edge.V, edge.W] = Math.Min(edge.Weight, result[edge.V, edge.W]);
+                result[edge.From, edge.To] = Math.Min(edge.Weight, result[edge.From, edge.To]);
             }
 
             if (!thisIsDirectedGraph)
             {
                 foreach (var edge in weightedEdges)
                 {
-                    result[edge.W, edge.V] = Math.Min(edge.Weight, result[edge.W, edge.V]);
+                    result[edge.To, edge.From] = Math.Min(edge.Weight, result[edge.To, edge.From]);
                 }
             }
 
@@ -283,6 +283,11 @@ namespace ImVader
             {
                 throw new ArgumentException("Index must be greater or equlas zero and less than a number of vertices in the graph");
             }
+        }
+
+        public int IndexOf(int index)
+        {
+            return Indexes.IndexOf(index);
         }
     }
 }

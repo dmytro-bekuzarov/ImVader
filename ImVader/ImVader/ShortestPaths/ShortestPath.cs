@@ -8,9 +8,11 @@
     /// <typeparam name="TE">
     /// edge type
     /// </typeparam>
-    public class ShortestPath<TE>
+    public class ShortestPath<TV, TE>
         where TE : Edge
     {
+
+        protected Graph<TV, TE> g; 
         /// <summary>
         /// distTo[v] = distance  of shortest s->v path
         /// </summary>
@@ -34,8 +36,15 @@
         /// </returns>
         public double GetDistTo(int v)
         {
+            v = g.IndexOf(v);
             return this.DistTo[v];
         }
+
+
+        protected ShortestPath(Graph<TV, TE> g)
+        {
+            this.g = g;
+        } 
 
         /**
           * Is there a path from the source vertex <tt>s</tt> to vertex <tt>v</tt>?
@@ -56,6 +65,13 @@
         /// and false otherwise
         /// </returns>
         public bool HasPathTo(int v)
+        {
+            v = g.IndexOf(v);
+            return this.DistTo[v] < double.MaxValue;
+        }
+
+
+        protected bool HasPathToVertex(int v)
         {
             return this.DistTo[v] < double.MaxValue;
         }
@@ -83,9 +99,10 @@
         /// </returns>
         public IEnumerable<TE> PathTo(int v)
         {
-            if (!HasPathTo(v)) return null;
+            v = g.IndexOf(v);
+            if (!this.HasPathToVertex(v)) return null;
             var path = new Stack<TE>();
-            for (var e = this.EdgeTo[v]; e != null; e = this.EdgeTo[e.V])
+            for (var e = this.EdgeTo[v]; e != null; e = this.EdgeTo[g.IndexOf(e.From)])
             {
                 path.Push(e);
             }
@@ -96,15 +113,15 @@
 
         public IEnumerable<int> PathToAsIds(int v)
         {
-            if (!HasPathTo(v)) return null;
+            v = g.IndexOf(v);
+            if (!this.HasPathToVertex(v)) return null;
             var path = new Stack<int>();
-            for (var e = this.EdgeTo[v]; e != null; e = this.EdgeTo[e.V])
+            for (var e = this.EdgeTo[v]; e != null; e = this.EdgeTo[g.IndexOf(e.From)])
             {
-                path.Push(e.V);
-                if (this.EdgeTo[e.V] == null)
-                {
-                    path.Push(e.W);
-                }
+                if (!path.Contains(e.From))
+                path.Push(e.From);
+                if (!path.Contains(e.To))
+                    path.Push(e.To);
             }
             return path;
         }

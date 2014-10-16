@@ -17,7 +17,7 @@ namespace ImVader
         /// <summary>
         /// Initializes a new instance of the <see cref="WeightedEdge"/> class.
         /// </summary>
-        /// <param name="v">
+        /// <param name="from">
         /// The first vertex of the edge
         /// </param>
         /// <param name="w">
@@ -26,8 +26,8 @@ namespace ImVader
         /// <param name="weight">
         /// WEight of the edge
         /// </param>
-        public WeightedEdge(int v, int w, double weight)
-            : base(v, w)
+        public WeightedEdge(int from, int w, double weight)
+            : base(from, w)
         {
             Weight = weight;
         }

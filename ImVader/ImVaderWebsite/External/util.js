@@ -100,8 +100,9 @@ function addToShortestPathList(properties) {
 
 
 function selectedArgumentPathNodes() {
-    if (shortestPathNodeListIndexes != 0)
+    if (shortestPathNodeListIndexes != 0) {
         network.selectNodes(shortestPathNodeListIndexes);
+    }
     else {
         network.selectNodes([]);
     }
@@ -109,9 +110,40 @@ function selectedArgumentPathNodes() {
 
 function goToServer() {
     console.log(shortestPathNodeListIndexes);
-    var edges = {};
-
-    $.getJSON('/api/ShortestPath', { vertices: shortestPathNodeListIndexes, edges: edges }, function(data) {
-        
+    var nodes = getNodes(); console.log(nodes);
+    var nodesIds = new Array();
+    for (var i = 0; i < nodes.length; i++) {
+        nodesIds.push(nodes[i].uid);
+    }
+    var edges = getEdges();
+    var udges = new Array();
+    for (var j = 0; j < edges.length; j++) {
+        var edge = {};
+        edge.From = edges[j].from;
+        edge.To = edges[j].to;
+        var edge2 = {};
+        edge2.From = edges[j].to;
+        edge2.To = edges[j].from;
+        udges.push(edge);
+        udges.push(edge2);
+    }
+    
+    $.ajax({
+        type: "POST",
+        data: JSON.stringify({
+            Vertices: nodesIds,
+            Edges: udges,
+            Vertex1: shortestPathNodeListIndexes[0],
+            Vertex2: shortestPathNodeListIndexes[1]
+        }),
+        url: "api/ShortestPath",
+        contentType: "application/json",
+        success: function (data) {
+            shortestPathNodeListIndexes = data;
+            selectedArgumentPathNodes();
+            
+            
+            
+        }
     });
 }

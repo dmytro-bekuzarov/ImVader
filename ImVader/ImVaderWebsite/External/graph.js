@@ -4,13 +4,30 @@ var textFile = null;
 
 var data = {
     nodes: nodes,
-    edges: edges
+    edges: edges,
+    color: 'green'
 };
+
 var options = {
     width: '100%',
     height: '100%',
-    selectable:false
+    selectable: false,
+    groups: {
+        mygroup: {
+            shape: 'circle',
+            color: {
+                border: 'black',
+                background: 'white',
+                highlight: {
+                    border: 'yellow',
+                    background: 'orange'
+                }
+            }
+    }
+    // add more groups here
+}
 };
+
 var container;
 var network;
 
@@ -70,9 +87,10 @@ function addNode(user) {
     if (user.sex == 1) user.color = {
         background: 'red',
         highlight: {
-            border: 'black'
+            border: 'red'
         }
     }
+    
     nodes.add(user);
     return nodes;
 }

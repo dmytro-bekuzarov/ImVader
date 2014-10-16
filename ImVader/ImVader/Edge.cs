@@ -20,27 +20,27 @@ namespace ImVader
         /// Initializes a new instance of the <see cref="Edge"/> class according to the order. 
         /// Order does not matter as it's not a directed edge
         /// </summary>
-        /// <param name="v">
+        /// <param name="from">
         /// First vertex id of the edge 
         /// </param>
-        /// <param name="w">
+        /// <param name="to">
         /// Second vertex of the edge
         /// </param>
-        protected Edge(int v, int w)
+        protected Edge(int from, int to)
         {
-            this.V = v;
-            this.W = w;
+            this.From = from;
+            this.To = to;
         }
 
         /// <summary>
         /// Gets or sets first vertex id.
         /// </summary>
-        public int V { get; protected set; }
+        public int From { get; protected set; }
 
         /// <summary>
         /// Gets or sets second vertex id.
         /// </summary>
-        public int W { get; protected set; }
+        public int To { get; protected set; }
 
         /// <summary>
         /// Returns the first vertex of the edge
@@ -51,7 +51,7 @@ namespace ImVader
         /// </returns>
         public int Either()
         {
-            return this.V;
+            return this.From;
         }
 
         /// <summary>
@@ -68,8 +68,8 @@ namespace ImVader
         /// </exception>
         public int Other(int vertex)
         {
-            if (vertex == this.V) { return W; }
-            if (vertex == this.W) { return V; }
+            if (vertex == this.From) { return this.To; }
+            if (vertex == this.To) { return this.From; }
             throw new ArgumentException();
         }
     }

@@ -17,14 +17,14 @@ namespace ImVader
         /// <summary>
         /// Initializes a new instance of the <see cref="UnweightedEdge"/> class.
         /// </summary>
-        /// <param name="v">
+        /// <param name="from">
         /// First vertex id of the edge 
         /// </param>
-        /// <param name="w">
+        /// <param name="to">
         /// Second vertex of the edge
         /// </param>
-        public UnweightedEdge(int v, int w)
-            : base(v, w)
+        public UnweightedEdge(int from, int to)
+            : base(from, to)
         {
         }
     }

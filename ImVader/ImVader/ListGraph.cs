@@ -9,6 +9,7 @@
 
 namespace ImVader
 {
+    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -52,16 +53,24 @@ namespace ImVader
         }
 
 
-        public void Init(List<TE> edges, List<TV> vertices)
+        public void Init(IEnumerable<TE> edges, IEnumerable<int> verticesIds)
         {
-            foreach (var vertex in vertices)
+            foreach (var vertex in verticesIds)
             {
-                this.AddVertex(vertex);
+                this.AddVertex(default(TV), vertex);
             }
 
             foreach (var edge in edges)
             {
                 this.AddEdge(edge);
+            }
+        }
+
+        public void Init(IEnumerable<int> verticesIds)
+        {
+            foreach (var vertex in verticesIds)
+            {
+                this.AddVertex(default(TV), vertex);
             }
         }
 
@@ -114,6 +123,15 @@ namespace ImVader
             return lastVertexIndex;
         }
 
+        public int AddVertex(TV value, int index)
+        {
+            // int lastVertexIndex = LastVertexIndex;
+            Vertices.Add(index, new Vertex<TV>(value));
+            AdjacencyList.Add(new List<TE>());
+            Indexes.Add(index);
+            return index;
+        }
+
         /// <summary>
         /// Removes the vertex with the specified index
         /// </summary>
@@ -138,10 +156,10 @@ namespace ImVader
         /// </returns>
         public override int AddEdge(TE e)
         {
-            CheckVerticesIndexes(e.V, e.W);
+            //CheckVerticesIndexes(e.From, e.To);
             Edges.Add(++LastEdgeIndex, e);
-            AdjacencyList[Indexes.IndexOf(e.V)].Add(e);
-            AdjacencyList[Indexes.IndexOf(e.W)].Add(e);
+            AdjacencyList[Indexes.IndexOf(e.From)].Add(e);
+            AdjacencyList[Indexes.IndexOf(e.To)].Add(e);
             EdgesCount++;
             return LastEdgeIndex;
         }
@@ -155,8 +173,8 @@ namespace ImVader
         public override void RemoveEdge(int index)
         {
             var e = Edges[index];
-            var list1 = AdjacencyList[Indexes.IndexOf(e.V)];
-            var list2 = AdjacencyList[Indexes.IndexOf(e.W)];
+            var list1 = AdjacencyList[Indexes.IndexOf(e.From)];
+            var list2 = AdjacencyList[Indexes.IndexOf(e.To)];
             var index1 = list1.IndexOf(e);
             var index2 = list2.IndexOf(e);
             list1.RemoveAt(index1);
@@ -164,6 +182,13 @@ namespace ImVader
             EdgesCount--;
             if (index == LastEdgeIndex) LastEdgeIndex--;
             Edges.Remove(index);
+        }
+
+        public ListGraph<TV, WeightedEdge> CopyWeighted()
+        {
+            var graph = new ListGraph<TV, WeightedEdge>();
+            graph.Init(Indexes);
+            return graph;
         }
     }
 }

@@ -12,7 +12,7 @@
     /// <typeparam name="TE">
     /// Edge type
     /// </typeparam>
-    public class Dijkstra<TV, TE> : ShortestPath<TE>
+    public class Dijkstra<TV, TE> : ShortestPath<TV, TE>
         where TE : Edge
     {
         /// <summary>
@@ -31,8 +31,10 @@
         /// Entry vertex
         /// </param>
         public Dijkstra(IDirectedGraph gr, int s)
+            : base((Graph<TV, TE>)gr)
         {
-            var g = (Graph<TV, TE>)gr;
+            
+            s = g.IndexOf(s);
             for (var i = 0; i < g.EdgesCount; i++)
             {
                 Edge e = g.GetEdge(i);
@@ -79,7 +81,7 @@
         private void Relax(TE edge)
         {
             var e = edge as Edge;
-            int v = e.V, w = e.W;
+            int v = g.IndexOf(e.From), w = g.IndexOf(e.To);
             var weight = 1.0;
             var weightedEdge = e as WeightedEdge;
             if (weightedEdge != null)

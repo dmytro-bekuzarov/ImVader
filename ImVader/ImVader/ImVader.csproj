@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="Algorithms\BreadthFirstPathes.cs" />
     <Compile Include="Algorithms\DepthFirstPathes.cs" />
+    <Compile Include="Algorithms\MinimalSpanningTree.cs" />
     <Compile Include="DirectedListGraph.cs" />
     <Compile Include="DirectedMatrixGraph.cs" />
     <Compile Include="Edge.cs" />

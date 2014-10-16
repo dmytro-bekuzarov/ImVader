@@ -43,9 +43,9 @@ namespace ImVader
         /// </returns>
         public override int AddEdge(TE e)
         {
-            CheckVerticesIndexes(e.V, e.W);
+            CheckVerticesIndexes(e.From, e.To);
             Edges.Add(++LastEdgeIndex, e);
-            this[e.V, e.W].Add(LastEdgeIndex);
+            this[e.From, e.To].Add(LastEdgeIndex);
             EdgesCount++;
             return LastEdgeIndex;
         }
@@ -59,7 +59,7 @@ namespace ImVader
         public override void RemoveEdge(int index)
         {
             Edge e = Edges[index];
-            this[e.V, e.W].Remove(index);
+            this[e.From, e.To].Remove(index);
             EdgesCount--;
             if (index == LastEdgeIndex) LastEdgeIndex--;
             Edges.Remove(index);
