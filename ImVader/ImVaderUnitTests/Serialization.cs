@@ -36,21 +36,7 @@
             Assert.AreEqual(graph1.ToString(), graph2.ToString());
         }
 
-         [TestMethod]
-        public void SerializeUnweightedToFile()
-        {
-            const string Path = "D:/graph.txt";
-            var graph1 = new ListGraph<int, UnweightedEdge>(5);
-            graph1.AddEdge(new UnweightedEdge(1, 2));
-            graph1.AddEdge(new UnweightedEdge(2, 3));
-            var stream = new FileStream(Path, FileMode.Create);
-            var serializer = new JsonSerializer<ListGraph<int, UnweightedEdge>>();
-            serializer.Serialize(graph1, stream);
-            //var reader = new FileStream(Path, FileMode.Open);
-            //ListGraph<int, WeightedEdge> graph2 = serializer.Deserialize(reader);
-            //Assert.AreEqual(graph1.ToString(), graph2.ToString());
-            //File.Delete(Path);
-        }
+       
     }
 
 }
