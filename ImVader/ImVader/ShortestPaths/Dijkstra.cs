@@ -34,10 +34,10 @@
             : base((Graph<TV, TE>)gr)
         {
             
-            s = g.IndexOf(s);
-            for (var i = 0; i < g.EdgesCount; i++)
+            s = this.G.IndexOf(s);
+            for (var i = 0; i < this.G.EdgesCount; i++)
             {
-                Edge e = g.GetEdge(i);
+                Edge e = this.G.GetEdge(i);
                 var edge = e as WeightedEdge;
                 if (edge != null)
                 {
@@ -48,9 +48,9 @@
                 }
             }
 
-            this.EdgeTo = new TE[g.VertexCount];
-            this.DistTo = new double[g.VertexCount];
-            for (var v = 0; v < g.VertexCount; v++)
+            this.EdgeTo = new TE[this.G.VertexCount];
+            this.DistTo = new double[this.G.VertexCount];
+            for (var v = 0; v < this.G.VertexCount; v++)
             {
                 this.DistTo[v] = double.MaxValue;
             }
@@ -58,12 +58,12 @@
             this.DistTo[s] = 0.0;
 
             // relax vertices in order of distance from s
-            pq = new MinPq<Node>(g.VertexCount);
+            pq = new MinPq<Node>(this.G.VertexCount);
             pq.Insert(new Node(s, this.DistTo[s]));
             while (!pq.IsEmpty())
             {
                 var v = pq.DelMin();
-                var adj = g.GetAdjacentEdges(v.N);
+                var adj = this.G.GetAdjacentEdges(v.N);
                 var enumerable = adj as TE[] ?? adj.ToArray();
                 for (var i = 0; i < enumerable.Count(); i++)
                 {
@@ -81,7 +81,7 @@
         private void Relax(TE edge)
         {
             var e = edge as Edge;
-            int v = g.IndexOf(e.From), w = g.IndexOf(e.To);
+            int v = this.G.IndexOf(e.From), w = this.G.IndexOf(e.To);
             var weight = 1.0;
             var weightedEdge = e as WeightedEdge;
             if (weightedEdge != null)

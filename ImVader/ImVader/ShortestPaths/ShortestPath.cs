@@ -6,13 +6,16 @@
     /// The ShortestPath interface.
     /// </summary>
     /// <typeparam name="TE">
-    /// edge type
+    /// Edge type
+    /// </typeparam>
+    /// <typeparam name="TV">
+    /// Type of the data stored in vertices
     /// </typeparam>
     public class ShortestPath<TV, TE>
         where TE : Edge
     {
 
-        protected Graph<TV, TE> g; 
+        protected Graph<TV, TE> G;
         /// <summary>
         /// distTo[v] = distance  of shortest s->v path
         /// </summary>
@@ -36,15 +39,15 @@
         /// </returns>
         public double GetDistTo(int v)
         {
-            v = g.IndexOf(v);
+            v = this.G.IndexOf(v);
             return this.DistTo[v];
         }
 
 
         protected ShortestPath(Graph<TV, TE> g)
         {
-            this.g = g;
-        } 
+            this.G = g;
+        }
 
         /**
           * Is there a path from the source vertex <tt>s</tt> to vertex <tt>v</tt>?
@@ -66,7 +69,7 @@
         /// </returns>
         public bool HasPathTo(int v)
         {
-            v = g.IndexOf(v);
+            v = this.G.IndexOf(v);
             return this.DistTo[v] < double.MaxValue;
         }
 
@@ -99,10 +102,10 @@
         /// </returns>
         public IEnumerable<TE> PathTo(int v)
         {
-            v = g.IndexOf(v);
+            v = this.G.IndexOf(v);
             if (!this.HasPathToVertex(v)) return null;
             var path = new Stack<TE>();
-            for (var e = this.EdgeTo[v]; e != null; e = this.EdgeTo[g.IndexOf(e.From)])
+            for (var e = this.EdgeTo[v]; e != null; e = this.EdgeTo[this.G.IndexOf(e.From)])
             {
                 path.Push(e);
             }
@@ -113,13 +116,13 @@
 
         public IEnumerable<int> PathToAsIds(int v)
         {
-            v = g.IndexOf(v);
+            v = this.G.IndexOf(v);
             if (!this.HasPathToVertex(v)) return null;
             var path = new Stack<int>();
-            for (var e = this.EdgeTo[v]; e != null; e = this.EdgeTo[g.IndexOf(e.From)])
+            for (var e = this.EdgeTo[v]; e != null; e = this.EdgeTo[this.G.IndexOf(e.From)])
             {
                 if (!path.Contains(e.From))
-                path.Push(e.From);
+                    path.Push(e.From);
                 if (!path.Contains(e.To))
                     path.Push(e.To);
             }

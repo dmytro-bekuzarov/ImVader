@@ -1,20 +1,13 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ImVaderUnitTests.AlgorithmsTests
 {
     using System;
-    using System.Diagnostics;
-    using System.Diagnostics.Contracts;
     using System.Linq;
-    using System.Runtime.InteropServices;
 
     using ImVader;
     using ImVader.Algorithms;
 
-    /// <summary>
-    /// Summary description for DepthFirstPassesTest
-    /// </summary>
     [TestClass]
     public class DepthFirstPassesTest
     {
@@ -26,6 +19,7 @@ namespace ImVaderUnitTests.AlgorithmsTests
             g.AddEdge(new UnweightedEdge(0, 1));
             g.AddEdge(new UnweightedEdge(2, 3));
             var dfs = new DepthFirstPathes<int, Edge>(g, -1);
+            Assert.IsNotNull(dfs);
         }
 
         [TestMethod]

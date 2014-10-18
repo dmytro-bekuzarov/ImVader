@@ -52,7 +52,7 @@
         public DepthFirstPathes(Graph<TV, TE> g, int s)
         {
             if (s < 0 || s > g.VertexCount)
-                throw new ArgumentOutOfRangeException("Vertex is out of range!");
+                throw new ArgumentOutOfRangeException("s", "Vertex index is out of range.");
             marked = new bool[g.VertexCount];
             edgeTo = new int[g.VertexCount];
             Timein = new int[g.VertexCount];
@@ -61,7 +61,7 @@
                 Timein[i] = Timeout[i] = edgeTo[i] = -1;
             
             this.s = s;
-            DFS(g);
+            this.Dfs(g);
         }
 
         /// <summary>
@@ -97,7 +97,7 @@
             return path;
         }
 
-        private void DFS(Graph<TV, TE> g)
+        private void Dfs(Graph<TV, TE> g)
         {
             int dfsTimer = 0;
             var vertices = new Stack<int>();

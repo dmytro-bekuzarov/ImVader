@@ -124,7 +124,7 @@
         /// </returns>
         public IEnumerable<T> GetAsEnumerable()
         {
-            return this.pq.Where(t => t != null);
+            return this.pq.Where(t => !Equals(t, default(T)));
         }
 
         /// <summary>

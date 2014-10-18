@@ -55,13 +55,13 @@ namespace ImVader.Algorithms
         public BreadthFirstPathes(Graph<TV, TE> g, int s)
         {
             if (s < 0 || s > g.VertexCount)
-                throw new ArgumentOutOfRangeException("Vertex is out of range!");
+                throw new ArgumentOutOfRangeException("s", "Vertex index is out of range.");
             marked = new bool[g.VertexCount];
             edgeTo = new int[g.VertexCount];
             for (var i = 0; i < edgeTo.Length; i++)
                 edgeTo[i] = -1;
             this.s = s;
-            BFS(g);
+            this.Bfs(g);
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace ImVader.Algorithms
         /// <param name="g">
         /// Graph we want to do bfs on
         /// </param>
-        private void BFS(Graph<TV, TE> g)
+        private void Bfs(Graph<TV, TE> g)
         {
             var vertices = new Queue<int>();
             vertices.Enqueue(s);

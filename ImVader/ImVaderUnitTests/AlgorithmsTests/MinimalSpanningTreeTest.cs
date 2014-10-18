@@ -1,16 +1,10 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ImVaderUnitTests.AlgorithmsTests
 {
-    using System;
-    using System.Diagnostics;
-    using System.Diagnostics.Contracts;
-    using System.Linq;
-    using System.Runtime.InteropServices;
-
     using ImVader;
     using ImVader.Algorithms;
+
     [TestClass]
     public class MinimalSpanningTreeTest
     {
@@ -26,7 +20,6 @@ namespace ImVaderUnitTests.AlgorithmsTests
             g.AddEdge(new WeightedEdge(3, 5, 2));
             g.AddEdge(new WeightedEdge(4, 5, 5));
             var mst = new MinimalSpanningTree<int, WeightedEdge>(g);
-
             Assert.AreEqual(13.0 ,mst.GetMstWeight());
         }
 

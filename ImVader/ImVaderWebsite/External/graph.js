@@ -57,6 +57,11 @@ function makeTextFile(text) {
 function selectNode(properties) {
     if (properties.nodes != null && properties.nodes.length != 0 && properties.nodes[0] != undefined) {
         var selectedNode = nodes._data[properties.nodes[0]];
+        if (selectedNode.gotFriends) {
+            $('#getFriendsButton').prop('disabled', true);
+        } else {
+            $('#getFriendsButton').prop('disabled', false);
+        }
         user_id = selectedNode.uid;
         showUserInfo(selectedNode);
     }
@@ -69,7 +74,6 @@ function initializeGraph() {
 }
 
 function higlightPath(selectedNodes) {
-    newObject = jQuery.extend(true, {}, oldObject);
     for (var i = 0; i < selectedNodes.length; i++) {
         data.nodes._data[selectedNodes[i]].color = {
             background: '#99FF99',

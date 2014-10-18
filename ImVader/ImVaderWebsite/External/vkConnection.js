@@ -28,11 +28,12 @@ function authInfo(response) {
 }
 
 function getFriends() {
-    startSpinner();
+
     var time = 0;
     //Getting user friends
     if (user_id != null) {
         if (checkHasNoFriends(user_id)) {
+            startSpinner();
             VK.Api.call('friends.get', { user_id: user_id, fields: "photo_200_orig,sex" }, function (r) {
                 if (r.response) {
                     var friends = r.response;

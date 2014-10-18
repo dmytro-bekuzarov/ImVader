@@ -47,7 +47,7 @@
                             <span id="user_gender"></span>
                         </div>
                         <br />
-                        <a onclick="getFriends()" class="btn btn-primary">Get friends</a>
+                        <button onclick="getFriends()" class="btn btn-primary" id="getFriendsButton">Get friends</button>
                     </div>
                 </div>
             </div>
@@ -56,39 +56,99 @@
     <div id="algorithms" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title">Algorithms</h3>
+                <h3 class="panel-title">Actions</h3>
             </div>
             <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-12 col-lg-12">
-                        <a class="btn btn-primary" id="find-shortest-path">Find shortest path</a>
-                        <div id="find-shortest-path-tooltip" style="text-align: center"></div>
-                        <a class="btn btn-primary hidden" id="find-shortest-path-start">Start algo</a>
+                <div class="panel-group accordion" id="accordion">
+
+                    <!-- Accordion item -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed">
+                                    <span class="marker"></span>
+                                    Dijkstra
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="panel-collapse collapse" id="collapseOne" style="height: 0;">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12 vmar-5">
+                                    <a class="btn btn-primary" id="find-shortest-path">Find shortest path</a>
+                                    <div id="find-shortest-path-tooltip" style="text-align: center"></div>
+                                    <a class="btn btn-primary hidden" id="find-shortest-path-start">Start algo</a>
+                                </div>
+                            </div>
+                            
+                        </div>
                     </div>
+                    <!-- End accordion item -->
+                    <!-- Accordion item -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                    <span class="marker"></span>
+                                   MST
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="panel-collapse collapse" id="collapseTwo" style="height: 0;">
+                            <div class="panel-body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet quam augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End accordion item -->
+                    <!-- Accordion item -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                    <span class="marker"></span>
+                                    Save & Load
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="panel-collapse collapse " id="collapseThree" style="">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12 vmar-5">
+                                        <div id="drop_zone">Drop files here</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12 ">
+                                        <a download="mygraph.txt" id="downloadlink" class="btn btn-primary" href="javascript: makeTextFile();">
+                                            Download graph
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End accordion item -->
+                    <!-- Accordion item -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                    <span class="marker"></span>
+                                    Article title goes here
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="panel-collapse collapse" id="collapseFour" style="height: 0;">
+                            <div class="panel-body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet quam augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End accordion item -->
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title">Save/Load graph</h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-12 col-lg-12 ">
-                        <div id="drop_zone">Drop files here</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 col-lg-12 ">
-                        <a download="mygraph.txt" id="downloadlink" class="btn btn-primary" href="javascript: makeTextFile();">
-                            Download graph
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 <div id="graph_place"></div>

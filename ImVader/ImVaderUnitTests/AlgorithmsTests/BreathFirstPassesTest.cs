@@ -8,9 +8,6 @@ namespace ImVaderUnitTests.AlgorithmsTests
     using ImVader;
     using ImVader.Algorithms;
 
-    /// <summary>
-    /// Summary description for BreathFirstPassesTest
-    /// </summary>
     [TestClass]
     public class BreadthFirstPassesTest
     {
@@ -22,6 +19,7 @@ namespace ImVaderUnitTests.AlgorithmsTests
             g.AddEdge(new UnweightedEdge(0, 1));
             g.AddEdge(new UnweightedEdge(2, 3));
             var bfs = new BreadthFirstPathes<int, Edge>(g, -1);
+            Assert.IsNotNull(bfs);
         }
 
         [TestMethod]
@@ -34,7 +32,6 @@ namespace ImVaderUnitTests.AlgorithmsTests
             Assert.IsFalse(bfs.HasPathTo(2));
             Assert.IsFalse(bfs.HasPathTo(2));
             Assert.IsNull(bfs.PathTo(2));
-            //Assert.AreEqual(bfs.PathTo(0), null);
             Assert.IsTrue(bfs.HasPathTo(1));
             Assert.IsTrue(bfs.PathTo(1).ToArray().Length == 2);
         }

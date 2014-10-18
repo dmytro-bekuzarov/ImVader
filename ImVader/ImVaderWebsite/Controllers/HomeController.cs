@@ -15,5 +15,11 @@
         {
             return View();
         }
+
+        [Route("documentation")]
+        public ActionResult Documentation()
+        {
+            return View();
+        }
     }
 }
