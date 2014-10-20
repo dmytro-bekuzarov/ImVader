@@ -154,6 +154,8 @@
     <Content Include="External\docs\css\bootswatch\Simplex\bootstrap.min.css" />
     <Content Include="External\docs\css\bootswatch\Slate\bootstrap.min.css" />
     <Content Include="External\docs\css\docs.css" />
+    <Content Include="External\docs\css\gh-fork-ribbon.css" />
+    <Content Include="External\docs\css\gh-fork-ribbon.ie.css" />
     <Content Include="External\docs\css\jquery.tocify.css" />
     <Content Include="External\docs\css\jquery.ui.all.css" />
     <Content Include="External\docs\css\prettify.css" />
