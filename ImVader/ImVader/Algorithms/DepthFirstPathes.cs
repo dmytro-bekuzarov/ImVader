@@ -61,7 +61,7 @@
                 Timein[i] = Timeout[i] = edgeTo[i] = -1;
             
             this.s = s;
-            this.Dfs(g);
+            Dfs(g);
         }
 
         /// <summary>
@@ -122,7 +122,6 @@
                 {
                     edgeTo[vertex] = curVertex;
                     vertices.Push(vertex);
-                    break;
                 }
             }
         }

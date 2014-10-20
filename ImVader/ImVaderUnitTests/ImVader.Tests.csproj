@@ -60,6 +60,7 @@
     <Compile Include="AlgorithmsTests\BreathFirstPassesTest.cs" />
     <Compile Include="AlgorithmsTests\DepthFirstPassesTest.cs" />
     <Compile Include="AlgorithmsTests\MinimalSpanningTreeTest.cs" />
+    <Compile Include="AlgorithmsTests\StrongComponentsTest.cs" />
     <Compile Include="ListGraph.cs" />
     <Compile Include="MatrixGraph.cs" />
     <Compile Include="ShortestPaths.cs" />

@@ -1,12 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace ImVaderUnitTests.AlgorithmsTests
+﻿namespace ImVaderUnitTests.AlgorithmsTests
 {
     using System;
     using System.Linq;
-
     using ImVader;
     using ImVader.Algorithms;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class DepthFirstPassesTest
