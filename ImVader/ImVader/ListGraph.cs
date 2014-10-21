@@ -65,6 +65,7 @@ namespace ImVader
             }
         }
 
+        
         public void Init(IEnumerable<int> verticesIds)
         {
             foreach (var vertex in verticesIds)
@@ -122,6 +123,12 @@ namespace ImVader
             return lastVertexIndex;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="index"></param>
+        /// <returns>The index</returns>
         public int AddVertex(TV value, int index)
         {
             // int lastVertexIndex = LastVertexIndex;

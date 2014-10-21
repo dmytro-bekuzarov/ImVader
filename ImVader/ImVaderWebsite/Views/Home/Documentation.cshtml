@@ -1,390 +1,614 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Documenation.cshtml";
+    ViewBag.Title = "ImVader | Documentation";
 }
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Document-Bootstrap</title>
-    <!-- Mobile viewport optimized -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <!-- Mobile Internet Explorer allows us to activate ClearType technology for smoothing fonts for easy reading -->
-    <meta http-equiv="cleartype" content="on">
-    <!-- Le styles -->
-    <link href="~/External/docs/css/bootswatch/Cosmo/bootstrap.min.css" rel="stylesheet">
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/black-tie/jquery-ui.css" rel="stylesheet">
-    <link href="~/External/docs/css/jquery.tocify.css" rel="stylesheet">
-    <link href="~/External/docs/css/prettify.css" rel="stylesheet" type="text/css">
-    <link href="~/External/docs/css/styles.css" rel="stylesheet" type="text/css">
-    <link href="~/External/docs/css/rainbow/themes/tomorrow-night.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="~/External/docs/css/rainbowlines/theme.css" media="screen" />
-    <link rel="stylesheet" href="~/External/docs/css/gh-fork-ribbon.css"/>
-    <!--[if lt IE 9]>
-        <link rel="stylesheet" href="~/External/docs/css/gh-fork-ribbon.ie.css">
-    <![endif]-->
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!-- Le fav and touch icons -->
-    <link href="../assets/ico/favicon.ico" rel="shortcut icon">
-    <link href="../assets/ico/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144">
-    <link href="../assets/ico/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114">
-    <link href="../assets/ico/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72">
-    <link href="../assets/ico/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon-precomposed">
-    <style>
-        .tocify-header li.active {
-          background-color: #e6e6e6;
-        }
-        .right .github-fork-ribbon {
-            background-color: #333;
-            position: fixed
-        }
-    </style>
-</head>
-    <body>
-        <!-- TOP RIGHT RIBBON: START COPYING HERE -->
-        <div id="fork-me" class="github-fork-ribbon-wrapper right">
-            <div class="github-fork-ribbon">
-                <a href="https://github.com/simonwhitaker/github-fork-ribbon-css" target="_blank">Fork us on GitHub</a>
+<div class="jumbotron">
+    <h1>ImVader</h1>
+    <br><br>
+    <h2>Description</h2>
+    <p>ImVader is a flexible and powerful .NET framework for working with graphs</p>
+    <br>
+    <p>
+        The project is hosted on <a class="projectLinks" href="https://github.com/Konnor95/ImVader/" target="_blank">Github</a> and is available for use under the <a class="projectLinks" href="#" target="_blank">MIT software license</a>.  You can report bugs and discuss features on the <a href="#" target="_blank">GitHub issues page</a>, or send tweets to <a href="#" target="_blank">Enter Project Twitter Page Here</a>.
+    </p>
+    <p><a class="btn btn-primary btn-lg" href="https://github.com/Konnor95/ImVader/" target="_blank">Fork us on Github »</a></p>
+</div>
+<div>
+    <h2>Requirements</h2>
+    <br>
+    <p class="well">
+        ImVader requires .NET 4.5 to be installed
+    </p>
+    <br>
+</div>
+<div>
+    <h2>Optional Dependencies</h2>
+    <br>
+    <p class="well">
+        ImVader uses NewtonSoft.Json library
+    </p>
+    <br>
+</div>
+<div>
+    <h2>Notable Features</h2>
+    <br>
+    <p class="well">
+        Enter Notable Features Here
+    </p>
+    <br>
+</div>
+<div>
+    <h2>Browser Support</h2>
+    <br>
+    <p class="well">
+        Enter Browser Support Here
+    </p>
+    <br>
+</div>
+
+
+
+<div>
+    <h2 id="anchor-graph">Graph</h2>
+    <p class="well note">
+        <strong>Graph</strong> respresents an abstract parent class for all graphs. It contains initial methods and fields which are used in any graph represenation.
+    </p>
+    <div>
+        <h3>Constructors</h3>
+        <br />
+        <div>
+            <h4><strong>protected Graph()</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+protected Graph()
+</code>
+</pre>
+                <p><strong>Description</strong></p>
+                <p>
+                    Initializes Vertices and Edges collections.
+                </p>
             </div>
         </div>
-        <!-- TOP RIGHT RIBBON: END COPYING HERE -->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom:120px;">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="@Url.Action("Index","Home")">ImVader</a>
+        <div></div>
+        <br>
+    </div>
+    <div>
+        <h3>Fields and properties</h3>
+        <br />
+        <div>
+            <h4><strong>Vertices</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+protected Dictionary&lt;int, vertex&lt;TV&gt;&gt; Vertices;
+</code>
+</pre>
+                <p><strong>Description</strong></p>
+                <p>
+                    A collection of vertices in the graph
+                </p>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
-                    <li class="active"><a href="@Url.Action("Documentation","Home")">Documentation</a></li>
-                    <li><a href="@Url.Action("Demo","Home")">Demo</a></li>
-                    @*<li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>*@
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-
-        <div class="container-fluid" style="margin-top:50px;">
-            <div class="row">
-                <div class="tocify col-sm-3 col-md-3">
-                    <div id="toc">
-                    </div><!--/.well -->
-                </div><!--/span-->
-                <div class="col-sm-9 col-md-9">
-                    <div class="jumbotron">
-                        <h1>ImVader</h1>
-                        <br><br>
-                        <h2>Description</h2>
-                        <p>ImVader is a flexible and powerful .NET framework for working with graphs</p>
-                        <br>
-                        <p>
-                            The project is hosted on <a class="projectLinks" href="https://github.com/Konnor95/ImVader/" target="_blank">Github</a> and is available for use under the <a class="projectLinks" href="#" target="_blank">MIT software license</a>.  You can report bugs and discuss features on the <a href="#" target="_blank">GitHub issues page</a>, or send tweets to <a href="#" target="_blank">Enter Project Twitter Page Here</a>.
-                        </p>
-                        <p><a class="btn btn-primary btn-lg" href="#" target="_blank">Fork on Github »</a></p>
-                    </div>
-                    <h2>Requirements</h2>
-                    <br>
-                    <p class="well">
-                        ImVader requires .NET 4.5 to be installed
-                    </p>
-                    <br>
-                    <h2>Optional Dependencies</h2>
-                    <br>
-                    <p class="well">
-                        ImVader uses NewtonSoft.Json library
-                    </p>
-                    <br>
-                    <h2>Notable Features</h2>
-                    <br>
-                    <p class="well">
-                        Enter Notable Features Here
-                    </p>
-                    <br>
-                    <h2>Browser Support</h2>
-                    <br>
-                    <p class="well">
-                        Enter Browser Support Here
-                    </p>
-                    <br>
-                    <h2>Getting Started</h2>
-                    <br>
-                    <p><h3><a href="customDownload.html">Custom Download</a></h3><p></p>
-                    <p class="well">
-                        <span class="note">
-                            <strong>Note: </strong> All of the plugin files are in the <code>src</code> directory (this includes both the JavaScript and CSS files). If you want to see an example page with all of the files included, look in the <code>demos</code> directory.
-                        </span>
-                    </p>
-                    <h3>C#</h3>
-                    <p></p>
-                    <p class="well note">
-                        C# Code
-                    </p>
-
-                    <pre>        
-                <code data-language="csharp">
-public class BadgeGenerator : IBadgeGenerator
+        </div>
+        <div>
+            <h4><strong>Edges</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+protected List&lt;int&gt; Indexes
+</code>
+</pre>
+                <p><strong>Description</strong></p>
+                <p>
+                    Contains indexes of the stored vertices
+                </p>
+            </div>
+        </div>
+        <div>
+            <h4><strong>VertexCount</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+public int VertexCount
 {
-	private IBadgeStorageService badgeStoreageService;
-	public BadgeGenerator(IBadgeStorageService service)
-	{
-		if (service == null)
-		{
-			throw new ArgumentNullException("storage service cannot be null", "service");
-		}
-	   
-		this.badgeStoreageService = service;
-	}
+    get { /*...*/ }
 }
-			</code>
-          </pre>
-
-                    <h3>CSS</h3>
-                    <p></p>
-                    <p class="well note">
-                        Enter CSS Instructions Here
-                    </p>
-                    <pre>
-                <code data-language="css">	
- * Author: gregfranko
- */
-/* The Table of Contents container element */
-#toc {
-    width: 20%;
-    max-height: 90%;
-    overflow: auto;
-    position: fixed;
-    border: 0px solid #ccc;
-    webkit-border-radius: 6px;
-    moz-border-radius: 6px;
-    border-radius: 6px;
+</code>
+</pre>
+                <p><strong>Description</strong></p>
+                <p>
+                    Gets number of vertices in the graph
+                </p>
+            </div>
+        </div>
+        <div>
+            <h4><strong>EdgesCount</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+public int EdgesCount { get; protected set; }
+</code>
+</pre>
+                <p><strong>Description</strong></p>
+                <p>
+                    Gets or sets number of edges in the graph
+                </p>
+            </div>
+        </div>
+        <div>
+            <h4><strong>LastEdgeIndex</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+protected int LastEdgeIndex { get; set; }
+</code>
+</pre>
+                <p><strong>Description</strong></p>
+                <p>
+                    Gets or sets the last edge index.
+                </p>
+            </div>
+        </div>
+        <div>
+            <h4><strong>LastVertexIndex</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+protected int LastVertexIndex
+{
+    get { /*...*/ }
 }
-/* The Table of Contents is composed of multiple nested unordered lists.  These styles remove the default styling of an unordered list because it is ugly. */
-#toc ul, #toc li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border: none;
-    line-height: 30px;
-}
-		  </code>
-          </pre>
-                    <p>
-                    <h3>JavaScript</h3>
-                    <p></p>
-                    <p class="well note">
-                        Enter JavaScript Instructions Here
-                    </p>
-                    <pre>          
-                <code data-language="javascript">
-;(function () {
-  var
-    object = typeof window != 'undefined' ? window : exports,
-    chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=',
-    INVALID_CHARACTER_ERR = (function () {
-      // fabricate a suitable error object
-      try { document.createElement('$'); }
-      catch (error) { return error; }}());
-  // encoder
-  // [https://gist.github.com/999166] by [https://github.com/nignag]
-  object.btoa || (
-  object.btoa = function (input) {
-    for (
-      // initialize result and counter
-      var block, charCode, idx = 0, map = chars, output = '';
-      // if the next input index does not exist:
-      //   change the mapping table to "="
-      //   check if d has no fractional digits
-      input.charAt(idx | 0) || (map = '=', idx % 1);
-      // "8 - idx % 1 * 8" generates the sequence 2, 4, 6, 8
-      output += map.charAt(63 & block >> 8 - idx % 1 * 8)
-    ) {
-      charCode = input.charCodeAt(idx += 3/4);
-      if (charCode > 0xFF) throw INVALID_CHARACTER_ERR;
-      block = block << 8 | charCode;
-    }
-    return output;
-  });
-  // decoder
-  // [https://gist.github.com/1020396] by [https://github.com/atk]
-  object.atob || (
-  object.atob = function (input) {
-    input = input.replace(/=+$/, '')
-    if (input.length % 4 == 1) throw INVALID_CHARACTER_ERR;
-    for (
-      // initialize result and counters
-      var bc = 0, bs, buffer, idx = 0, output = '';
-      // get next character
-      buffer = input.charAt(idx++);
-      // character found in table? initialize bit storage and add its ascii value;
-      ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer,
-        // and if not first of each 4 characters,
-        // convert the first 8 bits to one ascii character
-        bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0
-    ) {
-      // try to find character in table (0-63, not found => -1)
-      buffer = chars.indexOf(buffer);
-    }
-    return output;
-  });
-}());
-		  </code>
-          </pre>
-                    <h2>Options</h2>
-                    <p class="well note">
-                        Enter Options Instructions Here
-                    </p>
+</code>
+</pre>
+                <p><strong>Description</strong></p>
+                <p>
+                    Gets the last vertex index or -1 if there is no vertices in the graph.
+                </p>
+            </div>
+        </div>
+    </div>
 
-                    <h3>Options</h3>
-                    <table class="table table-striped table-bordered table-condensed">
-                        <tbody>
-                            <tr>
-                                <th>Name</th>
-                                <th>Type</th>
-                                <th>Default</th>
-                                <th>Parameters</th>
-                            </tr>
-                            <tr>
-                                <td title="Option Name" class="optionName" data-content="Enter Option Description Here">
-                                    <a href="#">Option Name</a>
-                                </td>
-                                <td>Enter Option Type Here</td>
-                                <td>Enter Option Default Here</td>
-                                <td>Enter Option Parameters Here</td>
-                            </tr>
-                            <tr>
-                                <td title="Option Name" class="optionName" data-content="Enter Option Description Here">
-                                    <a href="#">Option Name</a>
-                                </td>
-                                <td>Enter Option Type Here</td>
-                                <td>Enter Option Default Here</td>
-                                <td>Enter Option Parameters Here</td>
-                            </tr>
-                            <tr>
-                                <td title="Option Name" class="optionName" data-content="Enter Option Description Here">
-                                    <a href="#">Option Name</a>
-                                </td>
-                                <td>Enter Option Type Here</td>
-                                <td>Enter Option Default Here</td>
-                                <td>Enter Option Parameters Here</td>
-                            </tr>
-                            <tr>
-                                <td title="Option Name" class="optionName" data-content="Enter Option Description Here">
-                                    <a href="#">Option Name</a>
-                                </td>
-                                <td>Enter Option Type Here</td>
-                                <td>Enter Option Default Here</td>
-                                <td>Enter Option Parameters Here</td>
-                            </tr>
-                            <tr>
-                                <td title="Option Name" class="optionName" data-content="Enter Option Description Here">
-                                    <a href="#">Option Name</a>
-                                </td>
-                                <td>Enter Option Type Here</td>
-                                <td>Enter Option Default Here</td>
-                                <td>Enter Option Parameters Here</td>
-                            </tr>
-                            <tr>
-                                <td title="Option Name" class="optionName" data-content="Enter Option Description Here">
-                                    <a href="#">Option Name</a>
-                                </td>
-                                <td>Enter Option Type Here</td>
-                                <td>Enter Option Default Here</td>
-                                <td>Enter Option Parameters Here</td>
-                            </tr>
-                            <tr>
-                                <td title="Option Name" class="optionName" data-content="Enter Option Description Here">
-                                    <a href="#">Option Name</a>
-                                </td>
-                                <td>Enter Option Type Here</td>
-                                <td>Enter Option Default Here</td>
-                                <td>Enter Option Parameters Here</td>
-                            </tr>
-                            <tr>
-                                <td title="Option Name" class="optionName" data-content="Enter Option Description Here">
-                                    <a href="#">Option Name</a>
-                                </td>
-                                <td>Enter Option Type Here</td>
-                                <td>Enter Option Default Here</td>
-                                <td>Enter Option Parameters Here</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <h2>Contributing</h2>
-                    <p class="well">
-                        Take care to maintain the existing coding style. Add <strong>Enter Unit Testing Framework</strong> unit tests for any new or changed functionality. Lint and test your code using <strong>Enter Build Tool Here</strong>.
-                    </p>
-                    <p class="well">
-                        <span class="note">
-                            After you have verified your code, send a pull request to the <em>Enter Project Name Here</em> develop branch.  After you send a pull request, you will hear back from me shortly after I review your code.  You’ll find source code in the <code>src</code> subdirectory!
-                        </span>
-                    </p>
-                    <br>
-                    <h2>Extending</h2>
-                    <p class="well">
-                        If you find that you need a feature that <em>Enter Project Name Here</em> does not currently support, either let me know via the <a href="#" target="_blank">Github issue tracker</a>, or <a href="#" target="_blank">fork the project</a> and and easily extend <em>Enter Project Name Here</em>!
-                    </p>
-                    <br>
-                    <h2>Copyright</h2>
-                    <p class="well">
-                        Copyright © 2013 Enter Author Name Here
-                    </p>
-                </div>
-            </div><!--/row-->
 
-        </div><!--/.fluid-container-->
-        <!-- Le javascript
-            ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="~/External/docs/js/rainbow/rainbow.min.js"></script>
-        <script src="~/External/docs/js/rainbow/language/generic.js"></script>
-        <script src="~/External/docs/js/rainbow/language/html.js"></script>
-        <script src="~/External/docs/js/rainbow/language/css.js"></script>
-        <script src="~/External/docs/js/rainbow/language/javascript.js"></script>
-        <script src="~/External/docs/js/rainbowlines/rainbow.linenumbers.js"></script>
-        <script src="~/External/docs/js/jquery.min.js"></script>
-        <script src="~/External/docs/js/jquery-ui.min.js"></script>
-        <script src="~/External/docs/js/bootstrap.min.js"></script>
-        <script src="~/External/docs/js/jquery.tocify.min.js"></script>
-        <script src="~/External/docs/js/prettify.js"></script>
-        <script>
-            $(function() {
 
-                $("#toc").tocify({ selectors: "h2, h3, h4", scrollTo: 60, highlightOffset: 60, extendPage: true });
+    <div>
+        <h3>Methods</h3>
+        <br />
+        <div>
+            <h4><strong>GetAdjacentVertices(int v)</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+public abstract IEnumerable&lt;int&gt; GetAdjacentVertices(int v);
+</code>
+</pre>
+                <p><strong>Parameters</strong></p>
+                <table class="table table-striped table-bordered table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                v
+                            </td>
+                            <td>int</td>
+                            <td></td>
+                            <td>The vertex index</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Description</strong></p>
+                <p>
+                    Gets a collection of indexes of the vertices that are adjacent for the vertex v
+                </p>
+            </div>
+        </div>
+        <div>
+            <h4><strong>GetAdjacentEdges(int v)</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+public abstract IEnumerable&lt;TE&gt; GetAdjacentEdges(int v);
+</code>
+</pre>
+                <p><strong>Parameters</strong></p>
+                <table class="table table-striped table-bordered table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                v
+                            </td>
+                            <td>int</td>
+                            <td></td>
+                            <td>The vertex index</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Description</strong></p>
+                <p>
+                    Gets a collection of indexes of the edges that are adjacent for the vertex v
+                </p>
+            </div>
+        </div>
+        <div>
+            <h4><strong>AddVertex(TV value)</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+public abstract int AddVertex(TV value);
+</code>
+</pre>
+                <p><strong>Parameters</strong></p>
+                <table class="table table-striped table-bordered table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                value
+                            </td>
+                            <td>TV</td>
+                            <td></td>
+                            <td>The value of the vertex</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Description</strong></p>
+                <p>
+                    Adds a new vertex to the graph.
+                </p>
+            </div>
+        </div>
+        <div>
+            <h4><strong>GetVertexData(int index)</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+public virtual TV GetVertexData(int index)
+</code>
+</pre>
+                <p><strong>Parameters</strong></p>
+                <table class="table table-striped table-bordered table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                index
+                            </td>
+                            <td>int</td>
+                            <td></td>
+                            <td>Index of the vertex</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Description</strong></p>
+                <p>
+                    Gets vertex data
+                </p>
+            </div>
+        </div>
+        <div>
+            <h4><strong>SetVertexData(int index, TV data)</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+public virtual void SetVertexData(int index, TV data)
+</code>
+</pre>
+                <p><strong>Parameters</strong></p>
+                <table class="table table-striped table-bordered table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                index
+                            </td>
+                            <td>int</td>
+                            <td></td>
+                            <td>Index of the vertex</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                data
+                            </td>
+                            <td>TV</td>
+                            <td></td>
+                            <td>Data to store in the vertex</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Description</strong></p>
+                <p>
+                    Sets data to the the vertex
+                </p>
+            </div>
+        </div>
+        <div>
+            <h4><strong>RemoveVertex(int index)</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+public abstract void RemoveVertex(int index);
+</code>
+</pre>
+                <p><strong>Parameters</strong></p>
+                <table class="table table-striped table-bordered table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                index
+                            </td>
+                            <td>int</td>
+                            <td></td>
+                            <td>Index of the vertex</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Description</strong></p>
+                <p>
+                    Removes the vertex with the specified index
+                </p>
+            </div>
+        </div>
+        <div>
+            <h4><strong>AddEdge(TE e);</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+public abstract int AddEdge(TE e);
+</code>
+</pre>
+                <p><strong>Parameters</strong></p>
+                <table class="table table-striped table-bordered table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                e
+                            </td>
+                            <td>int</td>
+                            <td></td>
+                            <td>The edge to add</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Description</strong></p>
+                <p>
+                    Adds a new edge to the graph, returns the index of the created edge
+                </p>
+            </div>
+        </div>
+        <div>
+            <h4><strong>GetEdge(int edgeIndex)</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+public virtual TE GetEdge(int edgeIndex)
+</code>
+</pre>
+                <p><strong>Parameters</strong></p>
+                <table class="table table-striped table-bordered table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>edgeIndex</td>
+                            <td>int</td>
+                            <td></td>
+                            <td>The index of the edge</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Description</strong></p>
+                <p>
+                    Gets the edge with specified index, returns the edge found
+                </p>
+            </div>
+        </div>
+        <div>
+            <h4><strong>RemoveEdge(int index)</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+public abstract void RemoveEdge(int index);
+</code>
+</pre>
+                <p><strong>Parameters</strong></p>
+                <table class="table table-striped table-bordered table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>edgeIndex</td>
+                            <td>int</td>
+                            <td></td>
+                            <td>The index of the edge</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Description</strong></p>
+                <p>
+                    Removes the edge with the specified index
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
-                prettyPrint();
 
-                $(".optionName").popover({ trigger: "hover", container: "body" });
 
-                $("a[href='#']").click(function(event) {
 
-                    event.preventDefault();
 
-                });
+<div>
+    <h2 id="anchor-list-graph">ListGraph</h2>
+    <p class="well note">
+        <strong>ListGraph</strong> respresents a list-based graph. It's a simple and fast implementation of a <a href="#anchor-graph">Graph</a> class.
+        Some methods/fields/constructors may not be described here as they are already described in the <a href="#anchor-graph">parent class</a>.
+    </p>
+    <div>
+        <h3>Constructors</h3>
+        <br />
+        <div>
+            <h4><strong>ListGraph(int capacity = 0)</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+public ListGraph(int capacity = 0)
+</code>
+</pre>
+                <p><strong>Parameters</strong></p>
+                <table class="table table-striped table-bordered table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                capacity
+                            </td>
+                            <td>int</td>
+                            <td>0</td>
+                            <td>Number of vertices</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Description</strong></p>
+                <p>
+                    Initializes a new instance of the ListGraph&lt;TV,TE&gt; class.
+                </p>
+            </div>
+        </div>
+        <div></div>
+        <br>
+    </div>
+    <div>
+        <h3>Methods</h3>
+        <br />
+        <div>
+            <h4><strong>AddVertex(TV value, int index)</strong></h4>
+            <div style="padding-left: 20px">
+                <p><strong>Syntax</strong></p>
+                <pre>
+<code data-language="csharp">
+public int AddVertex(TV value, int index)
+</code>
+</pre>
+                <p><strong>Parameters</strong></p>
+                <table class="table table-striped table-bordered table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                value
+                            </td>
+                            <td>TV</td>
+                            <td></td>
+                            <td>The vertex type</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                index
+                            </td>
+                            <td>int</td>
+                            <td></td>
+                            <td>The index of the vertex</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Description</strong></p>
+                <p>
+                    Adds a new vertex with specified index.
+                </p>
+            </div>
+        </div>
+        <div></div>
+        <br>
+    </div>
+</div>
 
-                Rainbow.color();
-            });
-        </script>
-    </body>
-</html>
+
+
+
+<h2>Contributing</h2>
+<p class="well">
+    Take care to maintain the existing coding style. Add <strong>Enter Unit Testing Framework</strong> unit tests for any new or changed functionality. Lint and test your code using <strong>Enter Build Tool Here</strong>.
+</p>
+<p class="well">
+    <span class="note">
+        After you have verified your code, send a pull request to the <em>Enter Project Name Here</em> develop branch.  After you send a pull request, you will hear back from me shortly after I review your code.  You’ll find source code in the <code>src</code> subdirectory!
+    </span>
+</p>
+<br>
+<h2>Code map</h2>
+<p class="well">
+    If you want to understand the whole stucture of the framework, you can look through the <a href="~/Images/CodeMap.png" target="_blank">code map</a> of the framework.
+</p>
+<br>

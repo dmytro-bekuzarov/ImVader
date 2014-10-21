@@ -39,10 +39,10 @@ namespace ImVader
         internal Dictionary<int, TE> Edges;
 
         /// <summary>
-        /// Contains indexes of the vertices stored in the matrix
+        /// Contains indexes of the stored vertices
         /// </summary>
         [JsonProperty]
-        protected List<int> Indexes = new List<int>();
+        protected List<int> Indexes;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Graph{TV,TE}"/> class. 
@@ -51,6 +51,7 @@ namespace ImVader
         {
             Vertices = new Dictionary<int, Vertex<TV>>();
             Edges = new Dictionary<int, TE>();
+            Indexes = new List<int>();
         }
 
         /// <summary>
@@ -180,12 +181,6 @@ namespace ImVader
         public virtual TE GetEdge(int edgeIndex)
         {
             return Edges[edgeIndex];
-        }
-
-        //TODO: Rewrite
-        public virtual IEnumerable<Edge> FindShortestPath()
-        {
-            return this.Edges.Values;
         }
 
         /// <summary>

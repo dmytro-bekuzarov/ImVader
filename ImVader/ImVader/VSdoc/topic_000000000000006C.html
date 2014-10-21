@@ -1,0 +1,417 @@
+<html DIR="LTR" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+<META NAME="save" CONTENT="history" />
+<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com">
+<TITLE>MinPq&lt;T&gt;.Min Method</TITLE>
+<xml>
+<MSHelp:TOCTitle Title="MinPq&lt;T&gt;.Min Method"/>
+<MSHelp:RLTitle Title="MinPq&lt;T&gt;.Min Method"/>
+<MSHelp:Keyword Index="A" Term="topic_000000000000006C"/>
+<MSHelp:Keyword Index="A" Term="ImVader.ShortestPaths.MinPq&lt;T&gt;.Min"/>
+<MSHelp:Keyword Index="K" Term="MinPq&lt;T&gt;.Min Method"/>
+<MSHelp:Keyword Index="K" Term="ImVader.ShortestPaths.MinPq&lt;T&gt;.Min Method"/>
+<MSHelp:Keyword Index="F" Term="ImVader.ShortestPaths.MinPq&lt;T&gt;.Min"/>
+<MSHelp:Keyword Index="F" Term="MinPq&lt;T&gt;.Min"/>
+<MSHelp:Keyword Index="F" Term="ImVader.ShortestPaths.MinPq&lt;T&gt;.MinPq&lt;T&gt;.Min"/>
+<MSHelp:Attr Name="APIType" Value="Managed" />
+<MSHelp:Attr Name="TopicType" Value="apiref" />
+<MSHelp:Attr Name="APILocation" Value="ImVader (in ImVader.dll)" />
+<MSHelp:Attr Name="APIName" Value="ImVader.ShortestPaths.MinPq&lt;T&gt;.Min" />
+<MSHelp:Attr Name="DocSet" Value="NetFxBCL" />
+<MSHelp:Attr Name="TopicType" Value="kbSyntax" />
+<MSHelp:Attr Name="DocSet" Value="NETFramework" />
+<MSHelp:Attr Name="DocSet" Value="NETFrameworkXpr" />
+<MSHelp:Attr Name="DocSet" Value="ExpressLibVS" />
+<MSHelp:Attr Name="Technology" Value="ManagedCode" />
+<MSHelp:Attr Name="TechnologyVers" Value="netframework20" />
+<MSHelp:Attr Name="DevLang" Value="VJ#" />
+<MSHelp:Attr Name="TargetOS" Value="Windows" />
+<MSHelp:Attr Name="TopicVersion" Value="02.00.00000.00000" />
+<MSHelp:Attr Name="TargetOS" Value="Windows" />
+<MSHelp:Attr Name="DevLang" Value="CSharp" />
+<MSHelp:Attr Name="DevLang" Value="VB" />
+<MSHelp:Attr Name="DevLang" Value="C++" />
+<MSHelp:Attr Name="DevLang" Value="jsharp" />
+<MSHelp:Attr Name="DevLang" Value="JScript" />
+<MSHelp:Attr Name="DocSet" Value="NetCompactFramework" />
+<MSHelp:Attr Name="Technology" Value="kbNetFramewk" />
+<MSHelp:Attr Name="Technology" Value="kbNetCompactFramewk" />
+<MSHelp:Attr Name="Locale" Value="en-us" />
+<MSHelp:Attr Name="AssetID" Value="ImVader.ShortestPaths.MinPq&lt;T&gt;.Min" />
+<MSHelp:Attr Name="codelang" Value="kbLangVB" />
+<MSHelp:Attr Name="codelang" Value="CSharp" />
+<MSHelp:Attr Name="codelang" Value="kbLangCPP" />
+<MSHelp:Attr Name="codelang" Value="VJ#" />
+<MSHelp:Attr Name="codelang" Value="kbJScript" />
+</xml>
+
+		<link rel="stylesheet" type="text/css" href="msdn2/msdn2.css"></link>
+		<script src="msdn2/msdn2.js"></script>
+		<script src="SyntaxHighlighter/scripts/shCore_helixoft.js"></script>
+		<script src="SyntaxHighlighter/scripts/shBrushVb.js"></script>
+		<script src="SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+		<script src="SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+		<script src="SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+		<link href="SyntaxHighlighter/styles/shCore.css" rel="stylesheet" type="text/css" />
+		<link href="SyntaxHighlighter/styles/shThemeVS.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all()
+		</script>				
+
+		<link rel="stylesheet" type="text/css" href="ms-help://MS.VSCC.v90/dv_vscccommon/styles/presentation.css">
+		</link>
+		<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css">
+		</link>
+
+  	<script type="text/javascript">
+<!--
+if (self.name != "vbdocright") {
+	if (location.search != "?toc=no") {
+		var filename = location.pathname.replace(/\\/g, "/");
+		filename = filename.substring(filename.lastIndexOf('/')+1);
+		location.replace("index.html#" + filename);
+	} 
+}
+
+function replaceTitleAndUrl(win, title, url) {
+	if(history.replaceState) {
+		win.history.replaceState(null, title, url);
+	} else {
+		win.document.title = document.title;
+		win.location.replace(url);
+	}
+}
+//-->
+		</script>	
+</HEAD>
+
+<body style="direction: ltr;">
+	<script>
+		try {
+			if (location.search != "?toc=no") {
+				parent.document.title = document.title;
+				var filename = location.pathname.replace(/\\/g, "/");
+				filename = filename.substring(filename.lastIndexOf('/')+1);
+				if (window.parent.location.search == null || window.parent.location.search != "?" + filename) {
+					if (window.parent.location.hash == null || window.parent.location.hash != "#" + filename) {
+						replaceTitleAndUrl(window.parent, document.title, "index.html#" + filename);
+					}
+				}
+			}
+		} catch (ex) {}
+	</script>
+<!--NONSCROLLING BANNER START-->
+    <input type="hidden" id="userDataCache" class="userDataStyle"></input>
+    <input type="hidden" id="hiddenScrollOffset"></input>
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="msdn9/dropdown.gif"></img>
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="msdn9/dropdownHover.gif"></img>
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="msdn2/collapse_all.gif"></img>
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="msdn2/expand_all.gif"></img>
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="msdn2/collall.gif"></img>
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="msdn2/expall.gif"></img>
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="msdn2/copycode.gif"></img>
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="msdn2/copycodeHighlight.gif"></img>
+    
+    <div id="header">
+      <table id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+              <img ID="toggleAllImage" class="toggleAll" src="msdn2/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label>
+            </span>
+            <span>    </span>
+            <span id="devlangsDropdown" class="filter" tabindex="0">
+              <img id="devlangsDropdownImage" src="msdn9/dropdown.gif" />
+              <label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label><label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label><label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label><label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label><label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label><label id="devlangsMenuJSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: J# </nobr></label><label id="devlangsMenuJScriptLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: JScript </nobr></label>
+            </span>
+            <span>    </span>
+            <span id="memberOptionsDropdown" class="filter" tabindex="0" style="display: none;">
+              <img id="memberOptionsDropdownImage" src="msdn9/dropdown.gif" />
+              <label id="memberOptionsMenuAllLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members Options: Show All </nobr></label>
+              <label id="memberOptionsMenuMultipleLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members Options: Filtered </nobr></label>
+              <label id="memberOptionsMenuProtectedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members Options: Filtered </nobr></label>
+              <label id="memberOptionsMenuInheritedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members Options: Filtered </nobr></label>
+            </span>
+            <span>    </span>
+            <span id="memberFrameworksDropdown" class="filter" tabindex="0" style="display: none;">
+              <img id="memberFrameworksDropdownImage" src="msdn9/dropdown.gif" /> 
+              <label id="memberFrameworksMenuAllLabel" for="memberFrameworksDropdownImage" style="display: none;"><nobr>Frameworks: Show All </nobr></label>
+              <label id="memberFrameworksMenuMultipleLabel" for="memberFrameworksDropdownImage" style="display: none;"><nobr>Frameworks: Multiple </nobr></label>
+              <label id="memberFrameworksMenunetfwLabel" for="memberFrameworksDropdownImage" style="display: none;"><nobr>Frameworks: .NET Framework Only </nobr></label>
+              <label id="memberFrameworksMenunetcfwLabel" for="memberFrameworksDropdownImage" style="display: none;"><nobr>Frameworks: .NET Compact Framework Only </nobr></label>
+              <label id="memberFrameworksMenuxnafwLabel" for="memberFrameworksDropdownImage" style="display: none;"><nobr>Frameworks: XNA Framework Only </nobr></label></span>
+          </td>
+        </tr>
+      </table>
+      <div id="devlangsMenu">
+        <input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguageEx(this)" />
+        <label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label>
+        <br />
+
+        <input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguageEx(this)" />
+        <label class="checkboxLabel" for="CSharpCheckbox">C#</label>
+        <br />
+
+        <input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguageEx(this)" />
+        <label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label>
+        <br />
+
+        <input id="JScriptCheckbox" type="checkbox" data="JScript,cs,'persist'" value="on" onClick="SetLanguageEx(this)" />
+        <label class="checkboxLabel" for="JScriptCheckbox">JScript</label>
+        <br />
+        
+      </div>
+      <div id="memberOptionsMenu">
+        <input id="ProtectedCheckbox" type="checkbox" data="Protected" value="on" onClick="SetMemberOptions(this, 'vis')" />
+        <label class="checkboxLabel" for="ProtectedCheckbox">Include Protected Members</label>
+        <br />
+        <input id="InheritedCheckbox" type="checkbox" data="Inherited" value="on" onClick="SetMemberOptions(this, 'decl')" />
+        <label class="checkboxLabel" for="InheritedCheckbox">Include Inherited Members</label>
+        <br />
+      </div>
+      <div id="memberFrameworksMenu">
+        <input id="netfwCheckbox" type="checkbox" data="netfw,'persist'" value="on" onClick="SetMemberFrameworks(this)" />
+        <label class="checkboxLabel" for="netfwCheckbox">Include .NET Framework Members</label>
+        <br />
+        <input id="netcfwCheckbox" type="checkbox" data="netcfw,'persist'" value="on" onClick="SetMemberFrameworks(this)" />
+        <label class="checkboxLabel" for="netcfwCheckbox">Include .NET Compact Framework Members</label>
+        <br />
+        <input id="xnafwCheckbox" type="checkbox" data="xnafw,'persist'" value="on" onClick="SetMemberFrameworks(this)" />
+        <label class="checkboxLabel" for="xnafwCheckbox">Include XNA Framework Members</label>
+        <br />
+      </div>
+      <table id="topTable" cellpadding="0" cellspacing="0">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ImVader Reference</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">MinPq&lt;T&gt;.Min Method</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td align="left">
+
+
+          	<a href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See Also</a>
+
+            </td>
+        </tr>
+      </table>
+      <table id="gradientTable">
+        <tr>
+          <td class="nsrBottom" background="msdn9/gradient.gif" />
+        </tr>
+      </table>
+    </div>
+<!--NONSCROLLING BANNER END-->
+    
+		<div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()">
+        </div>
+        <p />
+       
+        smallest element
+
+
+        <p /><b>Namespace:</b>
+<a href="topic_0000000000000061.html">ImVader.ShortestPaths</a>
+
+
+
+
+        <br /><b>Assembly:</b> ImVader (in ImVader.dll)
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="heading" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><span 
+  onclick="ExpandCollapse(syntaxToggle)" style="cursor:default;"
+	onkeypress="ExpandCollapse_CheckKey(syntaxToggle)"
+	tabindex="0"><img
+	id="syntaxToggle" onload="OnLoadImage()" class="toggle" name="toggleSwitch" alt="Expand
+	image" src="msdn2/expand_all.gif"></img>Syntax</span></h1>
+	
+<div id="syntaxSection" class="section" name="collapseableSection" style="display: none;" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+	<div id="syntaxCodeBlocks" class="code">
+	  <span codeLanguage="VisualBasicDeclaration">
+		  <table>
+			  <tr>
+		      <th>Visual Basic (Declaration)</th>
+		    </tr>
+		    <tr>
+		      <td><pre xml:space="preserve" class="brush: vb">Public Function Min() As T</pre></td>
+		    </tr>
+		  </table>
+		</span>
+		
+		<span codeLanguage="CSharp">
+			<table>
+				<tr>
+					<th>
+						C#
+					</th>
+				</tr>
+				<tr>
+					<td><pre xml:space="preserve" class="brush: csharp">public T Min()</pre></td>
+				</tr>
+			</table>
+		</span>
+		
+		<span codeLanguage="ManagedCPlusPlus">
+			<table>
+				<tr>
+					<th>
+						C++
+					</th>
+				</tr>
+				<tr>
+          <td><pre xml:space="preserve" class="brush: cpp">public: &nbsp;<br>T^ Min() </pre></td>
+				</tr>
+			</table>
+		</span>
+		
+		<span codeLanguage="JScript">
+			<table>
+				<tr>
+					<th>
+						JScript
+					</th>
+				</tr>
+				<tr>
+          <td><pre xml:space="preserve" class="brush: js">public function Min() : <a target="_top" href=".html" onclick="this.target='';return true;">T</a>;</pre></td>								</tr>
+				</tr>
+			</table>
+		</span>
+		
+	</div>
+
+
+
+	<h4 class="subHeading">
+		Return Value</h4>
+  The <a target="_top" href=".html" onclick="this.target='';return true;">T</a>.
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="heading">
+	<span onclick="ExpandCollapse(platformsToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(platformsToggle)" tabindex="0">
+		<img id="platformsToggle" onload="OnLoadImage()" class="toggle" name="toggleSwitch" alt="Expand image" src="msdn2/expand_all.gif">
+		</img>
+		Platforms
+	</span></h1>
+<div id="platformsSection" class="section" name="collapseableSection" style="display: none;">
+	<p>
+		<supportedPlatforms xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+			Windows 8, Windows Server 2012, Windows 7, Windows Vista SP1 or later, Windows XP SP3, Windows XP SP2 x64 Edition, Windows Server 2008 (Server Core not supported), Windows Server 2008 R2 (Server Core supported with SP1 or later), Windows Server 2003 SP2
+			</supportedPlatforms>
+	</p>
+	<p>
+		The .NET Framework does not support all versions of every platform. For a list of the supported versions, see 
+		<a target="_top" href="http://msdn2.microsoft.com/en-us/library/298275e2-da1d-4618-9f74-6a3567832350.aspx">System Requirements</a>.
+	</p>
+</div>
+
+
+
+  
+
+	
+
+	
+	
+
+<h1 class="heading">
+	<span onclick="ExpandCollapse(frameworksToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(frameworksToggle)" tabindex="0">
+		<img id="frameworksToggle" onload="OnLoadImage()" class="toggle" name="toggleSwitch" alt="Expand image" src="msdn2/expand_all.gif">
+		</img>
+		Version Information
+	</span></h1>
+<div id="frameworksSection" class="section" name="collapseableSection" style="display: none;">
+  <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4, 3.5, 3.0, 2.0, 1.1, 1.0<br />
+
+	<h4 class="subHeading">.NET Compact Framework</h4>Supported in: 3.5, 2.0, 1.0<br />
+
+	<h4 class="subHeading">XNA Framework</h4>Supported in: 3.0, 2.0, 1.0<br />
+	
+</div>
+
+<h1 class="heading">
+	<span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle)" tabindex="0">
+		<img id="seeAlsoToggle" onload="OnLoadImage()" class="toggle" name="toggleSwitch" alt="Expand image" src="msdn2/expand_all.gif">
+		</img>
+		See Also
+	</span></h1>
+<div id="seeAlsoSection" class="section" name="collapseableSection" style="display: none;">
+	<div>
+		<h4 class="subHeading">
+			Reference</h4>
+		<a href="topic_0000000000000067.html">MinPq&lt;T&gt; Class</a><br />
+<a href="topic_0000000000000067_members--.html">MinPq&lt;T&gt; Members</a><br />
+
+
+
+<a href="topic_0000000000000061.html">ImVader.ShortestPaths Namespace</a><br />
+
+
+		
+
+	</div>
+</div>
+			</div>
+      <div id="footer">
+        <div class="footerLine">
+          <img alt="Footer image" width="100%" height="3px" src="msdn2/footer.gif">
+          </img>
+        </div>
+          <font color="#FF0000">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></font>&nbsp;<br>Your own footer text will only be shown in registered version.
+      </div>
+    </div>
+  	<script type="text/javascript">
+<!--
+	try {
+		parent.frames["vbdocswitch"].expandLinkInToc(location.href);
+	} catch (ex) {}
+//-->
+		</script>	
+  </body>
+</html>
+

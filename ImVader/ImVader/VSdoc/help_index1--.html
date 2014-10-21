@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Index</title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<style>
+		html,body {
+			margin: 0; padding: 0px;
+			height:100%; 
+			min-height:100%;
+			background-color: rgb(233,232,220);
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-style: normal;
+			font-weight: normal;
+			color: black;
+		}
+
+		body {font-size:75%;position:relative; margin-top:-1px; border-style: solid solid solid solid;	border-color: rgb(172,168,153);	border-width: 0px 0px 1px 0px;}
+		a { text-decoration:none; color:#06c }
+		form {padding:5px; margin:0px;}
+	</style>
+</head>
+<body style="direction: ltr;">
+	<form>
+	Look for:<br /><input style="width:100%" onKeyDown="check_input(this.value,get_match)" onKeyUp="check_input(this.value,get_match)"/>
+	</form>
+
+	<script>
+		var words = new Array(
+"Add Method","AddEdge Method {ImVader.DirectedListGraph&lt;TV, TE&gt;}","AddEdge Method {ImVader.DirectedMatrixGraph&lt;TV, TE&gt;}","AddEdge Method {ImVader.Graph&lt;TV, TE&gt;}","AddEdge Method {ImVader.ListGraph&lt;TV, TE&gt;}","AddEdge Method {ImVader.MatrixGraph&lt;TV, TE&gt;}","AddVertex (TV) Method {ImVader.ListGraph&lt;TV, TE&gt;}","AddVertex (TV, Int32) Method {ImVader.ListGraph&lt;TV, TE&gt;}","AddVertex Method {ImVader.Graph&lt;TV, TE&gt;}","AddVertex Method {ImVader.MatrixGraph&lt;TV, TE&gt;}","AdjacencyList&lt;,&gt;.AdjacencyList Field","Bfs Method","BreadthFirstPathes&lt;TV, TE&gt; Class","BreadthFirstPathes&lt;TV, TE&gt; Constructor","ChangeOrAdd Method","CheckVerticesIndexes Method","Compare Method","CompareTo Method","Components&lt;,&gt;.Components Field","CopyWeighted Method","Data Property","DelMin Method","DepthFirstPathes&lt;TV, TE&gt; Class","DepthFirstPathes&lt;TV, TE&gt; Constructor","Deserialize (Stream) Method","Deserialize (String) Method","Dfs Method","Dijkstra&lt;TV, TE&gt; Class","Dijkstra&lt;TV, TE&gt; Constructor","DirectedListGraph&lt;TV, TE&gt; Class","DirectedListGraph&lt;TV, TE&gt; Constructor","DirectedMatrixGraph&lt;TV, TE&gt; Class","DirectedMatrixGraph&lt;TV, TE&gt; Constructor","DistTo Field","Edge Class","Edge Constructor","EdgeTo Field","Edges&lt;,&gt;.Edges Field","EdgesCount Property","Either Method","Exch Method","From Property","G&lt;,&gt;.G Field","GetAdjacentEdges Method {ImVader.Graph&lt;TV, TE&gt;}","GetAdjacentEdges Method {ImVader.ListGraph&lt;TV, TE&gt;}","GetAdjacentEdges Method {ImVader.MatrixGraph&lt;TV, TE&gt;}","GetAdjacentVertices Method {ImVader.Graph&lt;TV, TE&gt;}","GetAdjacentVertices Method {ImVader.ListGraph&lt;TV, TE&gt;}","GetAdjacentVertices Method {ImVader.MatrixGraph&lt;TV, TE&gt;}","GetAsEnumerable Method","GetDistTo Method","GetEdge Method","GetMst Method","GetMstEdges Method","GetMstTree Method","GetMstWeight Method","GetShortestPathesList Method","GetVertexData Method","Graph&lt;TV, TE&gt; Class","Graph&lt;TV, TE&gt; Constructor","Greater Method","HasPathTo Method {ImVader.Algorithms.BreadthFirstPathes&lt;TV, TE&gt;}","HasPathTo Method {ImVader.Algorithms.DepthFirstPathes&lt;TV, TE&gt;}","HasPathTo Method {ImVader.ShortestPaths.ShortestPath&lt;TV, TE&gt;}","HasPathToVertex Method","IDirectedGraph Interface","ImVader Namespace","ImVader Reference","ImVader.Algorithms Namespace","ImVader.ShortestPaths Namespace","ImVader.Utils Namespace","IndexOf Method","Indexes&lt;,&gt;.Indexes Field","Inf Field","Init (IEnumerable&lt;Int32&gt;) Method","Init (IEnumerable&lt;TE&gt;, IEnumerable&lt;Int32&gt;) Method","Insert Method","IsEmpty Method","Item Property {ImVader.MatrixGraph&lt;TV, TE&gt;}","Item Property {ImVader.Utils.SquareMatrix&lt;T&gt;}","JsonSerializer&lt;T&gt; Class","LastEdgeIndex Property","LastVertexIndex Property","ListGraph&lt;TV, TE&gt; Class","ListGraph&lt;TV, TE&gt; Constructor","Matrix&lt;,&gt;.Matrix Field","MatrixGraph&lt;TV, TE&gt; Class","MatrixGraph&lt;TV, TE&gt; Constructor","Min Method","MinPq&lt;T&gt;  Constructor","MinPq&lt;T&gt; (Int32) Constructor","MinPq&lt;T&gt; Class","MinimalSpanningTree&lt;TV, TE&gt; Class","MinimalSpanningTree&lt;TV, TE&gt; Constructor","N Property","Node Class","Node Constructor","OrderComparer Class","Other Method","PathTo Method {ImVader.Algorithms.BreadthFirstPathes&lt;TV, TE&gt;}","PathTo Method {ImVader.Algorithms.DepthFirstPathes&lt;TV, TE&gt;}","PathTo Method {ImVader.ShortestPaths.ShortestPath&lt;TV, TE&gt;}","PathToAsIds Method","Relax Method","Remove Method","RemoveEdge Method {ImVader.DirectedListGraph&lt;TV, TE&gt;}","RemoveEdge Method {ImVader.DirectedMatrixGraph&lt;TV, TE&gt;}","RemoveEdge Method {ImVader.Graph&lt;TV, TE&gt;}","RemoveEdge Method {ImVader.ListGraph&lt;TV, TE&gt;}","RemoveEdge Method {ImVader.MatrixGraph&lt;TV, TE&gt;}","RemoveVertex Method {ImVader.Graph&lt;TV, TE&gt;}","RemoveVertex Method {ImVader.ListGraph&lt;TV, TE&gt;}","RemoveVertex Method {ImVader.MatrixGraph&lt;TV, TE&gt;}","Resize Method","Serialize (T) Method","Serialize (T, Stream) Method","SetVertexData Method","ShortestPath&lt;TV, TE&gt; Class","ShortestPath&lt;TV, TE&gt; Constructor","Sink Method","Size Method","Size Property","SquareMatrix&lt;T&gt; Class","SquareMatrix&lt;T&gt; Constructor","StrongComponents&lt;TV, TE&gt; Class","StrongComponents&lt;TV, TE&gt; Constructor","Swim Method","Timein Field","Timeout Field","To Property","UnweightedEdge Class","UnweightedEdge Constructor","Vertex&lt;T&gt;  Constructor","Vertex&lt;T&gt; (T) Constructor","Vertex&lt;T&gt; Class","VertexCount Property","Vertices&lt;,&gt;.Vertices Field","Weight Property {ImVader.ShortestPaths.Node}","Weight Property {ImVader.WeightedEdge}","WeightedEdge Class","WeightedEdge Constructor","edgeTo Field {ImVader.Algorithms.BreadthFirstPathes&lt;TV, TE&gt;}","edgeTo Field {ImVader.Algorithms.DepthFirstPathes&lt;TV, TE&gt;}","edges Field","marked Field {ImVader.Algorithms.BreadthFirstPathes&lt;TV, TE&gt;}","marked Field {ImVader.Algorithms.DepthFirstPathes&lt;TV, TE&gt;}","minE Field","mst&lt;,&gt;.mst Field","mstEdges&lt;,&gt;.mstEdges Field","pq&lt;,&gt;.pq Field","s Field {ImVader.Algorithms.BreadthFirstPathes&lt;TV, TE&gt;}","s Field {ImVader.Algorithms.DepthFirstPathes&lt;TV, TE&gt;}","selE Field","used Field"
+		);
+		
+		
+		var oldHighlight = 0;
+		var oldKey = "";
+		
+		function get_match(text) {
+		    var ltext = text.toLowerCase();
+		    for(i in words) {
+		        if(words[i].toLowerCase().indexOf(ltext) == "0") {
+		            return words[i];
+		        }
+		    }
+		    return "";
+		}
+		
+		function highlight(keyword) {
+		    if(oldHighlight) oldHighlight.className = "";
+		    var el = parent.frames['zindex'].document.getElementById("w_"+keyword);
+		    el.className="highlighted";
+		    oldHighlight = el;
+		}
+		
+		function check_input(text, matchfun) {
+		    if(text!=oldKey) {
+		        var keyword = matchfun(text);
+		        if(keyword) {       
+		            highlight(keyword);
+		            parent.frames['zindex'].document.getElementById('w_'+keyword).scrollIntoView();
+		        }
+		        oldKey = text;
+		    }
+		}
+	</script>
+</body>
+</html>
+

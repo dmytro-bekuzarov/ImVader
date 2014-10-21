@@ -35,9 +35,7 @@ namespace ImVader
         /// <summary>
         /// Adds a new edge to the graph
         /// </summary>
-        /// <param name="e">
-        /// The edge to add
-        /// </param>
+        /// <param name="e">The edge to add</param>
         /// <returns>
         /// The index of the created edge
         /// </returns>
