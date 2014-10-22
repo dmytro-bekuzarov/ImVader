@@ -35,12 +35,12 @@ namespace ImVader
         /// <summary>
         /// Gets or sets first vertex id.
         /// </summary>
-        public int From { get; protected set; }
+        public int From { get; internal set; }
 
         /// <summary>
         /// Gets or sets second vertex id.
         /// </summary>
-        public int To { get; protected set; }
+        public int To { get; internal set; }
 
         /// <summary>
         /// Returns the first vertex of the edge

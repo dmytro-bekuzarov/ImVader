@@ -30,7 +30,7 @@ namespace ImVader
         /// A collection of vertices in the graph
         /// </summary>
         [JsonProperty]
-        protected Dictionary<int, Vertex<TV>> Vertices;
+        internal Dictionary<int, Vertex<TV>> Vertices;
 
         /// <summary>
         /// Contains all edges in the graph
@@ -42,7 +42,7 @@ namespace ImVader
         /// Contains indexes of the stored vertices
         /// </summary>
         [JsonProperty]
-        protected List<int> Indexes;
+        internal List<int> Indexes;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Graph{TV,TE}"/> class. 
