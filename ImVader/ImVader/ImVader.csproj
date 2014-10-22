@@ -37,6 +37,7 @@
     <Compile Include="Algorithms\BreadthFirstPathes.cs" />
     <Compile Include="Algorithms\DepthFirstPathes.cs" />
     <Compile Include="Algorithms\MinimalSpanningTree.cs" />
+    <Compile Include="Algorithms\MinimumCuts.cs" />
     <Compile Include="Algorithms\StrongComponents.cs" />
     <Compile Include="DirectedListGraph.cs" />
     <Compile Include="DirectedMatrixGraph.cs" />

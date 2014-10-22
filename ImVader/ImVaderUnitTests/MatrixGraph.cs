@@ -8,7 +8,7 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public class MatrixGraph
+    public class MatrixGraphTest
     {
         [TestMethod]
         public void InitEmpty()

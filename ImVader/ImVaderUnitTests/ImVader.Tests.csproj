@@ -58,9 +58,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AlgorithmsTests\BreathFirstPassesTest.cs" />
-    <Compile Include="AlgorithmsTests\DepthFirstPassesTest.cs" />
-    <Compile Include="AlgorithmsTests\MinimalSpanningTreeTest.cs" />
-    <Compile Include="AlgorithmsTests\StrongComponentsTest.cs" />
+    <Compile Include="AlgorithmsTests\MinCutsTest.cs" />
     <Compile Include="ListGraph.cs" />
     <Compile Include="MatrixGraph.cs" />
     <Compile Include="ShortestPaths.cs" />
@@ -69,7 +67,6 @@
     <Compile Include="DirectedMatrixGraph.cs" />
     <Compile Include="DirectedListGraph.cs" />
     <Compile Include="Serialization.cs" />
-    <Compile Include="ShortestPathesTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ImVader\ImVader.csproj">
