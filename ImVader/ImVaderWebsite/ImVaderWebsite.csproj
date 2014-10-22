@@ -238,6 +238,7 @@
     <Content Include="External\graph.js" />
     <Content Include="External\jquery\jquery-2.1.1.min.js" />
     <Content Include="External\spinner.js" />
+    <Content Include="External\toolTips.js" />
     <Content Include="External\util.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -291,6 +292,10 @@
     <Content Include="Images\components\pattern-grid-light.png" />
     <Content Include="Images\components\pattern-grid-light2x.png" />
     <Content Include="Images\components\timeline-star.svg" />
+    <Content Include="Images\DemoPage\actions.jpg" />
+    <Content Include="Images\DemoPage\friends.jpg" />
+    <Content Include="Images\DemoPage\getfriends.jpg" />
+    <Content Include="Images\DemoPage\login.jpg" />
     <Content Include="Images\gallery\large\gallery-img1.jpg" />
     <Content Include="Images\gallery\large\gallery-img10.jpg" />
     <Content Include="Images\gallery\large\gallery-img11.jpg" />
