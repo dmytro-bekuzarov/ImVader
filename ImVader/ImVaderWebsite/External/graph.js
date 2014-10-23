@@ -147,8 +147,7 @@ function addEdge(from, to) {
         if (data.edges._data[ed].from == to && data.edges._data[ed].to == from)
             return edges;
     }
-    var val = Math.random() * 200;
-    edges.add({ from: from, to: to, color: 'grey', value: val });
+    edges.add({ from: from, to: to, color: 'grey' });
     return edges;
 }
 
