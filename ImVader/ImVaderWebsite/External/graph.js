@@ -81,7 +81,7 @@ function addEdge(from, to, value) {
 function hasEdge(from, to){
     for (var i=0;i<edges._data.length;i++)
     {
-        if (edges._data[i].from == from || edges._data[i].to == from)
+        if ((edges._data[i].from == from && edges._data[i].to == to))// || (edges._data[i].to == from && edges._data[i].from == to))
             return true;
     }
     return false;
