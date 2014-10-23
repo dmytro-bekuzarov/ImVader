@@ -42,16 +42,27 @@ function getFriends() {
                 offsetArray[user_id] = 0;
             }
             VK.Api.call('friends.get', { user_id: user_id, fields: "photo_200_orig,sex,counters", offset: offsetArray[user_id], count : 5 }, function (r) {
+                counter=0;
                 if (r.response) {
                     offsetArray[user_id]+=5;
-                    time = r.response.length;
+                    friends = new Array();
+                    time = friends.length;
                     console.log(r.response);
                     for (var i=0;i<r.response.length;i++)
                     {
-                        if (!isAdded(r.response[i].uid)){
-                                    addNode(r.response[i]);
-                        }
-                        getMutual(user_id, r.response[i].uid);
+                        friends[i]=r.response[i];
+                        VK.Api.call('friends.getMutual', {source_uid: user_id, target_uid:friends[i].uid}, function (resp){
+                            if (resp.response)
+                            {
+                                console.log(friends[counter]);
+                                if (!isAdded(friends[counter].uid)){
+                                    addNode(friends[counter]);
+                                }
+                                addEdge(user_id, friends[counter].uid, resp.response.length);
+                                counter++;
+                            }
+                        });
+
                     }
                     //Value - вес ребра
                 }
@@ -64,16 +75,5 @@ function getFriends() {
     else {
         console.log('not auth');
     }
-}
-function getMutual(from, to)
-{
-    var fr = from, t = to;
-    var func = VK.Api.call('friends.getMutual', {source_uid: from, target_uid:to}, function (resp){
-                            if (resp.response)
-                            {
-                                addEdge(fr, t, resp.response.length);
-                                console.log("Call");
-                            }
-                        });
-    return func;
+
 }
