@@ -1,36 +1,175 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
-<div class="container">
-    <div class="jumbotron">
-        <h1>IMVADER</h1>
-        <p class="lead">IMVADER is an algorithmic graph library build with and for C# applications .</p>
-
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                Structure and documentation
-            </p>
-            <p><a class="btn btn-default" href="~/VSdoc/index.html">Learn More</a></p>
+<!-- Page title -->
+<div class="home-title-wrapper">
+    <div class="pattern-light-wrapper">
+        <div class="container">
+            <h2 class="page-title-main">ImVader</h2>
+            <h3 class="page-title-secondary">the best framework to work with graphs</h3>
         </div>
-        <div class="col-md-4">
-            <h2>Download</h2>
-            <p>
-                Download the libary and start building your applications
-            </p>
-            <p><a class="btn btn-default" href="http://ge.tt/api/1/files/3xHQFR22/0/blob?download">Download Library</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Demo</h2>
-            <p>
-                See the demo usage of the IMVADER lib in a web project
-            </p>
-            <p><a class="btn btn-default" href="@Url.Action("Demo","Home")">DEMO</a></p>
-        </div>
+        <div class="decorative-lines"></div>
+        <div class="container">
 
+            <div class="circle-info-buttons">
+                <!-- Circle info button -->
+                <div class="circle-info-wrapper">
+                    <div class="circle-info">
+                        <div class="circle-info__front">
+                            <h4 class="circle-info__title">Fast</h4>
+                        </div>
+                        <div class="circle-info__back">
+                            <h4 class="circle-info__title">Fast</h4>
+                            <p class="circle-info__text hidden-xs">ImVader is a pretty fast framework comparing to its analogues</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Circle info button -->
+                <!-- Circle info button -->
+                <div class="circle-info-wrapper">
+                    <div class="circle-info">
+                        <div class="circle-info__front">
+                            <h4 class="circle-info__title">Easy</h4>
+                        </div>
+                        <div class="circle-info__back">
+                            <h4 class="circle-info__title">Easy</h4>
+                            <p class="circle-info__text hidden-xs">ImVader is really easy to use as it has a simple structure</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Circle info button -->
+                <!-- Circle info button -->
+                <div class="circle-info-wrapper">
+                    <div class="circle-info">
+                        <div class="circle-info__front">
+                            <h4 class="circle-info__title">Powerful</h4>
+                        </div>
+                        <div class="circle-info__back">
+                            <h4 class="circle-info__title">Powerful</h4>
+                            <p class="circle-info__text hidden-xs">ImVader can work with any types of graphs</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Circle info button -->
+            </div>
+        </div>
+        <div class="divider-simple"></div>
     </div>
 </div>
+<!-- End Page title -->
+<!-- Promobox -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="promobox hidden-xs promobox-position">
+                <p class="promobox__text">ImVader is totally free and ready to use. Click the link on the right to download</p>
+                <a class="btn btn--highlight btn-wider" href="http://ge.tt/api/1/files/3xHQFR22/0/blob?download">Download</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Begin page section -->
+<section class="services services--preview">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="divider-circle divider-circle--light"></div>
+                <h2 class="section-title"><span class="text-highlight">Features</span></h2>
+            </div>
+        </div>
+    </div>
+    <!-- Decorated slider -->
+    <div class="decorated-slider-wrapper">
+        <div class="decorative-lines"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="swiper-controls decorated-slider-controls">
+                        <a class="prev-arrow" href="#"></a>
+                        <a class="next-arrow" href="#"></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="swiper-container decorated-slider">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide swiper-slide--active" data-order="slide1">
+                                <div class="services__item">
+                                    <i class="icon icon-circle icon-circle--lg fa fa-cog"></i>
+                                    <h4 class="service__title">Quick Support</h4>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide" data-order="slide2">
+                                <div class="services__item">
+                                    <i class="icon icon-circle icon-circle--lg fa fa-users"></i>
+                                    <h4 class="service__title">Open source</h4>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide" data-order="slide3">
+                                <div class="services__item">
+                                    <i class="icon icon-circle icon-circle--lg fa fa-refresh"></i>
+                                    <h4 class="service__title">Instant updates</h4>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide" data-order="slide4">
+                                <div class="services__item">
+                                    <i class="icon icon-circle icon-circle--lg fa fa-edit"></i>
+                                    <h4 class="service__title">Flexibility</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service__info">
+                        <p class="service__description slide1 service__description--active">You can recieves quick help on the contact page (coming soon) or just <a href="mailto:dima95kh@gmail.com">email us</a>.</p>
+                        <p class="service__description slide2">ImVader is an open-source project. You can follow us on <a href="https://github.com/Konnor95/ImVader/">GitHub</a>. If you have any ideas or suggestions concerning the project, <a href="mailto:dima95kh@gmail.com">email us</a>.</p>
+                        <p class="service__description slide3">The project is updated frequently and is fully supported.</p>
+                        <p class="service__description slide4">ImVader is a flexible framework. You can easily extend or override basic functionality</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Decorated slider -->
+</section>
+<!-- End page section -->
+
+@section bottom
+{
+    <script src="~/External/jquery-event/jquery.event.drag-2.2.js"></script>		<!--Script jquery event Drag-->
+<script src="~/External/jquery-event/jquery.event.drop-2.2.js"></script>		<!--Script jquery event Drop-->
+<script src="~/External/jquery-easing/jquery.easing.1.3.js"></script>			<!--Script jquery Easing-->
+<script src="~/External/jquery-roundabout/jquery.roundabout.min.js"></script>	<!--Script Roundabout-->
+<script src="~/External/swiper/idangerous.swiper.min.js"></script>			<!--Script Swiper slider -->
+<script src="~/External/jquery-twitter/jquery.twitter.js"></script>			<!--Script Twitter-->
+    <script src="~/External/jflickrfeed/jflickrfeed.js"></script>					<!--Script Widget Flikr-->
+    
+    <script>
+    $(document).ready(function() {
+
+	//Button hover
+	init_ButtonInfo();
+
+	init_Button ();
+
+	//Roundabout slider
+	init_Roundabout();
+
+	//Swiper
+	init_DecoratedSlider();
+
+	init_QoutationSlider();
+
+	//Services hover
+	init_ServicesInfo();
+});
+</script>
+}
+@section head{
+    <style>
+        .services .service__description {
+            font-size: 20px;
+        }
+    </style>
+}

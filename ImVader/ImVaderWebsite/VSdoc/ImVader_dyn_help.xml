@@ -10,7 +10,7 @@
          <KItem Name="ImVader.Utils.SquareMatrix<T>.Add" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderUtilsSquareMatrix`1ClassAddTopic.html" LinkGroup="ImVader">Add Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_00000000000000A2.html" LinkGroup="ImVader">Add Method</LItem>
       </Links>
    </Context>
    
@@ -20,7 +20,7 @@
          <KItem Name="ImVader.DirectedListGraph<TV, TE>.AddEdge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderDirectedListGraph`2ClassAddEdgeTopic.html" LinkGroup="ImVader">AddEdge Method {ImVader.DirectedListGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000003A.html" LinkGroup="ImVader">AddEdge Method {ImVader.DirectedListGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -30,7 +30,7 @@
          <KItem Name="ImVader.DirectedMatrixGraph<TV, TE>.AddEdge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderDirectedMatrixGraph`2ClassAddEdgeTopic.html" LinkGroup="ImVader">AddEdge Method {ImVader.DirectedMatrixGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000003E.html" LinkGroup="ImVader">AddEdge Method {ImVader.DirectedMatrixGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -40,7 +40,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.AddEdge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassAddEdgeTopic.html" LinkGroup="ImVader">AddEdge Method {ImVader.Graph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000055.html" LinkGroup="ImVader">AddEdge Method {ImVader.Graph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -50,7 +50,7 @@
          <KItem Name="ImVader.ListGraph<TV, TE>.AddEdge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderListGraph`2ClassAddEdgeTopic.html" LinkGroup="ImVader">AddEdge Method {ImVader.ListGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000066.html" LinkGroup="ImVader">AddEdge Method {ImVader.ListGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -60,7 +60,7 @@
          <KItem Name="ImVader.MatrixGraph<TV, TE>.AddEdge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderMatrixGraph`2ClassAddEdgeTopic.html" LinkGroup="ImVader">AddEdge Method {ImVader.MatrixGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000071.html" LinkGroup="ImVader">AddEdge Method {ImVader.MatrixGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -69,7 +69,7 @@
          <KItem Name="ImVader.ListGraph<TV, TE>.AddVertex" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderListGraph`2ClassAddVertexTopic_overloads--.html" LinkGroup="ImVader">AddVertex Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000063_overloads--.html" LinkGroup="ImVader">AddVertex Method</LItem>
       </Links>
    </Context>
    
@@ -78,7 +78,7 @@
          <KItem Name="ImVader.ListGraph<TV, TE>.AddVertex" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderListGraph`2ClassAddVertexTopic2_overloads--.html" LinkGroup="ImVader">AddVertex Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000064_overloads--.html" LinkGroup="ImVader">AddVertex Method</LItem>
       </Links>
    </Context>
    
@@ -88,7 +88,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.AddVertex" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassAddVertexTopic.html" LinkGroup="ImVader">AddVertex Method {ImVader.Graph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000051.html" LinkGroup="ImVader">AddVertex Method {ImVader.Graph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -98,7 +98,7 @@
          <KItem Name="ImVader.MatrixGraph<TV, TE>.AddVertex" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderMatrixGraph`2ClassAddVertexTopic.html" LinkGroup="ImVader">AddVertex Method {ImVader.MatrixGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000006F.html" LinkGroup="ImVader">AddVertex Method {ImVader.MatrixGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -108,7 +108,27 @@
          <KItem Name="ImVader.ListGraph<,>.AdjacencyList" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderListGraph`1ClassAdjacencyListTopic.html" LinkGroup="ImVader">AdjacencyList<,>.AdjacencyList Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000005D.html" LinkGroup="ImVader">AdjacencyList<,>.AdjacencyList Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="ImVader.Algorithms.MinimumCuts<TV, TE>.BestCost" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000024.html" LinkGroup="ImVader">BestCost Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="ImVader.Algorithms.MinimumCuts<TV, TE>.BestCut" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000023.html" LinkGroup="ImVader">BestCut Property</LItem>
       </Links>
    </Context>
    
@@ -118,7 +138,7 @@
          <KItem Name="ImVader.Algorithms.BreadthFirstPathes<TV, TE>.Bfs" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsBreadthFirstPathes`2ClassBfsTopic.html" LinkGroup="ImVader">Bfs Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000008.html" LinkGroup="ImVader">Bfs Method</LItem>
       </Links>
    </Context>
    
@@ -128,7 +148,7 @@
          <KItem Name="ImVader.Algorithms.BreadthFirstPathes<TV, TE>" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsBreadthFirstPathes`2ClassTopic.html" LinkGroup="ImVader">BreadthFirstPathes<TV, TE> Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000001.html" LinkGroup="ImVader">BreadthFirstPathes<TV, TE> Class</LItem>
       </Links>
    </Context>
    
@@ -138,7 +158,7 @@
          <KItem Name="ImVader.Algorithms.BreadthFirstPathes<TV, TE>.BreadthFirstPathes" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsBreadthFirstPathes`2ClassctorTopic.html" LinkGroup="ImVader">BreadthFirstPathes<TV, TE> Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000005.html" LinkGroup="ImVader">BreadthFirstPathes<TV, TE> Constructor</LItem>
       </Links>
    </Context>
    
@@ -148,7 +168,7 @@
          <KItem Name="ImVader.ShortestPaths.Dijkstra<TV, TE>.ChangeOrAdd" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsDijkstra`2ClassChangeOrAddTopic.html" LinkGroup="ImVader">ChangeOrAdd Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000078.html" LinkGroup="ImVader">ChangeOrAdd Method</LItem>
       </Links>
    </Context>
    
@@ -158,7 +178,17 @@
          <KItem Name="ImVader.Graph<TV, TE>.CheckVerticesIndexes" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassCheckVerticesIndexesTopic.html" LinkGroup="ImVader">CheckVerticesIndexes Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000059.html" LinkGroup="ImVader">CheckVerticesIndexes Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="ImVader.Algorithms.Color" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000002C.html" LinkGroup="ImVader">Color Enumeration</LItem>
       </Links>
    </Context>
    
@@ -168,7 +198,7 @@
          <KItem Name="ImVader.Algorithms.StrongComponents<TV, TE>.OrderComparer.Compare" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsStrongComponents`2OrderComparerClassCompareTopic.html" LinkGroup="ImVader">Compare Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000002B.html" LinkGroup="ImVader">Compare Method</LItem>
       </Links>
    </Context>
    
@@ -178,7 +208,7 @@
          <KItem Name="ImVader.ShortestPaths.Node.CompareTo" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsNodeClassCompareToTopic.html" LinkGroup="ImVader">CompareTo Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000008B.html" LinkGroup="ImVader">CompareTo Method</LItem>
       </Links>
    </Context>
    
@@ -188,7 +218,7 @@
          <KItem Name="ImVader.Algorithms.StrongComponents<,>.Components" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsStrongComponents`1ClassComponentsTopic.html" LinkGroup="ImVader">Components<,>.Components Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000028.html" LinkGroup="ImVader">Components<,>.Components Field</LItem>
       </Links>
    </Context>
    
@@ -198,7 +228,7 @@
          <KItem Name="ImVader.ListGraph<TV, TE>.CopyWeighted" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderListGraph`2ClassCopyWeightedTopic.html" LinkGroup="ImVader">CopyWeighted Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000068.html" LinkGroup="ImVader">CopyWeighted Method</LItem>
       </Links>
    </Context>
    
@@ -208,7 +238,7 @@
          <KItem Name="ImVader.Vertex<T>.Data" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderVertex`1ClassDataTopic.html" LinkGroup="ImVader">Data Property</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_00000000000000A7.html" LinkGroup="ImVader">Data Property</LItem>
       </Links>
    </Context>
    
@@ -218,7 +248,7 @@
          <KItem Name="ImVader.ShortestPaths.MinPq<T>.DelMin" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsMinPq`1ClassDelMinTopic.html" LinkGroup="ImVader">DelMin Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000080.html" LinkGroup="ImVader">DelMin Method</LItem>
       </Links>
    </Context>
    
@@ -228,7 +258,7 @@
          <KItem Name="ImVader.Algorithms.DepthFirstPathes<TV, TE>" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsDepthFirstPathes`2ClassTopic.html" LinkGroup="ImVader">DepthFirstPathes<TV, TE> Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000009.html" LinkGroup="ImVader">DepthFirstPathes<TV, TE> Class</LItem>
       </Links>
    </Context>
    
@@ -238,7 +268,7 @@
          <KItem Name="ImVader.Algorithms.DepthFirstPathes<TV, TE>.DepthFirstPathes" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsDepthFirstPathes`2ClassctorTopic.html" LinkGroup="ImVader">DepthFirstPathes<TV, TE> Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000000F.html" LinkGroup="ImVader">DepthFirstPathes<TV, TE> Constructor</LItem>
       </Links>
    </Context>
    
@@ -247,7 +277,7 @@
          <KItem Name="ImVader.Utils.JsonSerializer<T>.Deserialize" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderUtilsJsonSerializer`1ClassDeserializeTopic2_overloads--.html" LinkGroup="ImVader">Deserialize Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000009D_overloads--.html" LinkGroup="ImVader">Deserialize Method</LItem>
       </Links>
    </Context>
    
@@ -256,7 +286,7 @@
          <KItem Name="ImVader.Utils.JsonSerializer<T>.Deserialize" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderUtilsJsonSerializer`1ClassDeserializeTopic_overloads--.html" LinkGroup="ImVader">Deserialize Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000009C_overloads--.html" LinkGroup="ImVader">Deserialize Method</LItem>
       </Links>
    </Context>
    
@@ -266,7 +296,17 @@
          <KItem Name="ImVader.Algorithms.DepthFirstPathes<TV, TE>.Dfs" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsDepthFirstPathes`2ClassDfsTopic.html" LinkGroup="ImVader">Dfs Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000012.html" LinkGroup="ImVader">Dfs Method {ImVader.Algorithms.DepthFirstPathes<TV, TE>}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="ImVader.Algorithms.TopologicalSort<TV, TE>.Dfs" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000036.html" LinkGroup="ImVader">Dfs Method {ImVader.Algorithms.TopologicalSort<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -276,7 +316,7 @@
          <KItem Name="ImVader.ShortestPaths.Dijkstra<TV, TE>" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsDijkstra`2ClassTopic.html" LinkGroup="ImVader">Dijkstra<TV, TE> Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000074.html" LinkGroup="ImVader">Dijkstra<TV, TE> Class</LItem>
       </Links>
    </Context>
    
@@ -286,7 +326,7 @@
          <KItem Name="ImVader.ShortestPaths.Dijkstra<TV, TE>.Dijkstra" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsDijkstra`2ClassctorTopic.html" LinkGroup="ImVader">Dijkstra<TV, TE> Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000076.html" LinkGroup="ImVader">Dijkstra<TV, TE> Constructor</LItem>
       </Links>
    </Context>
    
@@ -296,7 +336,7 @@
          <KItem Name="ImVader.DirectedListGraph<TV, TE>" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderDirectedListGraph`2ClassTopic.html" LinkGroup="ImVader">DirectedListGraph<TV, TE> Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000038.html" LinkGroup="ImVader">DirectedListGraph<TV, TE> Class</LItem>
       </Links>
    </Context>
    
@@ -306,7 +346,7 @@
          <KItem Name="ImVader.DirectedListGraph<TV, TE>.DirectedListGraph" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderDirectedListGraph`2ClassctorTopic.html" LinkGroup="ImVader">DirectedListGraph<TV, TE> Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000039.html" LinkGroup="ImVader">DirectedListGraph<TV, TE> Constructor</LItem>
       </Links>
    </Context>
    
@@ -316,7 +356,7 @@
          <KItem Name="ImVader.DirectedMatrixGraph<TV, TE>" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderDirectedMatrixGraph`2ClassTopic.html" LinkGroup="ImVader">DirectedMatrixGraph<TV, TE> Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000003C.html" LinkGroup="ImVader">DirectedMatrixGraph<TV, TE> Class</LItem>
       </Links>
    </Context>
    
@@ -326,7 +366,7 @@
          <KItem Name="ImVader.DirectedMatrixGraph<TV, TE>.DirectedMatrixGraph" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderDirectedMatrixGraph`2ClassctorTopic.html" LinkGroup="ImVader">DirectedMatrixGraph<TV, TE> Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000003D.html" LinkGroup="ImVader">DirectedMatrixGraph<TV, TE> Constructor</LItem>
       </Links>
    </Context>
    
@@ -336,7 +376,7 @@
          <KItem Name="ImVader.ShortestPaths.ShortestPath<,>.DistTo" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsShortestPath`1ClassDistToTopic.html" LinkGroup="ImVader">DistTo Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000008E.html" LinkGroup="ImVader">DistTo Field</LItem>
       </Links>
    </Context>
    
@@ -346,7 +386,7 @@
          <KItem Name="ImVader.Edge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderEdgeClassTopic.html" LinkGroup="ImVader">Edge Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000040.html" LinkGroup="ImVader">Edge Class</LItem>
       </Links>
    </Context>
    
@@ -356,7 +396,7 @@
          <KItem Name="ImVader.Edge.Edge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderEdgeClassctorTopic.html" LinkGroup="ImVader">Edge Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000041.html" LinkGroup="ImVader">Edge Constructor</LItem>
       </Links>
    </Context>
    
@@ -366,7 +406,7 @@
          <KItem Name="ImVader.ShortestPaths.ShortestPath<,>.EdgeTo" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsShortestPath`1ClassEdgeToTopic.html" LinkGroup="ImVader">EdgeTo Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000008F.html" LinkGroup="ImVader">EdgeTo Field</LItem>
       </Links>
    </Context>
    
@@ -376,7 +416,7 @@
          <KItem Name="ImVader.Graph<,>.Edges" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`1ClassEdgesTopic.html" LinkGroup="ImVader">Edges<,>.Edges Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000048.html" LinkGroup="ImVader">Edges<,>.Edges Field</LItem>
       </Links>
    </Context>
    
@@ -386,7 +426,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.EdgesCount" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassEdgesCountTopic.html" LinkGroup="ImVader">EdgesCount Property</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000004C.html" LinkGroup="ImVader">EdgesCount Property</LItem>
       </Links>
    </Context>
    
@@ -396,7 +436,7 @@
          <KItem Name="ImVader.Edge.Either" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderEdgeClassEitherTopic.html" LinkGroup="ImVader">Either Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000044.html" LinkGroup="ImVader">Either Method</LItem>
       </Links>
    </Context>
    
@@ -406,7 +446,7 @@
          <KItem Name="ImVader.ShortestPaths.MinPq<T>.Exch" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsMinPq`1ClassExchTopic.html" LinkGroup="ImVader">Exch Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000086.html" LinkGroup="ImVader">Exch Method</LItem>
       </Links>
    </Context>
    
@@ -416,7 +456,7 @@
          <KItem Name="ImVader.Edge.From" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderEdgeClassFromTopic.html" LinkGroup="ImVader">From Property</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000042.html" LinkGroup="ImVader">From Property</LItem>
       </Links>
    </Context>
    
@@ -426,7 +466,7 @@
          <KItem Name="ImVader.ShortestPaths.ShortestPath<,>.G" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsShortestPath`1ClassGTopic.html" LinkGroup="ImVader">G<,>.G Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000008D.html" LinkGroup="ImVader">G<,>.G Field</LItem>
       </Links>
    </Context>
    
@@ -436,7 +476,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.GetAdjacentEdges" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassGetAdjacentEdgesTopic.html" LinkGroup="ImVader">GetAdjacentEdges Method {ImVader.Graph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000050.html" LinkGroup="ImVader">GetAdjacentEdges Method {ImVader.Graph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -446,7 +486,7 @@
          <KItem Name="ImVader.ListGraph<TV, TE>.GetAdjacentEdges" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderListGraph`2ClassGetAdjacentEdgesTopic.html" LinkGroup="ImVader">GetAdjacentEdges Method {ImVader.ListGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000062.html" LinkGroup="ImVader">GetAdjacentEdges Method {ImVader.ListGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -456,7 +496,7 @@
          <KItem Name="ImVader.MatrixGraph<TV, TE>.GetAdjacentEdges" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderMatrixGraph`2ClassGetAdjacentEdgesTopic.html" LinkGroup="ImVader">GetAdjacentEdges Method {ImVader.MatrixGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000006E.html" LinkGroup="ImVader">GetAdjacentEdges Method {ImVader.MatrixGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -466,7 +506,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.GetAdjacentVertices" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassGetAdjacentVerticesTopic.html" LinkGroup="ImVader">GetAdjacentVertices Method {ImVader.Graph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000004F.html" LinkGroup="ImVader">GetAdjacentVertices Method {ImVader.Graph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -476,7 +516,7 @@
          <KItem Name="ImVader.ListGraph<TV, TE>.GetAdjacentVertices" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderListGraph`2ClassGetAdjacentVerticesTopic.html" LinkGroup="ImVader">GetAdjacentVertices Method {ImVader.ListGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000061.html" LinkGroup="ImVader">GetAdjacentVertices Method {ImVader.ListGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -486,7 +526,7 @@
          <KItem Name="ImVader.MatrixGraph<TV, TE>.GetAdjacentVertices" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderMatrixGraph`2ClassGetAdjacentVerticesTopic.html" LinkGroup="ImVader">GetAdjacentVertices Method {ImVader.MatrixGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000006D.html" LinkGroup="ImVader">GetAdjacentVertices Method {ImVader.MatrixGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -496,7 +536,7 @@
          <KItem Name="ImVader.ShortestPaths.MinPq<T>.GetAsEnumerable" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsMinPq`1ClassGetAsEnumerableTopic.html" LinkGroup="ImVader">GetAsEnumerable Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000081.html" LinkGroup="ImVader">GetAsEnumerable Method</LItem>
       </Links>
    </Context>
    
@@ -506,7 +546,7 @@
          <KItem Name="ImVader.ShortestPaths.ShortestPath<TV, TE>.GetDistTo" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsShortestPath`2ClassGetDistToTopic.html" LinkGroup="ImVader">GetDistTo Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000090.html" LinkGroup="ImVader">GetDistTo Method</LItem>
       </Links>
    </Context>
    
@@ -516,7 +556,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.GetEdge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassGetEdgeTopic.html" LinkGroup="ImVader">GetEdge Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000056.html" LinkGroup="ImVader">GetEdge Method</LItem>
       </Links>
    </Context>
    
@@ -526,7 +566,7 @@
          <KItem Name="ImVader.Algorithms.MinimalSpanningTree<TV, TE>.GetMst" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsMinimalSpanningTree`2ClassGetMstTopic.html" LinkGroup="ImVader">GetMst Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000001C.html" LinkGroup="ImVader">GetMst Method</LItem>
       </Links>
    </Context>
    
@@ -536,7 +576,7 @@
          <KItem Name="ImVader.Algorithms.MinimalSpanningTree<TV, TE>.GetMstEdges" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsMinimalSpanningTree`2ClassGetMstEdgesTopic.html" LinkGroup="ImVader">GetMstEdges Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000001D.html" LinkGroup="ImVader">GetMstEdges Method</LItem>
       </Links>
    </Context>
    
@@ -546,7 +586,7 @@
          <KItem Name="ImVader.Algorithms.MinimalSpanningTree<TV, TE>.GetMstTree" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsMinimalSpanningTree`2ClassGetMstTreeTopic.html" LinkGroup="ImVader">GetMstTree Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000001E.html" LinkGroup="ImVader">GetMstTree Method</LItem>
       </Links>
    </Context>
    
@@ -556,7 +596,7 @@
          <KItem Name="ImVader.Algorithms.MinimalSpanningTree<TV, TE>.GetMstWeight" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsMinimalSpanningTree`2ClassGetMstWeightTopic.html" LinkGroup="ImVader">GetMstWeight Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000001F.html" LinkGroup="ImVader">GetMstWeight Method</LItem>
       </Links>
    </Context>
    
@@ -566,7 +606,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.GetShortestPathesList" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassGetShortestPathesListTopic.html" LinkGroup="ImVader">GetShortestPathesList Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000058.html" LinkGroup="ImVader">GetShortestPathesList Method</LItem>
       </Links>
    </Context>
    
@@ -576,7 +616,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.GetVertexData" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassGetVertexDataTopic.html" LinkGroup="ImVader">GetVertexData Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000052.html" LinkGroup="ImVader">GetVertexData Method</LItem>
       </Links>
    </Context>
    
@@ -586,7 +626,7 @@
          <KItem Name="ImVader.Graph<TV, TE>" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassTopic.html" LinkGroup="ImVader">Graph<TV, TE> Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000046.html" LinkGroup="ImVader">Graph<TV, TE> Class</LItem>
       </Links>
    </Context>
    
@@ -596,7 +636,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.Graph" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassctorTopic.html" LinkGroup="ImVader">Graph<TV, TE> Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000004A.html" LinkGroup="ImVader">Graph<TV, TE> Constructor</LItem>
       </Links>
    </Context>
    
@@ -606,7 +646,7 @@
          <KItem Name="ImVader.ShortestPaths.MinPq<T>.Greater" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsMinPq`1ClassGreaterTopic.html" LinkGroup="ImVader">Greater Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000085.html" LinkGroup="ImVader">Greater Method</LItem>
       </Links>
    </Context>
    
@@ -616,7 +656,7 @@
          <KItem Name="ImVader.Algorithms.BreadthFirstPathes<TV, TE>.HasPathTo" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsBreadthFirstPathes`2ClassHasPathToTopic.html" LinkGroup="ImVader">HasPathTo Method {ImVader.Algorithms.BreadthFirstPathes<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000006.html" LinkGroup="ImVader">HasPathTo Method {ImVader.Algorithms.BreadthFirstPathes<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -626,7 +666,7 @@
          <KItem Name="ImVader.Algorithms.DepthFirstPathes<TV, TE>.HasPathTo" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsDepthFirstPathes`2ClassHasPathToTopic.html" LinkGroup="ImVader">HasPathTo Method {ImVader.Algorithms.DepthFirstPathes<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000010.html" LinkGroup="ImVader">HasPathTo Method {ImVader.Algorithms.DepthFirstPathes<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -636,7 +676,7 @@
          <KItem Name="ImVader.ShortestPaths.ShortestPath<TV, TE>.HasPathTo" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsShortestPath`2ClassHasPathToTopic.html" LinkGroup="ImVader">HasPathTo Method {ImVader.ShortestPaths.ShortestPath<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000092.html" LinkGroup="ImVader">HasPathTo Method {ImVader.ShortestPaths.ShortestPath<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -646,7 +686,7 @@
          <KItem Name="ImVader.ShortestPaths.ShortestPath<TV, TE>.HasPathToVertex" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsShortestPath`2ClassHasPathToVertexTopic.html" LinkGroup="ImVader">HasPathToVertex Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000093.html" LinkGroup="ImVader">HasPathToVertex Method</LItem>
       </Links>
    </Context>
    
@@ -656,7 +696,7 @@
          <KItem Name="ImVader.IDirectedGraph" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderIDirectedGraphClassTopic.html" LinkGroup="ImVader">IDirectedGraph Interface</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000005B.html" LinkGroup="ImVader">IDirectedGraph Interface</LItem>
       </Links>
    </Context>
    
@@ -666,7 +706,7 @@
          <KItem Name="ImVader" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVader.html" LinkGroup="ImVader">ImVader Namespace</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000037.html" LinkGroup="ImVader">ImVader Namespace</LItem>
       </Links>
    </Context>
    
@@ -676,7 +716,7 @@
          <KItem Name="ImVader Reference" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfimvader_referenceCustomTopic.html" LinkGroup="ImVader">ImVader Reference</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_00000000000000AB.html" LinkGroup="ImVader">ImVader Reference</LItem>
       </Links>
    </Context>
    
@@ -686,7 +726,7 @@
          <KItem Name="ImVader.Algorithms" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithms.html" LinkGroup="ImVader">ImVader.Algorithms Namespace</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000000.html" LinkGroup="ImVader">ImVader.Algorithms Namespace</LItem>
       </Links>
    </Context>
    
@@ -696,7 +736,7 @@
          <KItem Name="ImVader.ShortestPaths" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPaths.html" LinkGroup="ImVader">ImVader.ShortestPaths Namespace</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000073.html" LinkGroup="ImVader">ImVader.ShortestPaths Namespace</LItem>
       </Links>
    </Context>
    
@@ -706,7 +746,7 @@
          <KItem Name="ImVader.Utils" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderUtils.html" LinkGroup="ImVader">ImVader.Utils Namespace</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000098.html" LinkGroup="ImVader">ImVader.Utils Namespace</LItem>
       </Links>
    </Context>
    
@@ -716,7 +756,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.IndexOf" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassIndexOfTopic.html" LinkGroup="ImVader">IndexOf Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000005A.html" LinkGroup="ImVader">IndexOf Method</LItem>
       </Links>
    </Context>
    
@@ -726,7 +766,7 @@
          <KItem Name="ImVader.Graph<,>.Indexes" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`1ClassIndexesTopic.html" LinkGroup="ImVader">Indexes<,>.Indexes Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000049.html" LinkGroup="ImVader">Indexes<,>.Indexes Field</LItem>
       </Links>
    </Context>
    
@@ -736,7 +776,7 @@
          <KItem Name="ImVader.Algorithms.MinimalSpanningTree<,>.Inf" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsMinimalSpanningTree`1ClassInfTopic.html" LinkGroup="ImVader">Inf Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000014.html" LinkGroup="ImVader">Inf Field</LItem>
       </Links>
    </Context>
    
@@ -745,7 +785,7 @@
          <KItem Name="ImVader.ListGraph<TV, TE>.Init" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderListGraph`2ClassInitTopic2_overloads--.html" LinkGroup="ImVader">Init Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000060_overloads--.html" LinkGroup="ImVader">Init Method</LItem>
       </Links>
    </Context>
    
@@ -754,7 +794,7 @@
          <KItem Name="ImVader.ListGraph<TV, TE>.Init" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderListGraph`2ClassInitTopic_overloads--.html" LinkGroup="ImVader">Init Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000005F_overloads--.html" LinkGroup="ImVader">Init Method</LItem>
       </Links>
    </Context>
    
@@ -764,7 +804,7 @@
          <KItem Name="ImVader.ShortestPaths.MinPq<T>.Insert" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsMinPq`1ClassInsertTopic.html" LinkGroup="ImVader">Insert Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000007F.html" LinkGroup="ImVader">Insert Method</LItem>
       </Links>
    </Context>
    
@@ -774,7 +814,7 @@
          <KItem Name="ImVader.ShortestPaths.MinPq<T>.IsEmpty" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsMinPq`1ClassIsEmptyTopic.html" LinkGroup="ImVader">IsEmpty Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000007C.html" LinkGroup="ImVader">IsEmpty Method</LItem>
       </Links>
    </Context>
    
@@ -784,7 +824,7 @@
          <KItem Name="ImVader.MatrixGraph<TV, TE>.Item" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderMatrixGraph`2ClassItemTopic.html" LinkGroup="ImVader">Item Property {ImVader.MatrixGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000006C.html" LinkGroup="ImVader">Item Property {ImVader.MatrixGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -794,7 +834,7 @@
          <KItem Name="ImVader.Utils.SquareMatrix<T>.Item" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderUtilsSquareMatrix`1ClassItemTopic.html" LinkGroup="ImVader">Item Property {ImVader.Utils.SquareMatrix<T>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_00000000000000A1.html" LinkGroup="ImVader">Item Property {ImVader.Utils.SquareMatrix<T>}</LItem>
       </Links>
    </Context>
    
@@ -804,7 +844,7 @@
          <KItem Name="ImVader.Utils.JsonSerializer<T>" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderUtilsJsonSerializer`1ClassTopic.html" LinkGroup="ImVader">JsonSerializer<T> Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000099.html" LinkGroup="ImVader">JsonSerializer<T> Class</LItem>
       </Links>
    </Context>
    
@@ -814,7 +854,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.LastEdgeIndex" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassLastEdgeIndexTopic.html" LinkGroup="ImVader">LastEdgeIndex Property</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000004D.html" LinkGroup="ImVader">LastEdgeIndex Property</LItem>
       </Links>
    </Context>
    
@@ -824,7 +864,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.LastVertexIndex" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassLastVertexIndexTopic.html" LinkGroup="ImVader">LastVertexIndex Property</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000004E.html" LinkGroup="ImVader">LastVertexIndex Property</LItem>
       </Links>
    </Context>
    
@@ -834,7 +874,7 @@
          <KItem Name="ImVader.ListGraph<TV, TE>" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderListGraph`2ClassTopic.html" LinkGroup="ImVader">ListGraph<TV, TE> Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000005C.html" LinkGroup="ImVader">ListGraph<TV, TE> Class</LItem>
       </Links>
    </Context>
    
@@ -844,7 +884,7 @@
          <KItem Name="ImVader.ListGraph<TV, TE>.ListGraph" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderListGraph`2ClassctorTopic.html" LinkGroup="ImVader">ListGraph<TV, TE> Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000005E.html" LinkGroup="ImVader">ListGraph<TV, TE> Constructor</LItem>
       </Links>
    </Context>
    
@@ -854,7 +894,7 @@
          <KItem Name="ImVader.MatrixGraph<,>.Matrix" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderMatrixGraph`1ClassMatrixTopic.html" LinkGroup="ImVader">Matrix<,>.Matrix Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000006A.html" LinkGroup="ImVader">Matrix<,>.Matrix Field</LItem>
       </Links>
    </Context>
    
@@ -864,7 +904,7 @@
          <KItem Name="ImVader.MatrixGraph<TV, TE>" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderMatrixGraph`2ClassTopic.html" LinkGroup="ImVader">MatrixGraph<TV, TE> Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000069.html" LinkGroup="ImVader">MatrixGraph<TV, TE> Class</LItem>
       </Links>
    </Context>
    
@@ -874,7 +914,7 @@
          <KItem Name="ImVader.MatrixGraph<TV, TE>.MatrixGraph" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderMatrixGraph`2ClassctorTopic.html" LinkGroup="ImVader">MatrixGraph<TV, TE> Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000006B.html" LinkGroup="ImVader">MatrixGraph<TV, TE> Constructor</LItem>
       </Links>
    </Context>
    
@@ -884,7 +924,17 @@
          <KItem Name="ImVader.ShortestPaths.MinPq<T>.Min" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsMinPq`1ClassMinTopic.html" LinkGroup="ImVader">Min Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000007E.html" LinkGroup="ImVader">Min Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="ImVader.Algorithms.MinimumCuts<TV, TE>.MinCut" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000026.html" LinkGroup="ImVader">MinCut Method</LItem>
       </Links>
    </Context>
    
@@ -893,7 +943,7 @@
          <KItem Name="ImVader.ShortestPaths.MinPq<T>.MinPq" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsMinPq`1ClassctorTopic2_overloads--.html" LinkGroup="ImVader">MinPq </LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000007B_overloads--.html" LinkGroup="ImVader">MinPq </LItem>
       </Links>
    </Context>
    
@@ -902,7 +952,7 @@
          <KItem Name="ImVader.ShortestPaths.MinPq<T>.MinPq" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsMinPq`1ClassctorTopic_overloads--.html" LinkGroup="ImVader">MinPq </LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000007A_overloads--.html" LinkGroup="ImVader">MinPq </LItem>
       </Links>
    </Context>
    
@@ -912,7 +962,7 @@
          <KItem Name="ImVader.ShortestPaths.MinPq<T>" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsMinPq`1ClassTopic.html" LinkGroup="ImVader">MinPq<T> Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000079.html" LinkGroup="ImVader">MinPq<T> Class</LItem>
       </Links>
    </Context>
    
@@ -922,7 +972,7 @@
          <KItem Name="ImVader.Algorithms.MinimalSpanningTree<TV, TE>" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsMinimalSpanningTree`2ClassTopic.html" LinkGroup="ImVader">MinimalSpanningTree<TV, TE> Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000013.html" LinkGroup="ImVader">MinimalSpanningTree<TV, TE> Class</LItem>
       </Links>
    </Context>
    
@@ -932,7 +982,27 @@
          <KItem Name="ImVader.Algorithms.MinimalSpanningTree<TV, TE>.MinimalSpanningTree" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsMinimalSpanningTree`2ClassctorTopic.html" LinkGroup="ImVader">MinimalSpanningTree<TV, TE> Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000001B.html" LinkGroup="ImVader">MinimalSpanningTree<TV, TE> Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="ImVader.Algorithms.MinimumCuts<TV, TE>" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000020.html" LinkGroup="ImVader">MinimumCuts<TV, TE> Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="ImVader.Algorithms.MinimumCuts<TV, TE>.MinimumCuts" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000025.html" LinkGroup="ImVader">MinimumCuts<TV, TE> Constructor</LItem>
       </Links>
    </Context>
    
@@ -942,7 +1012,7 @@
          <KItem Name="ImVader.ShortestPaths.Node.N" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsNodeClassNTopic.html" LinkGroup="ImVader">N Property</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000089.html" LinkGroup="ImVader">N Property</LItem>
       </Links>
    </Context>
    
@@ -952,7 +1022,7 @@
          <KItem Name="ImVader.ShortestPaths.Node" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsNodeClassTopic.html" LinkGroup="ImVader">Node Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000087.html" LinkGroup="ImVader">Node Class</LItem>
       </Links>
    </Context>
    
@@ -962,7 +1032,7 @@
          <KItem Name="ImVader.ShortestPaths.Node.Node" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsNodeClassctorTopic.html" LinkGroup="ImVader">Node Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000088.html" LinkGroup="ImVader">Node Constructor</LItem>
       </Links>
    </Context>
    
@@ -972,7 +1042,7 @@
          <KItem Name="ImVader.Algorithms.StrongComponents<TV, TE>.OrderComparer" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsStrongComponents`2OrderComparerClassTopic.html" LinkGroup="ImVader">OrderComparer Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000002A.html" LinkGroup="ImVader">OrderComparer Class</LItem>
       </Links>
    </Context>
    
@@ -982,7 +1052,7 @@
          <KItem Name="ImVader.Edge.Other" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderEdgeClassOtherTopic.html" LinkGroup="ImVader">Other Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000045.html" LinkGroup="ImVader">Other Method</LItem>
       </Links>
    </Context>
    
@@ -992,7 +1062,7 @@
          <KItem Name="ImVader.Algorithms.BreadthFirstPathes<TV, TE>.PathTo" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsBreadthFirstPathes`2ClassPathToTopic.html" LinkGroup="ImVader">PathTo Method {ImVader.Algorithms.BreadthFirstPathes<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000007.html" LinkGroup="ImVader">PathTo Method {ImVader.Algorithms.BreadthFirstPathes<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1002,7 +1072,7 @@
          <KItem Name="ImVader.Algorithms.DepthFirstPathes<TV, TE>.PathTo" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsDepthFirstPathes`2ClassPathToTopic.html" LinkGroup="ImVader">PathTo Method {ImVader.Algorithms.DepthFirstPathes<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000011.html" LinkGroup="ImVader">PathTo Method {ImVader.Algorithms.DepthFirstPathes<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1012,7 +1082,7 @@
          <KItem Name="ImVader.ShortestPaths.ShortestPath<TV, TE>.PathTo" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsShortestPath`2ClassPathToTopic.html" LinkGroup="ImVader">PathTo Method {ImVader.ShortestPaths.ShortestPath<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000094.html" LinkGroup="ImVader">PathTo Method {ImVader.ShortestPaths.ShortestPath<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1022,7 +1092,7 @@
          <KItem Name="ImVader.ShortestPaths.ShortestPath<TV, TE>.PathToAsIds" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsShortestPath`2ClassPathToAsIdsTopic.html" LinkGroup="ImVader">PathToAsIds Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000095.html" LinkGroup="ImVader">PathToAsIds Method</LItem>
       </Links>
    </Context>
    
@@ -1032,7 +1102,7 @@
          <KItem Name="ImVader.ShortestPaths.Dijkstra<TV, TE>.Relax" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsDijkstra`2ClassRelaxTopic.html" LinkGroup="ImVader">Relax Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000077.html" LinkGroup="ImVader">Relax Method</LItem>
       </Links>
    </Context>
    
@@ -1042,7 +1112,7 @@
          <KItem Name="ImVader.Utils.SquareMatrix<T>.Remove" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderUtilsSquareMatrix`1ClassRemoveTopic.html" LinkGroup="ImVader">Remove Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_00000000000000A3.html" LinkGroup="ImVader">Remove Method</LItem>
       </Links>
    </Context>
    
@@ -1052,7 +1122,7 @@
          <KItem Name="ImVader.DirectedListGraph<TV, TE>.RemoveEdge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderDirectedListGraph`2ClassRemoveEdgeTopic.html" LinkGroup="ImVader">RemoveEdge Method {ImVader.DirectedListGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000003B.html" LinkGroup="ImVader">RemoveEdge Method {ImVader.DirectedListGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1062,7 +1132,7 @@
          <KItem Name="ImVader.DirectedMatrixGraph<TV, TE>.RemoveEdge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderDirectedMatrixGraph`2ClassRemoveEdgeTopic.html" LinkGroup="ImVader">RemoveEdge Method {ImVader.DirectedMatrixGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000003F.html" LinkGroup="ImVader">RemoveEdge Method {ImVader.DirectedMatrixGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1072,7 +1142,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.RemoveEdge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassRemoveEdgeTopic.html" LinkGroup="ImVader">RemoveEdge Method {ImVader.Graph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000057.html" LinkGroup="ImVader">RemoveEdge Method {ImVader.Graph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1082,7 +1152,7 @@
          <KItem Name="ImVader.ListGraph<TV, TE>.RemoveEdge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderListGraph`2ClassRemoveEdgeTopic.html" LinkGroup="ImVader">RemoveEdge Method {ImVader.ListGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000067.html" LinkGroup="ImVader">RemoveEdge Method {ImVader.ListGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1092,7 +1162,7 @@
          <KItem Name="ImVader.MatrixGraph<TV, TE>.RemoveEdge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderMatrixGraph`2ClassRemoveEdgeTopic.html" LinkGroup="ImVader">RemoveEdge Method {ImVader.MatrixGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000072.html" LinkGroup="ImVader">RemoveEdge Method {ImVader.MatrixGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1102,7 +1172,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.RemoveVertex" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassRemoveVertexTopic.html" LinkGroup="ImVader">RemoveVertex Method {ImVader.Graph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000054.html" LinkGroup="ImVader">RemoveVertex Method {ImVader.Graph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1112,7 +1182,7 @@
          <KItem Name="ImVader.ListGraph<TV, TE>.RemoveVertex" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderListGraph`2ClassRemoveVertexTopic.html" LinkGroup="ImVader">RemoveVertex Method {ImVader.ListGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000065.html" LinkGroup="ImVader">RemoveVertex Method {ImVader.ListGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1122,7 +1192,7 @@
          <KItem Name="ImVader.MatrixGraph<TV, TE>.RemoveVertex" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderMatrixGraph`2ClassRemoveVertexTopic.html" LinkGroup="ImVader">RemoveVertex Method {ImVader.MatrixGraph<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000070.html" LinkGroup="ImVader">RemoveVertex Method {ImVader.MatrixGraph<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1132,7 +1202,7 @@
          <KItem Name="ImVader.ShortestPaths.MinPq<T>.Resize" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsMinPq`1ClassResizeTopic.html" LinkGroup="ImVader">Resize Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000082.html" LinkGroup="ImVader">Resize Method</LItem>
       </Links>
    </Context>
    
@@ -1141,7 +1211,7 @@
          <KItem Name="ImVader.Utils.JsonSerializer<T>.Serialize" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderUtilsJsonSerializer`1ClassSerializeTopic_overloads--.html" LinkGroup="ImVader">Serialize Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000009A_overloads--.html" LinkGroup="ImVader">Serialize Method</LItem>
       </Links>
    </Context>
    
@@ -1150,7 +1220,7 @@
          <KItem Name="ImVader.Utils.JsonSerializer<T>.Serialize" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderUtilsJsonSerializer`1ClassSerializeTopic2_overloads--.html" LinkGroup="ImVader">Serialize Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000009B_overloads--.html" LinkGroup="ImVader">Serialize Method</LItem>
       </Links>
    </Context>
    
@@ -1160,7 +1230,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.SetVertexData" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassSetVertexDataTopic.html" LinkGroup="ImVader">SetVertexData Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000053.html" LinkGroup="ImVader">SetVertexData Method</LItem>
       </Links>
    </Context>
    
@@ -1170,7 +1240,7 @@
          <KItem Name="ImVader.ShortestPaths.ShortestPath<TV, TE>" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsShortestPath`2ClassTopic.html" LinkGroup="ImVader">ShortestPath<TV, TE> Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000008C.html" LinkGroup="ImVader">ShortestPath<TV, TE> Class</LItem>
       </Links>
    </Context>
    
@@ -1180,7 +1250,7 @@
          <KItem Name="ImVader.ShortestPaths.ShortestPath<TV, TE>.ShortestPath" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsShortestPath`2ClassctorTopic.html" LinkGroup="ImVader">ShortestPath<TV, TE> Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000091.html" LinkGroup="ImVader">ShortestPath<TV, TE> Constructor</LItem>
       </Links>
    </Context>
    
@@ -1190,7 +1260,7 @@
          <KItem Name="ImVader.ShortestPaths.MinPq<T>.Sink" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsMinPq`1ClassSinkTopic.html" LinkGroup="ImVader">Sink Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000084.html" LinkGroup="ImVader">Sink Method</LItem>
       </Links>
    </Context>
    
@@ -1200,7 +1270,7 @@
          <KItem Name="ImVader.ShortestPaths.MinPq<T>.Size" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsMinPq`1ClassSizeTopic.html" LinkGroup="ImVader">Size Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000007D.html" LinkGroup="ImVader">Size Method</LItem>
       </Links>
    </Context>
    
@@ -1210,7 +1280,17 @@
          <KItem Name="ImVader.Utils.SquareMatrix<T>.Size" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderUtilsSquareMatrix`1ClassSizeTopic.html" LinkGroup="ImVader">Size Property</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_00000000000000A0.html" LinkGroup="ImVader">Size Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="ImVader.Algorithms.TopologicalSort<TV, TE>.SortGraph" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000035.html" LinkGroup="ImVader">SortGraph Method</LItem>
       </Links>
    </Context>
    
@@ -1220,7 +1300,7 @@
          <KItem Name="ImVader.Utils.SquareMatrix<T>" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderUtilsSquareMatrix`1ClassTopic.html" LinkGroup="ImVader">SquareMatrix<T> Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000009E.html" LinkGroup="ImVader">SquareMatrix<T> Class</LItem>
       </Links>
    </Context>
    
@@ -1230,7 +1310,7 @@
          <KItem Name="ImVader.Utils.SquareMatrix<T>.SquareMatrix" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderUtilsSquareMatrix`1ClassctorTopic.html" LinkGroup="ImVader">SquareMatrix<T> Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000009F.html" LinkGroup="ImVader">SquareMatrix<T> Constructor</LItem>
       </Links>
    </Context>
    
@@ -1240,7 +1320,7 @@
          <KItem Name="ImVader.Algorithms.StrongComponents<TV, TE>" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsStrongComponents`2ClassTopic.html" LinkGroup="ImVader">StrongComponents<TV, TE> Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000027.html" LinkGroup="ImVader">StrongComponents<TV, TE> Class</LItem>
       </Links>
    </Context>
    
@@ -1250,7 +1330,7 @@
          <KItem Name="ImVader.Algorithms.StrongComponents<TV, TE>.StrongComponents" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsStrongComponents`2ClassctorTopic.html" LinkGroup="ImVader">StrongComponents<TV, TE> Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000029.html" LinkGroup="ImVader">StrongComponents<TV, TE> Constructor</LItem>
       </Links>
    </Context>
    
@@ -1260,7 +1340,7 @@
          <KItem Name="ImVader.ShortestPaths.MinPq<T>.Swim" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsMinPq`1ClassSwimTopic.html" LinkGroup="ImVader">Swim Method</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000083.html" LinkGroup="ImVader">Swim Method</LItem>
       </Links>
    </Context>
    
@@ -1270,7 +1350,7 @@
          <KItem Name="ImVader.Algorithms.DepthFirstPathes<,>.Timein" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsDepthFirstPathes`1ClassTimeinTopic.html" LinkGroup="ImVader">Timein Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000000A.html" LinkGroup="ImVader">Timein Field</LItem>
       </Links>
    </Context>
    
@@ -1280,7 +1360,7 @@
          <KItem Name="ImVader.Algorithms.DepthFirstPathes<,>.Timeout" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsDepthFirstPathes`1ClassTimeoutTopic.html" LinkGroup="ImVader">Timeout Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000000B.html" LinkGroup="ImVader">Timeout Field</LItem>
       </Links>
    </Context>
    
@@ -1290,7 +1370,17 @@
          <KItem Name="ImVader.Edge.To" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderEdgeClassToTopic.html" LinkGroup="ImVader">To Property</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000043.html" LinkGroup="ImVader">To Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="ImVader.Algorithms.TopologicalSort<TV, TE>" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000030.html" LinkGroup="ImVader">TopologicalSort<TV, TE> Class</LItem>
       </Links>
    </Context>
    
@@ -1300,7 +1390,7 @@
          <KItem Name="ImVader.UnweightedEdge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderUnweightedEdgeClassTopic.html" LinkGroup="ImVader">UnweightedEdge Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000096.html" LinkGroup="ImVader">UnweightedEdge Class</LItem>
       </Links>
    </Context>
    
@@ -1310,7 +1400,7 @@
          <KItem Name="ImVader.UnweightedEdge.UnweightedEdge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderUnweightedEdgeClassctorTopic.html" LinkGroup="ImVader">UnweightedEdge Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000097.html" LinkGroup="ImVader">UnweightedEdge Constructor</LItem>
       </Links>
    </Context>
    
@@ -1319,7 +1409,7 @@
          <KItem Name="ImVader.Vertex<T>.Vertex" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderVertex`1ClassctorTopic_overloads--.html" LinkGroup="ImVader">Vertex </LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_00000000000000A5_overloads--.html" LinkGroup="ImVader">Vertex </LItem>
       </Links>
    </Context>
    
@@ -1328,7 +1418,7 @@
          <KItem Name="ImVader.Vertex<T>.Vertex" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderVertex`1ClassctorTopic2_overloads--.html" LinkGroup="ImVader">Vertex </LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_00000000000000A6_overloads--.html" LinkGroup="ImVader">Vertex </LItem>
       </Links>
    </Context>
    
@@ -1338,7 +1428,7 @@
          <KItem Name="ImVader.Vertex<T>" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderVertex`1ClassTopic.html" LinkGroup="ImVader">Vertex<T> Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_00000000000000A4.html" LinkGroup="ImVader">Vertex<T> Class</LItem>
       </Links>
    </Context>
    
@@ -1348,7 +1438,7 @@
          <KItem Name="ImVader.Graph<TV, TE>.VertexCount" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`2ClassVertexCountTopic.html" LinkGroup="ImVader">VertexCount Property</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000004B.html" LinkGroup="ImVader">VertexCount Property</LItem>
       </Links>
    </Context>
    
@@ -1358,7 +1448,7 @@
          <KItem Name="ImVader.Graph<,>.Vertices" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderGraph`1ClassVerticesTopic.html" LinkGroup="ImVader">Vertices<,>.Vertices Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000047.html" LinkGroup="ImVader">Vertices<,>.Vertices Field</LItem>
       </Links>
    </Context>
    
@@ -1368,7 +1458,7 @@
          <KItem Name="ImVader.ShortestPaths.Node.Weight" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsNodeClassWeightTopic.html" LinkGroup="ImVader">Weight Property {ImVader.ShortestPaths.Node}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000008A.html" LinkGroup="ImVader">Weight Property {ImVader.ShortestPaths.Node}</LItem>
       </Links>
    </Context>
    
@@ -1378,7 +1468,7 @@
          <KItem Name="ImVader.WeightedEdge.Weight" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderWeightedEdgeClassWeightTopic.html" LinkGroup="ImVader">Weight Property {ImVader.WeightedEdge}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_00000000000000AA.html" LinkGroup="ImVader">Weight Property {ImVader.WeightedEdge}</LItem>
       </Links>
    </Context>
    
@@ -1388,7 +1478,7 @@
          <KItem Name="ImVader.WeightedEdge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderWeightedEdgeClassTopic.html" LinkGroup="ImVader">WeightedEdge Class</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_00000000000000A8.html" LinkGroup="ImVader">WeightedEdge Class</LItem>
       </Links>
    </Context>
    
@@ -1398,7 +1488,37 @@
          <KItem Name="ImVader.WeightedEdge.WeightedEdge" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderWeightedEdgeClassctorTopic.html" LinkGroup="ImVader">WeightedEdge Constructor</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_00000000000000A9.html" LinkGroup="ImVader">WeightedEdge Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="ImVader.Algorithms.MinimumCuts<,>.bestCost" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000021.html" LinkGroup="ImVader">bestCost Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="ImVader.Algorithms.MinimumCuts<,>.bestCut" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000022.html" LinkGroup="ImVader">bestCut<,>.bestCut Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="ImVader.Algorithms.TopologicalSort<,>.colors" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000032.html" LinkGroup="ImVader">colors Field</LItem>
       </Links>
    </Context>
    
@@ -1408,7 +1528,7 @@
          <KItem Name="ImVader.Algorithms.BreadthFirstPathes<,>.edgeTo" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsBreadthFirstPathes`1ClassedgeToTopic.html" LinkGroup="ImVader">edgeTo Field {ImVader.Algorithms.BreadthFirstPathes<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000003.html" LinkGroup="ImVader">edgeTo Field {ImVader.Algorithms.BreadthFirstPathes<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1418,7 +1538,7 @@
          <KItem Name="ImVader.Algorithms.DepthFirstPathes<,>.edgeTo" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsDepthFirstPathes`1ClassedgeToTopic.html" LinkGroup="ImVader">edgeTo Field {ImVader.Algorithms.DepthFirstPathes<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000000D.html" LinkGroup="ImVader">edgeTo Field {ImVader.Algorithms.DepthFirstPathes<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1428,7 +1548,17 @@
          <KItem Name="ImVader.Algorithms.MinimalSpanningTree<,>.edges" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsMinimalSpanningTree`1ClassedgesTopic.html" LinkGroup="ImVader">edges Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000017.html" LinkGroup="ImVader">edges Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="ImVader.Algorithms.TopologicalSort<,>.graph" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000031.html" LinkGroup="ImVader">graph<,>.graph Field</LItem>
       </Links>
    </Context>
    
@@ -1438,7 +1568,7 @@
          <KItem Name="ImVader.Algorithms.BreadthFirstPathes<,>.marked" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsBreadthFirstPathes`1ClassmarkedTopic.html" LinkGroup="ImVader">marked Field {ImVader.Algorithms.BreadthFirstPathes<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000002.html" LinkGroup="ImVader">marked Field {ImVader.Algorithms.BreadthFirstPathes<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1448,7 +1578,7 @@
          <KItem Name="ImVader.Algorithms.DepthFirstPathes<,>.marked" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsDepthFirstPathes`1ClassmarkedTopic.html" LinkGroup="ImVader">marked Field {ImVader.Algorithms.DepthFirstPathes<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000000C.html" LinkGroup="ImVader">marked Field {ImVader.Algorithms.DepthFirstPathes<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1458,7 +1588,7 @@
          <KItem Name="ImVader.Algorithms.MinimalSpanningTree<,>.minE" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsMinimalSpanningTree`1ClassminETopic.html" LinkGroup="ImVader">minE Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000018.html" LinkGroup="ImVader">minE Field</LItem>
       </Links>
    </Context>
    
@@ -1468,7 +1598,7 @@
          <KItem Name="ImVader.Algorithms.MinimalSpanningTree<,>.mst" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsMinimalSpanningTree`1ClassmstTopic.html" LinkGroup="ImVader">mst<,>.mst Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000015.html" LinkGroup="ImVader">mst<,>.mst Field</LItem>
       </Links>
    </Context>
    
@@ -1478,7 +1608,17 @@
          <KItem Name="ImVader.Algorithms.MinimalSpanningTree<,>.mstEdges" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsMinimalSpanningTree`1ClassmstEdgesTopic.html" LinkGroup="ImVader">mstEdges<,>.mstEdges Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000016.html" LinkGroup="ImVader">mstEdges<,>.mstEdges Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="ImVader.Algorithms.TopologicalSort<,>.numbers" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000033.html" LinkGroup="ImVader">numbers Field</LItem>
       </Links>
    </Context>
    
@@ -1488,7 +1628,7 @@
          <KItem Name="ImVader.ShortestPaths.Dijkstra<,>.pq" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderShortestPathsDijkstra`1ClasspqTopic.html" LinkGroup="ImVader">pq<,>.pq Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000075.html" LinkGroup="ImVader">pq<,>.pq Field</LItem>
       </Links>
    </Context>
    
@@ -1498,7 +1638,7 @@
          <KItem Name="ImVader.Algorithms.BreadthFirstPathes<,>.s" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsBreadthFirstPathes`1ClasssTopic.html" LinkGroup="ImVader">s Field {ImVader.Algorithms.BreadthFirstPathes<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000004.html" LinkGroup="ImVader">s Field {ImVader.Algorithms.BreadthFirstPathes<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1508,7 +1648,7 @@
          <KItem Name="ImVader.Algorithms.DepthFirstPathes<,>.s" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsDepthFirstPathes`1ClasssTopic.html" LinkGroup="ImVader">s Field {ImVader.Algorithms.DepthFirstPathes<TV, TE>}</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000000E.html" LinkGroup="ImVader">s Field {ImVader.Algorithms.DepthFirstPathes<TV, TE>}</LItem>
       </Links>
    </Context>
    
@@ -1518,7 +1658,7 @@
          <KItem Name="ImVader.Algorithms.MinimalSpanningTree<,>.selE" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsMinimalSpanningTree`1ClassselETopic.html" LinkGroup="ImVader">selE Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000019.html" LinkGroup="ImVader">selE Field</LItem>
       </Links>
    </Context>
    
@@ -1528,7 +1668,17 @@
          <KItem Name="ImVader.Algorithms.MinimalSpanningTree<,>.used" />
       </Keywords>
       <Links>
-         <LItem URL="ms-its:ImVader.chm::/frlrfImVaderAlgorithmsMinimalSpanningTree`1ClassusedTopic.html" LinkGroup="ImVader">used Field</LItem>
+         <LItem URL="ms-its:ImVader.chm::/topic_000000000000001A.html" LinkGroup="ImVader">used Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="ImVader.Algorithms.TopologicalSort<,>.visitedVertices" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:ImVader.chm::/topic_0000000000000034.html" LinkGroup="ImVader">visitedVertices<,>.visitedVertices Field</LItem>
       </Links>
    </Context>
    
