@@ -32,6 +32,11 @@ function initializeEvents() {
     var dropZone = document.getElementById('drop_zone');
     dropZone.addEventListener('dragover', handleDragOver, false);
     dropZone.addEventListener('drop', handleFileSelect, false);
+
+    var mstbtn = document.getElementById('mstbtn');
+    mstbtn.addEventListener('click', function () {
+        getMST();
+    }, false);
 }
 
 function onPageLoaded() {
@@ -142,6 +147,39 @@ function goToServer() {
             shortestPathNodeListIndexes = data;
             selectedArgumentPathNodes();
             higlightPath(shortestPathNodeListIndexes);
+            stopSpinner();
+        }
+    });
+}
+
+function getMST() {
+    console.log("Graph must be weighted");
+    return;
+    startSpinner();
+    var nodes = getNodes();
+    var nodesIds = new Array();
+    for (var i = 0; i < nodes.length; i++) {
+        nodesIds.push(nodes[i].uid);
+    }
+    var edges = getEdges();
+    var udges = new Array();
+    for (var j = 0; j < edges.length; j++) {
+        var edge = {};
+        edge.From = edges[j].from;
+        edge.To = edges[j].to;        
+        edge.Weight = edges[j].value;
+        udges.push(edge);
+    }
+    $.ajax({
+        type: "POST",
+        data: JSON.stringify({
+            Vertices: nodesIds,
+            Edges: udges
+        }),
+        url: "api/MinimalSpanningTree",
+        contentType: "application/json",
+        success: function (data) {
+            higlightPath(data);
             stopSpinner();
         }
     });

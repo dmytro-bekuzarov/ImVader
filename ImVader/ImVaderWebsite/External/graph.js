@@ -118,7 +118,6 @@ function setDefaultVisualOptions() {
         data.edges._data[id].color = {
             border: 'grey'
         };
-        data.edges._data[id].width = 1;
     }
     for (var id in data.nodes._data) {
         data.nodes._data[id].color = {
@@ -148,7 +147,8 @@ function addEdge(from, to) {
         if (data.edges._data[ed].from == to && data.edges._data[ed].to == from)
             return edges;
     }
-    edges.add({ from: from, to: to, color: 'grey' });
+    var val = Math.random() * 200;
+    edges.add({ from: from, to: to, color: 'grey', value: val });
     return edges;
 }
 
@@ -206,7 +206,8 @@ function getEdges() {
     for (var i = 0; i < edgez.length; i++) {
         localEdges.push({
             from: parseInt(edgez[i].from),
-            to: parseInt(edgez[i].to)
+            to: parseInt(edgez[i].to),
+            value: parseInt(edgez[i].value)
         });
     }
     return localEdges;

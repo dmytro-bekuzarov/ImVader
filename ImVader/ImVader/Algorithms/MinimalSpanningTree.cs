@@ -86,8 +86,7 @@ namespace ImVader.Algorithms
                 this.selE[i] = -1;
             }
             for (int i = 0; i < g.EdgesCount; i++)
-            {
-               
+            {               
                 int a1 = g.Edges[i].From;
                 int a2 = g.Edges[i].To;
                 edges[a1][a2] = g.Edges[i];
@@ -122,6 +121,7 @@ namespace ImVader.Algorithms
                 if (this.selE[v] != -1)
                 {
                     var tmp = new WeightedEdge(v, this.selE[v], edges[v][this.selE[v]].Weight);
+                    
                     mstEdges.Add(edges[v][this.selE[v]]);
                     mst.AddEdge(tmp);
                 }
@@ -141,6 +141,21 @@ namespace ImVader.Algorithms
         public List<TE> GetMstEdges()
         {
             return mstEdges;
+        }
+
+        /// <summary>
+        /// The getMSTEdges.
+        /// </summary>
+        public int[][] GetMstVertices()
+        {
+            int[][] mstVertices = new int[mstEdges.Count][];
+            for (int i = 0; i < mstEdges.Count; i++)
+            {
+                mstVertices[i] = new int[2];
+                mstVertices[i][0] = mstEdges[i].From;
+                mstVertices[i][1] = mstEdges[i].To;
+            }
+            return mstVertices;
         }
 
         /// <summary>

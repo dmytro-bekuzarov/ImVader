@@ -38,13 +38,6 @@ $('#color a').click( function(e) {
 
 $(document).ready(function() {
 
-//Flikr
-$('#flickr').jflickrfeed({
-	limit: 			10,
-	qstrings: 		{id: '52617155@N08'},
-	itemTemplate: 	'<li><a href="{{image_b}}" data-rel="colorbox"><img src="{{image_s}}" alt="{{title}}" /><span class="flickr__hover"></span></a></li>'
-	},function(data){$('#flickr a').colorbox({'data-rel':'colorbox'});}
-);
 
 
 //Colorbox responsive
