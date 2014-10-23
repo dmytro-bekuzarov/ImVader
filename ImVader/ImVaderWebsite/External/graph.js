@@ -4,18 +4,12 @@ var textFile = null;
 
 var data = {
     nodes: nodes,
-    edges: edges,
-    color: {
-        border: 'black',
-        background: '#CCCCFF'
-    }
+    edges: edges
 };
-
 var options = {
     width: '100%',
     height: '100%'
 };
-
 var container;
 var network;
 
@@ -54,101 +48,43 @@ function makeTextFile(text) {
     return textFile;
 };
 
-function selectNode(properties) {
-    if (properties.nodes != null && properties.nodes.length != 0 && properties.nodes[0] != undefined) {
-        var selectedNode = nodes._data[properties.nodes[0]];
-        if (selectedNode.gotFriends) {
-            $('#getFriendsButton').prop('disabled', true);
-        } else {
-            $('#getFriendsButton').prop('disabled', false);
-        }
-        user_id = selectedNode.uid;
-        showUserInfo(selectedNode);
-    }
-}
 
 function initializeGraph() {
     container = document.getElementById('graph_place');
     network = new vis.Network(container, data, options);
-    network.on('select', selectNode);
-}
-
-function higlightPath(selectedNodes) {
-    for (var i = 0; i < selectedNodes.length; i++) {
-        data.nodes._data[selectedNodes[i]].color = {
-            background: '#99FF99',
-            border: '#006600'
+    network.on('select', function (properties) {
+        if (properties.nodes != null && properties.nodes.length != 0 && properties.nodes[0] != undefined) {
+            var selectedNode = nodes._data[properties.nodes[0]];
+            user_id = selectedNode.uid;
+            showUserInfo(selectedNode);
         }
-        for (var id in data.edges._data) {
-            for (var k = 0; k < selectedNodes.length; k++) {
-                if (data.edges._data[id].from == selectedNodes[i] &&
-                    data.edges._data[id].to == selectedNodes[k]) {
-                    data.edges._data[id].color = '#33CC66';
-                    data.edges._data[id].width = 8;
-                }
-            }
-        }
-    }
-    network.setData(data);
-}
-
-function highlightSubgraph(selectedNodes, selectedEdges) {
-    for (var i = 0; i < selectedNodes.length; i++) {
-        data.nodes._data[selectedNodes[i]].color = {
-            background: '#99FF99',
-            border: '#006600'
-        }        
-    }
-    for (var id in data.edges._data) {
-        for (var k = 0; k < selectedEdges.length; k++) {
-            if (data.edges._data[id].from == selectedEdges[i].from &&
-                data.edges._data[id].to == selectedEdges[k].to ||
-                data.edges._data[id].from == selectedEdges[i].to &&
-                data.edges._data[id].to == selectedEdges[k].from) {
-                data.edges._data[id].color = '#33CC66';
-                data.edges._data[id].width = 8;
-            }
-        }
-    }
-    network.setData(data);
-}
-
-function setDefaultVisualOptions() {
-    for (var id in data.edges._data) {
-        data.edges._data[id].color = {
-            border: 'grey'
-        };
-    }
-    for (var id in data.nodes._data) {
-        data.nodes._data[id].color = {
-            border: '#9999FF',
-            backgroud: '#CCCCFF'
-        };
-    }
-    network.setData(data);
+    });
 }
 
 function addNode(user) {
     user.id = user.uid;
     user.label = user.first_name;
-    if (user.sex == 1) user.color = {
-        background: 'red',
-        highlight: {
-            border: 'red'
-        }
-    }
-    
+    if (user.sex == 1) user.color = 'red';
     nodes.add(user);
     return nodes;
 }
 
 function addEdge(from, to) {
-    for (var ed in data.edges._data) {
-        if (data.edges._data[ed].from == to && data.edges._data[ed].to == from)
-            return edges;
-    }
-    edges.add({ from: from, to: to, color: 'grey' });
+    edges.add({ from: from, to: to });
     return edges;
+}
+
+function addEdge(from, to, value) {
+    edges.add({from: from, to: to, value: value, label: value});
+}
+
+function hasEdge(from, to){
+    for (var i=0;i<edges._data.length;i++)
+    {
+        if (edges._data[i].from == from || edges._data[i].to == from)
+            return true;
+    }
+    return false;
 }
 
 function addFriends(friends) {
@@ -172,7 +108,8 @@ function checkHasNoFriends(user_id) {
         selectedNode.gotFriends = true;
         return true;
     }
-    else return false;
+    //else return false;
+    return true;
 }
 
 function clearGraph() {
@@ -192,33 +129,16 @@ function clearGraph() {
 
 function getGraphAsJson() {
     var graph = {};
-    graph.edges = getEdges();
-    graph.nodes = getNodes();
-    return graph;
-};
-
-function getEdges() {
-    var localEdges = new Array();
-    var edgez = Object.keys(edges._data).map(function (k) {
-        return edges._data[k];
-    });
-    for (var i = 0; i < edgez.length; i++) {
-        localEdges.push({
-            from: parseInt(edgez[i].from),
-            to: parseInt(edgez[i].to),
-            value: parseInt(edgez[i].value)
-        });
-    }
-    return localEdges;
-}
-
-function getNodes() {
-    var localNodes = new Array();
+    graph.edges = new Array();
+    graph.nodes = new Array();
     var nodez = Object.keys(nodes._data).map(function (k) {
         return nodes._data[k];
     });
+    var edgez = Object.keys(edges._data).map(function (k) {
+        return edges._data[k];
+    });
     for (var i = 0; i < nodez.length; i++) {
-        localNodes.push(new Object({
+        graph.nodes.push(new Object({
             first_name: nodez[i].first_name,
             last_name: nodez[i].last_name,
             uid: nodez[i].uid,
@@ -226,5 +146,18 @@ function getNodes() {
             sex: nodez[i].sex
         }));
     }
-    return localNodes;
-}
+    for (var i = 0; i < edgez.length; i++) {
+        graph.edges.push({
+            from: parseInt(edgez[i].from),
+            to: parseInt(edgez[i].to)
+        });
+    }
+    return graph;
+};
+
+$(document).ready(function() {
+    $("#find-shortest-path").on('click', function() {
+        $("#find-shortest-path-tooltip").html("Select two vertices");
+    });
+});
+
