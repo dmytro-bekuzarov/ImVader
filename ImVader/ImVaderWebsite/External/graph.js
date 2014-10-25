@@ -48,7 +48,6 @@ function makeTextFile(text) {
     return textFile;
 };
 
-
 function initializeGraph() {
     container = document.getElementById('graph_place');
     network = new vis.Network(container, data, options);

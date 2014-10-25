@@ -21,6 +21,53 @@ function handleFileSelect(evt) {
     loadGraph(files);
 }
 
+function selectNode(properties) {
+    if (properties.nodes != null && properties.nodes.length != 0 && properties.nodes[0] != undefined) {
+        var selectedNode = nodes._data[properties.nodes[0]];
+        user_id = selectedNode.uid;
+        showUserInfo(selectedNode);
+    }
+}
+
+function getEdges(nodes) {
+    var localEdges = new Array();
+    var edgez = Object.keys(edges._data).map(function (k) {
+        return edges._data[k];
+    });
+    for (var i = 0; i < edgez.length; i++) {
+        var froma = -1, toz = -1;
+        for (var j = 0; j < nodes.length; j++) {
+            if (nodes[j].uid == edgez[i].from)
+            { froma = j; }
+            if (nodes[j].uid == edgez[i].to)
+            { toz = j; }
+        }
+
+        localEdges.push({
+            from: froma,
+            to: toz
+        });
+    }
+    return localEdges;
+}
+
+function getNodes() {
+    var localNodes = new Array();
+    var nodez = Object.keys(nodes._data).map(function (k) {
+        return nodes._data[k];
+    });
+    for (var i = 0; i < nodez.length; i++) {
+        localNodes.push(new Object({
+            first_name: nodez[i].first_name,
+            last_name: nodez[i].last_name,
+            uid: nodez[i].uid,
+            photo_200_orig: nodez[i].photo_200_orig,
+            sex: nodez[i].sex
+        }));
+    }
+    return localNodes;
+}
+
 function initializeEvents() {
     var create = document.getElementById('downloadlink');
 
@@ -37,6 +84,12 @@ function initializeEvents() {
     mstbtn.addEventListener('click', function () {
         getMST();
     }, false);
+
+    var strongbtn = document.getElementById('strong');
+    strongbtn.addEventListener('click', function () {
+        getStrong();
+    }, false);
+
 }
 
 function onPageLoaded() {
@@ -79,7 +132,6 @@ function removeClickEvent() {
     network.off('click', addToShortestPathList);
 }
 
-
 var shortestPathNodeListIndexes = new Array();
 
 function addToShortestPathList(properties) {
@@ -102,7 +154,6 @@ function addToShortestPathList(properties) {
     }
     selectedArgumentPathNodes();
 }
-
 
 function selectedArgumentPathNodes() {
     if (shortestPathNodeListIndexes != 0) {
@@ -180,6 +231,55 @@ function getMST() {
         contentType: "application/json",
         success: function (data) {
             higlightPath(data);
+            stopSpinner();
+        }
+    });
+}
+
+function getNextColor(color) {
+    return color - 0x000033;
+}
+
+function highlightComponents(components) {
+    var color = 0x99FF99;
+    for (var i = 0; i < components.length; i++) {
+        for (var j = 0; j < components[j].length; j++) {
+            color = getNextColor(color);
+            var val = color.toString().split('x')[1];
+            console.log(val);
+            data.nodes._data[components[i][j].uid].color = {
+                background: '#' + val
+            }
+        }
+    }
+    network.setData(data);
+}
+
+
+function getStrong() {   
+    startSpinner();
+    var nodes = getNodes();
+    var nodesIds = new Array();
+    for (var i = 0; i < nodes.length; i++) {
+        nodesIds.push(nodes[i].uid);
+    }
+    var edges = getEdges(nodes);
+  
+    $.ajax({
+        type: "POST",
+        data: JSON.stringify({
+            Vertices: nodesIds,
+            Edges: edges
+        }),
+        url: "api/StrongComponents",
+        contentType: "application/json",
+        success: function (data) {
+            for (var i = 0; i < data.length; i++) {
+                for (var j = 0; j < data[j].length; j++) {
+                    data[i][j] = nodes[data[i][j]];
+                }
+            }
+            highlightComponents(data);
             stopSpinner();
         }
     });
