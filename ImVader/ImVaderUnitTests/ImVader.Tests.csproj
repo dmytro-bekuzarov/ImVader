@@ -58,9 +58,13 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AlgorithmsTests\BreathFirstPassesTest.cs" />
+    <Compile Include="AlgorithmsTests\DepthFirstPassesTest.cs" />
     <Compile Include="AlgorithmsTests\MinCutsTest.cs" />
+    <Compile Include="AlgorithmsTests\MinimalSpanningTreeTest.cs" />
+    <Compile Include="AlgorithmsTests\StrongComponentsTest.cs" />
     <Compile Include="ListGraph.cs" />
     <Compile Include="MatrixGraph.cs" />
+    <Compile Include="ShortestPathesTest.cs" />
     <Compile Include="ShortestPaths.cs" />
     <Compile Include="TopologicalSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,7 +79,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ImVader.Tests.vsdoc" />
     <None Include="packages.config" />
+    <None Include="Settings.StyleCop" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

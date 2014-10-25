@@ -86,8 +86,8 @@ namespace ImVader
         /// </returns>
         public override IEnumerable<int> GetAdjacentVertices(int v)
         {
-            CheckVerticesIndexes(v);
-            return this.AdjacencyList[v].Select(edge => edge.Other(v));
+            //CheckVerticesIndexes(v);
+            return this.AdjacencyList[Indexes[v]].Select(edge => Indexes[edge.Other(v)]);
         }
 
         /// <summary>
