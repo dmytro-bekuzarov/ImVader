@@ -46,7 +46,7 @@ function makeTextFile(text) {
     textFile = window.URL.createObjectURL(data);
 
     return textFile;
-};
+}
 
 function initializeGraph() {
     container = document.getElementById('graph_place');
@@ -60,10 +60,81 @@ function initializeGraph() {
     });
 }
 
+function highlightComponents(components) {
+    console.log(components);
+    for (var i = 0; i < components.length; i++) {
+        for (var j = 0; j < components[j].length; j++) {
+            data.nodes._data[components[i][j].uid].color = {
+                background: '#FFCC33'
+            }
+        }
+    }
+    network.setData(data);
+}
+
+function higlightPath(selectedNodes) {
+    for (var i = 0; i < selectedNodes.length; i++) {
+        data.nodes._data[selectedNodes[i]].color = {
+            background: '#99FF99'
+        }
+        for (var id in data.edges._data) {
+            console.log(data.edges._data[id].color);
+        }
+        for (var id in data.edges._data) {
+            for (var k = 0; k < selectedNodes.length; k++) {
+                if (data.edges._data[id].from == selectedNodes[i] &&
+                    data.edges._data[id].to == selectedNodes[k]) {
+                    data.edges._data[id].color = '#33CC66';
+                }
+            }
+        }
+    }
+    network.setData(data);
+}
+
+function highlightSubgraph(selectedNodes, selectedEdges) {
+    for (var i = 0; i < selectedNodes.length; i++) {
+        data.nodes._data[selectedNodes[i]].color = {
+            background: '#99FF99',
+            border: '#006600'
+        }
+    }
+    for (var id in data.edges._data) {
+        for (var k = 0; k < selectedEdges.length; k++) {
+            if (data.edges._data[id].from == selectedEdges[i].from &&
+                data.edges._data[id].to == selectedEdges[k].to ||
+                data.edges._data[id].from == selectedEdges[i].to &&
+                data.edges._data[id].to == selectedEdges[k].from) {
+                data.edges._data[id].color = '#33CC66';
+            }
+        }
+    }
+    network.setData(data);
+}
+
+function setDefaultVisualOptions() {
+    for (var id in data.edges._data) {
+        data.edges._data[id].color = {
+            border: 'grey'
+        };
+    }
+    for (var id in data.nodes._data) {
+        data.nodes._data[id].color = {
+            border: '#9999FF',
+            backgroud: '#CCCCFF'
+        };
+    }
+    network.setData(data);
+}
+
 function addNode(user) {
     user.id = user.uid;
     user.label = user.first_name;
-    if (user.sex == 1) user.color = 'red';
+    if (user.sex == 1) user.color = {
+        background: '#FF6699',
+        border: '#CC0033'
+    }
+
     nodes.add(user);
     return nodes;
 }
@@ -74,12 +145,15 @@ function addEdge(from, to) {
 }
 
 function addEdge(from, to, value) {
-    edges.add({from: from, to: to, value: value, label: value});
+    factor = value == 0 ? 0.5 : 1 / Math.sqrt(value);
+    edges.add({
+        from: from, to: to, value: value, label: value, color: '#bce8f1',
+        arrowScaleFactor: factor, style: "arrow"
+    });
 }
 
-function hasEdge(from, to){
-    for (var i=0;i<edges._data.length;i++)
-    {
+function hasEdge(from, to) {
+    for (var i = 0; i < edges._data.length; i++) {
         if ((edges._data[i].from == from && edges._data[i].to == to))// || (edges._data[i].to == from && edges._data[i].from == to))
             return true;
     }
@@ -154,8 +228,8 @@ function getGraphAsJson() {
     return graph;
 };
 
-$(document).ready(function() {
-    $("#find-shortest-path").on('click', function() {
+$(document).ready(function () {
+    $("#find-shortest-path").on('click', function () {
         $("#find-shortest-path-tooltip").html("Select two vertices");
     });
 });

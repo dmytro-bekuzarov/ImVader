@@ -459,6 +459,9 @@
     <Content Include="External\docs\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="External\docs\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\_references.js" />
+    <Content Include="VKConnection\index.html" />
+    <Content Include="VKConnection\script\vkConnection.js" />
+    <Content Include="VKConnection\style\style.css" />
     <Content Include="VSdoc\bookC.gif" />
     <Content Include="VSdoc\bookE.gif" />
     <Content Include="VSdoc\help_index--.html" />
