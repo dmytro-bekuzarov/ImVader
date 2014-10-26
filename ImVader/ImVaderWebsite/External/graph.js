@@ -147,8 +147,7 @@ function addEdge(from, to) {
 function addEdge(from, to, value) {
     factor = value == 0 ? 0.5 : 1 / Math.sqrt(value);
     edges.add({
-        from: from, to: to, value: value, label: value, color: '#bce8f1',
-        arrowScaleFactor: factor, style: "arrow"
+        from: from, to: to, value: value, label: value, color: '#bce8f1', arrowScaleFactor: factor, style: "arrow"
     });
 }
 
