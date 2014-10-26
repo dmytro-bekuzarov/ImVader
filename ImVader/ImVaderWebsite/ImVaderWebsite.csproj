@@ -295,6 +295,7 @@
     <Content Include="Images\components\timeline-star.svg" />
     <Content Include="Images\DemoPage\actions.jpg" />
     <Content Include="Images\DemoPage\friends.jpg" />
+    <Content Include="Images\DemoPage\friends.png" />
     <Content Include="Images\DemoPage\getfriends.jpg" />
     <Content Include="Images\DemoPage\login.jpg" />
     <Content Include="Images\gallery\large\gallery-img1.jpg" />

@@ -55,7 +55,7 @@
                             <span id="user_gender"></span>
                         </div>
                         <br />
-                        <button onclick="getFriends()" class="btn btn-primary" id="getFriendsButton" >
+                        <button onclick="getFriends()" class="btn btn-primary" id="getFriendsButton">
                             Get friends
                         </button>
                     </div>
@@ -116,7 +116,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" >
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
                                     <span class="marker"></span>
                                     <span id="saveload"> Save & Load</span>
                                 </a>
@@ -195,19 +195,27 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="myModalLabel">Welcome to IMVADER demo page</h4>
             </div>
-            <div class="modal-body">
-                To start demo log in into your vk account
-                <img src="~/Images/DemoPage/login.jpg" alt="login">
-                <hr>
-                To load your friends to visualize graph click "Get friends" button on the left
-                <img src="~/Images/DemoPage/getfriends.jpg" alt="getfriends">
-                <hr>
-                You will get something like this
-                <img src="~/Images/DemoPage/friends.jpg" alt="friends">
-                <hr>
-                Use "Actions" to manage your graph and operate on it
-                <img src="~/Images/DemoPage/actions.jpg" alt="actions">
-            </div>
+            <ol class="demoModalBody">
+                <li>
+                    To start demo log in into your vk account
+                    <img src="~/Images/DemoPage/login.jpg" alt="login">
+                    <hr>
+                </li>
+                <li>
+                    To load your friends to visualize graph click "Get friends" button on the left
+                    <img src="~/Images/DemoPage/getfriends.jpg" alt="getfriends">
+                    <hr>
+                </li>
+                <li>
+                    You will get something like this
+                    <img src="~/Images/DemoPage/friends.png" alt="friends">
+                    <hr>
+                </li>
+                <li>
+                    Use "Actions" to manage your graph and operate on it
+                    <img src="~/Images/DemoPage/actions.jpg" alt="actions">
+                </li>
+            </ol>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
