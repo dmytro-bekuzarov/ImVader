@@ -71,7 +71,7 @@ namespace ImVader.Algorithms
         /// Perfoms topological sort on graph and returns modified graph
         /// </summary>
         /// <param name="g">Graph to operate on</param>
-        /// <returns>Returns modofied suurce graph</returns>
+        /// <returns>Returns modofied source graph</returns>
         public Graph<TV, TE> SortGraph(Graph<TV, TE> g)
         {
             this.graph = g;
@@ -92,18 +92,30 @@ namespace ImVader.Algorithms
 
             foreach (var edge in g.Edges.Values)
             {
-                edge.From = numbers[edge.From];
-                edge.To = numbers[edge.To];
+                edge.From = numbers[g.IndexOf(edge.From)];
+                edge.To = numbers[g.IndexOf(edge.To)];
             }
 
-            var tempVertices = new Dictionary<int, Vertex<TV>>(g.VertexCount);
+            //var tempVertices = new Dictionary<int, Vertex<TV>>(g.VertexCount);
 
-            for (var i = 0; i < numbers.Length; i++)
-            {
-                tempVertices[i] = g.Vertices[numbers[i]];
-            }
+            //for (var i = 0; i < numbers.Length; i++)
+            //{
+            //    tempVertices[i] = g.Vertices[numbers[i]];
+            //}
 
             return g;
+        }
+
+        /// <summary>
+        /// The get order.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="int[]"/>.
+        /// Order of sorted graph vertices
+        /// </returns>
+        public int[] GetOrder()
+        {
+            return numbers;
         }
 
         /// <summary>
@@ -117,11 +129,12 @@ namespace ImVader.Algorithms
         /// </returns>
         private bool Dfs(int v)
         {
+
             if (colors[v] == Color.Grey) return true;
             if (colors[v] == Color.Black) return false;
             colors[v] = Color.Black;
             var edgesToEnumerate = graph.GetAdjacentEdges(v).ToArray();
-            if (edgesToEnumerate.Any(t => this.Dfs(t.To)))
+            if (edgesToEnumerate.Any(t => this.Dfs(graph.IndexOf(t.To))))
             {
                 return true;
             }

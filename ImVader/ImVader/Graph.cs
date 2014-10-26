@@ -214,7 +214,7 @@ namespace ImVader
             IEnumerable<WeightedEdge> edges;
             WeightedEdge[] weightedEdges;
             try
-            {   
+            {
                 edges = this.Edges.Values.Cast<WeightedEdge>();
                 weightedEdges = edges as WeightedEdge[] ?? edges.ToArray();
             }
@@ -229,7 +229,7 @@ namespace ImVader
             weightedEdges = weightedEdges.Select(
                 x => new WeightedEdge(
                          this.Indexes.IndexOf(x.From),
-                         this.Indexes.IndexOf(x.To), 
+                         this.Indexes.IndexOf(x.To),
                     x.Weight)).ToArray();
 
             foreach (var edge in weightedEdges)
@@ -284,5 +284,11 @@ namespace ImVader
         {
             return Indexes.IndexOf(index);
         }
+
+        public int IndexedValue(int index)
+        {
+            return Indexes[index];
+        }
+
     }
 }

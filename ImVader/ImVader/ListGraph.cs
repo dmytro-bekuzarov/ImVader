@@ -64,7 +64,6 @@ namespace ImVader
                 this.AddEdge(edge);
             }
         }
-
         
         public void Init(IEnumerable<int> verticesIds)
         {

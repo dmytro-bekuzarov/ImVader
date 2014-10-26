@@ -84,7 +84,7 @@ function higlightPath(selectedNodes) {
 
         }
         for (var id in data.edges._data) {
-        //    console.log(data.edges._data[id].color);
+            //    console.log(data.edges._data[id].color);
         }
         for (var id in data.edges._data) {
             for (var k = 0; k < selectedNodes.length; k++) {
@@ -194,19 +194,27 @@ function checkHasNoFriends(user_id) {
     return true;
 }
 
-function clearGraph() {
+function clearNodes() {
     var nodez = Object.keys(nodes._data).map(function (k) {
         return nodes._data[k];
-    });
-    var edgez = Object.keys(edges._data).map(function (k) {
-        return edges._data[k];
     });
     for (var i = 0; i < nodez.length; i++) {
         nodes.remove(nodez[i].uid);
     }
+}
+
+function clearEdges() {
+    var edgez = Object.keys(edges._data).map(function (k) {
+        return edges._data[k];
+    });
     for (var i = 0; i < edgez.length; i++) {
         nodes.remove(edgez[i].id);
     }
+}
+
+function clearGraph() {
+    clearNodes();
+    clearEdges();
 }
 
 function getEdges() {
@@ -239,6 +247,14 @@ function getNodes() {
         }));
     }
     return localNodes;
+}
+
+function getNodesAsMap() {
+    return jQuery.extend(true, {}, nodes._data);
+}
+
+function getCenterCoords() {
+    return network.getCenterCoordinates();
 }
 
 function getGraphAsJson() {

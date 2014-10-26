@@ -252,3 +252,57 @@ function getStrong() {
         }
     });
 }
+
+///////////////////////////////
+$(document).ready(function () {
+    $("#topological").on('click', function () {
+        topologicalSort();
+    });
+});
+
+function topologicalSort() {
+    startSpinner();
+    var nodes = getNodes();
+    var nodesIds = new Array();
+    for (var i = 0; i < nodes.length; i++) {
+        nodesIds.push(nodes[i].uid);
+    }
+    var edges = getEdges();
+    console.log(edges);
+    $.ajax({
+        type: "POST",
+        data: JSON.stringify({
+            Vertices: nodesIds,
+            Edges: edges
+        }),
+        url: "api/Topological",
+        contentType: "application/json",
+        success: function (data) {
+
+            if (data != null) {
+                console.log(data);
+                var coords = getCenterCoords();
+                var nodesMap=getNodesAsMap();
+                clearNodes();
+
+                nodesMap[data[0]].x = coords.x;
+                nodesMap[data[0]].y = coords.y;
+                addNode(nodesMap[data[0]]);
+
+                for (var j = 1; j < data.length; j++) {
+                    var thisId = data[j];
+
+                    nodesMap[data[j]].x = coords.x + j*140;
+                    nodesMap[data[j]].y = coords.y;
+                   
+                    nodesMap[data[j]].allowedToMoveY = true;
+                    addNode(nodesMap[data[j]]);
+                }
+
+            } else {
+                alert('Graph has cycles');
+            }
+            stopSpinner();
+        }
+    });
+}

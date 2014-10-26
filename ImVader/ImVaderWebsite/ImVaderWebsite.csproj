@@ -126,6 +126,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ShortestPathController.cs" />
     <Compile Include="Controllers\StrongComponentsController.cs" />
+    <Compile Include="Controllers\TopologicalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -926,6 +927,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\StrongComponents\" />
+    <Folder Include="Views\Topological\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
