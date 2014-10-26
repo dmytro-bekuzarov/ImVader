@@ -29,7 +29,7 @@ function selectNode(properties) {
     }
 }
 
-function getEdges(nodes) {
+function getEdgesByNodes(nodes) {
     var localEdges = new Array();
     var edgez = Object.keys(edges._data).map(function (k) {
         return edges._data[k];
@@ -46,6 +46,21 @@ function getEdges(nodes) {
         localEdges.push({
             from: froma,
             to: toz
+        });
+    }
+    return localEdges;
+}
+
+function getEdges() {
+    var localEdges = new Array();
+    var edgez = Object.keys(edges._data).map(function (k) {
+        return edges._data[k];
+    });
+    for (var i = 0; i < edgez.length; i++) {
+        localEdges.push({
+            from: parseInt(edgez[i].from),
+            to: parseInt(edgez[i].to),
+            value: parseInt(edgez[i].value)
         });
     }
     return localEdges;
@@ -236,26 +251,6 @@ function getMST() {
     });
 }
 
-function getNextColor(color) {
-    return color - 0x000033;
-}
-
-function highlightComponents(components) {
-    var color = 0x99FF99;
-    for (var i = 0; i < components.length; i++) {
-        for (var j = 0; j < components[j].length; j++) {
-            color = getNextColor(color);
-            var val = color.toString().split('x')[1];
-            console.log(val);
-            data.nodes._data[components[i][j].uid].color = {
-                background: '#' + val
-            }
-        }
-    }
-    network.setData(data);
-}
-
-
 function getStrong() {   
     startSpinner();
     var nodes = getNodes();
@@ -263,7 +258,7 @@ function getStrong() {
     for (var i = 0; i < nodes.length; i++) {
         nodesIds.push(nodes[i].uid);
     }
-    var edges = getEdges(nodes);
+    var edges = getEdgesByNodes(nodes);
   
     $.ajax({
         type: "POST",

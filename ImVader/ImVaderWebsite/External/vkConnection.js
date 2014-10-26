@@ -37,19 +37,16 @@ function getFriends() {
     //Getting user friends
     if (user_id != null) {
         if (checkHasNoFriends(user_id)) {
-            if (!offsetArray[user_id])
-            {
+            if (!offsetArray[user_id]) {
                 offsetArray[user_id] = 0;
             }
-            VK.Api.call('friends.get', { user_id: user_id, fields: "photo_200_orig,sex,counters", offset: offsetArray[user_id], count : 5 }, function (r) {
+            VK.Api.call('friends.get', { user_id: user_id, fields: "photo_200_orig,sex,counters", offset: offsetArray[user_id], count: 5 }, function (r) {
                 if (r.response) {
-                    offsetArray[user_id]+=5;
+                    offsetArray[user_id] += 5;
                     time = r.response.length;
-                    console.log(r.response);
-                    for (var i=0;i<r.response.length;i++)
-                    {
-                        if (!isAdded(r.response[i].uid)){
-                                    addNode(r.response[i]);
+                    for (var i = 0; i < r.response.length; i++) {
+                        if (!isAdded(r.response[i].uid)) {
+                            addNode(r.response[i]);
                         }
                         getMutual(user_id, r.response[i].uid);
                     }
@@ -65,15 +62,12 @@ function getFriends() {
         console.log('not auth');
     }
 }
-function getMutual(from, to)
-{
+function getMutual(from, to) {
     var fr = from, t = to;
-    var func = VK.Api.call('friends.getMutual', {source_uid: from, target_uid:to}, function (resp){
-                            if (resp.response)
-                            {
-                                addEdge(fr, t, resp.response.length);
-                                console.log("Call");
-                            }
-                        });
+    var func = VK.Api.call('friends.getMutual', { source_uid: from, target_uid: to }, function (resp) {
+        if (resp.response) {
+            addEdge(fr, t, resp.response.length);
+        }
+    });
     return func;
 }
