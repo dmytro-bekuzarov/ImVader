@@ -20,14 +20,14 @@ namespace ImVader
         /// <param name="from">
         /// The first vertex of the edge
         /// </param>
-        /// <param name="w">
+        /// <param name="to">
         /// The second vertex of the edge
         /// </param>
         /// <param name="weight">
         /// WEight of the edge
         /// </param>
-        public WeightedEdge(int from, int w, double weight)
-            : base(from, w)
+        public WeightedEdge(int from, int to, double weight)
+            : base(from, to)
         {
             Weight = weight;
         }

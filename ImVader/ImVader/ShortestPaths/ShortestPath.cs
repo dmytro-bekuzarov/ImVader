@@ -79,13 +79,6 @@
             return this.DistTo[v] < double.MaxValue;
         }
 
-        /**
-         * Returns a shortest path from the source vertex <tt>s</tt> to vertex <tt>v</tt>.
-         * @param v the destination vertex
-         * @return a shortest path from the source vertex <tt>s</tt> to vertex <tt>v</tt>
-         *    as an iterable of edges, and <tt>null</tt> if no such path
-         */
-
         /// <summary>
         /// Returns a shortest path from the source vertex s to vertex v.
         /// </summary>

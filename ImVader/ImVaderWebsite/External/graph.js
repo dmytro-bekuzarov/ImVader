@@ -75,10 +75,16 @@ function highlightComponents(components) {
 function higlightPath(selectedNodes) {
     for (var i = 0; i < selectedNodes.length; i++) {
         data.nodes._data[selectedNodes[i]].color = {
-            background: '#99FF99'
+            background: '#99FF99',
+            border: '#006600',
+            highlight: {
+                background: 'lightgreen',
+                border: 'darkgreen'
+            }
+
         }
         for (var id in data.edges._data) {
-            console.log(data.edges._data[id].color);
+        //    console.log(data.edges._data[id].color);
         }
         for (var id in data.edges._data) {
             for (var k = 0; k < selectedNodes.length; k++) {
@@ -131,8 +137,12 @@ function addNode(user) {
     user.id = user.uid;
     user.label = user.first_name;
     if (user.sex == 1) user.color = {
-        background: '#FF6699',
-        border: '#CC0033'
+        background: 'pink',
+        border: '#CC0033',
+        highlight: {
+            background: 'pink',
+            border: 'red'
+        }
     }
 
     nodes.add(user);
@@ -199,18 +209,28 @@ function clearGraph() {
     }
 }
 
-function getGraphAsJson() {
-    var graph = {};
-    graph.edges = new Array();
-    graph.nodes = new Array();
-    var nodez = Object.keys(nodes._data).map(function (k) {
-        return nodes._data[k];
-    });
+function getEdges() {
+    var localEdges = new Array();
     var edgez = Object.keys(edges._data).map(function (k) {
         return edges._data[k];
     });
+    for (var i = 0; i < edgez.length; i++) {
+        localEdges.push({
+            from: parseInt(edgez[i].from),
+            to: parseInt(edgez[i].to),
+            Weight: parseInt(edgez[i].value)
+        });
+    }
+    return localEdges;
+}
+
+function getNodes() {
+    var localNodes = new Array();
+    var nodez = Object.keys(nodes._data).map(function (k) {
+        return nodes._data[k];
+    });
     for (var i = 0; i < nodez.length; i++) {
-        graph.nodes.push(new Object({
+        localNodes.push(new Object({
             first_name: nodez[i].first_name,
             last_name: nodez[i].last_name,
             uid: nodez[i].uid,
@@ -218,14 +238,18 @@ function getGraphAsJson() {
             sex: nodez[i].sex
         }));
     }
-    for (var i = 0; i < edgez.length; i++) {
-        graph.edges.push({
-            from: parseInt(edgez[i].from),
-            to: parseInt(edgez[i].to)
-        });
-    }
+    return localNodes;
+}
+
+function getGraphAsJson() {
+    var graph = {};
+    graph.edges = getEdges();
+    graph.nodes = getNodes();
+
     return graph;
 };
+
+
 
 $(document).ready(function () {
     $("#find-shortest-path").on('click', function () {

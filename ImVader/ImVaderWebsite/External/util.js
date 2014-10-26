@@ -51,38 +51,6 @@ function getEdgesByNodes(nodes) {
     return localEdges;
 }
 
-function getEdges() {
-    var localEdges = new Array();
-    var edgez = Object.keys(edges._data).map(function (k) {
-        return edges._data[k];
-    });
-    for (var i = 0; i < edgez.length; i++) {
-        localEdges.push({
-            from: parseInt(edgez[i].from),
-            to: parseInt(edgez[i].to),
-            value: parseInt(edgez[i].value)
-        });
-    }
-    return localEdges;
-}
-
-function getNodes() {
-    var localNodes = new Array();
-    var nodez = Object.keys(nodes._data).map(function (k) {
-        return nodes._data[k];
-    });
-    for (var i = 0; i < nodez.length; i++) {
-        localNodes.push(new Object({
-            first_name: nodez[i].first_name,
-            last_name: nodez[i].last_name,
-            uid: nodez[i].uid,
-            photo_200_orig: nodez[i].photo_200_orig,
-            sex: nodez[i].sex
-        }));
-    }
-    return localNodes;
-}
-
 function initializeEvents() {
     var create = document.getElementById('downloadlink');
 
@@ -179,7 +147,16 @@ function selectedArgumentPathNodes() {
     }
 }
 
+function selectNodes(array) {
+    network.selectNodes(array);
+}
+
 function goToServer() {
+    if (shortestPathNodeListIndexes.length<2) {
+        alert("Select 2 nodes");
+        return;
+    }
+
     startSpinner();
     var nodes = getNodes();
     var nodesIds = new Array();
@@ -187,35 +164,31 @@ function goToServer() {
         nodesIds.push(nodes[i].uid);
     }
     var edges = getEdges();
-    var udges = new Array();
-    for (var j = 0; j < edges.length; j++) {
-        var edge = {};
-        edge.From = edges[j].from;
-        edge.To = edges[j].to;
-        var edge2 = {};
-        edge2.From = edges[j].to;
-        edge2.To = edges[j].from;
-        udges.push(edge);
-        udges.push(edge2);
-    }
-    
+
     $.ajax({
         type: "POST",
         data: JSON.stringify({
             Vertices: nodesIds,
-            Edges: udges,
+            Edges: edges,
             Vertex1: shortestPathNodeListIndexes[0],
             Vertex2: shortestPathNodeListIndexes[1]
         }),
         url: "api/ShortestPath",
         contentType: "application/json",
         success: function (data) {
-            shortestPathNodeListIndexes = data;
-            selectedArgumentPathNodes();
-            higlightPath(shortestPathNodeListIndexes);
+            if (data != null) {
+                shortestPathNodeListIndexes = data;
+                selectedArgumentPathNodes();
+                higlightPath(shortestPathNodeListIndexes);
+            } else {
+                alert('No path');
+                selectNodes([]);
+            }
+            shortestPathNodeListIndexes.splice(0, shortestPathNodeListIndexes.length);
             stopSpinner();
         }
     });
+
 }
 
 function getMST() {
@@ -232,7 +205,7 @@ function getMST() {
     for (var j = 0; j < edges.length; j++) {
         var edge = {};
         edge.From = edges[j].from;
-        edge.To = edges[j].to;        
+        edge.To = edges[j].to;
         edge.Weight = edges[j].value;
         udges.push(edge);
     }
@@ -251,7 +224,7 @@ function getMST() {
     });
 }
 
-function getStrong() {   
+function getStrong() {
     startSpinner();
     var nodes = getNodes();
     var nodesIds = new Array();
@@ -259,7 +232,7 @@ function getStrong() {
         nodesIds.push(nodes[i].uid);
     }
     var edges = getEdgesByNodes(nodes);
-  
+
     $.ajax({
         type: "POST",
         data: JSON.stringify({
