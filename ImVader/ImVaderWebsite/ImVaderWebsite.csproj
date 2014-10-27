@@ -124,6 +124,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MinimalSpanningTreeController.cs" />
+    <Compile Include="Controllers\MinimumCutsController.cs" />
     <Compile Include="Controllers\ShortestPathController.cs" />
     <Compile Include="Controllers\StrongComponentsController.cs" />
     <Compile Include="Controllers\TopologicalController.cs" />

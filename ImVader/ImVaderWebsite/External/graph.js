@@ -81,7 +81,6 @@ function higlightPath(selectedNodes) {
                 background: 'lightgreen',
                 border: 'darkgreen'
             }
-
         }
         for (var id in data.edges._data) {
             //    console.log(data.edges._data[id].color);

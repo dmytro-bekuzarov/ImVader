@@ -253,10 +253,43 @@ function getStrong() {
     });
 }
 
+
+function getMinimumCuts() {
+    startSpinner();
+    var nodes = getNodes();
+    var nodesIds = new Array();
+    for (var i = 0; i < nodes.length; i++) {
+        nodesIds.push(nodes[i].uid);
+    }
+    var edges = getEdges();
+
+    $.ajax({
+        type: "POST",
+        data: JSON.stringify({
+            Vertices: nodesIds,
+            Edges: edges
+        }),
+        url: "api/MinimumCuts",
+        contentType: "application/json",
+        success: function (response) {
+            console.log(response);
+            for (var i = 0; i < response.length; i++) {
+                data.nodes._data[response[i]].color = { background: "#00A86B" };
+            }
+            network.setData(data);
+
+            stopSpinner();
+        }
+    });
+}
+
 ///////////////////////////////
 $(document).ready(function () {
     $("#topological").on('click', function () {
         topologicalSort();
+    });
+    $("#findMinCutButton").on('click', function() {
+        getMinimumCuts();
     });
 });
 

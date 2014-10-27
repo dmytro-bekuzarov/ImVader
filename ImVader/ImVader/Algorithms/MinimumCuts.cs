@@ -9,13 +9,15 @@
     {
         private double bestCost = Double.MaxValue;
 
+        private readonly Graph<TV, TE> initialGraph;
+
         private List<int> bestCut;
 
         public List<int> BestCut
         {
             get
             {
-                return bestCut;
+                return this.bestCut.Select(v => this.initialGraph.Indexes[v]).ToList();
             }
         }
 
@@ -29,6 +31,7 @@
 
         public MinimumCuts(Graph<TV, TE> graph)
         {
+            initialGraph = graph;
             bestCut = new List<int>();
             var gmatrix = new double[graph.VertexCount][];
             for (var i = 0; i < gmatrix.GetLength(0); i++)
@@ -41,8 +44,8 @@
                 var adjacentEdges = graph.GetAdjacentEdges(i);
                 foreach (var edge in adjacentEdges)
                 {
-                    gmatrix[i][edge.Other(i)] = edge.Weight;
-                    gmatrix[edge.Other(i)][i] = edge.Weight;
+                    gmatrix[i][initialGraph.IndexOf(edge.Other(initialGraph.Indexes[i]))] = edge.Weight;
+                    gmatrix[initialGraph.IndexOf(edge.Other(initialGraph.Indexes[i]))][i] = edge.Weight;
                 }
             }
 
@@ -55,12 +58,11 @@
             var v = new List<int>[n];
             for (var i = 0; i < v.Length; i++)
             {
-                v[i] = new List<int>();
-                v[i].Add(i);
+                v[i] = new List<int> { i };
             }
 
             var exists = new Boolean[n];
-            var in_a = new Boolean[n];
+            var inA = new Boolean[n];
             var w = new double[n];
 
             for (var i = 0; i < n; i++)
@@ -72,7 +74,7 @@
             {
                 for (var i = 0; i < n; i++)
                 {
-                    in_a[i] = false;
+                    inA[i] = false;
                     w[i] = 0;
                 }
 
@@ -81,7 +83,7 @@
                     var sel = -1;
 
                     for (var i = 0; i < n; ++i)
-                        if (exists[i] && !in_a[i] && (sel == -1 || w[i] > w[sel]))
+                        if (exists[i] && !inA[i] && (sel == -1 || w[i] > w[sel]))
                             sel = i;
 
                     if (it == n - ph - 1)
@@ -99,7 +101,7 @@
                     }
                     else
                     {
-                        in_a[sel] = true;
+                        inA[sel] = true;
                         for (var i = 0; i < n; i++)
                             w[i] += graph[sel][i];
 
