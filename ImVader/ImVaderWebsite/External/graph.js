@@ -61,12 +61,34 @@ function initializeGraph() {
 }
 
 function highlightComponents(components) {
-    console.log(components);
+    var colors = [];
+
+    colors.push("#8A2BE2");
+    colors.push("#DC143C");
+    colors.push("#FFD700");
+    colors.push("#FF4500");
+    colors.push("#7FFF00");
+    colors.push("#00CED1");
+    colors.push("#F0E68C");
+
+    var counter = 0;
+
     for (var i = 0; i < components.length; i++) {
-        for (var j = 0; j < components[j].length; j++) {
-            data.nodes._data[components[i][j].uid].color = {
-                background: '#FFCC33'
+        counter %= 7;
+        if (components[i].length == 1) {
+            data.nodes._data[components[i][0]].color = { background: "#2F4F4F" }
+        } else {
+            for (var j = 0; j < components[i].length; j++) {
+                if (components[i][j] != null && components[i][j] != undefined)
+                    data.nodes._data[components[i][j]].color = { background: colors[counter] };
+                for (var k in data.edges._data) {
+                    if ((edges._data[k].from == components[i][j] && components[i].indexOf(edges._data[k].to) != -1) ||
+                        (edges._data[k].to == components[i][j] && components[i].indexOf(edges._data[k].from) != -1)) {
+                        edges._data[k].color = colors[counter];
+                    }
+                }
             }
+            counter++;
         }
     }
     network.setData(data);

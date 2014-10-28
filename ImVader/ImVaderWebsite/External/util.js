@@ -243,8 +243,8 @@ function getStrong() {
         contentType: "application/json",
         success: function (data) {
             for (var i = 0; i < data.length; i++) {
-                for (var j = 0; j < data[j].length; j++) {
-                    data[i][j] = nodes[data[i][j]];
+                for (var j = 0; j < data[i].length; j++) {
+                    data[i][j] = nodes[data[i][j]].uid;
                 }
             }
             highlightComponents(data);

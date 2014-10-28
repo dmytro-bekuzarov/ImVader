@@ -41,7 +41,7 @@
             dirListGraph.AddEdge(new UnweightedEdge(1, 3));
             dirListGraph.AddEdge(new UnweightedEdge(0, 2));
             dirListGraph.AddEdge(new UnweightedEdge(0, 3));
-            var dfs = new BreadthFirstPathes<int, Edge>(dirListGraph, 1);
+            var dfs = new DepthFirstPathes<int, Edge>(dirListGraph, 1);
             Assert.IsFalse(dfs.HasPathTo(0));
         }
 
@@ -54,7 +54,7 @@
             dirListGraph.AddEdge(new UnweightedEdge(0, 2));
             dirListGraph.AddEdge(new UnweightedEdge(0, 3));
             dirListGraph.AddEdge(new UnweightedEdge(3, 4));
-            var dfs = new BreadthFirstPathes<int, Edge>(dirListGraph, 0);
+            var dfs = new DepthFirstPathes<int, Edge>(dirListGraph, 0);
             var path = dfs.PathTo(4).ToArray();
             int[] path1 = { 0, 1, 3, 4 };
             int[] path2 = { 0, 3, 4 };
