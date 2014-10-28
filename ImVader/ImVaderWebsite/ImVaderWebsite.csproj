@@ -140,6 +140,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\demo.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\style_default.css" />
     <Content Include="Content\switcher.css" />
@@ -245,6 +246,7 @@
     <Content Include="External\toolTips.js" />
     <Content Include="External\util.js" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -461,6 +463,10 @@
     <Content Include="External\docs\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="External\docs\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="External\docs\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\_references.js" />
     <Content Include="VKConnection\index.html" />
     <Content Include="VKConnection\script\vkConnection.js" />
