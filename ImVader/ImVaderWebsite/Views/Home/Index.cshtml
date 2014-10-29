@@ -63,7 +63,7 @@
         <div class="col-md-12">
             <div class="promobox hidden-xs promobox-position">
                 <p class="promobox__text">ImVader is totally free and ready to use. Click the link on the right to download</p>
-                <a class="btn btn--highlight btn-wider" href="http://ge.tt/api/1/files/3xHQFR22/0/blob?download">Download</a>
+                <a class="btn btn--highlight btn-wider" href="https://www.nuget.org/packages/ImvaderPackage/">Download</a>
             </div>
         </div>
     </div>
@@ -134,37 +134,36 @@
     <!-- End Decorated slider -->
 </section>
 <!-- End page section -->
-
 @section bottom
 {
     <script src="~/External/jquery-event/jquery.event.drag-2.2.js"></script>		<!--Script jquery event Drag-->
-<script src="~/External/jquery-event/jquery.event.drop-2.2.js"></script>		<!--Script jquery event Drop-->
-<script src="~/External/jquery-easing/jquery.easing.1.3.js"></script>			<!--Script jquery Easing-->
-<script src="~/External/jquery-roundabout/jquery.roundabout.min.js"></script>	<!--Script Roundabout-->
-<script src="~/External/swiper/idangerous.swiper.min.js"></script>			<!--Script Swiper slider -->
-<script src="~/External/jquery-twitter/jquery.twitter.js"></script>			<!--Script Twitter-->
+    <script src="~/External/jquery-event/jquery.event.drop-2.2.js"></script>		<!--Script jquery event Drop-->
+    <script src="~/External/jquery-easing/jquery.easing.1.3.js"></script>			<!--Script jquery Easing-->
+    <script src="~/External/jquery-roundabout/jquery.roundabout.min.js"></script>	<!--Script Roundabout-->
+    <script src="~/External/swiper/idangerous.swiper.min.js"></script>			<!--Script Swiper slider -->
+    <script src="~/External/jquery-twitter/jquery.twitter.js"></script>			<!--Script Twitter-->
     <script src="~/External/jflickrfeed/jflickrfeed.js"></script>					<!--Script Widget Flikr-->
-    
+
     <script>
-    $(document).ready(function() {
+        $(document).ready(function () {
 
-	//Button hover
-	init_ButtonInfo();
+            //Button hover
+            init_ButtonInfo();
 
-	init_Button ();
+            init_Button();
 
-	//Roundabout slider
-	init_Roundabout();
+            //Roundabout slider
+            init_Roundabout();
 
-	//Swiper
-	init_DecoratedSlider();
+            //Swiper
+            init_DecoratedSlider();
 
-	init_QoutationSlider();
+            init_QoutationSlider();
 
-	//Services hover
-	init_ServicesInfo();
-});
-</script>
+            //Services hover
+            init_ServicesInfo();
+        });
+    </script>
 }
 @section head{
     <style>

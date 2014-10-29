@@ -15,14 +15,14 @@
             </address>
         </div>
         <div class="col-sm-6">
-            <form class="contact-form" id="contact-form" name="contact-form" method="post" action="send.php" novalidate>
-                <input class="form__field pull-left" id="user-name" name="user-name" type="text" placeholder="Name:">
-                <input class="form__field pull-right" id="user-email" name="user-email" type="email" placeholder="Email:">
-                <input class="form__field pull-left" id="user-phone" name="user-phone" type="text" placeholder="Phone:">
-                <input class="form__field pull-right clearfix" id="user-title" name="user-title" type="text" placeholder="Title:">
-                <textarea class="form__field form__field--message" name="user-message" id="user-message" placeholder="Message:"></textarea>
+            <form class="contact-form" id="contact-form" name="contact-form" method="post" action="@Url.Action("SendContactMail", "Home")" novalidate>
+                <input class="form__field pull-left" id="Name" name="Name" type="text" placeholder="Name:">
+                <input class="form__field pull-right" id="Email" name="Email" type="email" placeholder="Email:">                
+                <input class="form__field pull-left" id="Phone" name="Phone" type="text" placeholder="Phone:">
+                <input class="form__field pull-right clearfix" id="Title" name="Title" type="text" placeholder="Title:">
+                <textarea class="form__field form__field--message" name="Message" id="Message" placeholder="Message:"></textarea>
                 <button class="btn btn-info btn-lg btn--highlight" id="submit-btn" name="submit-btn" type="submit">Send Us Message</button>
-                <div id="response"></div>
+                <div id="response">@ViewBag.Message</div>
             </form>
         </div>
     </div>
