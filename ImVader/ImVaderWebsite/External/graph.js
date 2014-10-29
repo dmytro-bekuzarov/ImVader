@@ -71,7 +71,7 @@ function highlightComponents(components) {
     colors.push("#00CED1");
     colors.push("#F0E68C");
 
-    var counter = 0;    
+    var counter = 0;
     for (var i = 0; i < components.length; i++) {
         counter %= 7;
         if (components[i].length == 1) {

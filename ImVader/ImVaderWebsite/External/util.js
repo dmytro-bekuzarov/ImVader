@@ -18,6 +18,7 @@ function handleFileSelect(evt) {
     evt.stopPropagation();
     evt.preventDefault();
     var files = evt.dataTransfer.files;
+    clearGraph();
     loadGraph(files);
 }
 
@@ -36,7 +37,7 @@ function getEdgesByNodes(nodes) {
     });
     for (var i = 0; i < edgez.length; i++) {
         var froma = -1, toz = -1;
-        
+
         for (var j = 0; j < nodes.length; j++) {
             if (nodes[j].uid == edgez[i].from)
             { froma = j; }
@@ -92,14 +93,14 @@ function onPageLoaded() {
 
 //shortest path
 $(document).ready(function () {
-    $("#find-shortest-path").on('click', function () {        
+    $("#find-shortest-path").on('click', function () {
         removeSelectEvent();
         addClickEvent();
     });
     $("#find-shortest-path-start").on('click', function () {
         addSelectEvent();
         removeClickEvent();
-        goToServer();        
+        goToServer();
     });
 });
 
@@ -114,7 +115,7 @@ function removeSelectEvent() {
 function addClickEvent() {
     network.on('click', addToShortestPathList);
 }
-function removeClickEvent() {    
+function removeClickEvent() {
     network.off('click', addToShortestPathList);
 }
 
@@ -339,7 +340,7 @@ function topologicalSort() {
 
                 for (var j = 1; j < data.length; j++) {
                     var thisId = data[j];
-                    
+
                     nodesMap[data[j]].x = coords.x + j * 140;
                     nodesMap[data[j]].y = coords.y;
 

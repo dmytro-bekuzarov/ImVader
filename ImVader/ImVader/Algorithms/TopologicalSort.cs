@@ -68,7 +68,7 @@ namespace ImVader.Algorithms
         private Stack<int> visitedVertices;
 
         /// <summary>
-        /// Perfoms topological sort on graph and returns modified graph
+        /// Perfoms topological sort on graph 
         /// </summary>
         /// <param name="g">Graph to operate on</param>
         /// <returns>Returns modofied source graph</returns>
@@ -81,27 +81,13 @@ namespace ImVader.Algorithms
             for (var i = 0; i < g.VertexCount; i++)
             {
                 var cycle = this.Dfs(i);
-                if (cycle)
-                    throw new InvalidOperationException("Graph has cycles");
+                if (cycle) throw new InvalidOperationException("Graph has cycles");
             }
 
             for (var i = 0; i < g.VertexCount; i++)
             {
                 numbers[visitedVertices.Pop()] = i;
             }
-
-            foreach (var edge in g.Edges.Values)
-            {
-                edge.From = numbers[g.IndexOf(edge.From)];
-                edge.To = numbers[g.IndexOf(edge.To)];
-            }
-
-            //var tempVertices = new Dictionary<int, Vertex<TV>>(g.VertexCount);
-
-            //for (var i = 0; i < numbers.Length; i++)
-            //{
-            //    tempVertices[i] = g.Vertices[numbers[i]];
-            //}
 
             return g;
         }
@@ -129,12 +115,11 @@ namespace ImVader.Algorithms
         /// </returns>
         private bool Dfs(int v)
         {
-
             if (colors[v] == Color.Grey) return true;
             if (colors[v] == Color.Black) return false;
-            colors[v] = Color.Black;
+            colors[v] = Color.Grey;
             var edgesToEnumerate = graph.GetAdjacentEdges(v).ToArray();
-            if (edgesToEnumerate.Any(t => this.Dfs(graph.IndexOf(t.To))))
+            if (edgesToEnumerate.Select(edj => this.graph.IndexOf(edj.To)).Any(this.Dfs))
             {
                 return true;
             }
@@ -143,5 +128,5 @@ namespace ImVader.Algorithms
             colors[v] = Color.Black;
             return false;
         }
-    }   
+    }
 }

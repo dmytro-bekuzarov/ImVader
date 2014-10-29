@@ -26,7 +26,7 @@ namespace ImVaderUnitTests
         [TestMethod]
         public void Sort()
         {
-            var g = new ListGraph<int, WeightedEdge>(4);
+            var g = new DirectedListGraph<int, WeightedEdge>(4);
             g.AddEdge(new WeightedEdge(0, 2, 1));
             g.AddEdge(new WeightedEdge(0, 1, 1));
             g.AddEdge(new WeightedEdge(1, 3, 1));
