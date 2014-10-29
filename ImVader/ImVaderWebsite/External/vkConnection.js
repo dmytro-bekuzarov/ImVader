@@ -3,6 +3,7 @@ var offset = 0;
 var offsetArray = new Array();
 var friends = null;
 var counter = 0;
+
 function initializeVk() {
     console.log("Page loaded");
     VK.init({

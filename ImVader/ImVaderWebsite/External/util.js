@@ -18,6 +18,7 @@ function handleFileSelect(evt) {
     evt.stopPropagation();
     evt.preventDefault();
     var files = evt.dataTransfer.files;
+    clearGraph();
     loadGraph(files);
 }
 
@@ -301,7 +302,8 @@ function topologicalSort() {
         nodesIds.push(nodes[i].uid);
     }
     var edges = getEdges();
-    console.log(edges);
+    console.log(nodesIds);
+    console.log(getEdgesAsMap());
     $.ajax({
         type: "POST",
         data: JSON.stringify({
@@ -311,20 +313,13 @@ function topologicalSort() {
         url: "api/Topological",
         contentType: "application/json",
         success: function (data) {
-
             if (data != null) {
                 console.log(data);
                 var coords = getCenterCoords();
                 var nodesMap=getNodesAsMap();
                 clearNodes();
 
-                nodesMap[data[0]].x = coords.x;
-                nodesMap[data[0]].y = coords.y;
-                addNode(nodesMap[data[0]]);
-
-                for (var j = 1; j < data.length; j++) {
-                    var thisId = data[j];
-
+                for (var j = 0; j < data.length; j++) {
                     nodesMap[data[j]].x = coords.x + j*140;
                     nodesMap[data[j]].y = coords.y;
                    

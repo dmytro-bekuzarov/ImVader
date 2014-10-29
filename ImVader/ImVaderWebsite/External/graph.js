@@ -30,7 +30,7 @@ function loadGraph(files) {
             addNode(graph.nodes[j]);
         }
         for (var j = 0; j < graph.edges.length; j++) {
-            addEdge(graph.edges[j].from, graph.edges[j].to);
+            addEdge(graph.edges[j].from, graph.edges[j].to,graph.edges[j].Weight);
         }
         stopSpinner(graph.edges.length);
     }
@@ -272,6 +272,9 @@ function getNodes() {
 
 function getNodesAsMap() {
     return jQuery.extend(true, {}, nodes._data);
+}
+function getEdgesAsMap() {
+    return jQuery.extend(true, {}, edges._data);
 }
 
 function getCenterCoords() {
