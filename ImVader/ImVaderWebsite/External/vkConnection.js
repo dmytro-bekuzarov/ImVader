@@ -57,6 +57,26 @@ function getFriends() {
              */
 
 
+
+            /* VK.Api.call('friends.get', { user_id: user_id, fields: "photo_200_orig,sex,counters,common_count" }, function (resp) {
+                resp = resp.response;
+                if (resp) {
+                    offsetArray[user_id] += 20;
+                    time = resp.length;
+                    for (var i = 0; i < resp.length; i++) {
+                        if (resp[i].count != 0) {
+                            if (!isAdded(resp[i].uid)) {
+                                addNode(resp[i]);
+                            }
+                            if (!hasEdge(user_id, resp[i].uid))
+                                addEdge(user_id, resp[i].uid, resp[i].common_count);
+                        }
+                    }
+                }
+                console.log(resp);
+                stopSpinner(time);
+                console.log(data.nodes);
+            });*/
             var code = 'var friends = API.friends.get({ "user_id": ' + parseInt(user_id) + ', "fields": "photo_200_orig,sex", "offset": ' + offsetArray[user_id] + ', "count": 20 });\n' +
                 'var i = 0;\n var obj = [];\n' +
                 'while (i != parseInt(friends.length) && i <= 20) {\n' +
