@@ -86,7 +86,7 @@ namespace ImVader.Algorithms
                 this.selE[i] = -1;
             }
             for (int i = 0; i < g.EdgesCount; i++)
-            {               
+            {
                 int a1 = g.Edges[i].From;
                 int a2 = g.Edges[i].To;
                 edges[a1][a2] = g.Edges[i];
@@ -121,17 +121,17 @@ namespace ImVader.Algorithms
                 if (this.selE[v] != -1)
                 {
                     var tmp = new WeightedEdge(v, this.selE[v], edges[v][this.selE[v]].Weight);
-                    
+
                     mstEdges.Add(edges[v][this.selE[v]]);
                     mst.AddEdge(tmp);
                 }
                 for (var to = 0; to < n; ++to)
-                        if (edges[v][to] != null && edges[v][to].Weight < this.minE[to])
-                        {
-                            this.minE[to] = edges[v][to].Weight;
-                            this.selE[to] = v;
-                            this.selE[v] = to;
-                        }
+                    if (edges[v][to] != null && edges[v][to].Weight < this.minE[to])
+                    {
+                        this.minE[to] = edges[v][to].Weight;
+                        this.selE[to] = v;
+                        this.selE[v] = to;
+                    }
             }
         }
 

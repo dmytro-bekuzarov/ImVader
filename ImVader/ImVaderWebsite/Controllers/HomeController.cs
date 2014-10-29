@@ -21,5 +21,11 @@
         {
             return View();
         }
+
+        [Route("contact")]
+        public ActionResult Contact()
+        {
+            return View();
+        }
     }
 }

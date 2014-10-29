@@ -18,6 +18,7 @@ namespace ImVaderWebsite.Controllers
 
         public List<int> Post([FromBody]SGraph g)
         {
+            // у меня здесь работает с  айдишниками вк
             var graph = new ListGraph<int, WeightedEdge>();
             graph.Init(g.Edges, g.Vertices);
             var sc = new MinimumCuts<int, WeightedEdge>(graph);

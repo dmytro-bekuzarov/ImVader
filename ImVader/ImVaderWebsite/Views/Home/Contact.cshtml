@@ -1,17 +1,30 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Contact us";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<section class="container contact">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2 class="section-title">Get in<span class="text-highlight">touch</span></h2>
+            <p class="contact__text"><strong>Share your thougts with us.</strong> Our goal is to provide global quality solutions. Imvader is one of our projects and we want to make it perfect. Contact us if you have any wishes or issues.</p>
+            <address class="contact__info">
+                <span class="contact__info__item"><i class="icon-circle icon-circle--thin fa fa-phone"></i>+ 380930952638 / + 380637482244</span>
+                <span class="contact__info__item"><i class="icon-circle icon-circle--thin fa fa-envelope"></i>imvader.graphs@gmail.com</span>
+                <span class="contact__info__item"><i class="icon-circle icon-circle--thin fa fa-map-marker"></i>Kharkiv, Lenin ave 14, 61000</span>
+            </address>
+        </div>
+        <div class="col-sm-6">
+            <form class="contact-form" id="contact-form" name="contact-form" method="post" action="send.php" novalidate>
+                <input class="form__field pull-left" id="user-name" name="user-name" type="text" placeholder="Name:">
+                <input class="form__field pull-right" id="user-email" name="user-email" type="email" placeholder="Email:">
+                <input class="form__field pull-left" id="user-phone" name="user-phone" type="text" placeholder="Phone:">
+                <input class="form__field pull-right clearfix" id="user-title" name="user-title" type="text" placeholder="Title:">
+                <textarea class="form__field form__field--message" name="user-message" id="user-message" placeholder="Message:"></textarea>
+                <button class="btn btn-info btn-lg btn--highlight" id="submit-btn" name="submit-btn" type="submit">Send Us Message</button>
+                <div id="response"></div>
+            </form>
+        </div>
+    </div>
+</section>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
