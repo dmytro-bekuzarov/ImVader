@@ -91,7 +91,7 @@ function onPageLoaded() {
 }
 
 
-//shortest path
+//shortest path;
 $(document).ready(function () {
     $("#find-shortest-path").on('click', function () {
         removeSelectEvent();

@@ -232,7 +232,7 @@ function checkHasNoFriends(user_id) {
         selectedNode.gotFriends = true;
         return true;
     }
-    //else return false;
+    //else return false;;
     return true;
 }
 
