@@ -36,6 +36,7 @@ function getEdgesByNodes(nodes) {
     });
     for (var i = 0; i < edgez.length; i++) {
         var froma = -1, toz = -1;
+        
         for (var j = 0; j < nodes.length; j++) {
             if (nodes[j].uid == edgez[i].from)
             { froma = j; }
@@ -45,7 +46,8 @@ function getEdgesByNodes(nodes) {
 
         localEdges.push({
             from: froma,
-            to: toz
+            to: toz,
+            weight: edgez[i].value ? edgez[i].value : 0
         });
     }
     return localEdges;
@@ -73,6 +75,11 @@ function initializeEvents() {
         getStrong();
     }, false);
 
+    var defaultbtn = document.getElementById('set-default-btn');
+    defaultbtn.addEventListener('click', function () {
+        setDefaultVisualOptions();
+    }, false);
+
 }
 
 function onPageLoaded() {
@@ -85,18 +92,14 @@ function onPageLoaded() {
 
 //shortest path
 $(document).ready(function () {
-    $("#find-shortest-path").on('click', function () {
-        $("#find-shortest-path-tooltip").html("Select two vertices");
-        $("#find-shortest-path-start").removeClass("hidden");
+    $("#find-shortest-path").on('click', function () {        
         removeSelectEvent();
         addClickEvent();
     });
     $("#find-shortest-path-start").on('click', function () {
-        $("#find-shortest-path-tooltip").html("");
-        $("#find-shortest-path-start").addClass("hidden");
         addSelectEvent();
         removeClickEvent();
-        goToServer();
+        goToServer();        
     });
 });
 
@@ -111,7 +114,7 @@ function removeSelectEvent() {
 function addClickEvent() {
     network.on('click', addToShortestPathList);
 }
-function removeClickEvent() {
+function removeClickEvent() {    
     network.off('click', addToShortestPathList);
 }
 
@@ -141,8 +144,22 @@ function addToShortestPathList(properties) {
 function selectedArgumentPathNodes() {
     if (shortestPathNodeListIndexes != 0) {
         network.selectNodes(shortestPathNodeListIndexes);
+        if (shortestPathNodeListIndexes.length == 2) {
+            $("#find-shortest-path").disabled = "true";
+            $("#find-shortest-path-start").html("Run");
+            $("#find-shortest-path-start").removeClass("btn-warning");
+            $("#find-shortest-path-start").addClass("btn-success");
+        }
+        else if (shortestPathNodeListIndexes.length == 1) {
+            $("#find-shortest-path-start").removeClass("btn-success");
+            $("#find-shortest-path-start").addClass("btn-warning");
+            $("#find-shortest-path-start").html("Vertices to select: 1");
+        }
     }
     else {
+        $("#find-shortest-path-start").removeClass("btn-success");
+        $("#find-shortest-path-start").addClass("btn-warning");
+        $("#find-shortest-path-start").html("Vertices to select: 2");
         network.selectNodes([]);
     }
 }
@@ -152,7 +169,7 @@ function selectNodes(array) {
 }
 
 function goToServer() {
-    if (shortestPathNodeListIndexes.length<2) {
+    if (shortestPathNodeListIndexes.length < 2) {
         alert("Select 2 nodes");
         return;
     }
@@ -186,39 +203,37 @@ function goToServer() {
             }
             shortestPathNodeListIndexes.splice(0, shortestPathNodeListIndexes.length);
             stopSpinner();
+            $("#find-shortest-path-start").removeClass("btn-success");
+            $("#find-shortest-path-start").addClass("btn-warning");
+            $("#find-shortest-path-start").html("Vertices to select: 2");
         }
     });
 
 }
 
 function getMST() {
-    console.log("Graph must be weighted");
-    return;
     startSpinner();
     var nodes = getNodes();
     var nodesIds = new Array();
     for (var i = 0; i < nodes.length; i++) {
         nodesIds.push(nodes[i].uid);
     }
-    var edges = getEdges();
-    var udges = new Array();
-    for (var j = 0; j < edges.length; j++) {
-        var edge = {};
-        edge.From = edges[j].from;
-        edge.To = edges[j].to;
-        edge.Weight = edges[j].value;
-        udges.push(edge);
-    }
+    var edges = getEdgesByNodes(nodes);
     $.ajax({
         type: "POST",
         data: JSON.stringify({
             Vertices: nodesIds,
-            Edges: udges
+            Edges: edges
         }),
         url: "api/MinimalSpanningTree",
         contentType: "application/json",
         success: function (data) {
-            higlightPath(data);
+            if (!data) {
+                alert("MST of this tree cannot be built");
+            }
+            else {
+                hightlightEdgesByFromTo(data, nodes);
+            }
             stopSpinner();
         }
     });
@@ -242,9 +257,10 @@ function getStrong() {
         url: "api/StrongComponents",
         contentType: "application/json",
         success: function (data) {
+            console.log(data);
             for (var i = 0; i < data.length; i++) {
-                for (var j = 0; j < data[i].length; j++) {
-                    data[i][j] = nodes[data[i][j]].uid;
+                for (var j = 0; j < data[j].length; j++) {
+                    data[i][j] = nodes[data[i][j]];
                 }
             }
             highlightComponents(data);
@@ -272,7 +288,6 @@ function getMinimumCuts() {
         url: "api/MinimumCuts",
         contentType: "application/json",
         success: function (response) {
-            console.log(response);
             for (var i = 0; i < response.length; i++) {
                 data.nodes._data[response[i]].color = { background: "#00A86B" };
             }
@@ -288,7 +303,7 @@ $(document).ready(function () {
     $("#topological").on('click', function () {
         topologicalSort();
     });
-    $("#findMinCutButton").on('click', function() {
+    $("#findMinCutButton").on('click', function () {
         getMinimumCuts();
     });
 });
@@ -301,7 +316,6 @@ function topologicalSort() {
         nodesIds.push(nodes[i].uid);
     }
     var edges = getEdges();
-    console.log(edges);
     $.ajax({
         type: "POST",
         data: JSON.stringify({
@@ -313,22 +327,24 @@ function topologicalSort() {
         success: function (data) {
 
             if (data != null) {
-                console.log(data);
                 var coords = getCenterCoords();
-                var nodesMap=getNodesAsMap();
+                var nodesMap = getNodesAsMap();
                 clearNodes();
 
                 nodesMap[data[0]].x = coords.x;
                 nodesMap[data[0]].y = coords.y;
+                nodesMap[data[0]].allowedToMoveY = false;
+                nodesMap[data[0]].allowedToMoveX = false;
                 addNode(nodesMap[data[0]]);
 
                 for (var j = 1; j < data.length; j++) {
                     var thisId = data[j];
-
-                    nodesMap[data[j]].x = coords.x + j*140;
+                    
+                    nodesMap[data[j]].x = coords.x + j * 140;
                     nodesMap[data[j]].y = coords.y;
-                   
+
                     nodesMap[data[j]].allowedToMoveY = true;
+                    nodesMap[data[j]].allowedToMoveX = false;
                     addNode(nodesMap[data[j]]);
                 }
 
