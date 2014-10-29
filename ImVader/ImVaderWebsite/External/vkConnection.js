@@ -3,8 +3,8 @@ var offset = 0;
 var offsetArray = new Array();
 var friends = null;
 var counter = 0;
+
 function initializeVk() {
-    console.log("Page loaded");
     VK.init({
         apiId: 4575060
     });
@@ -64,7 +64,6 @@ function getFriends() {
                 'obj.push({ "uid": friends[i].uid, "photo_200_orig": friends[i].photo_200_orig, "sex" : friends[i].sex, "first_name": friends[i].first_name, "last_name": friends[i].last_name, "count": mutual.length });\n' +
                 'i = i + 1;\n }\n' +
                 'return obj;';
-            console.log(code);
             VK.api('execute', {
                 code: code
             }, function (resp) {
@@ -82,9 +81,7 @@ function getFriends() {
                         }
                     }
                 }
-                console.log(resp);
                 stopSpinner(time);
-                console.log(data.nodes);
             });
         } else {
             console.log('already has friends');

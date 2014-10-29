@@ -72,11 +72,10 @@ function highlightComponents(components) {
     colors.push("#F0E68C");
 
     var counter = 0;
-
     for (var i = 0; i < components.length; i++) {
         counter %= 7;
         if (components[i].length == 1) {
-            data.nodes._data[components[i][0]].color = { background: "#2F4F4F" }
+            data.nodes._data[components[i][0].uid].color = { background: "#2F4F4F" }
         } else {
             for (var j = 0; j < components[i].length; j++) {
                 if (components[i][j] != null && components[i][j] != undefined)
@@ -94,7 +93,21 @@ function highlightComponents(components) {
     network.setData(data);
 }
 
+function hightlightEdgesByFromTo(recievedEdges, nodesArray) {
+    setDefaultVisualOptions();
+    for (var i = 0; i < recievedEdges.length; i++) {
+        for (var edgeId in data.edges._data) {
+            if (data.edges._data[edgeId].from == nodesArray[recievedEdges[i].From].uid &&
+                data.edges._data[edgeId].to == nodesArray[recievedEdges[i].To].uid) {
+                data.edges._data[edgeId].color = '#FFCC33';
+            }
+        }
+    }
+    network.setData(data);
+}
+
 function higlightPath(selectedNodes) {
+    setDefaultVisualOptions();
     for (var i = 0; i < selectedNodes.length; i++) {
         data.nodes._data[selectedNodes[i]].color = {
             background: '#99FF99',
@@ -141,15 +154,23 @@ function highlightSubgraph(selectedNodes, selectedEdges) {
 
 function setDefaultVisualOptions() {
     for (var id in data.edges._data) {
-        data.edges._data[id].color = {
-            border: 'grey'
-        };
+        data.edges._data[id].color = '#bce8f1';
     }
     for (var id in data.nodes._data) {
-        data.nodes._data[id].color = {
-            border: '#9999FF',
-            backgroud: '#CCCCFF'
-        };
+        data.nodes._data[id].allowedToMoveX = true;
+        data.nodes._data[id].allowedToMoveY = true;
+        if (data.nodes._data[id].sex == 1) {
+            data.nodes._data[id].color = {
+                border: '#CC0033',
+                background: 'pink'
+            };
+        }
+        else {
+            data.nodes._data[id].color = {
+                border: '#5295EF',
+                background: '#99C2FC'
+            };
+        }
     }
     network.setData(data);
 }
@@ -285,12 +306,3 @@ function getGraphAsJson() {
 
     return graph;
 };
-
-
-
-$(document).ready(function () {
-    $("#find-shortest-path").on('click', function () {
-        $("#find-shortest-path-tooltip").html("Select two vertices");
-    });
-});
-
