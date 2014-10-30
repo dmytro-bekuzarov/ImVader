@@ -260,8 +260,8 @@ function getStrong() {
         success: function (data) {
             console.log(data);
             for (var i = 0; i < data.length; i++) {
-                for (var j = 0; j < data[j].length; j++) {
-                    data[i][j] = nodes[data[i][j]];
+                for (var j = 0; j < data[i].length; j++) {
+                    data[i][j] = nodes[data[i][j]].uid;
                 }
             }
             highlightComponents(data);
@@ -331,7 +331,7 @@ function topologicalSort() {
                 var coords = getCenterCoords();
                 var nodesMap = getNodesAsMap();
                 clearNodes();
-            
+
                 for (var j = 0; j < data.length; j++) {
                     var thisId = data[j];
 

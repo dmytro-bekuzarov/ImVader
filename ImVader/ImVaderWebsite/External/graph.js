@@ -30,7 +30,7 @@ function loadGraph(files) {
             addNode(graph.nodes[j]);
         }
         for (var j = 0; j < graph.edges.length; j++) {
-            addEdge(graph.edges[j].from, graph.edges[j].to,graph.edges[j].Weight);
+            addEdge(graph.edges[j].from, graph.edges[j].to, graph.edges[j].Weight);
         }
         stopSpinner(graph.edges.length);
     }
@@ -75,7 +75,7 @@ function highlightComponents(components) {
     for (var i = 0; i < components.length; i++) {
         counter %= 7;
         if (components[i].length == 1) {
-            data.nodes._data[components[i][0].uid].color = { background: "#2F4F4F" }
+            data.nodes._data[components[i][0]].color = { background: "#2F4F4F" }
         } else {
             for (var j = 0; j < components[i].length; j++) {
                 if (components[i][j] != null && components[i][j] != undefined)
