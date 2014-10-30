@@ -49,9 +49,9 @@
                 var mailSender = new ContactMailSender();
                 mailSender.Send(form);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                message = "Something went wrong";
+                message = e.Message;
             }
             return RedirectToAction("MailSent", "Home", new { message = message });
         }
