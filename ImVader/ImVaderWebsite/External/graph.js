@@ -30,7 +30,7 @@ function loadGraph(files) {
             addNode(graph.nodes[j]);
         }
         for (var j = 0; j < graph.edges.length; j++) {
-            addEdge(graph.edges[j].from, graph.edges[j].to);
+            addEdge(graph.edges[j].from, graph.edges[j].to,graph.edges[j].Weight);
         }
         stopSpinner(graph.edges.length);
     }
@@ -250,7 +250,7 @@ function clearEdges() {
         return edges._data[k];
     });
     for (var i = 0; i < edgez.length; i++) {
-        nodes.remove(edgez[i].id);
+        edges.remove(edgez[i].id);
     }
 }
 
