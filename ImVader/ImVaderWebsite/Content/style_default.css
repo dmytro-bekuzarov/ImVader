@@ -6237,10 +6237,10 @@ a.custom-tooltip:hover {
 .contact .contact__info__item {
   display: block;
   margin-bottom: 30px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   line-height: 20px;
-  color: #9aa0ae;
+    color: black;
 }
 .contact .contact__info__item:last-child {
   margin-bottom: 0;
@@ -6254,7 +6254,7 @@ a.custom-tooltip:hover {
   padding: 20px 20px 17px 20px;
   margin-top: 60px;
   text-align: center;
-  border: 8px double #f3f5f7;
+  border: 8px double #63c1fb;
 }
 .contact-form .form__field {
   height: 40px;

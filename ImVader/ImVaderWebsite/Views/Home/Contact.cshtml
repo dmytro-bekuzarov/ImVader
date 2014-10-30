@@ -3,12 +3,13 @@
     ViewBag.Title = "Contact us";
 }
 
-<section class="container contact">
+<section class="container contact" style="min-height: 700px">
     <div class="row">
         <div class="col-sm-6">
             <h2 class="section-title">Get in<span class="text-highlight">touch</span></h2>
-            <p class="contact__text"><strong>Share your thougts with us.</strong> Our goal is to provide global quality solutions. Imvader is one of our projects and we want to make it perfect. Contact us if you have any wishes or issues.</p>
-            <address class="contact__info">
+            <p style="font-size: 150%"><strong>Share your thougts with us.</strong> Our goal is to provide global quality solutions. Imvader is one of our projects and we want to make it perfect. Contact us if you have any wishes or issues.</p>
+            <br/>
+            <address class="contact__info" style="font-size: 150%">
                 <span class="contact__info__item"><i class="icon-circle icon-circle--thin fa fa-phone"></i>+ 380930952638 / + 380637482244</span>
                 <span class="contact__info__item"><i class="icon-circle icon-circle--thin fa fa-envelope"></i>imvader.graphs@gmail.com</span>
                 <span class="contact__info__item"><i class="icon-circle icon-circle--thin fa fa-map-marker"></i>Kharkiv, Lenin ave 14, 61000</span>
@@ -16,13 +17,12 @@
         </div>
         <div class="col-sm-6">
             <form class="contact-form" id="contact-form" name="contact-form" method="post" action="@Url.Action("SendContactMail", "Home")" novalidate>
-                <input class="form__field pull-left" id="Name" name="Name" type="text" placeholder="Name:">
-                <input class="form__field pull-right" id="Email" name="Email" type="email" placeholder="Email:">                
-                <input class="form__field pull-left" id="Phone" name="Phone" type="text" placeholder="Phone:">
-                <input class="form__field pull-right clearfix" id="Title" name="Title" type="text" placeholder="Title:">
-                <textarea class="form__field form__field--message" name="Message" id="Message" placeholder="Message:"></textarea>
-                <button class="btn btn-info btn-lg btn--highlight" id="submit-btn" name="submit-btn" type="submit">Send Us Message</button>
-                <div id="response">@ViewBag.Message</div>
+                <input class="form__field pull-left" id="Name" name="Name" type="text" placeholder="Name:" required="required">
+                <input class="form__field pull-right" id="Email" name="Email" type="email" placeholder="Email:" required="required">                
+                <input class="form__field pull-left" id="Phone" name="Phone" type="text" placeholder="Phone:" required="required">
+                <input class="form__field pull-right clearfix" id="Title" name="Title" type="text" placeholder="Title:" required="required">
+                <textarea class="form__field form__field--message" name="Message" id="Message" placeholder="Message:" required="required"></textarea>
+                <input class="btn btn-info btn-lg btn--highlight" id="submit-btn" name="submit-btn" type="submit" value="Send Us Message"/>
             </form>
         </div>
     </div>

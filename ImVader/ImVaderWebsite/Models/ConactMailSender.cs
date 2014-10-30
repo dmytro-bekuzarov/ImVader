@@ -38,6 +38,7 @@ namespace ImVaderWebsite.Models
                 {
                     Credentials = new NetworkCredential(senderMail, senderPassWord)
                 };
+                smtpClient.EnableSsl = true;
                 smtpClient.Send(message);
             }
             catch (SmtpException)

@@ -27,7 +27,13 @@
         }
 
         [Route("contact")]
-        public ActionResult Contact(String message)
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
+        [Route("contact/mailSent")]
+        public ActionResult MailSent(String message)
         {
             ViewBag.Message = message;
             return View();
@@ -47,7 +53,7 @@
             {
                 message = "Something went wrong";
             }
-            return RedirectToAction("Contact", "Home", new { message = message });
+            return RedirectToAction("MailSent", "Home", new { message = message });
         }
     }
 }

@@ -932,6 +932,7 @@
     <Content Include="Views\Home\Demo.cshtml" />
     <Content Include="Views\Home\Documentation.cshtml" />
     <Content Include="Views\Shared\_Documenation.cshtml" />
+    <Content Include="Views\Home\MailSent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
