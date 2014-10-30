@@ -164,7 +164,7 @@
                             <h4 class="panel-title">
                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
                                     <span class="marker"></span>
-                                    Minimum cuts
+                                    <span id="min-cuts">Minimum cuts</span>
                                 </a>
                             </h4>
                         </div>
@@ -183,7 +183,7 @@
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" class="collapsed">
                                     <span class="marker"></span>
-                                    <span id="strongspan">Strong components</span>
+                                    <span id="strong-comp">Strong components</span>
                                 </a>
                             </h4>
                         </div>
@@ -205,7 +205,7 @@
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix" class="collapsed">
                                     <span class="marker"></span>
-                                    <span id="strongspan">Topological Sort</span>
+                                    <span id="top-sort">Topological Sort</span>
                                 </a>
                             </h4>
                         </div>
@@ -235,27 +235,36 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="myModalLabel">Welcome to IMVADER demo page</h4>
             </div>
-            <ol class="demoModalBody">
-                <li>
-                    To start demo log in into your vk account
-                    <img src="~/Images/DemoPage/login.jpg" alt="login">
-                    <hr>
-                </li>
-                <li>
-                    To load your friends to visualize graph click "Get friends" button on the left
-                    <img src="~/Images/DemoPage/getfriends.jpg" alt="getfriends">
-                    <hr>
-                </li>
-                <li>
-                    You will get something like this
-                    <img src="~/Images/DemoPage/friends.png" alt="friends">
-                    <hr>
-                </li>
-                <li>
-                    Use "Actions" to manage your graph and operate on it
-                    <img src="~/Images/DemoPage/actions.jpg" alt="actions">
-                </li>
-            </ol>
+            <div class="demoModalBody">
+                <div style="margin:3px">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">Login</a></li>
+                        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">Get friends</a></li>
+                        <li role="presentation"><a href="#messages" role="tab" data-toggle="tab">View graph</a></li>
+                        <li role="presentation"><a href="#settings" role="tab" data-toggle="tab">Actions</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            To start demo log in into your vk account
+                            <img src="~/Images/DemoPage/login.jpg" alt="login">
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            To load your friends to visualize graph click "Get friends" button on the left
+                            <img src="~/Images/DemoPage/getfriends.jpg" alt="getfriends">
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="messages">
+                            You will get visualized graph similar to this
+                            <img src="~/Images/DemoPage/friends.png" alt="friends">
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="settings">
+                            Use "Actions" to manage your graph and operate on it
+                            <img src="~/Images/DemoPage/actions.jpg" alt="actions">
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>

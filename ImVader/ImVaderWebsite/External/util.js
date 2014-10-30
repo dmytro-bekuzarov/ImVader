@@ -331,14 +331,8 @@ function topologicalSort() {
                 var coords = getCenterCoords();
                 var nodesMap = getNodesAsMap();
                 clearNodes();
-
-                nodesMap[data[0]].x = coords.x;
-                nodesMap[data[0]].y = coords.y;
-                nodesMap[data[0]].allowedToMoveY = false;
-                nodesMap[data[0]].allowedToMoveX = false;
-                addNode(nodesMap[data[0]]);
-
-                for (var j = 1; j < data.length; j++) {
+            
+                for (var j = 0; j < data.length; j++) {
                     var thisId = data[j];
 
                     nodesMap[data[j]].x = coords.x + j * 140;
