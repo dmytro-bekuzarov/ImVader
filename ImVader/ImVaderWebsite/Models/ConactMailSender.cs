@@ -8,14 +8,17 @@ namespace ImVaderWebsite.Models
 
     public class ContactMailSender
     {
-        private readonly string siteMail;
-        private readonly string passWord;
+        private readonly string recieverMail;
+        private readonly string senderMail;
+        private readonly string senderPassWord;
         private readonly string host;
 
         public ContactMailSender()
         {
-            siteMail = ConfigurationManager.AppSettings["SiteMail"];
-            passWord = ConfigurationManager.AppSettings["EmailPassword"];
+            recieverMail = ConfigurationManager.AppSettings["recieverMail"];
+            senderMail = ConfigurationManager.AppSettings["senderMail"];
+            senderPassWord = ConfigurationManager.AppSettings["senderPassWord"];
+
             host = ConfigurationManager.AppSettings["host"];
         }
 
@@ -26,14 +29,14 @@ namespace ImVaderWebsite.Models
             MailMessage message = null;
             try
             {
-                message = new MailMessage(new MailAddress(form.Email), new MailAddress(siteMail))
+                message = new MailMessage(new MailAddress(senderMail), new MailAddress(recieverMail))
                 {
                     Subject = form.Title,
-                    Body = form.Message + "\n User phone: " + form.Phone
+                    Body = form.Message + String.Format("\nFrom:{0} \nemail:{1} \nUser phone: {2}", form.Name, form.Email, form.Phone)
                 };
                 smtpClient = new SmtpClient(host, Convert.ToInt32(ConfigurationManager.AppSettings["port"]))
                 {
-                    Credentials = new NetworkCredential(siteMail, passWord)
+                    Credentials = new NetworkCredential(senderMail, senderPassWord)
                 };
                 smtpClient.Send(message);
             }
