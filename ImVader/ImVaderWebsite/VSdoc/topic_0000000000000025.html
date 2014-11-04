@@ -73,6 +73,7 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
+        Initializes a new instance of the <a target="_top" href="topic_0000000000000021.html" onclick="this.target='';return true;">MinimumCuts&lt;TV, TE&gt;</a> class.
 
 
         <p /><strong>Namespace:</strong>
@@ -129,7 +130,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public MinimumCuts(&nbsp;<br />   <a target="_top" href="topic_0000000000000046.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; <i>graph</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public MinimumCuts(&nbsp;<br />   <a target="_top" href="topic_000000000000004D.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; <i>graph</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,10 +152,10 @@ function replaceTitleAndUrl(win, title, url) {
 	</dt>
 	<dd>
 		<p>
-			Type: <a target="_top" href="topic_0000000000000046.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; 
+			Type: <a target="_top" href="topic_000000000000004D.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; 
 		</p>
 		<p>
-			 
+			Graph, for which minimun cut must be found. 
 		</p>
 	</dd>
 </dl>
@@ -234,6 +235,7 @@ function replaceTitleAndUrl(win, title, url) {
 					<pre xml:space="preserve" class="brush: csharp">
 public MinimumCuts(Graph&lt;TV, TE&gt; graph)
  {
+     initialGraph = graph;
      bestCut = new List&lt;int&gt;();
      var gmatrix = new double[graph.VertexCount][];
      for (var i = 0; i &lt; gmatrix.GetLength(0); i++)
@@ -246,8 +248,8 @@ public MinimumCuts(Graph&lt;TV, TE&gt; graph)
          var adjacentEdges = graph.GetAdjacentEdges(i);
          foreach (var edge in adjacentEdges)
          {
-             gmatrix[i][edge.Other(i)] = edge.Weight;
-             gmatrix[edge.Other(i)][i] = edge.Weight;
+             gmatrix[i][initialGraph.IndexOf(edge.Other(initialGraph.Indexes[i]))] = edge.Weight;
+             gmatrix[initialGraph.IndexOf(edge.Other(initialGraph.Indexes[i]))][i] = edge.Weight;
          }
      }
  
@@ -314,8 +316,8 @@ public MinimumCuts(Graph&lt;TV, TE&gt; graph)
 		<div>
 			<h4 class="subHeading">
 				Reference</h4>
-			<a href="topic_0000000000000020.html">MinimumCuts&lt;TV, TE&gt; Class</a><br />
-<a href="topic_0000000000000020_members--.html">MinimumCuts&lt;TV, TE&gt; Members</a><br />
+			<a href="topic_0000000000000021.html">MinimumCuts&lt;TV, TE&gt; Class</a><br />
+<a href="topic_0000000000000021_members--.html">MinimumCuts&lt;TV, TE&gt; Members</a><br />
 
 
 
@@ -329,7 +331,9 @@ public MinimumCuts(Graph&lt;TV, TE&gt; graph)
 </div>
 			</div>
 			</div>
-
+      <div id="footer">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
     </div>
   	<script type="text/javascript">
 <!--

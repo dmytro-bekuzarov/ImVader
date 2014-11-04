@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>Dijkstra&lt;TV, TE&gt;.ChangeOrAdd Method</title>
+	<title>MatrixGraph&lt;TV, TE&gt;.RemoveVertex Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn10_lightweight/msdn10_lightweight.css"></link>
 	<script src="msdn10_lightweight/msdn10_lightweight.js" type="text/javascript"></script>
@@ -59,7 +59,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">ImVader Documentation</div>
-  	<h1 class="title">Dijkstra&lt;TV, TE&gt;.ChangeOrAdd Method</h1>
+  	<h1 class="title">MatrixGraph&lt;TV, TE&gt;.RemoveVertex Method</h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -73,11 +73,11 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
-        The change or add while relaxing is done
+        Removes the vertex with the specified index.
 
 
         <p /><strong>Namespace:</strong>
-<a href="topic_0000000000000073.html">ImVader.ShortestPaths</a>
+<a href="topic_000000000000003E.html">ImVader</a>
 
 
 
@@ -130,7 +130,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">private <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.void.aspx">void</a> ChangeOrAdd(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>w</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.double.aspx">double</a> <i>weight</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public override <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.void.aspx">void</a> RemoveVertex(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>index</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -144,10 +144,10 @@ function replaceTitleAndUrl(win, title, url) {
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="w">
+	Parameters</h4><dl paramName="index">
 	<dt>
 		<span class="parameter">
-			w
+			index
 		</span>
 	</dt>
 	<dd>
@@ -155,22 +155,7 @@ function replaceTitleAndUrl(win, title, url) {
 			Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> 
 		</p>
 		<p>
-			Vertex to add or update 
-		</p>
-	</dd>
-</dl>
-<dl paramName="weight">
-	<dt>
-		<span class="parameter">
-			weight
-		</span>
-	</dt>
-	<dd>
-		<p>
-			Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.double.aspx">double</a> 
-		</p>
-		<p>
-			New weight 
+			The index of the vertex. 
 		</p>
 	</dd>
 </dl>
@@ -248,23 +233,17 @@ function replaceTitleAndUrl(win, title, url) {
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-private void ChangeOrAdd(int w, double weight)
+public override void RemoveVertex(int index)
  {
-     bool b = false;
- 
-     var all = this.pq.GetAsEnumerable();
-     var enumerable = all as Node[] ?? all.ToArray();
- 
-     foreach (var t in enumerable.Where(t =&gt; t.N == w))
+     var edges = this[index, index];
+     foreach (var i in edges)
      {
-         t.Weight = weight;
-         b = true;
+         Edges.Remove(i);
      }
  
-     if (!b)
-     {
-         pq.Insert(new Node(w, weight));
-     }
+     Matrix.Remove(Indexes.IndexOf(index));
+     this.Indexes.Remove(index);
+     Vertices.Remove(index);
  }
 					</pre>			
 				</div>
@@ -327,12 +306,12 @@ private void ChangeOrAdd(int w, double weight)
 		<div>
 			<h4 class="subHeading">
 				Reference</h4>
-			<a href="topic_0000000000000074.html">Dijkstra&lt;TV, TE&gt; Class</a><br />
-<a href="topic_0000000000000074_members--.html">Dijkstra&lt;TV, TE&gt; Members</a><br />
+			<a href="topic_0000000000000071.html">MatrixGraph&lt;TV, TE&gt; Class</a><br />
+<a href="topic_0000000000000071_members--.html">MatrixGraph&lt;TV, TE&gt; Members</a><br />
 
 
 
-<a href="topic_0000000000000073.html">ImVader.ShortestPaths Namespace</a><br />
+<a href="topic_000000000000003E.html">ImVader Namespace</a><br />
 
 
 			
@@ -342,7 +321,9 @@ private void ChangeOrAdd(int w, double weight)
 </div>
 			</div>
 			</div>
-
+      <div id="footer">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
     </div>
   	<script type="text/javascript">
 <!--

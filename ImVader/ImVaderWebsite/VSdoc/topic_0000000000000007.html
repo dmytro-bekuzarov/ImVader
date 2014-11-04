@@ -73,7 +73,7 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
-        Defines a path between start vertex and v as a sequence of vertices from s to v if path exists else returns null
+        Defines a path between start vertex and vertex with index v as a sequence of vertices from s to v.
 
 
         <p /><strong>Namespace:</strong>
@@ -155,7 +155,7 @@ function replaceTitleAndUrl(win, title, url) {
 			Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> 
 		</p>
 		<p>
-			Path from s to v 
+			Path from s to v. 
 		</p>
 	</dd>
 </dl>
@@ -165,7 +165,7 @@ function replaceTitleAndUrl(win, title, url) {
 
 	<h4 class="subHeading">
 		Return Value</h4>
-  Collections of vertices <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.collections.ienumerable.aspx">IEnumerable</a>.
+  Collections of vertices <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.collections.ienumerable.aspx">IEnumerable</a> if path found, null otherwise.
 
 
 
@@ -241,7 +241,9 @@ public IEnumerable&lt;int&gt; PathTo(int v)
      if (!HasPathTo(v)) return null;
      var path = new Stack&lt;int&gt;();
      for (var i = v; i != -1; i = edgeTo[i])
+     {
          path.Push(i);
+     }
  
      return path;
  }
@@ -321,7 +323,9 @@ public IEnumerable&lt;int&gt; PathTo(int v)
 </div>
 			</div>
 			</div>
-
+      <div id="footer">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
     </div>
   	<script type="text/javascript">
 <!--

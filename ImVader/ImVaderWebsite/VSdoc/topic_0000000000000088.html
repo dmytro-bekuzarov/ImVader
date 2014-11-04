@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>Node Constructor  </title>
+	<title>MinPq&lt;T&gt;.DelMin Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn10_lightweight/msdn10_lightweight.css"></link>
 	<script src="msdn10_lightweight/msdn10_lightweight.js" type="text/javascript"></script>
@@ -59,7 +59,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">ImVader Documentation</div>
-  	<h1 class="title">Node Constructor  </h1>
+  	<h1 class="title">MinPq&lt;T&gt;.DelMin Method</h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -73,11 +73,11 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
-        Initializes a new instance of the <a target="_top" href="topic_0000000000000087.html" onclick="this.target='';return true;">Node</a> class.
+        Deletes and returns the minimum element, restoring the heap-order invariant.
 
 
         <p /><strong>Namespace:</strong>
-<a href="topic_0000000000000073.html">ImVader.ShortestPaths</a>
+<a href="topic_000000000000007B.html">ImVader.ShortestPaths</a>
 
 
 
@@ -130,7 +130,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public Node(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>n</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.double.aspx">double</a> <i>weight</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public T DelMin()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -143,41 +143,11 @@ function replaceTitleAndUrl(win, title, url) {
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="n">
-	<dt>
-		<span class="parameter">
-			n
-		</span>
-	</dt>
-	<dd>
-		<p>
-			Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> 
-		</p>
-		<p>
-			The n. 
-		</p>
-	</dd>
-</dl>
-<dl paramName="weight">
-	<dt>
-		<span class="parameter">
-			weight
-		</span>
-	</dt>
-	<dd>
-		<p>
-			Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.double.aspx">double</a> 
-		</p>
-		<p>
-			The weight. 
-		</p>
-	</dd>
-</dl>
 
-<p />
-<p />
-
+	<h4 class="subHeading">
+		Return Value</h4>
+  Gets the top of the queue.
+The <a target="_top" href=".html" onclick="this.target='';return true;">T</a>.
 
 
 
@@ -194,6 +164,38 @@ function replaceTitleAndUrl(win, title, url) {
 
 
 
+<div class="section_container">
+	<div class="section_heading">
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Exceptions</a></span>
+		<div><hr /></div>
+	</div>
+
+	<div id="exceptionsSection" class="section">	
+	<table>
+		<tr>
+			<th>
+				Exception type
+			</th>
+			<th>
+				Condition
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<p>
+<a href="#">IndexOutOfRangeException</a>
+				</p>
+			</td>
+			<td>
+				<p>
+					Returns exception if the queue is empty. 
+				</p>
+			</td>
+		</tr>
+			
+	</table>
+	</div>
+</div>
 
 
 
@@ -248,10 +250,14 @@ function replaceTitleAndUrl(win, title, url) {
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public Node(int n, double weight)
+public T DelMin()
  {
-     this.N = n;
-     this.Weight = weight;
+     if (this.n == 0)
+         throw new IndexOutOfRangeException(&quot;Priority queue underflow&quot;);
+     this.Exch(1, this.n);
+     T min = pq[this.n--];
+     this.Sink(1);
+     return min;
  }
 					</pre>			
 				</div>
@@ -314,12 +320,12 @@ public Node(int n, double weight)
 		<div>
 			<h4 class="subHeading">
 				Reference</h4>
-			<a href="topic_0000000000000087.html">Node Class</a><br />
-<a href="topic_0000000000000087_members--.html">Node Members</a><br />
+			<a href="topic_0000000000000081.html">MinPq&lt;T&gt; Class</a><br />
+<a href="topic_0000000000000081_members--.html">MinPq&lt;T&gt; Members</a><br />
 
 
 
-<a href="topic_0000000000000073.html">ImVader.ShortestPaths Namespace</a><br />
+<a href="topic_000000000000007B.html">ImVader.ShortestPaths Namespace</a><br />
 
 
 			
@@ -329,7 +335,9 @@ public Node(int n, double weight)
 </div>
 			</div>
 			</div>
-
+      <div id="footer">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
     </div>
   	<script type="text/javascript">
 <!--

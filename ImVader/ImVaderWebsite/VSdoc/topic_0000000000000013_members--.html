@@ -79,7 +79,7 @@ function replaceTitleAndUrl(win, title, url) {
 		<div id="mainSection">
       <div id="mainBody">
         <p />
-        Initialized new instance for getting minimal spanning tree of a graph
+        Represents an implementation of the algorithm for finding a minimum spanning tree.
 
         <p>
           The following tables list the members exposed by the  
@@ -277,14 +277,14 @@ function replaceTitleAndUrl(win, title, url) {
 	  </td>
 	  <td>
 	
-	    <a href="topic_000000000000001C.html">GetMst</a>
+	    <a href="topic_0000000000000020.html">GetMst</a>
 
 	
 	  </td>
 	  <td>
 	
 	
-	The getMST.
+	Encapsulates algorithm for finding a minimum spanning tree of the graph g.
 	
 	
 		</td>
@@ -306,14 +306,14 @@ function replaceTitleAndUrl(win, title, url) {
 	  </td>
 	  <td>
 	
-	    <a href="topic_000000000000001D.html">GetMstEdges</a>
+	    <a href="topic_000000000000001C.html">GetMstEdges</a>
 
 	
 	  </td>
 	  <td>
 	
 	
-	The getMSTEdges.
+	Returns edges of the minimal spanning tree.
 	
 	
 		</td>
@@ -342,7 +342,36 @@ function replaceTitleAndUrl(win, title, url) {
 	  <td>
 	
 	
-	The GetMstTree.
+	Returns the minimal spanning tree.
+	
+	
+		</td>
+	</tr>
+
+
+
+
+
+	<tr class="
+	
+	
+	">
+	  <td>
+	    <img alt="Public method" src="msdn10_lightweight/pubmethod.gif"></img>
+		  
+	
+	    
+	  </td>
+	  <td>
+	
+	    <a href="topic_000000000000001D.html">GetMstVertices</a>
+
+	
+	  </td>
+	  <td>
+	
+	
+	Returns the vertices of the minimal spanning tree.
 	
 	
 		</td>
@@ -371,7 +400,7 @@ function replaceTitleAndUrl(win, title, url) {
 	  <td>
 	
 	
-	The getMSTEdges.
+	Returns total weight of the minimal spanning tree.
 	
 	
 		</td>
@@ -538,6 +567,7 @@ function replaceTitleAndUrl(win, title, url) {
 
 
 
+
   
 
 <!-- Classes -->
@@ -591,7 +621,7 @@ function replaceTitleAndUrl(win, title, url) {
 	  </td>
 	  <td>
 	
-	Infinite weight of edge
+	Infinite weight of edge.
 	
 		</td>
 	</tr>
@@ -609,11 +639,11 @@ function replaceTitleAndUrl(win, title, url) {
 	    
 	  </td>
 	  <td>
-	    <a href="topic_0000000000000017.html">edges</a>
+	    <a href="topic_0000000000000016.html">edges</a>
 	  </td>
 	  <td>
 	
-	contains indexes of edges accessible by adjacent vertices
+	Contains indexes of the edges accessible from adjacent vertices.
 	
 		</td>
 	</tr>
@@ -631,11 +661,11 @@ function replaceTitleAndUrl(win, title, url) {
 	    
 	  </td>
 	  <td>
-	    <a href="topic_0000000000000018.html">minE</a>
+	    <a href="topic_0000000000000017.html">minE</a>
 	  </td>
 	  <td>
 	
-	min_e[i] contains the weight of edge with minimal weight, adjacent to vertex i
+	Contains the weight of the edge with minimal weight, adjacent to vertex with appropriate index.
 	
 		</td>
 	</tr>
@@ -653,11 +683,11 @@ function replaceTitleAndUrl(win, title, url) {
 	    
 	  </td>
 	  <td>
-	    <a href="topic_0000000000000015.html">mst&lt;,&gt;.mst</a>
+	    <a href="topic_000000000000001A.html">mst&lt;,&gt;.mst</a>
 	  </td>
 	  <td>
 	
-	Edges included to resulting MST
+	Resulting minimal spanning tree.
 	
 		</td>
 	</tr>
@@ -675,11 +705,11 @@ function replaceTitleAndUrl(win, title, url) {
 	    
 	  </td>
 	  <td>
-	    <a href="topic_0000000000000016.html">mstEdges&lt;,&gt;.mstEdges</a>
+	    <a href="topic_0000000000000015.html">mstEdges&lt;,&gt;.mstEdges</a>
 	  </td>
 	  <td>
 	
-	Edges included to resulting MST
+	Edges included to resulting minimal spanning tree.
 	
 		</td>
 	</tr>
@@ -697,11 +727,11 @@ function replaceTitleAndUrl(win, title, url) {
 	    
 	  </td>
 	  <td>
-	    <a href="topic_0000000000000019.html">selE</a>
+	    <a href="topic_0000000000000018.html">selE</a>
 	  </td>
 	  <td>
 	
-	sel_e[i] contains the other vertex adjacent to min_e[i]
+	Contains the other vertex adjacent to min_e[i].
 	
 		</td>
 	</tr>
@@ -719,11 +749,11 @@ function replaceTitleAndUrl(win, title, url) {
 	    
 	  </td>
 	  <td>
-	    <a href="topic_000000000000001A.html">used</a>
+	    <a href="topic_0000000000000019.html">used</a>
 	  </td>
 	  <td>
 	
-	used[i] is &quot;true&quot; if vertex i is included into MST
+	Value in used[i] is &quot;true&quot; if vertex i is included into minimal spanning tree.
 	
 		</td>
 	</tr>
@@ -759,7 +789,9 @@ function replaceTitleAndUrl(win, title, url) {
 </div>
 			</div>
 			</div>
-
+      <div id="footer">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
     </div>
   	<script type="text/javascript">
 <!--

@@ -103,7 +103,6 @@ namespace ImVader.Algorithms
         /// Returns edges of the minimal spanning tree.
         /// </summary>
         /// <returns>
-        /// The <see cref="List{TE}"/>.
         /// Edges of the minimal spanning tree.
         /// </returns>
         public List<TE> GetMstEdges()

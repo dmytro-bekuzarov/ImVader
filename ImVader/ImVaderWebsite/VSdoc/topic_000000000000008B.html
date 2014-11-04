@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>Node.CompareTo Method</title>
+	<title>MinPq&lt;T&gt;.Swim Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn10_lightweight/msdn10_lightweight.css"></link>
 	<script src="msdn10_lightweight/msdn10_lightweight.js" type="text/javascript"></script>
@@ -59,7 +59,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">ImVader Documentation</div>
-  	<h1 class="title">Node.CompareTo Method</h1>
+  	<h1 class="title">MinPq&lt;T&gt;.Swim Method</h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -73,11 +73,11 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
-        The compare to method,used for Dijkstra minPQ.
+        Swim the element in the queue.
 
 
         <p /><strong>Namespace:</strong>
-<a href="topic_0000000000000073.html">ImVader.ShortestPaths</a>
+<a href="topic_000000000000007B.html">ImVader.ShortestPaths</a>
 
 
 
@@ -130,7 +130,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> CompareTo(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.object.aspx">object</a> <i>obj</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">private <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.void.aspx">void</a> Swim(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>k</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -144,18 +144,18 @@ function replaceTitleAndUrl(win, title, url) {
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="obj">
+	Parameters</h4><dl paramName="k">
 	<dt>
 		<span class="parameter">
-			obj
+			k
 		</span>
 	</dt>
 	<dd>
 		<p>
-			Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.object.aspx">object</a> 
+			Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> 
 		</p>
 		<p>
-			The obj. 
+			The element in the queue. 
 		</p>
 	</dd>
 </dl>
@@ -163,13 +163,6 @@ function replaceTitleAndUrl(win, title, url) {
 <p />
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-  The <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a>.
-
-	<h4 class="subHeading">
-		Implements</h4><a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.icomparable.compareto.aspx">IComparable.CompareTo</a>
-<br />
 
 
 
@@ -240,10 +233,13 @@ function replaceTitleAndUrl(win, title, url) {
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public int CompareTo(object obj)
+private void Swim(int k)
  {
-     var anotherNode = (Node)obj;
-     return this.Weight.CompareTo(anotherNode.Weight);
+     while (k &gt; 1 &amp;&amp; this.Greater(k / 2, k))
+     {
+         this.Exch(k, k / 2);
+         k = k / 2;
+     }
  }
 					</pre>			
 				</div>
@@ -306,12 +302,12 @@ public int CompareTo(object obj)
 		<div>
 			<h4 class="subHeading">
 				Reference</h4>
-			<a href="topic_0000000000000087.html">Node Class</a><br />
-<a href="topic_0000000000000087_members--.html">Node Members</a><br />
+			<a href="topic_0000000000000081.html">MinPq&lt;T&gt; Class</a><br />
+<a href="topic_0000000000000081_members--.html">MinPq&lt;T&gt; Members</a><br />
 
 
 
-<a href="topic_0000000000000073.html">ImVader.ShortestPaths Namespace</a><br />
+<a href="topic_000000000000007B.html">ImVader.ShortestPaths Namespace</a><br />
 
 
 			
@@ -321,7 +317,9 @@ public int CompareTo(object obj)
 </div>
 			</div>
 			</div>
-
+      <div id="footer">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
     </div>
   	<script type="text/javascript">
 <!--

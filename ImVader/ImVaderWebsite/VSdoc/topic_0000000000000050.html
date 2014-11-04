@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>Graph&lt;TV, TE&gt;.GetAdjacentEdges Method</title>
+	<title>Indexes&lt;,&gt;.Indexes Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn10_lightweight/msdn10_lightweight.css"></link>
 	<script src="msdn10_lightweight/msdn10_lightweight.js" type="text/javascript"></script>
@@ -59,7 +59,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">ImVader Documentation</div>
-  	<h1 class="title">Graph&lt;TV, TE&gt;.GetAdjacentEdges Method</h1>
+  	<h1 class="title">Indexes&lt;,&gt;.Indexes Field</h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -73,11 +73,11 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
-        Gets a collection of indexes of the edges that are adjacent for the vertex v
+        Contains indexes of the stored vertices.
 
 
         <p /><strong>Namespace:</strong>
-<a href="topic_0000000000000037.html">ImVader</a>
+<a href="topic_000000000000003E.html">ImVader</a>
 
 
 
@@ -130,7 +130,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public abstract <a target="_top" href="http://msdn2.microsoft.com/en-us/library/9eekhta0.aspx">IEnumerable</a>&lt;TE&gt; GetAdjacentEdges(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>v</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[JsonProperty()]&nbsp;<br />internal <a target="_top" href="http://msdn2.microsoft.com/en-us/library/6sh2ey19.aspx">List</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a>&gt; Indexes</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -142,20 +142,16 @@ function replaceTitleAndUrl(win, title, url) {
 		
 	</div>
 
-
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="v">
+	Type Parameters</h4><dl paramName="int">
 	<dt>
 		<span class="parameter">
-			v
+			int
 		</span>
 	</dt>
 	<dd>
 		<p>
-			Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> 
-		</p>
-		<p>
-			The v. 
+			 
 		</p>
 	</dd>
 </dl>
@@ -163,9 +159,7 @@ function replaceTitleAndUrl(win, title, url) {
 <p />
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-  <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.collections.ienumerable.aspx">IEnumerable</a>
+
 
 
 
@@ -236,7 +230,8 @@ function replaceTitleAndUrl(win, title, url) {
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public abstract IEnumerable&lt;TE&gt; GetAdjacentEdges(int v);
+[JsonProperty]
+ internal List&lt;int&gt; Indexes;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -298,12 +293,12 @@ public abstract IEnumerable&lt;TE&gt; GetAdjacentEdges(int v);
 		<div>
 			<h4 class="subHeading">
 				Reference</h4>
-			<a href="topic_0000000000000046.html">Graph&lt;TV, TE&gt; Class</a><br />
-<a href="topic_0000000000000046_members--.html">Graph&lt;TV, TE&gt; Members</a><br />
+			<a href="topic_000000000000004D.html">Graph&lt;TV, TE&gt; Class</a><br />
+<a href="topic_000000000000004D_members--.html">Graph&lt;TV, TE&gt; Members</a><br />
 
 
 
-<a href="topic_0000000000000037.html">ImVader Namespace</a><br />
+<a href="topic_000000000000003E.html">ImVader Namespace</a><br />
 
 
 			
@@ -313,7 +308,9 @@ public abstract IEnumerable&lt;TE&gt; GetAdjacentEdges(int v);
 </div>
 			</div>
 			</div>
-
+      <div id="footer">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
     </div>
   	<script type="text/javascript">
 <!--
@@ -324,4 +321,3 @@ public abstract IEnumerable&lt;TE&gt; GetAdjacentEdges(int v);
 		</script>	
   </body>
 </html>
-
