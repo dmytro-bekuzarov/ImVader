@@ -4,15 +4,10 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="telephone=no" name="format-detection">										<!--Remove styling of telephone numbers on IOS-->
-    <meta name="description" content="@ViewBag.Description"> 							<!--Change content-->
-    <meta name="keywords" content="HTML, LESS, CSS, JavaScript"> 								<!--Change content-->
-    <meta name="author" content="Designzway Team"> 												<!--Change content-->
-    <title>@ViewBag.Title</title>															<!--Change title-->
-    <link href="~/Content/switcher.css" rel="stylesheet" />											<!--Color panel-->
-    <link href="~/Content/style.css?v=1" rel="stylesheet">    										<!-- Stylesheet -->
-    <link href="~/Content/style_default.css" rel="stylesheet" media="all">    						<!-- Stylesheet -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <meta content="telephone=no" name="format-detection">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/style.css?v=1" rel="stylesheet">
+    <link href="~/Content/style_default.css" rel="stylesheet" media="all">
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -68,16 +63,7 @@
             <!--End footer -->
         }
     </div>
-
-    <!--End wrapper -->
-    <script src="~/External/jquery/jquery-migrate-1.2.1.min.js"></script>			<!--Script jQuery for old version jQuery-->
-    <script src="~/External/bootstrap/js/bootstrap.min.js"></script>				<!--Bootstrap JavaScript-->
-    <script src="~/External/gozha-nav/jquery.mobile.menu.js"></script>			<!--Script Mobile menu-->
-    <script src="~/External/modernizr/modernizr.custom.91224.js"></script>		<!--Script Modernizr-->
-    <script src="~/External/colorbox/jquery.colorbox.js"></script>				<!--Script Сolorbox-->
-    <script src="~/External/jquery-cookie/jquery.cookie.js"></script>				<!--Script Сookie-->
-    <script src="~/External/custom.js"></script>										<!--Script Custom-->
-
+    @Scripts.Render("~/bundles/scripts/main")
     @RenderSection("bottom",false)
 </body>
 </html>
