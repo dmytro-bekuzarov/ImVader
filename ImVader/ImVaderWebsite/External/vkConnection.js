@@ -4,6 +4,11 @@ var offsetArray = new Array();
 var friends = null;
 var counter = 0;
 
+function logout() {
+    VK.Auth.logout();
+    window.location.reload();
+}
+
 function initializeVk() {
     VK.init({
         apiId: 4575060
