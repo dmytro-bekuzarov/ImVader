@@ -10,7 +10,7 @@
 namespace ImVader
 {
     /// <summary>
-    /// Represents weighted edge in the graph
+    /// Represents weighted edge in the graph.
     /// </summary>
     public class WeightedEdge : Edge
     {
@@ -18,13 +18,13 @@ namespace ImVader
         /// Initializes a new instance of the <see cref="WeightedEdge"/> class.
         /// </summary>
         /// <param name="from">
-        /// The first vertex of the edge
+        /// The first vertex of the edge.
         /// </param>
         /// <param name="to">
-        /// The second vertex of the edge
+        /// The second vertex of the edge.
         /// </param>
         /// <param name="weight">
-        /// WEight of the edge
+        /// WEight of the edge.
         /// </param>
         public WeightedEdge(int from, int to, double weight)
             : base(from, to)
@@ -35,6 +35,9 @@ namespace ImVader
         /// <summary>
         /// Gets or sets the weight.
         /// </summary>
+        /// <value>
+        /// The weight.
+        /// </value>
         public double Weight { get; set; }
     }
 }

@@ -17,19 +17,19 @@ namespace ImVader
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Matrix-based graph
+    /// Matrix-based graph.
     /// </summary>
     /// <typeparam name="TV">
-    /// Type of data stored in vertices
+    /// Type of data stored in vertices.
     /// </typeparam>
     /// <typeparam name="TE">
-    /// Type of edge used to connect vertices
+    /// Type of edge used to connect vertices.
     /// </typeparam>
     public class MatrixGraph<TV, TE> : Graph<TV, TE>
         where TE : Edge
     {
         /// <summary>
-        /// Represents an adjacency matrix of the graph
+        /// Represents an adjacency matrix of the graph.
         /// </summary>
         [JsonProperty]
         protected SquareMatrix<List<int>> Matrix;
@@ -38,7 +38,7 @@ namespace ImVader
         /// Initializes a new instance of the <see cref="MatrixGraph{TV,TE}"/> class.
         /// </summary>
         /// <param name="capacity">
-        /// Initial number of vertices
+        /// Initial number of vertices.
         /// </param>
         public MatrixGraph(int capacity = 0)
         {
@@ -53,16 +53,16 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Represents the indexer for the matrix
+        /// Represents the indexer for the matrix.
         /// </summary>
         /// <param name="i">
-        /// The row index 
+        /// The row index. 
         /// </param>
         /// <param name="j">
-        /// The column index
+        /// The column index.
         /// </param>
         /// <returns>
-        /// The indexes of edges that connect the vertex with id i and the vertex with id j
+        /// The indexes of edges that connect the vertex with index i and the vertex with index j.
         /// </returns>
         protected List<int> this[int i, int j]
         {
@@ -73,14 +73,14 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Gets a collection of indexes of the vertices that are adjacent for the vertex v
+        /// Gets a collection of indexes of the vertices that are adjacent for the vertex v.
         /// </summary>
         /// <param name="v">
-        /// Index of the vertex
+        /// Index of the vertex.
         /// </param>
         /// <returns>
         /// <see cref="System.Collections.IEnumerable"/> 
-        /// Indexes of the vertices that are adjacent for the vertex v
+        /// Indexes of the vertices that are adjacent for the vertex v.
         /// </returns>
         public override IEnumerable<int> GetAdjacentVertices(int v)
         {
@@ -93,10 +93,10 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Gets a collection of indexes of the edges that are adjacent for the vertex v
+        /// Gets a collection of indexes of the edges that are adjacent for the vertex v.
         /// </summary>
         /// <param name="v">
-        /// The v.
+        /// The vertex index.
         /// </param>
         /// <returns>
         /// <see cref="System.Collections.IEnumerable"/> 
@@ -118,10 +118,10 @@ namespace ImVader
         /// Adds a new vertex to the graph.
         /// </summary>
         /// <param name="value">
-        /// The value of the vertex
+        /// The value of the vertex.
         /// </param>
         /// <returns>
-        /// Index of the created vertex
+        /// Index of the created vertex.
         /// </returns>
         public override int AddVertex(TV value)
         {
@@ -133,10 +133,10 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Removes the vertex with the specified index
+        /// Removes the vertex with the specified index.
         /// </summary>
         /// <param name="index">
-        /// The index of the vertex
+        /// The index of the vertex.
         /// </param>
         public override void RemoveVertex(int index)
         {
@@ -152,13 +152,13 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Adds a new edge to the graph
+        /// Adds a new edge to the graph.
         /// </summary>
         /// <param name="e">
-        /// The edge to add
+        /// The edge to add.
         /// </param>
         /// <returns>
-        /// The index of the created edge
+        /// The index of the created edge.
         /// </returns>
         public override int AddEdge(TE e)
         {
@@ -171,10 +171,10 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Removes the edge with the specified index
+        /// Removes the edge with the specified index.
         /// </summary>
         /// <param name="index">
-        /// The index of the edge
+        /// The index of the edge.
         /// </param>
         public override void RemoveEdge(int index)
         {

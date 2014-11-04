@@ -10,15 +10,15 @@
 namespace ImVader
 {
     /// <summary>
-    /// Defines directed list-based graph
+    /// Defines directed list-based graph.
     /// </summary>
     /// <typeparam name="TV">
-    /// Type of data stored in vertices
+    /// Type of data stored in vertices.
     /// </typeparam>
     /// <typeparam name="TE">
-    /// Type of edge used to connect vertices
+    /// Type of edge used to connect vertices.
     /// </typeparam>
-    public class DirectedListGraph<TV, TE> : ListGraph<TV, TE>,IDirectedGraph
+    public class DirectedListGraph<TV, TE> : ListGraph<TV, TE>, IDirectedGraph
         where TE : Edge
     {
         /// <summary>
@@ -33,15 +33,16 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Adds a new edge to the graph
+        /// Adds a new edge to the graph.
         /// </summary>
-        /// <param name="e">The edge to add</param>
+        /// <param name="e">
+        /// The edge to add.
+        /// </param>
         /// <returns>
-        /// The index of the created edge
+        /// The index of the created edge.
         /// </returns>
         public override int AddEdge(TE e)
         {
-            //CheckVerticesIndexes(e.From, e.To);
             Edges.Add(++LastEdgeIndex, e);
             AdjacencyList[Indexes.IndexOf(e.From)].Add(e);
             EdgesCount++;
@@ -49,10 +50,10 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Removes the edge with the specified index
+        /// Removes the edge with the specified index.
         /// </summary>
         /// <param name="index">
-        /// The index of the edge
+        /// The index of the edge.
         /// </param>
         public override void RemoveEdge(int index)
         {

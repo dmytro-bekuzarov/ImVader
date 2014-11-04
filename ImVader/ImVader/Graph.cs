@@ -15,31 +15,31 @@ namespace ImVader
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Base class for all graphs
+    /// Base class for all graphs.
     /// </summary>
     /// <typeparam name="TV">
-    /// Type of data stored in the vertex
+    /// Type of data stored in the vertex.
     /// </typeparam>
     /// <typeparam name="TE">
-    /// Type of the edges connecting vertices
+    /// Type of the edges connecting vertices.
     /// </typeparam>
     public abstract class Graph<TV, TE>
         where TE : Edge
     {
         /// <summary>
-        /// A collection of vertices in the graph
+        /// A collection of vertices in the graph.
         /// </summary>
         [JsonProperty]
         internal Dictionary<int, Vertex<TV>> Vertices;
 
         /// <summary>
-        /// Contains all edges in the graph
+        /// Contains all edges in the graph.
         /// </summary>
         [JsonProperty]
         internal Dictionary<int, TE> Edges;
 
         /// <summary>
-        /// Contains indexes of the stored vertices
+        /// Contains indexes of the stored vertices.
         /// </summary>
         [JsonProperty]
         internal List<int> Indexes;
@@ -55,8 +55,11 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Gets number of vertices in the graph
+        /// Gets number of vertices in the graph.
         /// </summary>
+        /// <value>
+        /// Number of vertices in the graph.
+        /// </value>
         [JsonIgnore]
         public int VertexCount
         {
@@ -64,20 +67,29 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Gets or sets number of edges in the graph
+        /// Gets or sets number of edges in the graph.
         /// </summary>
+        /// <value>
+        /// Number of edges in the graph.
+        /// </value>
         [JsonProperty]
         public int EdgesCount { get; protected set; }
 
         /// <summary>
         /// Gets or sets the last edge index.
         /// </summary>
+        /// <value>
+        /// The last edge index.
+        /// </value>
         [JsonProperty]
         protected int LastEdgeIndex { get; set; }
 
         /// <summary>
         /// Gets the last vertex index or -1 if there is no vertices in the graph.
         /// </summary>
+        /// <value>
+        /// The last vertex index.
+        /// </value>
         protected int LastVertexIndex
         {
             get
@@ -87,22 +99,22 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Gets a collection of indexes of the vertices that are adjacent for the vertex v
+        /// Gets a collection of indexes of the vertices that are adjacent for the vertex v.
         /// </summary>
         /// <param name="v">
-        /// Index of the vertex
+        /// Index of the vertex.
         /// </param>
         /// <returns>
         /// <see cref="System.Collections.IEnumerable"/> 
-        /// Indexes of the vertices that are adjacent for the vertex v
+        /// Indexes of the vertices that are adjacent for the vertex v.
         /// </returns>
         public abstract IEnumerable<int> GetAdjacentVertices(int v);
 
         /// <summary>
-        /// Gets a collection of indexes of the edges that are adjacent for the vertex v
+        /// Gets a collection of indexes of the edges that are adjacent for the vertex v.
         /// </summary>
         /// <param name="v">
-        /// The v.
+        /// The vertex index.
         /// </param>
         /// <returns>
         /// <see cref="System.Collections.IEnumerable"/> 
@@ -113,21 +125,21 @@ namespace ImVader
         /// Adds a new vertex to the graph.
         /// </summary>
         /// <param name="value">
-        /// The value of the vertex
+        /// The value of the vertex.
         /// </param>
         /// <returns>
-        /// Index of the created vertex
+        /// Index of the created vertex.
         /// </returns>
         public abstract int AddVertex(TV value);
 
         /// <summary>
-        /// Gets vertex data
+        /// Gets vertex data.
         /// </summary>
         /// <param name="index">
-        /// Index of the vertex
+        /// Index of the vertex.
         /// </param>
         /// <returns>
-        /// Data stored in the vertex
+        /// Data stored in the vertex.
         /// </returns>
         public virtual TV GetVertexData(int index)
         {
@@ -136,13 +148,13 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Sets data to the the vertex
+        /// Sets data to the the vertex.
         /// </summary>
         /// <param name="index">
-        /// Index of vertex where we want to set data
+        /// Index of vertex where we want to set data.
         /// </param>
         /// <param name="data">
-        /// Data to store in the vertex
+        /// Data to store in the vertex.
         /// </param>
         public virtual void SetVertexData(int index, TV data)
         {
@@ -151,21 +163,21 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Removes the vertex with the specified index
+        /// Removes the vertex with the specified index.
         /// </summary>
         /// <param name="index">
-        /// The index of the vertex
+        /// The index of the vertex.
         /// </param>
         public abstract void RemoveVertex(int index);
 
         /// <summary>
-        /// Adds a new edge to the graph
+        /// Adds a new edge to the graph.
         /// </summary>
         /// <param name="e">
-        /// The edge to add
+        /// The edge to add.
         /// </param>
         /// <returns>
-        /// The index of the created edge
+        /// The index of the created edge.
         /// </returns>
         public abstract int AddEdge(TE e);
 
@@ -176,7 +188,7 @@ namespace ImVader
         /// The index of the edge.
         /// </param>
         /// <returns>
-        /// The edge found
+        /// The edge found.
         /// </returns>
         public virtual TE GetEdge(int edgeIndex)
         {
@@ -184,15 +196,15 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Removes the edge with the specified index
+        /// Removes the edge with the specified index.
         /// </summary>
         /// <param name="index">
-        /// The index of the edge
+        /// The index of the edge.
         /// </param>
         public abstract void RemoveEdge(int index);
 
         /// <summary>
-        /// Calculate shortest pathes in graph between every pair of vertices.
+        /// Calculates shortest pathes in graph between every pair of vertices.
         /// </summary>
         /// <returns>
         /// Returns matrix with vertices indexes as indexes and minimal pathes as values.
@@ -220,12 +232,10 @@ namespace ImVader
             }
             catch
             {
-                // if our graph edges can`t be cast to WeightedEdge their weight is considered equal to 1
                 edges = this.Edges.Values.Select(x => new WeightedEdge(x.From, x.To, 1));
                 weightedEdges = edges as WeightedEdge[] ?? edges.ToArray();
             }
 
-            // map graph vertices indexes to zero-based iterative indexes
             weightedEdges = weightedEdges.Select(
                 x => new WeightedEdge(
                          this.Indexes.IndexOf(x.From),
@@ -264,13 +274,41 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Checks if indexes are greater or equlas zero and less than a number of vertices in the graph)
+        /// Gets the ordinal index of the vertex index.
+        /// </summary>
+        /// <param name="index">
+        /// The vertex index.
+        /// </param>
+        /// <returns>
+        /// The ordinal index of the vertex index.
+        /// </returns>
+        public int IndexOf(int index)
+        {
+            return Indexes.IndexOf(index);
+        }
+
+        /// <summary>
+        /// Gets the real index of the vertex ordinal index.
+        /// </summary>
+        /// <param name="index">
+        /// The vertex index.
+        /// </param>
+        /// <returns>
+        /// The real index of the vertex ordinal index.
+        /// </returns>
+        public int IndexedValue(int index)
+        {
+            return Indexes[index];
+        }
+
+        /// <summary>
+        /// Checks if indexes are greater or equlas zero and less than a number of vertices in the graph).
         /// </summary>
         /// <param name="indexes">
         /// The indexes to check.
         /// </param>
         /// <exception cref="ArgumentException">
-        /// Throws an exception if at least one of indexes is out of boundaries (0 and number of vertices in the graph)
+        /// Throws an exception if at least one of indexes is out of boundaries (0 and number of vertices in the graph).
         /// </exception>
         protected void CheckVerticesIndexes(params int[] indexes)
         {
@@ -279,16 +317,5 @@ namespace ImVader
                 throw new ArgumentException("Index must be greater or equlas zero and less than a number of vertices in the graph");
             }
         }
-
-        public int IndexOf(int index)
-        {
-            return Indexes.IndexOf(index);
-        }
-
-        public int IndexedValue(int index)
-        {
-            return Indexes[index];
-        }
-
     }
 }

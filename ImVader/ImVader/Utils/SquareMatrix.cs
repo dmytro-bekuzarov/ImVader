@@ -10,10 +10,10 @@
 namespace ImVader.Utils
 {
     /// <summary>
-    /// The square matrix used in matrix-based graph
+    /// The square matrix used in matrix-based graph.
     /// </summary>
     /// <typeparam name="T">
-    /// A class with public constructor without parameters
+    /// A class with public constructor without parameters.
     /// </typeparam>
     public class SquareMatrix<T> where T : new()
     {
@@ -26,7 +26,7 @@ namespace ImVader.Utils
         /// Initializes a new instance of the <see cref="SquareMatrix{T}"/> class.
         /// </summary>
         /// <param name="size">
-        /// The size.
+        /// The inital size of the matrix.
         /// </param>
         public SquareMatrix(int size = 0)
         {
@@ -42,21 +42,24 @@ namespace ImVader.Utils
         }
 
         /// <summary>
-        /// Gets the size of the matrix
+        /// Gets the size of the matrix.
         /// </summary>
+        /// <value>
+        /// The size of the matrix.
+        /// </value>
         public int Size { get; private set; }
 
         /// <summary>
-        /// Gets or sets the value in the specified cell
+        /// Gets or sets the value in the specified cell.
         /// </summary>
         /// <param name="i">
-        /// The row index of the cell
+        /// The row index of the cell.
         /// </param>
         /// <param name="j">
-        /// The column index of the cell
+        /// The column index of the cell.
         /// </param>
         /// <returns>
-        /// The <see cref="T"/>.
+        /// The value stored in the cell.
         /// </returns>
         public T this[int i, int j]
         {
@@ -65,7 +68,7 @@ namespace ImVader.Utils
         }
 
         /// <summary>
-        /// Adds a new row and a new column
+        /// Adds a new row and a new column to the matrix.
         /// </summary>
         public void Add()
         {
@@ -90,10 +93,10 @@ namespace ImVader.Utils
         }
 
         /// <summary>
-        /// Removes the row and the column with specified index 
+        /// Removes the row and the column with specified index.
         /// </summary>
         /// <param name="index">
-        /// The index of the row and column
+        /// The index of the row and column.
         /// </param>
         public void Remove(int index)
         {

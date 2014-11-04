@@ -18,16 +18,16 @@ namespace ImVader
     /// List-based graph.
     /// </summary>
     /// <typeparam name="TV">
-    /// Type of data stored in vertices
+    /// Type of data stored in vertices.
     /// </typeparam>
     /// <typeparam name="TE">
-    /// Type of edge used to connect vertices
+    /// Type of edge used to connect vertices.
     /// </typeparam>
     public class ListGraph<TV, TE> : Graph<TV, TE>
         where TE : Edge
     {
         /// <summary>
-        /// Represents adjacency list
+        /// Represents adjacency list.
         /// </summary>
         [JsonProperty]
         protected List<List<TE>> AdjacencyList;
@@ -51,7 +51,15 @@ namespace ImVader
             LastEdgeIndex = -1;
         }
 
-
+        /// <summary>
+        /// Creates new graph objects from the edges and vertices indexes given.
+        /// </summary>
+        /// <param name="edges">
+        /// The edges of the graph.
+        /// </param>
+        /// <param name="verticesIds">
+        /// The vertices indexes of the graph.
+        /// </param>
         public void Init(IEnumerable<TE> edges, IEnumerable<int> verticesIds)
         {
             foreach (var vertex in verticesIds)
@@ -64,7 +72,13 @@ namespace ImVader
                 this.AddEdge(edge);
             }
         }
-        
+
+        /// <summary>
+        /// Creates new graph objects from the vertices indexes given.
+        /// </summary>
+        /// <param name="verticesIds">
+        /// The vertices indexes of the graph.
+        /// </param>
         public void Init(IEnumerable<int> verticesIds)
         {
             foreach (var vertex in verticesIds)
@@ -74,26 +88,25 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Gets a collection of indexes of the vertices that are adjacent for the vertex v
+        /// Gets a collection of indexes of the vertices that are adjacent for the vertex v.
         /// </summary>
         /// <param name="v">
-        /// Index of the vertex
+        /// Index of the vertex.
         /// </param>
         /// <returns>
         /// <see cref="System.Collections.IEnumerable"/> 
-        /// Indexes of the vertices that are adjacent for the vertex v
+        /// Indexes of the vertices that are adjacent for the vertex v.
         /// </returns>
         public override IEnumerable<int> GetAdjacentVertices(int v)
         {
-            //CheckVerticesIndexes(v);
             return this.AdjacencyList[Indexes[v]].Select(edge => Indexes[edge.Other(v)]);
         }
 
         /// <summary>
-        /// Gets a collection of indexes of the edges that are adjacent for the vertex v
+        /// Gets a collection of indexes of the edges that are adjacent for the vertex v.
         /// </summary>
         /// <param name="v">
-        /// The v.
+        /// The vertex index.
         /// </param>
         /// <returns>
         /// <see cref="System.Collections.IEnumerable"/> 
@@ -108,10 +121,10 @@ namespace ImVader
         /// Adds a new vertex to the graph.
         /// </summary>
         /// <param name="value">
-        /// The value of the vertex
+        /// The value of the vertex.
         /// </param>
         /// <returns>
-        /// Index of the created vertex
+        /// Index of the created vertex.
         /// </returns>
         public override int AddVertex(TV value)
         {
@@ -123,11 +136,11 @@ namespace ImVader
         }
 
         /// <summary>
-        /// 
+        /// Adds a new vertex with the specified index to the graph.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="index"></param>
-        /// <returns>The index</returns>
+        /// <param name="value">The value of the vertex.</param>
+        /// <param name="index">The index of the vertex.</param>
+        /// <returns>The index of the vertex added.</returns>
         public int AddVertex(TV value, int index)
         {
             // int lastVertexIndex = LastVertexIndex;
@@ -138,10 +151,10 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Removes the vertex with the specified index
+        /// Removes the vertex with the specified index.
         /// </summary>
         /// <param name="index">
-        /// The index of the vertex
+        /// The index of the vertex.
         /// </param>
         public override void RemoveVertex(int index)
         {
@@ -151,17 +164,16 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Adds a new edge to the graph
+        /// Adds a new edge to the graph.
         /// </summary>
         /// <param name="e">
-        /// The edge to add
+        /// The edge to add.
         /// </param>
         /// <returns>
-        /// The index of the created edge
+        /// The index of the created edge.
         /// </returns>
         public override int AddEdge(TE e)
         {
-            //CheckVerticesIndexes(e.From, e.To);
             Edges.Add(++LastEdgeIndex, e);
             AdjacencyList[Indexes.IndexOf(e.From)].Add(e);
             AdjacencyList[Indexes.IndexOf(e.To)].Add(e);
@@ -170,10 +182,10 @@ namespace ImVader
         }
 
         /// <summary>
-        /// Removes the edge with the specified index
+        /// Removes the edge with the specified index.
         /// </summary>
         /// <param name="index">
-        /// The index of the edge
+        /// The index of the edge.
         /// </param>
         public override void RemoveEdge(int index)
         {
@@ -189,6 +201,12 @@ namespace ImVader
             Edges.Remove(index);
         }
 
+        /// <summary>
+        /// Generates a copy of the graph instance.
+        /// </summary>
+        /// <returns>
+        /// A copy of the graph instance.
+        /// </returns>
         public ListGraph<TV, WeightedEdge> CopyWeighted()
         {
             var graph = new ListGraph<TV, WeightedEdge>();

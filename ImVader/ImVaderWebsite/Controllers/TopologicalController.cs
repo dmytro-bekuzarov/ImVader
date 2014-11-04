@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
 
 namespace ImVaderWebsite.Controllers
 {
@@ -10,7 +7,6 @@ namespace ImVaderWebsite.Controllers
 
     using ImVader;
     using ImVader.Algorithms;
-    using ImVader.ShortestPaths;
 
     public class TopologicalController : ApiController
     {
@@ -26,7 +22,7 @@ namespace ImVaderWebsite.Controllers
             var graph = new DirectedListGraph<int, WeightedEdge>();
             graph.Init(g.Edges, g.Vertices);
             var topSort = new TopologicalSort<int, WeightedEdge>();
-            int[] res = null;
+            int[] res;
             try
             {
                 topSort.SortGraph(graph);
@@ -35,7 +31,7 @@ namespace ImVaderWebsite.Controllers
                 for (int i = 0; i < order.Length; i++)
                     res[i] = graph.IndexedValue(order[i]);
             }
-            catch (InvalidOperationException ex)
+            catch (InvalidOperationException)
             {
                 res = null;
             }

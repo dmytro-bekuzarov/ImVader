@@ -1,39 +1,47 @@
-﻿namespace ImVader.ShortestPaths
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Dijkstra.cs" company="Sigma">
+//   It's a totally free software
+// </copyright>
+// <summary>
+//   Defines the Dijkstra type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace ImVader.ShortestPaths
 {
     using System;
     using System.Linq;
 
     /// <summary>
-    /// The dijkstra algorithm
+    /// Represents an implementation of the Dijkstra algorithm.
     /// </summary>
     /// <typeparam name="TV">
-    /// Vertex type
+    /// Type of data stored in vertices of the graph.
     /// </typeparam>
     /// <typeparam name="TE">
-    /// Edge type
+    /// Type of edge of the graph.
     /// </typeparam>
     public class Dijkstra<TV, TE> : ShortestPath<TV, TE>
         where TE : Edge
     {
         /// <summary>
-        /// The priority queue of vertices
+        /// The priority queue of vertices.
         /// </summary>
         private readonly MinPq<Node> pq;  
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Dijkstra{TV,TE}"/> class. 
-        /// Processes graph via Dijkstra algo
+        /// Processes graph via Dijkstra algo.
         /// </summary>
         /// <param name="gr">
-        /// directed graph to be precessed+
+        /// Directed graph to be precessed.
         /// </param>
         /// <param name="s">
-        /// Entry vertex
+        /// Entry vertex index.
         /// </param>
         public Dijkstra(IDirectedGraph gr, int s)
             : base((Graph<TV, TE>)gr)
         {
-            
             s = this.G.IndexOf(s);
             for (var i = 0; i < this.G.EdgesCount; i++)
             {
@@ -56,8 +64,6 @@
             }
 
             this.DistTo[s] = 0.0;
-
-            // relax vertices in order of distance from s
             pq = new MinPq<Node>(this.G.VertexCount);
             pq.Insert(new Node(s, this.DistTo[s]));
             while (!pq.IsEmpty())
@@ -73,10 +79,10 @@
         }
 
         /// <summary>
-        /// relax edge e and update pq if changed
+        /// Relaxes edge with index e and update pq if changed.
         /// </summary>
         /// <param name="edge">
-        /// The edge.
+        /// The edge to relax.
         /// </param>
         private void Relax(TE edge)
         {
@@ -98,18 +104,17 @@
         }
 
         /// <summary>
-        /// The change or add while relaxing is done
+        /// Changes or adds the vertex while relaxing.
         /// </summary>
         /// <param name="w">
-        /// Vertex to add or update
+        /// Vertex to add or update.
         /// </param>
         /// <param name="weight">
-        /// New weight
+        /// New weight of the edege.
         /// </param>
         private void ChangeOrAdd(int w, double weight)
         {
             bool b = false;
-
             var all = this.pq.GetAsEnumerable();
             var enumerable = all as Node[] ?? all.ToArray();
 

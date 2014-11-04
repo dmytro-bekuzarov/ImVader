@@ -1,17 +1,26 @@
-﻿namespace ImVader.ShortestPaths
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Node.cs" company="Sigma">
+//   It's a totally free software
+// </copyright>
+// <summary>
+//   Defines the Node type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace ImVader.ShortestPaths
 {
     using System;
 
     /// <summary>
-    /// The ode interface.
+    /// The node used in Dijktra algorithm.
     /// </summary>
     public class Node : IComparable
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Node"/> class.
+        /// Initializes a new instance of the <see cref="ImVader.ShortestPaths.Node"/> class.
         /// </summary>
         /// <param name="n">
-        /// The n.
+        /// The index of the node.
         /// </param>
         /// <param name="weight">
         /// The weight.
@@ -23,23 +32,29 @@
         }
 
         /// <summary>
-        /// Gets or sets the index of the node.
-        /// </summary>
-        public int N { get; set; }
-
-        /// <summary>
         /// Gets or sets the weight of the path to the vertex.
         /// </summary>
+        /// <value>
+        /// The weight of the path to the vertex.
+        /// </value>
         public double Weight { get; set; }
 
         /// <summary>
-        /// The compare to method,used for Dijkstra minPQ.
+        /// Gets or sets the index of the node.
+        /// </summary>
+        /// <value>
+        /// The index of the node.
+        /// </value>
+        public int N { get; set; }
+
+        /// <summary>
+        /// Compares nodes, used for Dijkstra minPQ.
         /// </summary>
         /// <param name="obj">
-        /// The obj.
+        /// The object to compare.
         /// </param>
         /// <returns>
-        /// The <see cref="int"/>.
+        /// The difference between the nodes.
         /// </returns>
         public int CompareTo(object obj)
         {

@@ -53,7 +53,7 @@
             {
                 message = e.Message;
             }
-            return RedirectToAction("MailSent", "Home", new { message = message });
+            return RedirectToAction("MailSent", "Home", new { message });
         }
     }
 }

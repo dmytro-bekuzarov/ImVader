@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="TopologicalSort.cs" company="NURE">
-//   TopologicalSort
+// <copyright file="TopologicalSort.cs" company="Sigma">
+//   It's a totally free software
 // </copyright>
 // <summary>
 //   Defines the TopologicalSort type.
@@ -13,36 +13,35 @@ namespace ImVader.Algorithms
     using System.Collections.Generic;
     using System.Linq;
 
-
     /// <summary>
-    /// The color, vertix can have.
+    /// Enum of the colors vertices can have.
     /// </summary>
     internal enum Color
     {
         /// <summary>
-        /// The white.
+        /// Defines the integer value of the white color.
         /// </summary>
         White = 0,
 
         /// <summary>
-        /// The grey.
+        /// Defines the integer value of the grey color.
         /// </summary>
         Grey = 1,
 
         /// <summary>
-        /// The black.
+        /// Defines the integer value of the black color.
         /// </summary>
         Black = 2
     }
 
     /// <summary>
-    /// The topological sort.
+    /// Represents an implementation of the toplogical sort algorithm.
     /// </summary>
     /// <typeparam name="TV">
-    /// Vertex type
+    /// Type of data stored in vertices of the graph.
     /// </typeparam>
     /// <typeparam name="TE">
-    /// Edge type
+    /// Type of edge of the graph.
     /// </typeparam>
     public class TopologicalSort<TV, TE>
           where TE : Edge
@@ -53,12 +52,12 @@ namespace ImVader.Algorithms
         private Graph<TV, TE> graph;
 
         /// <summary>
-        /// The colors of graph`s vertices.
+        /// The colors of graph vertices.
         /// </summary>
         private Color[] colors;
 
         /// <summary>
-        /// This array maps old Vertices indexes to new
+        /// This array maps old vertices indexes to new.
         /// </summary>
         private int[] numbers;
 
@@ -68,10 +67,14 @@ namespace ImVader.Algorithms
         private Stack<int> visitedVertices;
 
         /// <summary>
-        /// Perfoms topological sort on graph 
+        /// Perfoms topological sort on graph. 
         /// </summary>
-        /// <param name="g">Graph to operate on</param>
-        /// <returns>Returns modofied source graph</returns>
+        /// <param name="g">
+        /// Graph to operate on.
+        /// </param>
+        /// <returns>
+        /// Returns modified source graph.
+        /// </returns>
         public Graph<TV, TE> SortGraph(Graph<TV, TE> g)
         {
             this.graph = g;
@@ -80,7 +83,7 @@ namespace ImVader.Algorithms
             visitedVertices = new Stack<int>(g.VertexCount);
             for (var i = 0; i < g.VertexCount; i++)
             {
-                var cycle = this.Dfs(i);
+                var cycle = this.DepthFirstSearch(i);
                 if (cycle) throw new InvalidOperationException("Graph has cycles");
             }
 
@@ -93,11 +96,10 @@ namespace ImVader.Algorithms
         }
 
         /// <summary>
-        /// The get order.
+        /// Gets the order of sorted graph vertices.
         /// </summary>
         /// <returns>
-        /// The <see cref="int[]"/>.
-        /// Order of sorted graph vertices
+        /// Order of sorted graph vertices.
         /// </returns>
         public int[] GetOrder()
         {
@@ -105,21 +107,21 @@ namespace ImVader.Algorithms
         }
 
         /// <summary>
-        /// The dfs. Fills vertices stack to complete topological sort.
+        /// Fills vertices stack to complete topological sort.
         /// </summary>
         /// <param name="v">
-        /// The vertix index.
+        /// The vertex index.
         /// </param>
         /// <returns>
-        /// Returns treu if graph has cycles.
+        /// Returns true if graph has cycles, false otherwise.
         /// </returns>
-        private bool Dfs(int v)
+        private bool DepthFirstSearch(int v)
         {
             if (colors[v] == Color.Grey) return true;
             if (colors[v] == Color.Black) return false;
             colors[v] = Color.Grey;
             var edgesToEnumerate = graph.GetAdjacentEdges(v).ToArray();
-            if (edgesToEnumerate.Select(edj => this.graph.IndexOf(edj.To)).Any(this.Dfs))
+            if (edgesToEnumerate.Select(edj => this.graph.IndexOf(edj.To)).Any(this.DepthFirstSearch))
             {
                 return true;
             }
