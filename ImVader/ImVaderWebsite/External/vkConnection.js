@@ -4,19 +4,21 @@ var offsetArray = new Array();
 var friends = null;
 var counter = 0;
 
+$(document).ready(function() {
+
+});
+
 function initializeVk() {
     VK.init({
         apiId: 4575060
     });
     VK.Auth.getLoginStatus(authInfo);
-    VK.UI.button('login_button');
-    VK.Auth.login(authInfo, 2);
 }
 function authInfo(response) {
     if (response.session) {
-        //Hiding vk auth button
-        $("#login_button").hide();
+        $("#vk-login-section").hide();
         $("#demo-content").removeClass("hidden");
+        $("#myModal").modal("show");
         user_id = response.session.mid;
         VK.Api.call('users.get', { uids: response.session.mid, fields: "photo_200_orig,sex" }, function (r) {
             if (r.response) {
@@ -90,13 +92,4 @@ function getFriends() {
     else {
         console.log('not auth');
     }
-}
-function getMutual(from, to) {
-    var fr = from, t = to;
-    var func = VK.Api.call('friends.getMutual', { source_uid: from, target_uid: to }, function (resp) {
-        if (resp.response) {
-            addEdge(fr, t, resp.response.length);
-        }
-    });
-    return func;
 }

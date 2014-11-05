@@ -6,36 +6,25 @@
 }
 @section head
 {
-    <link rel="stylesheet" href="~/Content/demo.css" />
     <link href="http://visjs.org/dist/vis.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/demo.css" />
 
-    <!-- Third-party Libs -->
     <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
     <script src="http://visjs.org/dist/vis.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-    <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-    <!-- ourLibs -->
-    <script src="~/External/vkConnection.js" type="text/javascript"></script>
-    <script src="~/External/graph.js" type="text/javascript"></script>
-    <script src="~/External/spinner.js" type="text/javascript"></script>
-    <script src="~/External/util.js" type="text/javascript"></script>
-    <script src="~/External/toolTips.js" type="text/javascript"></script>
-
+    @Scripts.Render("~/bundles/scripts/demo")
 }
-
 <div id="loading" class="hidden">
     <div id="splash" class="page-splash"></div>
     <div id="spinner" class="spinner"></div>
 </div>
-
-<div style="margin: 50px auto; display: table;" id="login_button" onclick="VK.Auth.login(authInfo);"></div>
-
+<div class="col-md-12 center-block vertical-center" id="vk-login-section">
+    <button style="font-size: 200%; padding: 15px 30px; border-radius: 200px" class="btn btn-primary center-block" onclick="VK.Auth.login(authInfo, 2);">
+        Log in
+    </button>
+</div>
 <div id="demo-content" class="hidden">
     <div id="user_info" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 toppad">
         <div class="panel panel-info">
@@ -117,14 +106,14 @@
                             <h4 class="panel-title">
                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" id="">
                                     <span class="marker"></span>
-                                    <span id="mst"> MST</span>
+                                    <span id="mst"> Minimal spanning tree</span>
                                 </a>
                             </h4>
                         </div>
                         <div class="panel-collapse collapse" id="collapseTwo" style="height: 0;">
                             <div class="row">
                                 <div class="col-md-12 col-lg-12 vmar-5">
-                                    <a class="btn btn-primary" id="mstbtn">Build minimal spanning tree</a>
+                                    <a class="btn btn-primary" id="mstbtn">Build</a>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +133,7 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-12 col-lg-12 vmar-5">
-                                        <div id="drop_zone">Drop files here</div>
+                                        <div id="drop_zone">Drop file here</div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -229,30 +218,25 @@
 
 </div>
 <div id="graph_place"></div>
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Welcome to IMVADER demo page</h4>
+                <h4 class="modal-title" id="myModalLabel">Welcome to ImVader demo page</h4>
             </div>
             <div class="demoModalBody">
                 <div style="margin:3px">
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">Login</a></li>
-                        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">Get friends</a></li>
+                        <li role="presentation" class="active"><a href="#profile" role="tab" data-toggle="tab">Get friends</a></li>
                         <li role="presentation"><a href="#messages" role="tab" data-toggle="tab">View graph</a></li>
                         <li role="presentation"><a href="#settings" role="tab" data-toggle="tab">Actions</a></li>
+                        <li role="presentation"><a href="#logout" role="tab" data-toggle="tab">Log out</a></li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="home">
-                            To start demo log in into your vk account
-                            <img src="~/Images/DemoPage/login.jpg" alt="login">
-                        </div>
                         <div role="tabpanel" class="tab-pane" id="profile">
                             To load your friends to visualize graph click "Get friends" button on the left
                             <img src="~/Images/DemoPage/getfriends.jpg" alt="getfriends">
@@ -265,11 +249,15 @@
                             Use "Actions" to manage your graph and operate on it
                             <img src="~/Images/DemoPage/actions.jpg" alt="actions">
                         </div>
+                        <div role="tabpanel" class="tab-pane active" id="logout">
+                            Press logout button in "Action" section to log out from your vk account
+                            <img src="~/Images/DemoPage/logout.png" alt="logout">
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <div class="modal-footer" style="text-align: center">
+                <button type="button" class="btn btn-success" data-dismiss="modal">I got it</button>
             </div>
         </div>
     </div>

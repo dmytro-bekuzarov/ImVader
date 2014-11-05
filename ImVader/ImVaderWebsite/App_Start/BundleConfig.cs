@@ -21,6 +21,12 @@ namespace ImVaderWebsite
                 "~/External/jquery-easing/jquery.easing.1.3.js",
                 "~/External/jquery-roundabout/jquery.roundabout.min.js",
                 "~/External/swiper/idangerous.swiper.min.js"));
+            bundles.Add(new ScriptBundle("~/bundles/scripts/demo").Include(
+               "~/External/vkConnection.js",
+               "~/External/graph.js",
+               "~/External/spinner.js",
+               "~/External/util.js",
+               "~/External/toolTips.js"));
         }
     }
 }

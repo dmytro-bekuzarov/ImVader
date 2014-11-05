@@ -305,7 +305,6 @@ function getMinimumCuts() {
     });
 }
 
-///////////////////////////////
 $(document).ready(function () {
     $("#topological").on('click', function () {
         topologicalSort();

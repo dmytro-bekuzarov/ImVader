@@ -43,7 +43,4 @@
         'placement': 'right',
         'title': "Click here to find strong components of the graph"
     });
-
-
-    $("#myModal").modal("show");
 });
