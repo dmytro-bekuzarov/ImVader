@@ -8,6 +8,12 @@
         $("#user_gender").text("Male");
 }
 
+
+function logout() {
+    VK.Auth.logout();
+    window.location.reload();
+}
+
 function handleDragOver(evt) {
     evt.stopPropagation();
     evt.preventDefault();
