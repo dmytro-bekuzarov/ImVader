@@ -359,6 +359,7 @@
     <Content Include="Images\iphone-blue.png" />
     <Content Include="Images\iphone-dark.png" />
     <Content Include="Images\iphone-pink.png" />
+    <Content Include="Images\logo.png" />
     <Content Include="Images\meet-image.png" />
     <Content Include="Images\page_title\about-photo.jpg" />
     <Content Include="Images\page_title\blog-photo.jpg" />
