@@ -42,28 +42,13 @@ function getFriends() {
             if (!offsetArray[user_id]) {
                 offsetArray[user_id] = 0;
             }
-            /* VK.Api.call('friends.get', { user_id: user_id, fields: "photo_200_orig,sex,counters", offset: offsetArray[user_id], count: 5 }, function (r) {
-                 if (r.response) {
-                     offsetArray[user_id] += 5;
-                     time = r.response.length;
-                     for (var i = 0; i < r.response.length; i++) {
-                         if (!isAdded(r.response[i].uid)) {
-                             addNode(r.response[i]);
-                         }
-                         getMutual(user_id, r.response[i].uid);
-                     }
-                     //Value - вес ребра
-                 }
-                 stopSpinner(time);
-             }, function () { stopSpinner(time); });
-             */
-
-
             var code = 'var friends = API.friends.get({ "user_id": ' + parseInt(user_id) + ', "fields": "photo_200_orig,sex", "offset": ' + offsetArray[user_id] + ', "count": 20 });\n' +
                 'var i = 0;\n var obj = [];\n' +
                 'while (i != parseInt(friends.length) && i <= 20) {\n' +
                 'var mutual = API.friends.getMutual({ "source_uid": ' + parseInt(user_id) + ', "target_uid": friends[i].uid });\n' +
+                'if (parseInt(mutual.length)!=0){' +
                 'obj.push({ "uid": friends[i].uid, "photo_200_orig": friends[i].photo_200_orig, "sex" : friends[i].sex, "first_name": friends[i].first_name, "last_name": friends[i].last_name, "count": mutual.length });\n' +
+                '}'+
                 'i = i + 1;\n }\n' +
                 'return obj;';
             VK.api('execute', {

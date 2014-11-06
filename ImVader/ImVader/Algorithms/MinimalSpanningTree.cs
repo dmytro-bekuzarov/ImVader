@@ -28,7 +28,7 @@ namespace ImVader.Algorithms
         /// <summary>
         /// Infinite weight of edge.
         /// </summary>
-        private const double Inf = double.MaxValue;
+        private const double Infinity = double.MaxValue;
 
         /// <summary>
         /// Edges included to resulting minimal spanning tree.
@@ -83,7 +83,7 @@ namespace ImVader.Algorithms
 
             for (var i = 0; i < this.minE.Length; i++)
             {
-                this.minE[i] = Inf;
+                this.minE[i] = Infinity;
                 this.selE[i] = -1;
             }
 
@@ -168,7 +168,7 @@ namespace ImVader.Algorithms
             {
                 var v = -1;
                 for (var j = 0; j < n; ++j) if (!used[j] && (v == -1 || this.minE[j] < this.minE[v])) v = j;
-                if (Math.Abs(this.minE[v] - Inf) < 0.01)
+                if (Math.Abs(this.minE[v] - Infinity) < 0.01)
                 {
                     throw new InvalidOperationException("Cannot build MST of not fully connected graph!");
                 }

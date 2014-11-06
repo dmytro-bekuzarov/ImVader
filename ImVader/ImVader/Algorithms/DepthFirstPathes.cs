@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="DepthFirstPathes.cs" company="Sigma">
-//   It's a totally free software
+//   It'startIndex a totally free software
 // </copyright>
 // <summary>
 //   Defines the DepthFirstPathes type.
@@ -48,7 +48,7 @@ namespace ImVader.Algorithms
         /// <summary>
         /// Start vertex index for depth-first search.
         /// </summary>
-        private readonly int s;
+        private readonly int startIndex;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DepthFirstPathes{TV,TE}"/> class.
@@ -56,16 +56,16 @@ namespace ImVader.Algorithms
         /// <param name="g">
         /// Graph, on which depth-first search is performed.
         /// </param>
-        /// <param name="s">
+        /// <param name="startIndex">
         /// Start vertex for breath-first search.
         /// </param>
         /// <exception cref="ArgumentOutOfRangeException">
-        /// Exception is thrown if s is out of boundaries (0, g.VertexCount).
+        /// Exception is thrown if startIndex is out of boundaries (0, g.VertexCount).
         /// </exception>
-        public DepthFirstPathes(Graph<TV, TE> g, int s)
+        public DepthFirstPathes(Graph<TV, TE> g, int startIndex)
         {
-            if (s < 0 || s > g.VertexCount)
-                throw new ArgumentOutOfRangeException("s", "Vertex index is out of range.");
+            if (startIndex < 0 || startIndex > g.VertexCount)
+                throw new ArgumentOutOfRangeException("startIndex", "Vertex index is out of range.");
             marked = new bool[g.VertexCount];
             edgeTo = new int[g.VertexCount];
             Timein = new int[g.VertexCount];
@@ -75,7 +75,7 @@ namespace ImVader.Algorithms
                 Timein[i] = Timeout[i] = edgeTo[i] = -1;
             }
 
-            this.s = s;
+            this.startIndex = startIndex;
             this.DepthFirstSearch(g);
         }
 
@@ -94,10 +94,10 @@ namespace ImVader.Algorithms
         }
 
         /// <summary>
-        /// Defines a path between start vertex and vertex with index v as a sequence of vertices from s to v. 
+        /// Defines a path between start vertex and vertex with index v as a sequence of vertices from startIndex to v. 
         /// </summary>
         /// <param name="v">
-        /// Path from s to v.
+        /// Path from startIndex to v.
         /// </param>
         /// <returns>
         /// Collections of vertices <see cref="System.Collections.IEnumerable"/> if path found, null otherwise.
@@ -122,7 +122,7 @@ namespace ImVader.Algorithms
         {
             int dfsTimer = 0;
             var vertices = new Stack<int>();
-            vertices.Push(s);
+            vertices.Push(this.startIndex);
             while (vertices.Any())
             {
                 ++dfsTimer;
