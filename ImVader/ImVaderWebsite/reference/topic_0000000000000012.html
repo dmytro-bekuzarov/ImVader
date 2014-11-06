@@ -130,7 +130,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">private <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.void.aspx">void</a> DepthFirstSearch(&nbsp;<br />   <a target="_top" href="topic_000000000000004D.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; <i>g</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">private <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.void.aspx">void</a> DepthFirstSearch(&nbsp;<br />   <a target="_top" href="topic_0000000000000061.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; <i>graph</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -144,15 +144,15 @@ function replaceTitleAndUrl(win, title, url) {
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="g">
+	Parameters</h4><dl paramName="graph">
 	<dt>
 		<span class="parameter">
-			g
+			graph
 		</span>
 	</dt>
 	<dd>
 		<p>
-			Type: <a target="_top" href="topic_000000000000004D.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; 
+			Type: <a target="_top" href="topic_0000000000000061.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; 
 		</p>
 		<p>
 			Graph we want to perform depth-first search on. 
@@ -233,11 +233,11 @@ function replaceTitleAndUrl(win, title, url) {
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-private void DepthFirstSearch(Graph&lt;TV, TE&gt; g)
+private void DepthFirstSearch(Graph&lt;TV, TE&gt; graph)
  {
      int dfsTimer = 0;
      var vertices = new Stack&lt;int&gt;();
-     vertices.Push(s);
+     vertices.Push(this.startIndex);
      while (vertices.Any())
      {
          ++dfsTimer;
@@ -254,7 +254,7 @@ private void DepthFirstSearch(Graph&lt;TV, TE&gt; g)
          }
  
          marked[curVertex] = true;
-         foreach (var vertex in g.GetAdjacentVertices(curVertex).Where(x =&gt; !this.marked[x]))
+         foreach (var vertex in graph.GetAdjacentVertices(curVertex).Where(x =&gt; !this.marked[x]))
          {
              edgeTo[vertex] = curVertex;
              vertices.Push(vertex);

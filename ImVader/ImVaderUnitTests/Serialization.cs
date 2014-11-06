@@ -1,10 +1,8 @@
 ﻿namespace ImVaderUnitTests
 {
     using System.IO;
-
     using ImVader;
     using ImVader.Utils;
-
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
@@ -35,8 +33,5 @@
             ListGraph<int, WeightedEdge> graph2 = serializer.Deserialize(s);
             Assert.AreEqual(graph1.ToString(), graph2.ToString());
         }
-
-       
     }
-
 }

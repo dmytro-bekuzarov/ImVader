@@ -84,7 +84,10 @@ namespace ImVader.Algorithms
             for (var i = 0; i < graphObject.VertexCount; i++)
             {
                 var cycle = this.DepthFirstSearch(i);
-                if (cycle) throw new InvalidOperationException("Graph has cycles");
+                if (cycle)
+                {
+                    throw new InvalidOperationException("Graph has cycles");
+                }
             }
 
             for (var i = 0; i < graphObject.VertexCount; i++)
@@ -117,8 +120,16 @@ namespace ImVader.Algorithms
         /// </returns>
         private bool DepthFirstSearch(int vertexIndex)
         {
-            if (colors[vertexIndex] == Color.Grey) return true;
-            if (colors[vertexIndex] == Color.Black) return false;
+            if (colors[vertexIndex] == Color.Grey)
+            {
+                return true;
+            }
+
+            if (colors[vertexIndex] == Color.Black)
+            {
+                return false;
+            }
+
             colors[vertexIndex] = Color.Grey;
             var edgesToEnumerate = graph.GetAdjacentEdges(vertexIndex).ToArray();
             if (edgesToEnumerate.Select(edj => this.graph.IndexOf(edj.To)).Any(this.DepthFirstSearch))

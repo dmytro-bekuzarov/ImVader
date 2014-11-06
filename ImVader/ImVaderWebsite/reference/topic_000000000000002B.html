@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>used Field</title>
+	<title>Dijkstra&lt;TV, TE&gt; Constructor  </title>
 
 	<link rel="stylesheet" type="text/css" href="msdn10_lightweight/msdn10_lightweight.css"></link>
 	<script src="msdn10_lightweight/msdn10_lightweight.js" type="text/javascript"></script>
@@ -59,7 +59,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">ImVader Documentation</div>
-  	<h1 class="title">used Field</h1>
+  	<h1 class="title">Dijkstra&lt;TV, TE&gt; Constructor  </h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -73,11 +73,12 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
-        Defines whether the vertex used/unused.
+        Initializes a new instance of the <a target="_top" href="topic_0000000000000029.html" onclick="this.target='';return true;">Dijkstra&lt;TV, TE&gt;</a> class.
+Processes graph via Dijkstra algo.
 
 
         <p /><strong>Namespace:</strong>
-<a href="topic_0000000000000000.html">ImVader.Algorithms</a>
+<a href="topic_0000000000000028.html">ImVader.Algorithms.ShortestPaths</a>
 
 
 
@@ -130,7 +131,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">private readonly <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.boolean.aspx">bool</a>[] used</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public Dijkstra(&nbsp;<br />   <a target="_top" href="topic_0000000000000077.html" onclick="this.target='';return true;">IDirectedGraph</a> <i>gr</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>index</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -143,6 +144,40 @@ function replaceTitleAndUrl(win, title, url) {
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="gr">
+	<dt>
+		<span class="parameter">
+			gr
+		</span>
+	</dt>
+	<dd>
+		<p>
+			Type: <a target="_top" href="topic_0000000000000077.html" onclick="this.target='';return true;">IDirectedGraph</a> 
+		</p>
+		<p>
+			Directed graph to be precessed. 
+		</p>
+	</dd>
+</dl>
+<dl paramName="index">
+	<dt>
+		<span class="parameter">
+			index
+		</span>
+	</dt>
+	<dd>
+		<p>
+			Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> 
+		</p>
+		<p>
+			Entry vertex index. 
+		</p>
+	</dd>
+</dl>
+
+<p />
+<p />
 
 
 
@@ -214,7 +249,44 @@ function replaceTitleAndUrl(win, title, url) {
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-private readonly bool[] used;
+public Dijkstra(IDirectedGraph gr, int index)
+     : base((Graph&lt;TV, TE&gt;)gr)
+ {
+     index = this.G.IndexOf(index);
+     for (var i = 0; i &lt; this.G.EdgesCount; i++)
+     {
+         Edge e = this.G.GetEdge(i);
+         var edge = e as WeightedEdge;
+         if (edge != null)
+         {
+             if (edge.Weight &lt; 0)
+             {
+                 throw new ArgumentException(&quot;edge &quot; + e + &quot; has negative weight&quot;);
+             }
+         }
+     }
+ 
+     this.EdgeTo = new TE[this.G.VertexCount];
+     this.DistTo = new double[this.G.VertexCount];
+     for (var v = 0; v &lt; this.G.VertexCount; v++)
+     {
+         this.DistTo[v] = double.MaxValue;
+     }
+ 
+     this.DistTo[index] = 0.0;
+     this.queue = new MinPq&lt;Node&gt;(this.G.VertexCount);
+     this.queue.Insert(new Node(index, this.DistTo[index]));
+     while (!this.queue.IsEmpty())
+     {
+         var v = this.queue.DelMin();
+         var adj = this.G.GetAdjacentEdges(v.NodeIndex);
+         var enumerable = adj as TE[] ?? adj.ToArray();
+         for (var i = 0; i &lt; enumerable.Count(); i++)
+         {
+             this.Relax(enumerable[i]);
+         }
+     }
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -276,12 +348,12 @@ private readonly bool[] used;
 		<div>
 			<h4 class="subHeading">
 				Reference</h4>
-			<a href="topic_0000000000000029.html">StrongComponents&lt;TV, TE&gt; Class</a><br />
-<a href="topic_0000000000000029_members--.html">StrongComponents&lt;TV, TE&gt; Members</a><br />
+			<a href="topic_0000000000000029.html">Dijkstra&lt;TV, TE&gt; Class</a><br />
+<a href="topic_0000000000000029_members--.html">Dijkstra&lt;TV, TE&gt; Members</a><br />
 
 
 
-<a href="topic_0000000000000000.html">ImVader.Algorithms Namespace</a><br />
+<a href="topic_0000000000000028.html">ImVader.Algorithms.ShortestPaths Namespace</a><br />
 
 
 			
@@ -302,3 +374,4 @@ private readonly bool[] used;
 		</script>	
   </body>
 </html>
+

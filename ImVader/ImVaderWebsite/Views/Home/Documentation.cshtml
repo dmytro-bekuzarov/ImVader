@@ -129,7 +129,7 @@ matrixGraph.AddEdge(new WeightedEdge(1, 2, 4));
 matrixGraph.AddEdge(new WeightedEdge(2, 3, 1));
 matrixGraph.AddEdge(new WeightedEdge(3, 0, 10));
 var minCuts = new MinimumCuts&lt;int, WeightedEdge&gt;(matrixGraph);
-foreach (var vertexId in BestCut)
+foreach (var vertexId in MinimumCut)
 {
     Console.WriteLine(vertexId);
 }           

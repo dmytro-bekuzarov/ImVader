@@ -32,12 +32,12 @@ namespace ImVader.Algorithms
         /// <summary>
         /// The weight of the minimum cut.
         /// </summary>
-        private double bestCost = double.MaxValue;
+        private double minimumCost = double.MaxValue;
 
         /// <summary>
         /// The list of indexes that represents a minimum cut.
         /// </summary>
-        private List<int> bestCut;
+        private List<int> minimumCut;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MinimumCuts{TV,TE}"/> class.
@@ -48,7 +48,7 @@ namespace ImVader.Algorithms
         public MinimumCuts(Graph<TV, TE> graph)
         {
             initialGraph = graph;
-            bestCut = new List<int>();
+            this.minimumCut = new List<int>();
             var gmatrix = new double[graph.VertexCount][];
             for (var i = 0; i < gmatrix.GetLength(0); i++)
             {
@@ -60,8 +60,8 @@ namespace ImVader.Algorithms
                 var adjacentEdges = graph.GetAdjacentEdges(i);
                 foreach (var edge in adjacentEdges)
                 {
-                    gmatrix[i][initialGraph.IndexOf(edge.Other(initialGraph.Indexes[i]))] = edge.Weight;
-                    gmatrix[initialGraph.IndexOf(edge.Other(initialGraph.Indexes[i]))][i] = edge.Weight;
+                    gmatrix[i][initialGraph.IndexOf(edge.Other(initialGraph.IndexedValue(i)))] = edge.Weight;
+                    gmatrix[initialGraph.IndexOf(edge.Other(initialGraph.IndexedValue(i)))][i] = edge.Weight;
                 }
             }
 
@@ -74,11 +74,11 @@ namespace ImVader.Algorithms
         /// <value>
         /// The list of vertices indexes that represents a minimum cut.
         /// </value>
-        public List<int> BestCut
+        public List<int> MinimumCut
         {
             get
             {
-                return this.bestCut.Select(v => this.initialGraph.Indexes[v]).ToList();
+                return this.minimumCut.Select(v => this.initialGraph.IndexedValue(v)).ToList();
             }
         }
 
@@ -88,11 +88,11 @@ namespace ImVader.Algorithms
         /// <value>
         /// The weight of the minimum cut.
         /// </value>
-        public double BestCost
+        public double MinimumCost
         {
             get
             {
-                return bestCost;
+                return this.minimumCost;
             }
         }
 
@@ -104,58 +104,58 @@ namespace ImVader.Algorithms
         /// </param>
         private void MinCut(double[][] graph)
         {
-            var n = graph.GetLength(0);
-            var v = new List<int>[n];
-            for (var i = 0; i < v.Length; i++)
+            var length = graph.GetLength(0);
+            var minCutPath = new List<int>[length];
+            for (var i = 0; i < minCutPath.Length; i++)
             {
-                v[i] = new List<int> { i };
+                minCutPath[i] = new List<int> { i };
             }
 
-            var exists = new bool[n];
-            var inA = new bool[n];
-            var w = new double[n];
+            var exists = new bool[length];
+            var inSet = new bool[length];
+            var coverDistance = new double[length];
 
-            for (var i = 0; i < n; i++)
+            for (var i = 0; i < length; i++)
             {
                 exists[i] = true;
             }
 
-            for (var ph = 0; ph < n - 1; ph++)
+            for (var k = 0; k < length - 1; k++)
             {
-                for (var i = 0; i < n; i++)
+                for (var i = 0; i < length; i++)
                 {
-                    inA[i] = false;
-                    w[i] = 0;
+                    inSet[i] = false;
+                    coverDistance[i] = 0;
                 }
 
-                for (int it = 0, prev = -1; it < n - ph; it++)
+                for (int j = 0, prev = -1; j < length - k; j++)
                 {
-                    var sel = -1;
+                    var selected = -1;
 
-                    for (var i = 0; i < n; ++i)
-                        if (exists[i] && !inA[i] && (sel == -1 || w[i] > w[sel]))
-                            sel = i;
+                    for (var i = 0; i < length; ++i)
+                        if (exists[i] && !inSet[i] && (selected == -1 || coverDistance[i] > coverDistance[selected]))
+                            selected = i;
 
-                    if (it == n - ph - 1)
+                    if (j == length - k - 1)
                     {
-                        if (w[sel] < bestCost)
+                        if (coverDistance[selected] < this.minimumCost)
                         {
-                            bestCost = w[sel];
-                            bestCut = v[sel];
+                            this.minimumCost = coverDistance[selected];
+                            this.minimumCut = minCutPath[selected];
                         }
 
-                        v[prev].AddRange(v[sel]);
-                        for (var i = 0; i < n; ++i)
-                            graph[prev][i] = graph[i][prev] += graph[sel][i];
-                        exists[sel] = false;
+                        minCutPath[prev].AddRange(minCutPath[selected]);
+                        for (var i = 0; i < length; ++i)
+                            graph[prev][i] = graph[i][prev] += graph[selected][i];
+                        exists[selected] = false;
                     }
                     else
                     {
-                        inA[sel] = true;
-                        for (var i = 0; i < n; i++)
-                            w[i] += graph[sel][i];
+                        inSet[selected] = true;
+                        for (var i = 0; i < length; i++)
+                            coverDistance[i] += graph[selected][i];
 
-                        prev = sel;
+                        prev = selected;
                     }
                 }
             }

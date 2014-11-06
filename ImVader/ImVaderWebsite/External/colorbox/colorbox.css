@@ -53,7 +53,7 @@
         #cboxClose:hover{background-position:-25px -25px;}
 
 /*
-  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+  The following fixes a problem where IE7 and IE8 replace a PNodeIndexG's alpha transparency with a black fill
   when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
   See: http://jacklmoore.com/notes/ie-transparency-problems/
 */

@@ -1,9 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace ImVaderUnitTests.AlgorithmsTests
+﻿namespace ImVaderUnitTests.AlgorithmsTests
 {
     using ImVader;
     using ImVader.Algorithms;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class MinimalSpanningTreeTest
@@ -22,6 +21,5 @@ namespace ImVaderUnitTests.AlgorithmsTests
             var mst = new MinimalSpanningTree<int, WeightedEdge>(g);
             Assert.AreEqual(13.0, mst.GetMstWeight());
         }
-
     }
 }

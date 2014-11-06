@@ -28,8 +28,8 @@ namespace ImVader
         /// </param>
         protected Edge(int from, int to)
         {
-            this.From = from;
-            this.To = to;
+            From = from;
+            To = to;
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace ImVader
         /// </returns>
         public int Either()
         {
-            return this.From;
+            return From;
         }
 
         /// <summary>
@@ -74,9 +74,17 @@ namespace ImVader
         /// </exception>
         public int Other(int vertex)
         {
-            if (vertex == this.From) { return this.To; }
-            if (vertex == this.To) { return this.From; }
-            throw new ArgumentException();
+            if (vertex == From)
+            {
+                return To;
+            }
+
+            if (vertex == To)
+            {
+                return From;
+            }
+
+            throw new ArgumentException("Invalid vertex index");
         }
     }
 }

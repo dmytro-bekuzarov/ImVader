@@ -130,7 +130,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">private <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.void.aspx">void</a> BreadthFirstSearch(&nbsp;<br />   <a target="_top" href="topic_000000000000004D.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; <i>g</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">private <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.void.aspx">void</a> BreadthFirstSearch(&nbsp;<br />   <a target="_top" href="topic_0000000000000061.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; <i>g</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,7 +152,7 @@ function replaceTitleAndUrl(win, title, url) {
 	</dt>
 	<dd>
 		<p>
-			Type: <a target="_top" href="topic_000000000000004D.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; 
+			Type: <a target="_top" href="topic_0000000000000061.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; 
 		</p>
 		<p>
 			Graph we want to perform breadth-first search on. 
@@ -236,7 +236,7 @@ function replaceTitleAndUrl(win, title, url) {
 private void BreadthFirstSearch(Graph&lt;TV, TE&gt; g)
  {
      var vertices = new Queue&lt;int&gt;();
-     vertices.Enqueue(s);
+     vertices.Enqueue(this.startIndex);
      while (vertices.Any())
      {
          var curVertex = vertices.Dequeue();

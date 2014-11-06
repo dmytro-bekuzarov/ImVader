@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>SquareMatrix&lt;T&gt;.Size Property</title>
+	<title>SquareMatrix&lt;T&gt;.Item Property</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn10_lightweight/msdn10_lightweight.css"></link>
 	<script src="msdn10_lightweight/msdn10_lightweight.js" type="text/javascript"></script>
@@ -59,7 +59,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">ImVader Documentation</div>
-  	<h1 class="title">SquareMatrix&lt;T&gt;.Size Property</h1>
+  	<h1 class="title">SquareMatrix&lt;T&gt;.Item Property</h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -73,11 +73,11 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
-        Gets the size of the matrix.
+        Gets or sets the value in the specified cell.
 
 
         <p /><strong>Namespace:</strong>
-<a href="topic_00000000000000A0.html">ImVader.Utils</a>
+<a href="topic_0000000000000091.html">ImVader.Utils</a>
 
 
 
@@ -130,7 +130,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> Size {get; private set;}</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public T this[&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>i</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>j</i>&nbsp;<br />] {get; set;}</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -143,10 +143,44 @@ function replaceTitleAndUrl(win, title, url) {
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="i">
+	<dt>
+		<span class="parameter">
+			i
+		</span>
+	</dt>
+	<dd>
+		<p>
+			Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> 
+		</p>
+		<p>
+			The row index of the cell. 
+		</p>
+	</dd>
+</dl>
+<dl paramName="j">
+	<dt>
+		<span class="parameter">
+			j
+		</span>
+	</dt>
+	<dd>
+		<p>
+			Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> 
+		</p>
+		<p>
+			The column index of the cell. 
+		</p>
+	</dd>
+</dl>
+
+<p />
+<p />
 
 	<h4 class="subHeading">
 		Property Value</h4>
-  The size of the matrix.
+  The value stored in the cell.
 
 
 
@@ -217,7 +251,11 @@ function replaceTitleAndUrl(win, title, url) {
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public int Size { get; private set; }
+public T this[int i, int j]
+ {
+     get { return values[i, j]; }
+     set { values[i, j] = value; }
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -279,12 +317,12 @@ public int Size { get; private set; }
 		<div>
 			<h4 class="subHeading">
 				Reference</h4>
-			<a href="topic_00000000000000A6.html">SquareMatrix&lt;T&gt; Class</a><br />
-<a href="topic_00000000000000A6_members--.html">SquareMatrix&lt;T&gt; Members</a><br />
+			<a href="topic_00000000000000A5.html">SquareMatrix&lt;T&gt; Class</a><br />
+<a href="topic_00000000000000A5_members--.html">SquareMatrix&lt;T&gt; Members</a><br />
 
 
 
-<a href="topic_00000000000000A0.html">ImVader.Utils Namespace</a><br />
+<a href="topic_0000000000000091.html">ImVader.Utils Namespace</a><br />
 
 
 			

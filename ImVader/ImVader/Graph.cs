@@ -30,19 +30,19 @@ namespace ImVader
         /// A collection of vertices in the graph.
         /// </summary>
         [JsonProperty]
-        internal Dictionary<int, Vertex<TV>> Vertices;
+        protected Dictionary<int, Vertex<TV>> Vertices;
 
         /// <summary>
         /// Contains all edges in the graph.
         /// </summary>
         [JsonProperty]
-        internal Dictionary<int, TE> Edges;
+        protected Dictionary<int, TE> Edges;
 
         /// <summary>
         /// Contains indexes of the stored vertices.
         /// </summary>
         [JsonProperty]
-        internal List<int> Indexes;
+        protected List<int> Indexes;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Graph{TV,TE}"/> class. 
@@ -143,7 +143,7 @@ namespace ImVader
         /// </returns>
         public virtual TV GetVertexData(int index)
         {
-            this.CheckVerticesIndexes(index);
+            CheckVerticesIndexes(index);
             return Vertices[index].Data;
         }
 
@@ -158,7 +158,6 @@ namespace ImVader
         /// </param>
         public virtual void SetVertexData(int index, TV data)
         {
-            this.CheckVerticesIndexes(index);
             Vertices[index].Data = data;
         }
 

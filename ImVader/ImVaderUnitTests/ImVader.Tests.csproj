@@ -64,9 +64,9 @@
     <Compile Include="AlgorithmsTests\StrongComponentsTest.cs" />
     <Compile Include="ListGraph.cs" />
     <Compile Include="MatrixGraph.cs" />
-    <Compile Include="ShortestPathesTest.cs" />
-    <Compile Include="ShortestPaths.cs" />
-    <Compile Include="TopologicalSort.cs" />
+    <Compile Include="AlgorithmsTests\ShortestPathesTest.cs" />
+    <Compile Include="AlgorithmsTests\ShortestPaths.cs" />
+    <Compile Include="AlgorithmsTests\TopologicalSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DirectedMatrixGraph.cs" />
     <Compile Include="DirectedListGraph.cs" />

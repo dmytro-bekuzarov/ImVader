@@ -20,7 +20,7 @@ namespace ImVaderWebsite.Controllers
             var graph = new ListGraph<int, WeightedEdge>();
             graph.Init(g.Edges, g.Vertices);
             var sc = new MinimumCuts<int, WeightedEdge>(graph);
-            var ids = sc.BestCut;
+            var ids = sc.MinimumCut;
             return ids;
         }
     }

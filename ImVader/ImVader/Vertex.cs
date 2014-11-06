@@ -9,10 +9,10 @@
 namespace ImVader
 {
     /// <summary>
-    /// Defines graph vertex
+    /// Defines graph vertex.
     /// </summary>
     /// <typeparam name="T">
-    /// Defines type of data stored in the vertex
+    /// Defines type of data stored in the vertex.
     /// </typeparam>
     public class Vertex<T>
     {
@@ -21,23 +21,26 @@ namespace ImVader
         /// </summary>
         public Vertex()
         {
-            this.Data = default(T);
+            Data = default(T);
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Vertex{T}"/> class.
         /// </summary>
         /// <param name="data">
-        /// The data.
+        /// Type of the data stored in the vertex.
         /// </param>
         public Vertex(T data)
         {
-            this.Data = data;
+            Data = data;
         }
 
         /// <summary>
-        /// Gets or sets the data in the vertex
+        /// Gets or sets the data in the vertex.
         /// </summary>
+        /// <value>
+        /// The data stored in the vertex.
+        /// </value>
         public T Data { get; set; }
     }
 }

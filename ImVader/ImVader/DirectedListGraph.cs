@@ -58,11 +58,15 @@ namespace ImVader
         public override void RemoveEdge(int index)
         {
             TE e = Edges[index];
-            var list1 = AdjacencyList[Indexes.IndexOf(e.From)];
-            int index1 = list1.IndexOf(e);
-            list1.RemoveAt(index1);
+            var adjacentList = AdjacencyList[Indexes.IndexOf(e.From)];
+            int adjacentIndexes = adjacentList.IndexOf(e);
+            adjacentList.RemoveAt(adjacentIndexes);
             EdgesCount--;
-            if (index == LastEdgeIndex) LastEdgeIndex--;
+            if (index == LastEdgeIndex)
+            {
+                LastEdgeIndex--;
+            }
+
             Edges.Remove(index);
         }
     }

@@ -61,7 +61,10 @@ namespace ImVader
             Edge e = Edges[index];
             this[e.From, e.To].Remove(index);
             EdgesCount--;
-            if (index == LastEdgeIndex) LastEdgeIndex--;
+            if (index == LastEdgeIndex)
+            {
+                LastEdgeIndex--;
+            }
             Edges.Remove(index);
         }
     }

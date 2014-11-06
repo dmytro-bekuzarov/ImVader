@@ -28,7 +28,7 @@ namespace ImVader.Algorithms
         /// <summary>
         /// Infinite weight of edge.
         /// </summary>
-        private const double infinity = double.MaxValue;
+        private const double Infinity = double.MaxValue;
 
         /// <summary>
         /// Edges included to resulting minimal spanning tree.
@@ -84,17 +84,16 @@ namespace ImVader.Algorithms
 
             for (var i = 0; i < minimalWeightEdges.Length; i++)
             {
-                minimalWeightEdges[i] = infinity;
+                minimalWeightEdges[i] = Infinity;
                 otherAdjacentVertex[i] = -1;
             }
 
-            int from, to;
             for (int i = 0; i < g.EdgesCount; i++)
             {
-                from = g.Edges[i].From;
-                to = g.Edges[i].To;
-                initialEdges[from][to] = g.Edges[i];
-                initialEdges[to][from] = g.Edges[i];
+                int from = g.GetEdge(i).From;
+                int to = g.GetEdge(i).To;
+                initialEdges[from][to] = g.GetEdge(i);
+                initialEdges[to][from] = g.GetEdge(i);
             }
 
             minimalWeightEdges[0] = 0;
@@ -157,7 +156,8 @@ namespace ImVader.Algorithms
                         v = j;
                     }
                 }
-                if (Math.Abs(minimalWeightEdges[v] - infinity) < 0.01)
+
+                if (Math.Abs(minimalWeightEdges[v] - Infinity) < 0.01)
                 {
                     throw new InvalidOperationException("Cannot build MST of not fully connected graph!");
                 }

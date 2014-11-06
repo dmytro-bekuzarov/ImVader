@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	-	Revolution Slider 4.1 Captions -
 
@@ -14,7 +14,7 @@ website:   	http://www.themepunch.com
 
 
 /*************************
-	-	CAPTIONS	-
+	-	CAPTIONodeIndexS	-
 **************************/
 
 .tp-static-layers	{	position:absolute; z-index:505; top:0px;left:0px;}
@@ -1042,7 +1042,7 @@ border-style:none;
 
 
 /*********************************
-	-	SPECIAL TP CAPTIONS -
+	-	SPECIAL TP CAPTIONodeIndexS -
 **********************************/
 .tp-caption .frontcorner		{
 										width: 0;
@@ -1081,7 +1081,7 @@ border-style:none;
 									}
 
 /******************************
-	-	BUTTONS	-
+	-	BUTTONodeIndexS	-
 *******************************/
 
 .tp-simpleresponsive .button				{	padding:6px 13px 5px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; height:30px;
@@ -1121,7 +1121,7 @@ border-style:none;
 
 
 
-/*	BUTTON COLORS	*/
+/*	BUTTONodeIndex COLORS	*/
 
 
 
@@ -1150,7 +1150,7 @@ border-style:none;
 
 /****************************************************************
 
-	-	SET THE ANIMATION EVEN MORE SMOOTHER ON ANDROID   -
+	-	SET THE ANodeIndexIMATIONodeIndex EVENodeIndex MORE SMOOTHER ONodeIndex ANodeIndexDROID   -
 
 ******************************************************************/
 
@@ -1165,7 +1165,7 @@ border-style:none;
 
 
 /**********************************************
-	-	FULLSCREEN AND FULLWIDHT CONTAINERS	-
+	-	FULLSCREENodeIndex ANodeIndexD FULLWIDHT CONodeIndexTAINodeIndexERS	-
 **********************************************/
 
 .fullscreen-container {
@@ -1191,7 +1191,7 @@ border-style:none;
 
 
 /************************************************
-	  - SOME CAPTION MODIFICATION AT START  -
+	  - SOME CAPTIONodeIndex MODIFICATIONodeIndex AT START  -
 *************************************************/
 .tp-simpleresponsive .caption,
 .tp-simpleresponsive .tp-caption {
@@ -1233,7 +1233,7 @@ border-style:none;
 
 
 /********************************
-	-	FULLSCREEN VIDEO	-
+	-	FULLSCREENodeIndex VIDEO	-
 *********************************/
 .caption.fullscreenvideo {	left:0px; top:0px; position:absolute;width:100%;height:100%;}
 .caption.fullscreenvideo iframe,
@@ -1281,7 +1281,7 @@ border-style:none;
 
 
 /********************************
-	-	FULLSCREEN VIDEO ENDS	-
+	-	FULLSCREENodeIndex VIDEO ENodeIndexDS	-
 *********************************/
 
 
@@ -1294,12 +1294,12 @@ border-style:none;
 .tp-dottedoverlay.threexthree			{	background:url(../assets/gridtile_3x3.png)}
 .tp-dottedoverlay.threexthreewhite		{	background:url(../assets/gridtile_3x3_white.png)}
 /********************************
-	-	DOTTED OVERLAYS ENDS	-
+	-	DOTTED OVERLAYS ENodeIndexDS	-
 *********************************/
 
 
 /************************
-	-	NAVIGATION	-
+	-	NodeIndexAVIGATIONodeIndex	-
 *************************/
 
 /** BULLETS **/
@@ -1344,7 +1344,7 @@ border-style:none;
 .tp-bullets.simplebullets.square-old .bullet.last		{	margin-right:0px;}
 
 
-/** navbar NAVIGATION VERSION **/
+/** navbar NodeIndexAVIGATIONodeIndex VERSIONodeIndex **/
 .tp-bullets.simplebullets.navbar .bullet			{	cursor:pointer; position:relative;	background:url(../assets/bullet_boxed.png) no-Repeat top left;	width:18px;	height:19px;   margin-right:5px; float:left; margin-top:0px;}
 
 .tp-bullets.simplebullets.navbar .bullet.first		{	margin-left:0px !important;}
@@ -1352,7 +1352,7 @@ border-style:none;
 
 
 
-/** navbar NAVIGATION VERSION **/
+/** navbar NodeIndexAVIGATIONodeIndex VERSIONodeIndex **/
 .tp-bullets.simplebullets.navbar-old .bullet			{	cursor:pointer; position:relative;	background:url(../assets/navigdots.png) no-Repeat bottom left;	width:15px;	height:15px;  margin-left:5px !important; margin-right:5px !important;float:left; margin-top:10px;}
 .tp-bullets.simplebullets.navbar-old .bullet.first		{	margin-left:0px !important;}
 .tp-bullets.simplebullets.navbar-old .bullet.last		{	margin-right:0px !important;}
@@ -1449,20 +1449,20 @@ border-style:none;
 
 
 .tp-bullets.tp-thumbs						{	z-index:1000; position:absolute; padding:3px;background-color:#fff;
-												width:500px;height:50px; 			/* THE DIMENSIONS OF THE THUMB CONTAINER */
+												width:500px;height:50px; 			/* THE DIMENodeIndexSIONodeIndexS OF THE THUMB CONodeIndexTAINodeIndexER */
 												margin-top:-50px;
 											}
 
 
 .fullwidthbanner-container .tp-thumbs		{  padding:3px;}
 
-.tp-bullets.tp-thumbs .tp-mask				{	width:500px; height:50px;  			/* THE DIMENSIONS OF THE THUMB CONTAINER */
+.tp-bullets.tp-thumbs .tp-mask				{	width:500px; height:50px;  			/* THE DIMENodeIndexSIONodeIndexS OF THE THUMB CONodeIndexTAINodeIndexER */
 												overflow:hidden; position:relative;}
 
 
 .tp-bullets.tp-thumbs .tp-mask .tp-thumbcontainer	{	width:5000px; position:absolute;}
 
-.tp-bullets.tp-thumbs .bullet				{   width:100px; height:50px; 			/* THE DIMENSION OF A SINGLE THUMB */
+.tp-bullets.tp-thumbs .bullet				{   width:100px; height:50px; 			/* THE DIMENodeIndexSIONodeIndex OF A SINodeIndexGLE THUMB */
 												cursor:pointer; overflow:hidden;background:none;margin:0;float:left;
 												-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 												/*filter: alpha(opacity=50);	*/
@@ -1485,7 +1485,7 @@ border-style:none;
 
 
 /************************************
-		-	TP BANNER TIMER		-
+		-	TP BANodeIndexNodeIndexER TIMER		-
 *************************************/
 .tp-bannertimer								{	width:100%; height:10px; background:url(../assets/timer.png);position:absolute; z-index:200;top:0px;}
 .tp-bannertimer.tp-bottom					{	bottom:0px;height:5px; top:auto;}
@@ -1494,7 +1494,7 @@ border-style:none;
 
 
 /***************************************
-	-	RESPONSIVE SETTINGS 	-
+	-	RESPONodeIndexSIVE SETTINodeIndexGS 	-
 ****************************************/
 
 
@@ -1511,7 +1511,7 @@ border-style:none;
 
 /*********************************************
 
-	-	BASIC SETTINGS FOR THE BANNER	-
+	-	BASIC SETTINodeIndexGS FOR THE BANodeIndexNodeIndexER	-
 
 ***********************************************/
 
@@ -1537,7 +1537,7 @@ border-style:none;
 	position:absolute;
 	visibility:hidden;
 }
-/*  CAPTION SLIDELINK   **/
+/*  CAPTIONodeIndex SLIDELINodeIndexK   **/
 .caption.slidelink a div,
 .tp-caption.slidelink a div {	width:3000px; height:1500px;  background:url(../assets/coloredbg.png) repeat;}
 
@@ -1546,7 +1546,7 @@ border-style:none;
 
 
 /*****************************************
-	-	NAVIGATION FANCY EXAMPLES	-
+	-	NodeIndexAVIGATIONodeIndex FANodeIndexCY EXAMPLES	-
 *****************************************/
 
 .tparrows .tp-arr-imgholder								{ display: none}
@@ -1555,10 +1555,10 @@ border-style:none;
 
 
 /*****************************************
-	-	NAVIGATION FANCY EXAMPLES	-
+	-	NodeIndexAVIGATIONodeIndex FANodeIndexCY EXAMPLES	-
 *****************************************/
 
-/* NAVIGATION PREVIEW 1 */
+/* NodeIndexAVIGATIONodeIndex PREVIEW 1 */
 .tparrows.preview1 							{	width:100px;height:100px;-webkit-transform-style: preserve-3d; -webkit-perspective: 1000; -moz-perspective: 1000; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden;background: transparent;}
 .tparrows.preview1:after					{	position:absolute; left:0px;top:0px; font-family: "revicons"; color:#fff; font-size:30px; width:100px;height:100px;text-align: center; background:#fff;background:rgba(0,0,0,0.15);z-index:2;line-height:100px; -webkit-transition: background 0.3s, color 0.3s; -moz-transition: background 0.3s, color 0.3s; transition: background 0.3s, color 0.3s;}
 .tp-rightarrow.preview1:after				{	content: '\e825';  }
@@ -1660,7 +1660,7 @@ border-style:none;
 												
 												
 												
-/* NAVIGATION PREVIEW 2 */
+/* NodeIndexAVIGATIONodeIndex PREVIEW 2 */
 .tparrows.preview2 							{	min-width:60px; min-height:60px; background:#fff; ; 
 												
 												border-radius:30px;-moz-border-radius:30px;-webkit-border-radius:30px;
@@ -1788,7 +1788,7 @@ border-style:none;
 
 
 
-/* NAVIGATION PREVIEW 3 */
+/* NodeIndexAVIGATIONodeIndex PREVIEW 3 */
 .tparrows.preview3 							{	width:70px; height:70px; background:#fff; background:rgba(255,255,255,1); -webkit-transform-style: flat; }
 .tparrows.preview3:after					{	position:absolute;  line-height: 70px;text-align: center; font-family: "revicons"; color:#aaa; font-size:30px; top:0px;left:0px;;background:#fff; z-index:100; width:70px;height:70px; -webkit-transition: color 0.3s; -moz-transition: color 0.3s; transition: color 0.3s;}
 .tparrows.preview3:hover:after					{	color:#000; }
@@ -1887,7 +1887,7 @@ border-style:none;
 
    						
 											
-/* NAVIGATION PREVIEW 4 */
+/* NodeIndexAVIGATIONodeIndex PREVIEW 4 */
 .tparrows.preview4 							{	width:30px; height:110px;  background:transparent;-webkit-transform-style: preserve-3d; -webkit-perspective: 1000; -moz-perspective: 1000;}
 .tparrows.preview4:after					{	position:absolute;  line-height: 110px;text-align: center; font-family: "revicons"; color:#fff; font-size:20px; top:0px;left:0px;z-index:0; width:30px;height:110px; background: #000; background: rgba(0,0,0,0.25);
 												-webkit-transition: all 0.2s ease-in-out;
@@ -2264,7 +2264,7 @@ zoom: 1;
   font-style: normal;
 }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/* NodeIndexote, that will break hinting! In other OS-es font will be not as sharp as it could be */
 /*
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {

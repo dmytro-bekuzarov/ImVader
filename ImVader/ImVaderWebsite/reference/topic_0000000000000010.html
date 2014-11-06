@@ -73,7 +73,7 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
-        Defines if there is a path from start vertex to vertex v after breath-first search.
+        Defines if there is a path from start vertex to vertex v after depth-first search.
 
 
         <p /><strong>Namespace:</strong>
@@ -130,7 +130,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.boolean.aspx">bool</a> HasPathTo(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>v</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.boolean.aspx">bool</a> HasPathTo(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>vertex</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -144,10 +144,10 @@ function replaceTitleAndUrl(win, title, url) {
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="v">
+	Parameters</h4><dl paramName="vertex">
 	<dt>
 		<span class="parameter">
-			v
+			vertex
 		</span>
 	</dt>
 	<dd>
@@ -236,9 +236,9 @@ function replaceTitleAndUrl(win, title, url) {
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public bool HasPathTo(int v)
+public bool HasPathTo(int vertex)
  {
-     return marked[v];
+     return marked[vertex];
  }
 					</pre>			
 				</div>

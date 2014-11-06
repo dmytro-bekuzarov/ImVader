@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>JsonSerializer&lt;T&gt;.Deserialize (String) Method</title>
+	<title>MinPq&lt;T&gt;.Exch Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn10_lightweight/msdn10_lightweight.css"></link>
 	<script src="msdn10_lightweight/msdn10_lightweight.js" type="text/javascript"></script>
@@ -59,7 +59,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">ImVader Documentation</div>
-  	<h1 class="title">JsonSerializer&lt;T&gt;.Deserialize (String) Method</h1>
+  	<h1 class="title">MinPq&lt;T&gt;.Exch Method</h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -73,11 +73,11 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
-        Deserializes the object from JSON string.
+        Exchanges two objects in the queue with index i and j.
 
 
         <p /><strong>Namespace:</strong>
-<a href="topic_00000000000000A0.html">ImVader.Utils</a>
+<a href="topic_0000000000000091.html">ImVader.Utils</a>
 
 
 
@@ -130,7 +130,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public T Deserialize(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> <i>s</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">private <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.void.aspx">void</a> Exch(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>i</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>j</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -144,18 +144,33 @@ function replaceTitleAndUrl(win, title, url) {
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="s">
+	Parameters</h4><dl paramName="i">
 	<dt>
 		<span class="parameter">
-			s
+			i
 		</span>
 	</dt>
 	<dd>
 		<p>
-			Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> 
+			Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> 
 		</p>
 		<p>
-			The JSON string. 
+			The index of the first object. 
+		</p>
+	</dd>
+</dl>
+<dl paramName="j">
+	<dt>
+		<span class="parameter">
+			j
+		</span>
+	</dt>
+	<dd>
+		<p>
+			Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> 
+		</p>
+		<p>
+			The index of the second object. 
 		</p>
 	</dd>
 </dl>
@@ -163,9 +178,6 @@ function replaceTitleAndUrl(win, title, url) {
 <p />
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-  The deserialized object.
 
 
 
@@ -236,9 +248,11 @@ function replaceTitleAndUrl(win, title, url) {
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public T Deserialize(string s)
+private void Exch(int i, int j)
  {
-     return JsonConvert.DeserializeObject&lt;T&gt;(s);
+     var swap = queue[i];
+     queue[i] = queue[j];
+     queue[j] = swap;
  }
 					</pre>			
 				</div>
@@ -301,12 +315,12 @@ public T Deserialize(string s)
 		<div>
 			<h4 class="subHeading">
 				Reference</h4>
-			<a href="topic_00000000000000A1.html">JsonSerializer&lt;T&gt; Class</a><br />
-<a href="topic_00000000000000A1_members--.html">JsonSerializer&lt;T&gt; Members</a><br />
+			<a href="topic_0000000000000097.html">MinPq&lt;T&gt; Class</a><br />
+<a href="topic_0000000000000097_members--.html">MinPq&lt;T&gt; Members</a><br />
 
 
 
-<a href="topic_00000000000000A0.html">ImVader.Utils Namespace</a><br />
+<a href="topic_0000000000000091.html">ImVader.Utils Namespace</a><br />
 
 
 			

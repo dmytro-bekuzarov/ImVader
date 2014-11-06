@@ -130,7 +130,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public BreadthFirstPathes(&nbsp;<br />   <a target="_top" href="topic_000000000000004D.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; <i>g</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>s</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public BreadthFirstPathes(&nbsp;<br />   <a target="_top" href="topic_0000000000000061.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; <i>g</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>startIndex</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,17 +152,17 @@ function replaceTitleAndUrl(win, title, url) {
 	</dt>
 	<dd>
 		<p>
-			Type: <a target="_top" href="topic_000000000000004D.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; 
+			Type: <a target="_top" href="topic_0000000000000061.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; 
 		</p>
 		<p>
 			Graph, on which breath-first search is performed. 
 		</p>
 	</dd>
 </dl>
-<dl paramName="s">
+<dl paramName="startIndex">
 	<dt>
 		<span class="parameter">
-			s
+			startIndex
 		</span>
 	</dt>
 	<dd>
@@ -170,7 +170,7 @@ function replaceTitleAndUrl(win, title, url) {
 			Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> 
 		</p>
 		<p>
-			Start vertex for breath-first search. 
+			Start vertex index for breath-first search. 
 		</p>
 	</dd>
 </dl>
@@ -218,7 +218,7 @@ function replaceTitleAndUrl(win, title, url) {
 			</td>
 			<td>
 				<p>
-					Exception is thrown if s is out of boundaries (0, g.VertexCount). 
+					Exception is thrown if startIndex is out of boundaries (0, g.VertexCount). 
 				</p>
 			</td>
 		</tr>
@@ -280,10 +280,13 @@ function replaceTitleAndUrl(win, title, url) {
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public BreadthFirstPathes(Graph&lt;TV, TE&gt; g, int s)
+public BreadthFirstPathes(Graph&lt;TV, TE&gt; g, int startIndex)
  {
-     if (s &lt; 0 || s &gt; g.VertexCount)
-         throw new ArgumentOutOfRangeException(&quot;s&quot;, &quot;Vertex index is out of range.&quot;);
+     if (startIndex &lt; 0 || startIndex &gt; g.VertexCount)
+     {
+         throw new ArgumentOutOfRangeException(&quot;startIndex&quot;, &quot;Vertex index is out of range.&quot;);
+     }
+ 
      marked = new bool[g.VertexCount];
      edgeTo = new int[g.VertexCount];
      for (var i = 0; i &lt; edgeTo.Length; i++)
@@ -291,7 +294,7 @@ public BreadthFirstPathes(Graph&lt;TV, TE&gt; g, int s)
          edgeTo[i] = -1;
      }
  
-     this.s = s;
+     this.startIndex = startIndex;
      this.BreadthFirstSearch(g);
  }
 					</pre>			

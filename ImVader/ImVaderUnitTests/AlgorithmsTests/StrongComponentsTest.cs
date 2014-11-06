@@ -1,15 +1,10 @@
 ﻿namespace ImVaderUnitTests.AlgorithmsTests
 {
-    using System;
     using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using ImVader;
     using ImVader.Algorithms;
-    /// <summary>
-    /// Summary description for StrongComponentsTest
-    /// </summary>
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class StrongComponentsTest
     {

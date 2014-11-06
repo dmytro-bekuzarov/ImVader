@@ -130,7 +130,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public MinimalSpanningTree(&nbsp;<br />   <a target="_top" href="topic_000000000000004D.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; <i>g</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public MinimalSpanningTree(&nbsp;<br />   <a target="_top" href="topic_0000000000000061.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; <i>g</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,7 +152,7 @@ function replaceTitleAndUrl(win, title, url) {
 	</dt>
 	<dd>
 		<p>
-			Type: <a target="_top" href="topic_000000000000004D.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; 
+			Type: <a target="_top" href="topic_0000000000000061.html" onclick="this.target='';return true;">Graph</a>&lt;TV, TE&gt; 
 		</p>
 		<p>
 			Graph, for which minimal spanning tree is built. 
@@ -267,32 +267,33 @@ function replaceTitleAndUrl(win, title, url) {
 					<pre xml:space="preserve" class="brush: csharp">
 public MinimalSpanningTree(Graph&lt;TV, TE&gt; g)
  {
-     used = new bool[g.VertexCount];
+     isIncludedToMst = new bool[g.VertexCount];
      mstEdges = new List&lt;TE&gt;();
-     this.selE = new int[g.VertexCount];
-     this.minE = new double[g.VertexCount];
-     edges = new TE[g.VertexCount][];
-     for (var i = 0; i &lt; this.minE.Length; i++)
+     otherAdjacentVertex = new int[g.VertexCount];
+     minimalWeightEdges = new double[g.VertexCount];
+     initialEdges = new TE[g.VertexCount][];
+ 
+     for (var i = 0; i &lt; minimalWeightEdges.Length; i++)
      {
-         edges[i] = new TE[g.VertexCount];
+         initialEdges[i] = new TE[g.VertexCount];
      }
  
-     for (var i = 0; i &lt; this.minE.Length; i++)
+     for (var i = 0; i &lt; minimalWeightEdges.Length; i++)
      {
-         this.minE[i] = Inf;
-         this.selE[i] = -1;
+         minimalWeightEdges[i] = Infinity;
+         otherAdjacentVertex[i] = -1;
      }
  
      for (int i = 0; i &lt; g.EdgesCount; i++)
      {
-         int a1 = g.Edges[i].From;
-         int a2 = g.Edges[i].To;
-         edges[a1][a2] = g.Edges[i];
-         edges[a2][a1] = g.Edges[i];
+         int from = g.GetEdge(i).From;
+         int to = g.GetEdge(i).To;
+         initialEdges[from][to] = g.GetEdge(i);
+         initialEdges[to][from] = g.GetEdge(i);
      }
  
-     this.minE[0] = 0;
-     this.GetMst(g);
+     minimalWeightEdges[0] = 0;
+     FindMst(g);
  }
 					</pre>			
 				</div>

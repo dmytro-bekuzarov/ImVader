@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>MinimumCuts&lt;TV, TE&gt;.BestCut Property</title>
+	<title>MinimumCuts&lt;TV, TE&gt;.MinimumCost Property</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn10_lightweight/msdn10_lightweight.css"></link>
 	<script src="msdn10_lightweight/msdn10_lightweight.js" type="text/javascript"></script>
@@ -59,7 +59,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">ImVader Documentation</div>
-  	<h1 class="title">MinimumCuts&lt;TV, TE&gt;.BestCut Property</h1>
+  	<h1 class="title">MinimumCuts&lt;TV, TE&gt;.MinimumCost Property</h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -73,7 +73,7 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
-        Gets the list of vertices indexes that represents a minimum cut.
+        Gets the weight of the minimum cut.
 
 
         <p /><strong>Namespace:</strong>
@@ -130,7 +130,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="http://msdn2.microsoft.com/en-us/library/6sh2ey19.aspx">List</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a>&gt; BestCut {get;}</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.double.aspx">double</a> MinimumCost {get;}</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -146,7 +146,7 @@ function replaceTitleAndUrl(win, title, url) {
 
 	<h4 class="subHeading">
 		Property Value</h4>
-  The list of vertices indexes that represents a minimum cut.
+  The weight of the minimum cut.
 
 
 
@@ -217,11 +217,11 @@ function replaceTitleAndUrl(win, title, url) {
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public List&lt;int&gt; BestCut
+public double MinimumCost
  {
      get
      {
-         return this.bestCut.Select(v =&gt; this.initialGraph.Indexes[v]).ToList();
+         return this.minimumCost;
      }
  }
 					</pre>			
@@ -285,8 +285,8 @@ public List&lt;int&gt; BestCut
 		<div>
 			<h4 class="subHeading">
 				Reference</h4>
-			<a href="topic_0000000000000021.html">MinimumCuts&lt;TV, TE&gt; Class</a><br />
-<a href="topic_0000000000000021_members--.html">MinimumCuts&lt;TV, TE&gt; Members</a><br />
+			<a href="topic_0000000000000020.html">MinimumCuts&lt;TV, TE&gt; Class</a><br />
+<a href="topic_0000000000000020_members--.html">MinimumCuts&lt;TV, TE&gt; Members</a><br />
 
 
 

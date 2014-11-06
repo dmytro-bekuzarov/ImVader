@@ -65,14 +65,20 @@ namespace ImVader.Algorithms
 
             for (int i = 0; i < graph.EdgesCount; i++)
             {
-                graphReversed.AddEdge(new UnweightedEdge(graph.Edges[i].To, graph.Edges[i].From));
+                graphReversed.AddEdge(new UnweightedEdge(graph.GetEdge(i).To, graph.GetEdge(i).From));
                 if (typeof(MatrixGraph<TV, TE>) == graph.GetType() || typeof(ListGraph<TV, TE>) == graph.GetType())
-                    graphReversed.AddEdge(new UnweightedEdge(graph.Edges[i].From, graph.Edges[i].To));
+                {
+                    graphReversed.AddEdge(new UnweightedEdge(graph.GetEdge(i).From, graph.GetEdge(i).To));
+                }
             }
 
             for (var i = 0; i < graph.VertexCount; ++i)
+            {
                 if (!used[i])
+                {
                     DepthFirstSearch1(i);
+                }
+            }
 
             used = new bool[graph.VertexCount];
 
@@ -97,8 +103,13 @@ namespace ImVader.Algorithms
         {
             used[currentVertex] = true;
             for (var i = 0; i < graph.GetAdjacentVertices(currentVertex).Count(); ++i)
+            {
                 if (!used[graph.GetAdjacentVertices(currentVertex).ElementAt(i)])
+                {
                     DepthFirstSearch1(graph.GetAdjacentVertices(currentVertex).ElementAt(i));
+                }
+            }
+
             order.Add(currentVertex);
         }
 
@@ -113,8 +124,12 @@ namespace ImVader.Algorithms
             used[currentVertex] = true;
             Components[Components.Count - 1].Add(currentVertex);
             for (var i = 0; i < graphReversed.GetAdjacentVertices(currentVertex).Count(); ++i)
+            {
                 if (!used[graphReversed.GetAdjacentVertices(currentVertex).ElementAt(i)])
+                {
                     DepthFirstSearch2(graphReversed.GetAdjacentVertices(currentVertex).ElementAt(i));
+                }
+            }
         }
     }
 }

@@ -4,7 +4,7 @@
     using System.Web.Http;
 
     using ImVader;
-    using ImVader.ShortestPaths;
+    using ImVader.Algorithms.ShortestPaths;
 
     public class ShortestPathController : ApiController
     {

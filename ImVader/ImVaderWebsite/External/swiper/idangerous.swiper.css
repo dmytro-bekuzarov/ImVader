@@ -82,13 +82,13 @@ Your custom styles, here you need to specify container's and slide's
 sizes, pagination, etc.
 ================================================================*/
 .swiper-container {
-	/* Specify Swiper's Size: */
+	/* Specify Swiper's capacity: */
 
 	/*width:200px;
 	height: 100px;*/
 }
 .swiper-slide {
-	/* Specify Slides's Size: */
+	/* Specify Slides's capacity: */
 	
 	/*width: 100%;
 	height: 100%;*/
