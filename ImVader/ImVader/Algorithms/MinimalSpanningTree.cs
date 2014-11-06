@@ -14,7 +14,7 @@ namespace ImVader.Algorithms
     using System.Linq;
 
     /// <summary>
-    /// Represents an implementation of the algorithm for finding a minimum spanning tree.
+    /// Represents an implementation of the algorithm for findingW a minimum spanning tree.
     /// </summary>
     /// <typeparam name="TV">
     /// Type of data stored in vertices of the graph.
@@ -28,7 +28,7 @@ namespace ImVader.Algorithms
         /// <summary>
         /// Infinite weight of edge.
         /// </summary>
-        private const double Infinity = double.MaxValue;
+        private const double infinity = double.MaxValue;
 
         /// <summary>
         /// Edges included to resulting minimal spanning tree.
@@ -38,27 +38,27 @@ namespace ImVader.Algorithms
         /// <summary>
         /// Contains indexes of the edges accessible from adjacent vertices.
         /// </summary>
-        private readonly TE[][] edges;
+        private readonly TE[][] initialEdges;
 
         /// <summary>
         /// Contains the weight of the edge with minimal weight, adjacent to vertex with appropriate index.
         /// </summary>
-        private readonly double[] minE;
+        private readonly double[] minimalWeightEdges;
 
         /// <summary>
-        /// Contains the other vertex adjacent to min_e[i].
+        /// Contains the other vertex adjacent to minimalWeightEdges[i].
         /// </summary>
-        private readonly int[] selE;
+        private readonly int[] otherAdjacentVertex;
 
         /// <summary>
         /// Value in used[i] is "true" if vertex i is included into minimal spanning tree.
         /// </summary>
-        private readonly bool[] used;
+        private readonly bool[] isIncludedToMst;
 
         /// <summary>
         /// Resulting minimal spanning tree.
         /// </summary>
-        private ListGraph<TV, WeightedEdge> mst;
+        private ListGraph<TV, WeightedEdge> resultingTree;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MinimalSpanningTree{TV,TE}"/> class.
@@ -71,32 +71,34 @@ namespace ImVader.Algorithms
         /// </exception>
         public MinimalSpanningTree(Graph<TV, TE> g)
         {
-            used = new bool[g.VertexCount];
+            isIncludedToMst = new bool[g.VertexCount];
             mstEdges = new List<TE>();
-            this.selE = new int[g.VertexCount];
-            this.minE = new double[g.VertexCount];
-            edges = new TE[g.VertexCount][];
-            for (var i = 0; i < this.minE.Length; i++)
+            otherAdjacentVertex = new int[g.VertexCount];
+            minimalWeightEdges = new double[g.VertexCount];
+            initialEdges = new TE[g.VertexCount][];
+
+            for (var i = 0; i < minimalWeightEdges.Length; i++)
             {
-                edges[i] = new TE[g.VertexCount];
+                initialEdges[i] = new TE[g.VertexCount];
             }
 
-            for (var i = 0; i < this.minE.Length; i++)
+            for (var i = 0; i < minimalWeightEdges.Length; i++)
             {
-                this.minE[i] = Infinity;
-                this.selE[i] = -1;
+                minimalWeightEdges[i] = infinity;
+                otherAdjacentVertex[i] = -1;
             }
 
+            int from, to;
             for (int i = 0; i < g.EdgesCount; i++)
             {
-                int a1 = g.Edges[i].From;
-                int a2 = g.Edges[i].To;
-                edges[a1][a2] = g.Edges[i];
-                edges[a2][a1] = g.Edges[i];
+                from = g.Edges[i].From;
+                to = g.Edges[i].To;
+                initialEdges[from][to] = g.Edges[i];
+                initialEdges[to][from] = g.Edges[i];
             }
 
-            this.minE[0] = 0;
-            this.GetMst(g);
+            minimalWeightEdges[0] = 0;
+            FindMst(g);
         }
 
         /// <summary>
@@ -111,25 +113,6 @@ namespace ImVader.Algorithms
         }
 
         /// <summary>
-        /// Returns the vertices of the minimal spanning tree.
-        /// </summary>
-        /// <returns>
-        /// Vertices of the minimal spanning tree.
-        /// </returns>
-        public int[][] GetMstVertices()
-        {
-            var mstVertices = new int[mstEdges.Count][];
-            for (int i = 0; i < mstEdges.Count; i++)
-            {
-                mstVertices[i] = new int[2];
-                mstVertices[i][0] = mstEdges[i].From;
-                mstVertices[i][1] = mstEdges[i].To;
-            }
-
-            return mstVertices;
-        }
-
-        /// <summary>
         /// Returns the minimal spanning tree.
         /// </summary>
         /// <returns>
@@ -137,7 +120,7 @@ namespace ImVader.Algorithms
         /// </returns>
         public ListGraph<TV, WeightedEdge> GetMstTree()
         {
-            return mst;
+            return resultingTree;
         }
 
         /// <summary>
@@ -148,7 +131,7 @@ namespace ImVader.Algorithms
         /// </returns>
         public double GetMstWeight()
         {
-            return this.mstEdges.Cast<WeightedEdge>().Sum(we => we.Weight);
+            return mstEdges.Cast<WeightedEdge>().Sum(we => we.Weight);
         }
 
         /// <summary>
@@ -160,35 +143,41 @@ namespace ImVader.Algorithms
         /// <exception cref="InvalidOperationException">
         /// Exception is thrown if minimal spanning tree cannot be built.
         /// </exception>
-        private void GetMst(Graph<TV, TE> g)
+        private void FindMst(Graph<TV, TE> g)
         {
-            mst = ((ListGraph<TV, TE>)g).CopyWeighted();
+            resultingTree = ((ListGraph<TV, TE>)g).CopyWeighted();
             var n = g.VertexCount;
             for (var i = 0; i < n; ++i)
             {
                 var v = -1;
-                for (var j = 0; j < n; ++j) if (!used[j] && (v == -1 || this.minE[j] < this.minE[v])) v = j;
-                if (Math.Abs(this.minE[v] - Infinity) < 0.01)
+                for (var j = 0; j < n; ++j)
+                {
+                    if (!isIncludedToMst[j] && (v == -1 || minimalWeightEdges[j] < minimalWeightEdges[v]))
+                    {
+                        v = j;
+                    }
+                }
+                if (Math.Abs(minimalWeightEdges[v] - infinity) < 0.01)
                 {
                     throw new InvalidOperationException("Cannot build MST of not fully connected graph!");
                 }
 
-                used[v] = true;
-                if (this.selE[v] != -1)
+                isIncludedToMst[v] = true;
+                if (otherAdjacentVertex[v] != -1)
                 {
-                    var tmp = new WeightedEdge(v, this.selE[v], edges[v][this.selE[v]].Weight);
+                    var tmp = new WeightedEdge(v, otherAdjacentVertex[v], initialEdges[v][otherAdjacentVertex[v]].Weight);
 
-                    mstEdges.Add(edges[v][this.selE[v]]);
-                    mst.AddEdge(tmp);
+                    mstEdges.Add(initialEdges[v][otherAdjacentVertex[v]]);
+                    resultingTree.AddEdge(tmp);
                 }
 
                 for (var to = 0; to < n; ++to)
                 {
-                    if (edges[v][to] != null && edges[v][to].Weight < this.minE[to])
+                    if (initialEdges[v][to] != null && initialEdges[v][to].Weight < minimalWeightEdges[to])
                     {
-                        this.minE[to] = edges[v][to].Weight;
-                        this.selE[to] = v;
-                        this.selE[v] = to;
+                        minimalWeightEdges[to] = initialEdges[v][to].Weight;
+                        otherAdjacentVertex[to] = v;
+                        otherAdjacentVertex[v] = to;
                     }
                 }
             }

@@ -20,7 +20,7 @@ namespace ImVaderUnitTests.AlgorithmsTests
             g.AddEdge(new WeightedEdge(3, 5, 2));
             g.AddEdge(new WeightedEdge(4, 5, 5));
             var mst = new MinimalSpanningTree<int, WeightedEdge>(g);
-            Assert.AreEqual(13.0 ,mst.GetMstWeight());
+            Assert.AreEqual(13.0, mst.GetMstWeight());
         }
 
     }
