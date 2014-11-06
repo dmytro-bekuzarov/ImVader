@@ -37,12 +37,12 @@ namespace ImVader.Algorithms
         /// <summary>
         /// Initial graph.
         /// </summary>
-        private readonly Graph<TV, TE> g;
+        private readonly Graph<TV, TE> graph;
 
         /// <summary>
         /// Reversed graph.
         /// </summary>
-        private readonly DirectedMatrixGraph<TV, UnweightedEdge> gr;
+        private readonly DirectedMatrixGraph<TV, UnweightedEdge> graphReversed;
 
         /// <summary>
         /// Back order of the vertices timeouts.
@@ -57,32 +57,32 @@ namespace ImVader.Algorithms
         /// </param>
         public StrongComponents(Graph<TV, TE> graph)
         {
-            g = graph;
-            used = new bool[g.VertexCount];
+            this.graph = graph;
+            used = new bool[graph.VertexCount];
             order = new List<int>();
             Components = new List<List<int>>();
-            gr = new DirectedMatrixGraph<TV, UnweightedEdge>(g.VertexCount);
+            graphReversed = new DirectedMatrixGraph<TV, UnweightedEdge>(graph.VertexCount);
 
-            for (int i = 0; i < g.EdgesCount; i++)
+            for (int i = 0; i < graph.EdgesCount; i++)
             {
-                gr.AddEdge(new UnweightedEdge(g.Edges[i].To, g.Edges[i].From));
-                if (typeof(MatrixGraph<TV, TE>) == g.GetType() || typeof(ListGraph<TV, TE>) == g.GetType())
-                    gr.AddEdge(new UnweightedEdge(g.Edges[i].From, g.Edges[i].To));
+                graphReversed.AddEdge(new UnweightedEdge(graph.Edges[i].To, graph.Edges[i].From));
+                if (typeof(MatrixGraph<TV, TE>) == graph.GetType() || typeof(ListGraph<TV, TE>) == graph.GetType())
+                    graphReversed.AddEdge(new UnweightedEdge(graph.Edges[i].From, graph.Edges[i].To));
             }
 
-            for (var i = 0; i < g.VertexCount; ++i)
+            for (var i = 0; i < graph.VertexCount; ++i)
                 if (!used[i])
-                    this.DepthFirstSearch1(i);
+                    DepthFirstSearch1(i);
 
-            used = new bool[g.VertexCount];
+            used = new bool[graph.VertexCount];
 
-            for (var i = 0; i < g.VertexCount; ++i)
+            for (var i = 0; i < graph.VertexCount; ++i)
             {
-                var v = order[g.VertexCount - 1 - i];
-                if (!used[v])
+                var vertex = order[graph.VertexCount - 1 - i];
+                if (!used[vertex])
                 {
                     Components.Add(new List<int>());
-                    this.DepthFirstSearch2(v);
+                    DepthFirstSearch2(vertex);
                 }
             }
         }
@@ -90,31 +90,31 @@ namespace ImVader.Algorithms
         /// <summary>
         /// First depth-first search which is used in the algorithm.
         /// </summary>
-        /// <param name="v">
+        /// <param name="currentVertex">
         /// The index of the vertex.
         /// </param>
-        private void DepthFirstSearch1(int v)
+        private void DepthFirstSearch1(int currentVertex)
         {
-            used[v] = true;
-            for (var i = 0; i < g.GetAdjacentVertices(v).Count(); ++i)
-                if (!used[g.GetAdjacentVertices(v).ElementAt(i)])
-                    this.DepthFirstSearch1(g.GetAdjacentVertices(v).ElementAt(i));
-            order.Add(v);
+            used[currentVertex] = true;
+            for (var i = 0; i < graph.GetAdjacentVertices(currentVertex).Count(); ++i)
+                if (!used[graph.GetAdjacentVertices(currentVertex).ElementAt(i)])
+                    DepthFirstSearch1(graph.GetAdjacentVertices(currentVertex).ElementAt(i));
+            order.Add(currentVertex);
         }
 
         /// <summary>
         /// Second depth-first search which is used in the algorithm.
         /// </summary>
-        /// <param name="v">
+        /// <param name="currentVertex">
         /// The index of the vertex.
         /// </param>
-        private void DepthFirstSearch2(int v)
+        private void DepthFirstSearch2(int currentVertex)
         {
-            used[v] = true;
-            Components[Components.Count - 1].Add(v);
-            for (var i = 0; i < gr.GetAdjacentVertices(v).Count(); ++i)
-                if (!used[gr.GetAdjacentVertices(v).ElementAt(i)])
-                    this.DepthFirstSearch2(gr.GetAdjacentVertices(v).ElementAt(i));
+            used[currentVertex] = true;
+            Components[Components.Count - 1].Add(currentVertex);
+            for (var i = 0; i < graphReversed.GetAdjacentVertices(currentVertex).Count(); ++i)
+                if (!used[graphReversed.GetAdjacentVertices(currentVertex).ElementAt(i)])
+                    DepthFirstSearch2(graphReversed.GetAdjacentVertices(currentVertex).ElementAt(i));
         }
     }
 }

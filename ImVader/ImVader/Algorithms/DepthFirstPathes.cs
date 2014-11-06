@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="DepthFirstPathes.cs" company="Sigma">
-//   It'startIndex a totally free software
+//   It's a totally free software
 // </copyright>
 // <summary>
 //   Defines the DepthFirstPathes type.
@@ -53,60 +53,61 @@ namespace ImVader.Algorithms
         /// <summary>
         /// Initializes a new instance of the <see cref="DepthFirstPathes{TV,TE}"/> class.
         /// </summary>
-        /// <param name="g">
+        /// <param name="graph">
         /// Graph, on which depth-first search is performed.
         /// </param>
         /// <param name="startIndex">
-        /// Start vertex for breath-first search.
+        /// Start vertex for depth-first search.
         /// </param>
         /// <exception cref="ArgumentOutOfRangeException">
         /// Exception is thrown if startIndex is out of boundaries (0, g.VertexCount).
         /// </exception>
-        public DepthFirstPathes(Graph<TV, TE> g, int startIndex)
+        public DepthFirstPathes(Graph<TV, TE> graph, int startIndex)
         {
-            if (startIndex < 0 || startIndex > g.VertexCount)
+            if (startIndex < 0 || startIndex > graph.VertexCount)
                 throw new ArgumentOutOfRangeException("startIndex", "Vertex index is out of range.");
-            marked = new bool[g.VertexCount];
-            edgeTo = new int[g.VertexCount];
-            Timein = new int[g.VertexCount];
-            Timeout = new int[g.VertexCount];
+            marked = new bool[graph.VertexCount];
+            edgeTo = new int[graph.VertexCount];
+            Timein = new int[graph.VertexCount];
+            Timeout = new int[graph.VertexCount];
+
             for (var i = 0; i < edgeTo.Length; i++)
             {
                 Timein[i] = Timeout[i] = edgeTo[i] = -1;
             }
 
             this.startIndex = startIndex;
-            this.DepthFirstSearch(g);
+            this.DepthFirstSearch(graph);
         }
 
         /// <summary>
-        /// Defines if there is a path from start vertex to vertex v after breath-first search.
+        /// Defines if there is a path from start vertex to vertex v after depth-first search.
         /// </summary>
-        /// <param name="v">
+        /// <param name="vertex">
         /// Vertex index for which we want to know if there is a path from start to it. 
         /// </param>
         /// <returns>
         /// True, if path exists, false otherwise.
         /// </returns>
-        public bool HasPathTo(int v)
+        public bool HasPathTo(int vertex)
         {
-            return marked[v];
+            return marked[vertex];
         }
 
         /// <summary>
         /// Defines a path between start vertex and vertex with index v as a sequence of vertices from startIndex to v. 
         /// </summary>
-        /// <param name="v">
+        /// <param name="vertex">
         /// Path from startIndex to v.
         /// </param>
         /// <returns>
         /// Collections of vertices <see cref="System.Collections.IEnumerable"/> if path found, null otherwise.
         /// </returns>
-        public IEnumerable<int> PathTo(int v)
+        public IEnumerable<int> PathTo(int vertex)
         {
-            if (!HasPathTo(v)) return null;
+            if (!HasPathTo(vertex)) return null;
             var path = new Stack<int>();
-            for (var i = v; i != -1; i = edgeTo[i])
+            for (var i = vertex; i != -1; i = edgeTo[i])
                 path.Push(i);
 
             return path;
@@ -115,10 +116,10 @@ namespace ImVader.Algorithms
         /// <summary>
         /// Encapsulates depth-first search algorithm on the graph g.
         /// </summary>
-        /// <param name="g">
+        /// <param name="graph">
         /// Graph we want to perform depth-first search on.
         /// </param>
-        private void DepthFirstSearch(Graph<TV, TE> g)
+        private void DepthFirstSearch(Graph<TV, TE> graph)
         {
             int dfsTimer = 0;
             var vertices = new Stack<int>();
@@ -139,7 +140,7 @@ namespace ImVader.Algorithms
                 }
 
                 marked[curVertex] = true;
-                foreach (var vertex in g.GetAdjacentVertices(curVertex).Where(x => !this.marked[x]))
+                foreach (var vertex in graph.GetAdjacentVertices(curVertex).Where(x => !this.marked[x]))
                 {
                     edgeTo[vertex] = curVertex;
                     vertices.Push(vertex);

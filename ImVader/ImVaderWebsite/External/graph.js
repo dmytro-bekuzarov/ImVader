@@ -75,7 +75,7 @@ function highlightComponents(components) {
     for (var i = 0; i < components.length; i++) {
         counter %= 7;
         if (components[i].length == 1) {
-            data.nodes._data[components[i][0]].color = { background: "#2F4F4F" }
+            data.nodes._data[components[i][0]].color = { background: "#54FF9F" }
         } else {
             for (var j = 0; j < components[i].length; j++) {
                 if (components[i][j] != null && components[i][j] != undefined)
