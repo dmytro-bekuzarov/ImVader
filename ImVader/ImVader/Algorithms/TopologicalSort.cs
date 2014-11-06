@@ -69,30 +69,30 @@ namespace ImVader.Algorithms
         /// <summary>
         /// Perfoms topological sort on graph. 
         /// </summary>
-        /// <param name="g">
+        /// <param name="graphObject">
         /// Graph to operate on.
         /// </param>
         /// <returns>
         /// Returns modified source graph.
         /// </returns>
-        public Graph<TV, TE> SortGraph(Graph<TV, TE> g)
+        public Graph<TV, TE> SortGraph(Graph<TV, TE> graphObject)
         {
-            this.graph = g;
-            colors = new Color[g.VertexCount];
-            numbers = new int[g.VertexCount];
-            visitedVertices = new Stack<int>(g.VertexCount);
-            for (var i = 0; i < g.VertexCount; i++)
+            this.graph = graphObject;
+            colors = new Color[graphObject.VertexCount];
+            numbers = new int[graphObject.VertexCount];
+            visitedVertices = new Stack<int>(graphObject.VertexCount);
+            for (var i = 0; i < graphObject.VertexCount; i++)
             {
                 var cycle = this.DepthFirstSearch(i);
                 if (cycle) throw new InvalidOperationException("Graph has cycles");
             }
 
-            for (var i = 0; i < g.VertexCount; i++)
+            for (var i = 0; i < graphObject.VertexCount; i++)
             {
                 numbers[visitedVertices.Pop()] = i;
             }
 
-            return g;
+            return graphObject;
         }
 
         /// <summary>
@@ -109,25 +109,25 @@ namespace ImVader.Algorithms
         /// <summary>
         /// Fills vertices stack to complete topological sort.
         /// </summary>
-        /// <param name="v">
+        /// <param name="vertexIndex">
         /// The vertex index.
         /// </param>
         /// <returns>
         /// Returns true if graph has cycles, false otherwise.
         /// </returns>
-        private bool DepthFirstSearch(int v)
+        private bool DepthFirstSearch(int vertexIndex)
         {
-            if (colors[v] == Color.Grey) return true;
-            if (colors[v] == Color.Black) return false;
-            colors[v] = Color.Grey;
-            var edgesToEnumerate = graph.GetAdjacentEdges(v).ToArray();
+            if (colors[vertexIndex] == Color.Grey) return true;
+            if (colors[vertexIndex] == Color.Black) return false;
+            colors[vertexIndex] = Color.Grey;
+            var edgesToEnumerate = graph.GetAdjacentEdges(vertexIndex).ToArray();
             if (edgesToEnumerate.Select(edj => this.graph.IndexOf(edj.To)).Any(this.DepthFirstSearch))
             {
                 return true;
             }
 
-            visitedVertices.Push(v);
-            colors[v] = Color.Black;
+            visitedVertices.Push(vertexIndex);
+            colors[vertexIndex] = Color.Black;
             return false;
         }
     }

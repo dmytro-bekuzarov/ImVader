@@ -49,27 +49,27 @@ namespace ImVader.Utils
         /// </returns>
         public string Serialize(T obj, Stream stream)
         {
-            string s = Serialize(obj);
+            var jsonSerialiazedString = Serialize(obj);
             using (var streamWriter = new StreamWriter(stream))
             {
-                streamWriter.Write(s);
+                streamWriter.Write(jsonSerialiazedString);
             }
 
-            return s;
+            return jsonSerialiazedString;
         }
 
         /// <summary>
         /// Deserializes the object from JSON string.
         /// </summary>
-        /// <param name="s">
+        /// <param name="jsonSerialiazedString">
         /// The JSON string.
         /// </param>
         /// <returns>
         /// The deserialized object.
         /// </returns>
-        public T Deserialize(string s)
+        public T Deserialize(string jsonSerialiazedString)
         {
-            return JsonConvert.DeserializeObject<T>(s);
+            return JsonConvert.DeserializeObject<T>(jsonSerialiazedString);
         }
 
         /// <summary>
